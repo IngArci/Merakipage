@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Calendar, MapPin, Video, Users } from 'lucide-react';
 import { Button } from '../components/ui/button';
-import fraseMeraki from 'figma:asset/a57aa43659f8a8d7ff9a6a829c361cec51caad27.png';
+import fraseMeraki from "../../assets/logo.png";
 
 export default function Cartera() {
   const [formData, setFormData] = useState({

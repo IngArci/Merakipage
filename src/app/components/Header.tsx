@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Button } from './ui/button';
-import logoMeraki from 'figma:asset/69f8557010ec36236c7804eeddc47c3ad3518c5a.png';
+import logoMeraki from "../../assets/logo.png";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

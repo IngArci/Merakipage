@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 import { Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-react';
-import logoMeraki from 'figma:asset/69f8557010ec36236c7804eeddc47c3ad3518c5a.png';
+import logoMeraki from "../../assets/logo.png";
 
 // SVG personalizado para TikTok
 const TikTokIcon = () => (
@@ -115,16 +115,16 @@ export function Footer() {
               <li className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-[#F4BA3E] flex-shrink-0 mt-0.5" />
                 <span className="text-gray-400 text-sm">
-                  Calle Principal 123<br />Ciudad, País
+                  Cra. 7 #57-129<br />Ibagué, Tolima
                 </span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-[#F4BA3E] flex-shrink-0" />
-                <span className="text-gray-400 text-sm">+57 300 123 4567</span>
+                <span className="text-gray-400 text-sm">+57 317 682 0728</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-[#F4BA3E] flex-shrink-0" />
-                <span className="text-gray-400 text-sm">info@meraki.com</span>
+                <span className="text-gray-400 text-sm">servicioalcliente.grupomeraki@gmail.com</span>
               </li>
             </ul>
           </div>
