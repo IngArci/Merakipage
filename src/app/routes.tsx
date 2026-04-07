@@ -14,6 +14,7 @@ import Privacidad from './pages/Privacidad';
 import Terminos from './pages/Terminos';
 import Inversionistas from './pages/Inversionistas';
 import Pagos from './pages/Pagos';
+import Admin from './pages/Admin';
 
 export const router = createBrowserRouter([
   {
@@ -34,6 +35,7 @@ export const router = createBrowserRouter([
       { path: 'privacidad', Component: Privacidad },
       { path: 'terminos', Component: Terminos },
       { path: 'inversionistas', Component: Inversionistas },
+      { path: 'admin', Component: Admin },
     ],
   },
 ]);

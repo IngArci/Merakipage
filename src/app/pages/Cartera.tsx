@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Calendar, MapPin, Video, Users } from 'lucide-react';
 import { Button } from '../components/ui/button';
-import fraseMeraki from "../../assets/logo.png";
+import fraseMeraki from 'figma:asset/a57aa43659f8a8d7ff9a6a829c361cec51caad27.png';
 
 export default function Cartera() {
   const [formData, setFormData] = useState({
@@ -140,7 +140,7 @@ export default function Cartera() {
                   <div className="absolute inset-0 bg-gradient-to-br from-[#F4BA3E]/20 via-[#B7871C]/20 to-transparent blur-3xl scale-110" />
                   
                   {/* Imagen con marco elegante */}
-                  <div className="relative bg-gradient-to-br from-[#1a1a1a] to-black p-8 rounded-2xl border-2 border-[#F4BA3E]/30">
+                  <div className="relative bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl border-2 border-[#F4BA3E]/30">
                     <img 
                       src={fraseMeraki} 
                       alt="Nunca nos cansaremos de mejorar para ti" 

@@ -13,11 +13,14 @@ import {
   ShoppingBag,
   Shield,
   Camera,
-  Download
+  Download,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { LeadForm } from '../components/LeadForm';
 import { useState } from 'react';
+import Slider from 'react-slick';
 
 // Datos de proyectos
 const projectsData = {
@@ -62,14 +65,26 @@ const projectsData = {
       { name: 'Certificado de Libertad', status: 'Vigente', date: '10 Marzo 2025' },
       { name: 'Reglamento de Copropiedad', status: 'Aprobado', date: '25 Enero 2025' }
     ],
+    videos: {
+      informesGestion: [
+        'dQw4w9WgXcQ', // Video ID de ejemplo
+        '3JZ_D3ELwOQ'
+      ],
+      avancesObra: [
+        'ScMzIvxBSi4',
+        'tgbNymZ7vqY'
+      ]
+    },
     progress: [
       {
         date: 'Marzo 2026',
         title: 'Vías principales pavimentadas',
         percentage: 85,
         images: [
+          'https://images.unsplash.com/photo-1763328044351-98341e9963da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjBwcm9ncmVzcyUyMHJvYWQlMjBwYXZpbmd8ZW58MXx8fHwxNzc1NTc0NjkyfDA&ixlib=rb-4.1.0&q=80&w=1080',
           'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80',
-          'https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=800&q=80'
+          'https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=800&q=80',
+          'https://images.unsplash.com/photo-1706437524158-6ca925ce5a06?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmZyYXN0cnVjdHVyZSUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc3NTU3NDY5OHww&ixlib=rb-4.1.0&q=80&w=1080'
         ]
       },
       {
@@ -78,7 +93,9 @@ const projectsData = {
         percentage: 60,
         images: [
           'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80',
-          'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80'
+          'https://images.unsplash.com/photo-1664976706112-864d7a38e12c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidWlsZGluZyUyMGNvbnN0cnVjdGlvbiUyMHNpdGU8ZW58MXx8fHwxNzc1NTQ0NzM1fDA&ixlib=rb-4.1.0&q=80&w=1080',
+          'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80',
+          'https://images.unsplash.com/photo-1762049297262-4eef6d6d4d7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmUlMjBjb25zdHJ1Y3Rpb258ZW58MXx8fHwxNzc1NTM2ODU2fDA&ixlib=rb-4.1.0&q=80&w=1080'
         ]
       },
       {
@@ -86,7 +103,9 @@ const projectsData = {
         title: 'Redes de servicios instaladas',
         percentage: 100,
         images: [
-          'https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=800&q=80'
+          'https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=800&q=80',
+          'https://images.unsplash.com/photo-1764223531702-1614efb82e40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWFsJTIwZXN0YXRlJTIwZGV2ZWxvcG1lbnQlMjBsYW5kfGVufDF8fHx8MTc3NTU3MTE2NXww&ixlib=rb-4.1.0&q=80&w=1080',
+          'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80'
         ]
       }
     ]
@@ -223,7 +242,7 @@ const projectsData = {
     availableLots: 52,
     deliveryDate: 'Marzo 2027',
     images: [
-      'https://images.unsplash.com/photo-1758565811272-e79917ca0adc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjb3VudHJ5c2lkZSUyMGVzdGF0ZSUyMG5hdHVyYWwlMjBsYW5kc2NhcGV8ZW58MXx8fHwxNzczODQ1NTI5fDA&ixlib=rb-4.1.0&q=80&w=1080',
+      'https://images.unsplash.com/photo-1758565811272-e79917ca0adc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjb3VudHJ5c2lkZSUyMGVzdGF0ZSUyMGNvdW50cnlzaWRlJTIwbGFuZCUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc3Mzg0NTUyOXww&ixlib=rb-4.1.0&q=80&w=1080',
       'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1080&q=80',
       'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=1080&q=80',
       'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1080&q=80'
@@ -649,8 +668,8 @@ export default function ProyectoDetalle() {
         </div>
       </section>
 
-      {/* Legal Documentation */}
-      <section id="documentacion" className="py-16 bg-gradient-to-b from-black via-[#0d060a] to-black">
+      {/* Club News - Videos */}
+      <section id="noticias" className="py-16 bg-gradient-to-b from-black via-[#0d060a] to-black">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -658,47 +677,30 @@ export default function ProyectoDetalle() {
             viewport={{ once: true }}
             className="max-w-6xl mx-auto"
           >
-            <h2 className="text-4xl mb-6 text-white">Documentación Legal</h2>
+            <h2 className="text-4xl mb-6 text-white">Noticias de tu Club Campestre</h2>
             <div className="h-1 w-32 bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] mb-12" />
             
-            <div className="bg-gradient-to-b from-[#1a1a1a] to-black p-8 rounded-2xl border border-[#F4BA3E]/30">
-              <p className="text-gray-300 mb-8">
-                Todos nuestros proyectos cuentan con documentación legal completa y al día. 
-                Tu inversión está 100% protegida.
-              </p>
+            {/* Grid de videos lado a lado */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Informes de Gestión */}
+              {project.videos && project.videos.informesGestion && project.videos.informesGestion.length > 0 && (
+                <div>
+                  <h3 className="text-2xl text-white mb-6">Informes de Gestión</h3>
+                  <div className="videos-carousel-compact">
+                    <VideoCarouselCompact videos={project.videos.informesGestion} />
+                  </div>
+                </div>
+              )}
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {project.legalDocs.map((doc, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="flex items-start space-x-4 bg-black/50 p-6 rounded-xl border border-[#F4BA3E]/20 hover:border-[#F4BA3E]/50 transition-all"
-                  >
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#947018] to-[#F4BA3E] flex items-center justify-center flex-shrink-0">
-                      <FileText className="w-6 h-6 text-black" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg text-white mb-1">{doc.name}</h3>
-                      <div className="flex items-center space-x-4 text-sm">
-                        <span className="px-3 py-1 rounded-full bg-green-500/20 text-green-400 border border-green-500/30">
-                          {doc.status}
-                        </span>
-                        <span className="text-gray-400">{doc.date}</span>
-                      </div>
-                    </div>
-                    <Button 
-                      size="sm" 
-                      variant="outline" 
-                      className="border-[#F4BA3E]/30 text-[#F4BA3E] hover:bg-[#F4BA3E] hover:text-black"
-                    >
-                      <Download className="w-4 h-4" />
-                    </Button>
-                  </motion.div>
-                ))}
-              </div>
+              {/* Avances de Obra (Videos) */}
+              {project.videos && project.videos.avancesObra && project.videos.avancesObra.length > 0 && (
+                <div>
+                  <h3 className="text-2xl text-white mb-6">Avances de Obra</h3>
+                  <div className="videos-carousel-compact">
+                    <VideoCarouselCompact videos={project.videos.avancesObra} />
+                  </div>
+                </div>
+              )}
             </div>
           </motion.div>
         </div>
@@ -718,61 +720,7 @@ export default function ProyectoDetalle() {
             
             <div className="space-y-8">
               {project.progress.map((update, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-gradient-to-b from-[#1a1a1a] to-black p-8 rounded-2xl border border-[#F4BA3E]/20"
-                >
-                  <div className="flex items-center justify-between mb-6">
-                    <div>
-                      <div className="flex items-center space-x-3 mb-2">
-                        <Calendar className="w-5 h-5 text-[#F4BA3E]" />
-                        <span className="text-gray-400">{update.date}</span>
-                      </div>
-                      <h3 className="text-2xl text-white">{update.title}</h3>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-4xl text-[#F4BA3E] font-semibold">{update.percentage}%</p>
-                      <p className="text-gray-400 text-sm">Completado</p>
-                    </div>
-                  </div>
-
-                  {/* Progress Bar */}
-                  <div className="w-full h-3 bg-black/50 rounded-full overflow-hidden mb-6">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${update.percentage}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1, delay: 0.5 }}
-                      className="h-full bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#FFF18F]"
-                    />
-                  </div>
-
-                  {/* Progress Images */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {update.images.map((image, imgIndex) => (
-                      <div 
-                        key={imgIndex}
-                        className="relative h-64 rounded-xl overflow-hidden border border-[#F4BA3E]/20"
-                      >
-                        <img
-                          src={image}
-                          alt={`Avance ${index + 1} - ${imgIndex + 1}`}
-                          className="w-full h-full object-cover"
-                        />
-                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                          <div className="flex items-center space-x-2">
-                            <Camera className="w-4 h-4 text-[#F4BA3E]" />
-                            <span className="text-white text-sm">Foto de avance {imgIndex + 1}</span>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
+                <ProgressCard key={index} update={update} index={index} />
               ))}
             </div>
           </motion.div>
@@ -829,6 +777,219 @@ export default function ProyectoDetalle() {
           </div>
         </div>
       </section>
+    </div>
+  );
+}
+
+// Componente para mostrar cada actualización de progreso con carrusel
+function ProgressCard({ update, index }: { update: { date: string, title: string, percentage: number, images: string[] }, index: number }) {
+  // Configuración del carrusel
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
+    dotsClass: "slick-dots !bottom-4",
+    appendDots: (dots: React.ReactNode) => (
+      <div>
+        <ul className="flex justify-center space-x-2"> {dots} </ul>
+      </div>
+    ),
+    customPaging: () => (
+      <div className="w-3 h-3 rounded-full bg-white/30 hover:bg-white/60 transition-all" />
+    )
+  };
+
+  return (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1 }}
+      className="bg-gradient-to-b from-[#1a1a1a] to-black p-8 rounded-2xl border border-[#F4BA3E]/20"
+    >
+      <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center space-x-3">
+          <Calendar className="w-5 h-5 text-[#F4BA3E]" />
+          <span className="text-gray-400">{update.date}</span>
+        </div>
+        <div className="text-right">
+          <p className="text-4xl text-[#F4BA3E] font-semibold">{update.percentage}%</p>
+          <p className="text-gray-400 text-sm">Completado</p>
+        </div>
+      </div>
+
+      {/* Texto descriptivo (reemplaza el título) */}
+      <p className="text-gray-300 leading-relaxed mb-6">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+      </p>
+
+      {/* Progress Bar */}
+      <div className="w-full h-3 bg-black/50 rounded-full overflow-hidden mb-8">
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: `${update.percentage}%` }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="h-full bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#FFF18F]"
+        />
+      </div>
+
+      {/* Carrusel de imágenes */}
+      <div className="progress-carousel">
+        <Slider {...settings}>
+          {update.images.map((image, imgIndex) => (
+            <div key={imgIndex} className="px-2">
+              <div className="relative h-96 rounded-xl overflow-hidden border border-[#F4BA3E]/20">
+                <img
+                  src={image}
+                  alt={`Avance ${index + 1} - ${imgIndex + 1}`}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                  <div className="flex items-center space-x-2">
+                    <Camera className="w-4 h-4 text-[#F4BA3E]" />
+                    <span className="text-white text-sm">Foto de avance {imgIndex + 1}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+    </motion.div>
+  );
+}
+
+// Componentes de flechas personalizadas para el carrusel
+function PrevArrow(props: any) {
+  const { onClick } = props;
+  return (
+    <button
+      onClick={onClick}
+      className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-black/70 hover:bg-[#F4BA3E] border border-[#F4BA3E]/30 hover:border-[#F4BA3E] flex items-center justify-center transition-all group"
+    >
+      <ChevronLeft className="w-6 h-6 text-[#F4BA3E] group-hover:text-black" />
+    </button>
+  );
+}
+
+function NextArrow(props: any) {
+  const { onClick } = props;
+  return (
+    <button
+      onClick={onClick}
+      className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-black/70 hover:bg-[#F4BA3E] border border-[#F4BA3E]/30 hover:border-[#F4BA3E] flex items-center justify-center transition-all group"
+    >
+      <ChevronRight className="w-6 h-6 text-[#F4BA3E] group-hover:text-black" />
+    </button>
+  );
+}
+
+// Componente para mostrar videos en carrusel
+function VideoCarousel({ videos }: { videos: string[] }) {
+  // Configuración del carrusel
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
+    dotsClass: "slick-dots !bottom-4",
+    appendDots: (dots: React.ReactNode) => (
+      <div>
+        <ul className="flex justify-center space-x-2"> {dots} </ul>
+      </div>
+    ),
+    customPaging: () => (
+      <div className="w-3 h-3 rounded-full bg-white/30 hover:bg-white/60 transition-all" />
+    )
+  };
+
+  return (
+    <div className="videos-carousel">
+      <Slider {...settings}>
+        {videos.map((videoId, index) => (
+          <div key={index} className="px-2">
+            <div className="relative h-96 rounded-xl overflow-hidden border border-[#F4BA3E]/20">
+              <iframe
+                src={`https://www.youtube.com/embed/${videoId}`}
+                title={`Video ${index + 1}`}
+                className="w-full h-full object-cover"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                <div className="flex items-center space-x-2">
+                  <Camera className="w-4 h-4 text-[#F4BA3E]" />
+                  <span className="text-white text-sm">Video {index + 1}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </Slider>
+    </div>
+  );
+}
+
+// Componente para mostrar videos en carrusel compacto
+function VideoCarouselCompact({ videos }: { videos: string[] }) {
+  // Configuración del carrusel
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
+    dotsClass: "slick-dots !bottom-4",
+    appendDots: (dots: React.ReactNode) => (
+      <div>
+        <ul className="flex justify-center space-x-2"> {dots} </ul>
+      </div>
+    ),
+    customPaging: () => (
+      <div className="w-3 h-3 rounded-full bg-white/30 hover:bg-white/60 transition-all" />
+    )
+  };
+
+  return (
+    <div className="videos-carousel-compact">
+      <Slider {...settings}>
+        {videos.map((videoId, index) => (
+          <div key={index} className="px-2">
+            <div className="relative h-64 rounded-xl overflow-hidden border border-[#F4BA3E]/20">
+              <iframe
+                src={`https://www.youtube.com/embed/${videoId}`}
+                title={`Video ${index + 1}`}
+                className="w-full h-full object-cover"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                <div className="flex items-center space-x-2">
+                  <Camera className="w-4 h-4 text-[#F4BA3E]" />
+                  <span className="text-white text-sm">Video {index + 1}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </Slider>
     </div>
   );
 }

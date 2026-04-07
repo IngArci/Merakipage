@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Button } from './ui/button';
-import logoMeraki from "../../assets/logo.png";
+import logoMeraki from 'figma:asset/69f8557010ec36236c7804eeddc47c3ad3518c5a.png';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,7 +31,6 @@ export function Header() {
     { name: 'Ubicación', anchor: 'ubicacion' },
     { name: 'Amenidades', anchor: 'amenidades' },
     { name: 'Plano Maestro', anchor: 'plano' },
-    { name: 'Documentación', anchor: 'documentacion' },
     { name: 'Avances', anchor: 'avances' },
   ];
 
