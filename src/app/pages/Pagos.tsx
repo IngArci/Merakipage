@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Search, CreditCard, Smartphone, Globe, FileText, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 import { Button } from '../components/ui/button';
-import logoMeraki from "../../assets/logo.png";
+import logoArizona from "../../assets/logo.png";
 
 export default function Pagos() {
   const [searchCode, setSearchCode] = useState('');
