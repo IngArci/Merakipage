@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Gift, Users, CheckCircle, TrendingUp, Share2, DollarSign, Clock } from 'lucide-react';
 import { Button } from '../components/ui/button';
-import { LeadForm } from '../components/LeadForm';
+import { LeadForm } from '../components/shared/LeadForm';
 
 export default function Referidos() {
   const steps = [

@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { MessageCircle, Phone, Mail, MapPin, Clock, HelpCircle } from 'lucide-react';
 import { Button } from '../components/ui/button';
-import { LeadForm } from '../components/LeadForm';
+import { LeadForm } from '../components/shared/LeadForm';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
 
 export default function Servicio() {

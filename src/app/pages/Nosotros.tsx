@@ -5,6 +5,7 @@ import { Button } from '../components/ui/button';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { useFirestoreCollection } from '../hooks/useFirestoreCollection';
 
 export default function Nosotros() {
   const values = [
@@ -37,7 +38,11 @@ export default function Nosotros() {
     { number: '100%', label: 'Proyectos legales' }
   ];
 
-  const ferias = [
+  // Fetch dynamic data from Firebase
+  const { data: firebaseFerias } = useFirestoreCollection<any>('ferias_eventos');
+  const { data: firebaseAsesores } = useFirestoreCollection<any>('asesores');
+
+  const staticFerias = [
     {
       id: 1,
       nombre: 'Expo Inmobiliaria Bogotá 2026',
@@ -79,6 +84,31 @@ export default function Nosotros() {
       ]
     }
   ];
+
+  const combinedFerias = [...(firebaseFerias || []), ...staticFerias];
+
+  const staticAsesores = [
+    {
+      nombre: 'Carlos Martínez',
+      cargo: 'Agente Inmobiliario',
+      foto: 'https://images.unsplash.com/photo-1680540692052-79fde1108370?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjByZWFsJTIwZXN0YXRlJTIwYWdlbnQlMjBwb3J0cmFpdCUyMG1hbnxlbnwxfHx8fDE3NzM4NTI0NTd8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      whatsapp: '573001234571'
+    },
+    {
+      nombre: 'María Rodríguez',
+      cargo: 'Agente Inmobiliario',
+      foto: 'https://images.unsplash.com/photo-1770199105714-a5a349546346?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzc3dvbWFuJTIwcmVhbCUyMGVzdGF0ZSUyMGFnZW50fGVufDF8fHx8MTc3Mzg1MjQ1OHww&ixlib=rb-4.1.0&q=80&w=1080',
+      whatsapp: '573001234572'
+    },
+    {
+      nombre: 'Andrés López',
+      cargo: 'Agente Inmobiliario',
+      foto: 'https://images.unsplash.com/photo-1750741268857-7e44510f867d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzc21hbiUyMHN1aXQlMjBwb3J0cmFpdHxlbnwxfHx8fDE3NzM3ODQzNjN8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      whatsapp: '573001234573'
+    }
+  ];
+
+  const combinedAsesores = [...(firebaseAsesores || []), ...staticAsesores];
 
   // Custom arrow components for carousel
   const NextArrow = ({ onClick }: any) => (
@@ -354,197 +384,39 @@ export default function Nosotros() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Asesor 1 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0 }}
-              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
-            >
-              <div className="relative h-80 overflow-hidden">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1680540692052-79fde1108370?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjByZWFsJTIwZXN0YXRlJTIwYWdlbnQlMjBwb3J0cmFpdCUyMG1hbnxlbnwxfHx8fDE3NzM4NTI0NTd8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                  alt="Carlos Martínez"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl mb-2 text-[#0d060a]">Carlos Martínez</h3>
-                <p className="text-[#B7871C] font-semibold mb-4">Agente Inmobiliario</p>
-                <Button
-                  onClick={() => {
-                    const message = encodeURIComponent('Hola Carlos, me gustaría información sobre los proyectos disponibles');
-                    window.open(`https://wa.me/573001234571?text=${message}`, '_blank');
-                  }}
-                  className="w-full bg-green-600 hover:bg-green-700 text-white"
-                >
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  Contactar por WhatsApp
-                </Button>
-              </div>
-            </motion.div>
-
-            {/* Asesor 2 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
-            >
-              <div className="relative h-80 overflow-hidden">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1770199105714-a5a349546346?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzc3dvbWFuJTIwcmVhbCUyMGVzdGF0ZSUyMGFnZW50fGVufDF8fHx8MTc3Mzg1MjQ1OHww&ixlib=rb-4.1.0&q=80&w=1080"
-                  alt="María Rodríguez"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl mb-2 text-[#0d060a]">María Rodríguez</h3>
-                <p className="text-[#B7871C] font-semibold mb-4">Agente Inmobiliario</p>
-                <Button
-                  onClick={() => {
-                    const message = encodeURIComponent('Hola María, me gustaría información sobre los proyectos disponibles');
-                    window.open(`https://wa.me/573001234572?text=${message}`, '_blank');
-                  }}
-                  className="w-full bg-green-600 hover:bg-green-700 text-white"
-                >
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  Contactar por WhatsApp
-                </Button>
-              </div>
-            </motion.div>
-
-            {/* Asesor 3 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
-            >
-              <div className="relative h-80 overflow-hidden">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1750741268857-7e44510f867d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzc21hbiUyMHN1aXQlMjBwb3J0cmFpdHxlbnwxfHx8fDE3NzM3ODQzNjN8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                  alt="Andrés López"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl mb-2 text-[#0d060a]">Andrés López</h3>
-                <p className="text-[#B7871C] font-semibold mb-4">Agente Inmobiliario</p>
-                <Button
-                  onClick={() => {
-                    const message = encodeURIComponent('Hola Andrés, me gustaría información sobre los proyectos disponibles');
-                    window.open(`https://wa.me/573001234573?text=${message}`, '_blank');
-                  }}
-                  className="w-full bg-green-600 hover:bg-green-700 text-white"
-                >
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  Contactar por WhatsApp
-                </Button>
-              </div>
-            </motion.div>
-
-            {/* Asesor 4 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
-            >
-              <div className="relative h-80 overflow-hidden">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1610387694365-19fafcc86d86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzcyUyMHdvbWFuJTIwcG9ydHJhaXQlMjBvZmZpY2V8ZW58MXx8fHwxNzczODUyNDU5fDA&ixlib=rb-4.1.0&q=80&w=1080"
-                  alt="Laura Gómez"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl mb-2 text-[#0d060a]">Laura Gómez</h3>
-                <p className="text-[#B7871C] font-semibold mb-4">Agente Inmobiliario</p>
-                <Button
-                  onClick={() => {
-                    const message = encodeURIComponent('Hola Laura, me gustaría información sobre los proyectos disponibles');
-                    window.open(`https://wa.me/573001234574?text=${message}`, '_blank');
-                  }}
-                  className="w-full bg-green-600 hover:bg-green-700 text-white"
-                >
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  Contactar por WhatsApp
-                </Button>
-              </div>
-            </motion.div>
-
-            {/* Asesor 5 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
-            >
-              <div className="relative h-80 overflow-hidden">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1758598497625-346365a9875b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzc21hbiUyMHNtaWxpbmclMjBwb3J0cmFpdHxlbnwxfHx8fDE3NzM4NDk3ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                  alt="Diego Herrera"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl mb-2 text-[#0d060a]">Diego Herrera</h3>
-                <p className="text-[#B7871C] font-semibold mb-4">Agente Inmobiliario</p>
-                <Button
-                  onClick={() => {
-                    const message = encodeURIComponent('Hola Diego, me gustaría información sobre los proyectos disponibles');
-                    window.open(`https://wa.me/573001234575?text=${message}`, '_blank');
-                  }}
-                  className="w-full bg-green-600 hover:bg-green-700 text-white"
-                >
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  Contactar por WhatsApp
-                </Button>
-              </div>
-            </motion.div>
-
-            {/* Asesor 6 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
-            >
-              <div className="relative h-80 overflow-hidden">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1689600944138-da3b150d9cb8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b21hbiUyMGJ1c2luZXNzJTIwc3VpdCUyMHNtaWxlfGVufDF8fHx8MTc3Mzg1MjQ2Mnww&ixlib=rb-4.1.0&q=80&w=1080"
-                  alt="Ana Patricia Silva"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl mb-2 text-[#0d060a]">Ana Patricia Silva</h3>
-                <p className="text-[#B7871C] font-semibold mb-4">Agente Inmobiliario</p>
-                <Button
-                  onClick={() => {
-                    const message = encodeURIComponent('Hola Ana Patricia, me gustaría información sobre los proyectos disponibles');
-                    window.open(`https://wa.me/573001234576?text=${message}`, '_blank');
-                  }}
-                  className="w-full bg-green-600 hover:bg-green-700 text-white"
-                >
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  Contactar por WhatsApp
-                </Button>
-              </div>
-            </motion.div>
+            {combinedAsesores.map((asesor, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+              >
+                <div className="relative h-80 overflow-hidden">
+                  <ImageWithFallback
+                    src={asesor.foto}
+                    alt={asesor.nombre}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl mb-2 text-[#0d060a]">{asesor.nombre}</h3>
+                  <p className="text-[#B7871C] font-semibold mb-4">{asesor.cargo}</p>
+                  <Button
+                    onClick={() => {
+                      const message = encodeURIComponent(`Hola ${asesor.nombre.split(' ')[0]}, me gustaría información sobre los proyectos disponibles`);
+                      window.open(`https://wa.me/${asesor.whatsapp.replace(/\D/g, '')}?text=${message}`, '_blank');
+                    }}
+                    className="w-full bg-green-600 hover:bg-green-700 text-white"
+                  >
+                    <MessageCircle className="w-4 h-4 mr-2" />
+                    Contactar por WhatsApp
+                  </Button>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -618,7 +490,7 @@ export default function Nosotros() {
           </div>
 
           <div className="space-y-16 max-w-7xl mx-auto">
-            {ferias.map((feria, index) => (
+            {combinedFerias.map((feria, index) => (
               <motion.div
                 key={feria.id}
                 initial={{ opacity: 0, y: 30 }}

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Calendar, MapPin, Video, Users } from 'lucide-react';
 import { Button } from '../components/ui/button';
-import logoMeraki from "../../assets/logo.png";
+
 
 export default function Cartera() {
   const [formData, setFormData] = useState({
@@ -35,16 +35,16 @@ export default function Cartera() {
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         {/* Background Image */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ 
+          style={{
             backgroundImage: 'url(https://images.unsplash.com/photo-1758519289022-5f9dea0d8cdc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzcyUyMG1lZXRpbmclMjBmaW5hbmNpYWwlMjBwbGFubmluZ3xlbnwxfHx8fDE3NzM5NTIxMDJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral)'
           }}
         />
-        
+
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-black/70 to-[#947018]/60" />
-        
+
         {/* Decorative Elements */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-[#F4BA3E] rounded-full blur-3xl" />
@@ -67,10 +67,8 @@ export default function Cartera() {
           </motion.div>
         </div>
       </section>
-
-      {/* Texto Principal */}
       <section className="py-20 bg-black relative overflow-hidden">
-        {/* Elementos decorativos de fondo */}
+
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 left-10 w-96 h-96 bg-[#F4BA3E] rounded-full blur-3xl" />
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#B7871C] rounded-full blur-3xl" />
@@ -138,12 +136,12 @@ export default function Cartera() {
                 >
                   {/* Resplandor dorado detrás de la imagen */}
                   <div className="absolute inset-0 bg-gradient-to-br from-[#F4BA3E]/20 via-[#B7871C]/20 to-transparent blur-3xl scale-110" />
-                  
+
                   {/* Imagen con marco elegante */}
                   <div className="relative bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl border-2 border-[#F4BA3E]/30">
-                    <img 
-                      src={fraseMeraki} 
-                      alt="Nunca nos cansaremos de mejorar para ti" 
+                    <img
+                      src={""}
+                      alt="Nunca nos cansaremos de mejorar para ti"
                       className="max-w-full h-auto relative z-10"
                     />
                     {/* Esquinas decorativas */}

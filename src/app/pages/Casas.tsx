@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { CheckCircle, Home, Maximize, Zap } from 'lucide-react';
 import { Button } from '../components/ui/button';
-import { LeadForm } from '../components/LeadForm';
+import { LeadForm } from '../components/shared/LeadForm';
 import { Link } from 'react-router';
 
 export default function Casas() {
@@ -147,9 +147,8 @@ export default function Casas() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-                  index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-                }`}
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                  }`}
               >
                 <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
                   <img
@@ -163,7 +162,7 @@ export default function Casas() {
                   <h3 className="text-3xl md:text-4xl mb-4 text-[#0d060a]">
                     {model.name}
                   </h3>
-                  
+
                   <div className="flex items-center space-x-6 mb-6 text-gray-600">
                     <div>
                       <span className="block text-2xl text-[#947018]">{model.size}</span>

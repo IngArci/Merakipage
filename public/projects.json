@@ -1,0 +1,108 @@
+{
+  "projects": [
+    {
+      "id": "rio-claro",
+      "planImage": "/RIO1.jpg",
+      "planImageTopo": "/rio-topografia.png",
+      "planSize": { "w": 2579.1, "h": 1658.6 },
+      "name": "Río Claro",
+      "location": "Mariquita, Tolima",
+      "image": "/rio-porteria.jpg",
+
+      "coordsFile": "/coords/RIO.json",
+      "sectors": [
+        { "id": "rio-medina", "name": "Rio Medina", "color": "#22C55E",  "planImage": "/sectors/medina.jpg","planImageTopo":"/sectors/medina-topografia.png",  "planSize": { "w": 747.1, "h":510.6 }, "coordsFile":  "/coords/medina.json" },
+
+        { "id": "rio-lagunilla", "name": "Rio Lagunilla", "color": "#3B82F6", "planImage": "/sectors/lagunilla.jpg", "planImageTopo":"/sectors/lagunilla-topografia.png",  "planSize": {"w": 852.8, "h": 584.8 }, "coordsFile":  "/coords/lagunilla.json" }
+      ]
+    },{
+      "id": "cañon-arizona",
+      "planImage": "/cañon1.jpg",
+      "planImageTopo": "/cañon-topografia.png",
+      "planSize": { "w": 2623.08026, "h": 1333.96353 }, 
+      "name": "Cañon de Arizona",
+      "location": "Alvarado, Tolima",
+      "image": "/cañonportada.png", 
+      
+      "coordsFile": "/coords/cañon.json",
+      "sectors": [
+        { "id": "texas", "name": "Texas", "color": "#3B82F6", "planImage": "/sectors/texas.jpg","planImageTopo": "/sectors/texas-topografia.png", "planSize": { "w":399.38018, "h":220.80722 }, "coordsFile":  "/coords/texas.json" },
+        { "id": "colorado", "name": "Colorado", "color": "#001855", "planImage": "/sectors/colorado.jpeg", "planImageTopo": "/sectors/colorado-topografia.png", "planSize": { "w":374.2, "h":272.5 }, "coordsFile":  "/coords/colorado.json" },
+        { "id": "las-vegas", "name": "Las Vegas", "color": "#F59E0B", "planImage": "/sectors/las-vegas.jpg","planImageTopo": "/sectors/las-vegas-topografia.png", "planSize": { "w":459.58601, "h":258.39746 }, "coordsFile":  "/coords/las-vegas.json" },
+        { "id": "los-angeles", "name": "Los Angeles", "color": "#8B0000", "planImage": "/sectors/los-angeles.png", "planImageTopo": "/sectors/los-angeles-topografia.png", "planSize": { "w":449.41, "h":610.65 }, "coordsFile":  "/coords/los-angeles.json"},
+        { "id": "san-francisco", "name": "San Francisco", "color": "#FFFF00", "planImage": "/sectors/san-francisco.jpg", "planImageTopo": "/sectors/san-francisco-topografia.png", "planSize": { "w":657.75998, "h":431.60824 }, "coordsFile":  "/coords/san-francisco.json"}
+
+      ]
+    },  {
+  "id": "laguna-mar",
+  "name": "Laguna Mar",
+  "location": "Melgar, Tolima",
+  "planImageTopo": "/canarias-topografia.png",
+  "image": "/lagunamarportada.png",
+
+  "sectors": [
+    {
+      "id": "mar-santorini",
+      "name": "Mar Santorini",
+      "color": "#CFAB42",
+      "planImage": "/SANTORINI.jpg",
+      "planImageTopo": "/santorini-topografia.png",
+      "planSize": { "w": 2636.22, "h": 1332.28 },
+      "coordsFile": "/coords/SANTORINI.json",
+    
+
+      "sectors": [
+         { "id": "SECTOR1", "name": "SECTOR1", "color": "#3B82F6", "planImage": "/sectors/SECTOR1.png","planImageTopo": "/sectors/santorini-sector1.png", "planSize": { "w":514.740255, "h":555.045521 }, "coordsFile":  "/coords/SECTOR1.json" },
+          { "id": "SECTOR2", "name" : "SECTOR2", "color": "#001855", "planImage": "/sectors/SECTOR2.png","planImageTopo": "/sectors/santorini-sector2.png", "planSize": { "w":535.736296, "h":564.809243 }, "coordsFile":  "/coords/SECTOR2.json" },
+          { "id": "SECTOR3", "name": "SECTOR3", "color": "#F59E0B", "planImage": "/sectors/SECTOR3.png","planImageTopo": "/sectors/santorini-sector3.png", "planSize": { "w":511.627142, "h":564.809243 }, "coordsFile":  "/coords/SECTOR3.json" },
+          { "id": "SECTOR4", "name": "SECTOR4", "color": "#8B0000", "planImage": "/sectors/SECTOR4.png","planImageTopo": "/sectors/santorini-sector4.png", "planSize": { "w":725.466616, "h":606.639878 }, "coordsFile":  "/coords/SECTOR4.json" }
+      ]
+    },
+
+    {
+      "id": "mar-canarias",
+      "name": "Mar Canarias",
+      "color": "#001855",
+      "planImage": "/CANARIAS.png",
+      "planSize": { "w": 1318.11024, "h": 651.9685 },
+      "coordsFile": "/coords/CANARIAS.json",
+     
+      "sectors": [
+        { "id": "SECTOR 1", "name": "SECTOR 1", "color": "#3B82F6", "planImage": "/sectors/SECTOR1M.jpg", "planSize": { "w":803.70153, "h": 610.40775 }, "coordsFile":  "/coords/SECTOR1M.json" },
+        { "id": "SECTOR 2", "name": "SECTOR 2", "color": "#001855", "planImage": "/sectors/SECTOR2M.jpg", "planSize": { "w":404.35399, "h": 310.95865 }, "coordsFile":  "/coords/SECTOR2M.json" },
+        { "id": "SECTOR 3", "name": "SECTOR 3", "color": "#F59E0B", "planImage": "/sectors/SECTOR3M.jpg", "planSize": { "w":393.16266, "h":310.95865 }, "coordsFile":  "/coords/SECTOR3M.json" },
+        { "id": "SECTOR 4", "name": "SECTOR 4", "color": "#8B0000", "planImage": "/sectors/SECTOR4M.jpg", "planSize": { "w":698.16968, "h": 305.38265 }, "coordsFile":  "/coords/SECTOR4M.json" }
+
+      ]
+    }
+  ]
+},{
+      "id": "sobre-montañas",
+      "planImage": "/sobre-montana.jpg",
+      "planSize": { "w": 2636.22047, "h": 1332.28346 }, 
+      "name": "Sobre Montañas",
+      "location": "Alvarado, Tolima",
+      "image": "/sobre-montañas-portada.jpg", 
+   
+      "coordsFile": "/coords/sobre-montana.json"
+        
+    },{
+      "id": "llano-grande",
+      "planImage": "/llanogrande.jpg",
+      "planImageTopo": "/llanograndetopografia.png",
+      "planSize": { "w": 1785.82677, "h": 892.91339 },
+      "name": "Llano Grande",
+      "location": "Alvarado, Tolima",
+      "image": "/PORTERIA-2.webp",
+      
+      "coordsFile": "/coords/llanogrande.json", 
+      "sectors": [
+        { "id": "VALLE DE ABURRA", "name": "VALLE DE ABURRÁ", "color": "#22C55E",  "planImage": "/sectors/mallguatapeyaburra.jpg","planImageTopo":"/sectors/valle-topografia.png",  "planSize": { "w": 371.27696, "h":531.82706 }, "coordsFile":  "/coords/mallguatapeyaburra.json" },
+          { "id": "MALL GUATAPE", "name": "MALL GUATAPE", "color": "#3B82F6", "planImage": "/sectors/MALL-GUATAPE.jpg", "planImageTopo":"/sectors/mall-topografia.png",  "planSize": {"w": 199.80734, "h": 541.78723 }, "coordsFile":  "/coords/MALL-GUATAPE.json" },
+        { "id": "EL POBLADO", "name": "EL POBLADO", "color": "#3B82F6", "planImage": "/sectors/EL-POBLADO.jpg", "planImageTopo":"/sectors/poblado-topografia.png",  "planSize": {"w": 263.6675, "h": 250.67743 }, "coordsFile":  "/coords/EL-POBLADO.json" },
+            { "id": "SANTA HELENA", "name": "SANTA HELENA", "color": "#3B82F6", "planImage": "/sectors/SANTA-HELENA.jpg", "planImageTopo":"/sectors/santa-topografia.png",  "planSize": {"w": 177.42596, "h": 282.0175 }, "coordsFile":  "/coords/SANTA-HELENA.json" },
+          { "id": "SAN ANTONIO", "name": "SAN ANTONIO", "color": "#3B82F6", "planImage": "/sectors/SAN-ANTONIO.jpg", "planImageTopo":"/sectors/san-topografia.png",  "planSize": {"w": 808.06805, "h": 541.78723 }, "coordsFile":  "/coords/SAN-ANTONIO.json" }
+      ]
+    }
+  ]
+}

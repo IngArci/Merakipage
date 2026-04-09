@@ -13,33 +13,20 @@ import {
   MessageCircle
 } from 'lucide-react';
 import { Button } from '../components/ui/button';
-import { ProjectCard } from '../components/ProjectCard';
-import { LeadForm } from '../components/LeadForm';
+import { ProjectCard } from '../components/shared/ProjectCard';
+import { LeadForm } from '../components/shared/LeadForm';
+import { projectsData } from '../data/projectsData';
 
 export default function Home() {
-  const projects = [
-    {
-      title: 'Río Claro',
-      location: 'Valle del Cauca',
-      sizes: '500m² - 1,000m²',
-      image: 'https://images.unsplash.com/photo-1600257729950-13a634d32697?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3VudGFpbiUyMHJpdmVyJTIwbGFuZHNjYXBlJTIwbmF0dXJlfGVufDF8fHx8MTc3Mzg0NTUzMXww&ixlib=rb-4.1.0&q=80&w=1080',
-      slug: 'rio-claro'
-    },
-    {
-      title: 'Laguna Mar',
-      location: 'Antioquia',
-      sizes: '600m² - 1,200m²',
-      image: 'https://images.unsplash.com/photo-1618479357329-14dd10e76f5e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYWdvb24lMjB0cm9waWNhbCUyMG5hdHVyYWwlMjB3YXRlcnxlbnwxfHx8fDE3NzM4NDU1MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      slug: 'laguna-mar'
-    },
-    {
-      title: 'Cañón de Arizona',
-      location: 'Santander',
-      sizes: '800m² - 2,000m²',
-      image: 'https://images.unsplash.com/photo-1764223531702-1614efb82e40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWFsJTIwZXN0YXRlJTIwbGFuZCUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc3Mzg0NTUzMHww&ixlib=rb-4.1.0&q=80&w=1080',
-      slug: 'canon-arizona'
-    }
-  ];
+  const projects = Object.entries(projectsData)
+    .filter(([_, data]) => data.status === 'lanzamiento')
+    .slice(0, 3)
+    .map(([slug, data]) => ({
+      ...data,
+      slug,
+      location: `${data.region} - ${data.location.nearbyPlaces[0]}`,
+      image: data.images[0]
+    }));
 
   const benefits = [
     {

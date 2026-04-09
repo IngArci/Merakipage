@@ -1,9 +1,9 @@
 import { Outlet } from 'react-router';
-import { Header } from './components/Header';
-import { Footer } from './components/Footer';
+import { Header } from './components/shared/Header';
+import { Footer } from './components/shared/Footer';
 import { Toaster } from './components/ui/sonner';
-import { WhatsAppMenu } from './components/WhatsAppMenu';
-import { ScrollToTop } from './components/ScrollToTop';
+import { WhatsAppMenu } from './components/shared/WhatsAppMenu';
+import { ScrollToTop } from './components/shared/ScrollToTop';
 
 export default function Layout() {
   return (

@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { LeadForm } from '../components/LeadForm';
+import { LeadForm } from '../components/shared/LeadForm';
 
 export default function Contacto() {
   return (

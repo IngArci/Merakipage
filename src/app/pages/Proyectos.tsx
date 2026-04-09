@@ -1,56 +1,19 @@
 import { motion } from 'motion/react';
-import { ProjectCard } from '../components/ProjectCard';
-import { LeadForm } from '../components/LeadForm';
+import { ProjectCard } from '../components/shared/ProjectCard';
+import { LeadForm } from '../components/shared/LeadForm';
 import { Rocket, CheckCircle2 } from 'lucide-react';
+import { projectsData } from '../data/projectsData';
 
 export default function Proyectos() {
-  const enLanzamiento = [
-    {
-      title: 'Valle Escondido',
-      location: 'Cundinamarca - A 2 horas de Bogotá',
-      sizes: '700m², 1,000m², 1,500m²',
-      image: 'https://images.unsplash.com/photo-1758565811272-e79917ca0adc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjb3VudHJ5c2lkZSUyMGVzdGF0ZSUyMG5hdHVyYWwlMjBsYW5kc2NhcGV8ZW58MXx8fHwxNzczODQ1NTI5fDA&ixlib=rb-4.1.0&q=80&w=1080',
-      slug: 'valle-escondido'
-    },
-    {
-      title: 'Bosques del Paraíso',
-      location: 'Eje Cafetero - Armenia',
-      sizes: '500m², 800m², 1,200m²',
-      image: 'https://images.unsplash.com/photo-1724048413085-1c8d81b3ffa3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjb3VudHJ5JTIwaG91c2UlMjBhZXJpYWwlMjB2aWV3fGVufDF8fHx8MTc3Mzg0NTUzMHww&ixlib=rb-4.1.0&q=80&w=1080',
-      slug: 'bosques-paraiso'
-    },
-    {
-      title: 'Montaña Dorada',
-      location: 'Quindío - A 20 min de Montenegro',
-      sizes: '600m², 1,000m², 1,800m²',
-      image: 'https://images.unsplash.com/photo-1762438421221-1626a4958dbf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGZhbWlseSUyMG5hdHVyZSUyMGNvdW50cnlzaWRlfGVufDF8fHx8MTc3Mzg0NTUzMHww&ixlib=rb-4.1.0&q=80&w=1080',
-      slug: 'montana-dorada'
-    }
-  ];
+  const allProjects = Object.entries(projectsData).map(([slug, data]) => ({
+    ...data,
+    slug,
+    location: `${data.region} - ${data.location.nearbyPlaces[0]}`,
+    image: data.images[0]
+  }));
 
-  const entregados = [
-    {
-      title: 'Río Claro',
-      location: 'Valle del Cauca - A 45 min de Cali',
-      sizes: '500m², 750m², 1,000m²',
-      image: 'https://images.unsplash.com/photo-1600257729950-13a634d32697?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3VudGFpbiUyMHJpdmVyJTIwbGFuZHNjYXBlJTIwbmF0dXJlfGVufDF8fHx8MTc3Mzg0NTUzMXww&ixlib=rb-4.1.0&q=80&w=1080',
-      slug: 'rio-claro'
-    },
-    {
-      title: 'Laguna Mar',
-      location: 'Antioquia - A 1 hora de Medellín',
-      sizes: '600m², 900m², 1,200m²',
-      image: 'https://images.unsplash.com/photo-1618479357329-14dd10e76f5e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYWdvb24lMjB0cm9waWNhbCUyMG5hdHVyYWwlMjB3YXRlcnxlbnwxfHx8fDE3NzM4NDU1MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      slug: 'laguna-mar'
-    },
-    {
-      title: 'Cañón de Arizona',
-      location: 'Santander - A 30 min de Bucaramanga',
-      sizes: '800m², 1,500m², 2,000m²',
-      image: 'https://images.unsplash.com/photo-1764223531702-1614efb82e40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWFsJTIwZXN0YXRlJTIwbGFuZCUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc3Mzg0NTUzMHww&ixlib=rb-4.1.0&q=80&w=1080',
-      slug: 'canon-arizona'
-    }
-  ];
+  const enLanzamiento = allProjects.filter(p => p.status === 'lanzamiento');
+  const entregados = allProjects.filter(p => p.status === 'entregado');
 
   return (
     <div className="min-h-screen pt-20">
@@ -170,12 +133,12 @@ export default function Proyectos() {
                 Contáctanos y te ayudaremos a encontrar el terreno perfecto para ti.
               </p>
               <p className="text-base text-gray-600">
-                Nuestros asesores están listos para brindarte información detallada 
+                Nuestros asesores están listos para brindarte información detallada
                 sobre cada proyecto, opciones de financiamiento y beneficios exclusivos.
               </p>
             </div>
 
-            <LeadForm 
+            <LeadForm
               title="Solicita información"
               subtitle="Te responderemos en menos de 24 horas"
             />
