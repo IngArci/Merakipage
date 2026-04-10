@@ -24,7 +24,7 @@ import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 const proyectos = [
   { id: 'rio-claro', name: 'Río Claro' },
   { id: 'laguna-mar', name: 'Laguna Mar' },
-  { id: 'canon-arizona', name: 'Cañón de Arizona' },
+  { id: 'cañon-arizona', name: 'Cañón de Arizona' },
   { id: 'valle-escondido', name: 'Valle Escondido' },
   { id: 'bosques-paraiso', name: 'Bosques del Paraíso' },
   { id: 'montana-dorada', name: 'Montaña Dorada' }
