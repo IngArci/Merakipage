@@ -61,7 +61,6 @@ export default function Admin() {
   const [currentAvance, setCurrentAvance] = useState<ProgressUpdate>({
     date: '',
     text: '',
-    percentage: 0,
     images: []
   });
   const [imageUrl, setImageUrl] = useState('');
@@ -94,21 +93,25 @@ export default function Admin() {
   const [isUploading, setIsUploading] = useState(false);
 
   // Handlers para avances
-  const handleAvanceUpload = async (file: File) => {
+  const handleAvanceUpload = async (files: FileList) => {
     if (!selectedProject) {
       alert('Por favor selecciona un proyecto primero');
       return;
     }
     setIsUploading(true);
     try {
-      const url = await uploadImage(file, `avances/${selectedProject}`);
-      setCurrentAvance({
-        ...currentAvance,
-        images: [...currentAvance.images, url]
-      });
+      const uploadPromises = Array.from(files).map(file => 
+        uploadImage(file, `avances/${selectedProject}`)
+      );
+      const urls = await Promise.all(uploadPromises);
+      
+      setCurrentAvance(prev => ({
+        ...prev,
+        images: [...prev.images, ...urls]
+      }));
     } catch (error) {
-      console.error('Error al subir imagen de avance:', error);
-      alert('Error al subir la imagen.');
+      console.error('Error al subir imágenes de avance:', error);
+      alert('Error al subir una o más imágenes.');
     } finally {
       setIsUploading(false);
     }
@@ -122,12 +125,11 @@ export default function Admin() {
   };
 
   const handleSaveAvance = () => {
-    if (currentAvance.date && currentAvance.text && currentAvance.percentage > 0) {
+    if (currentAvance.date && currentAvance.text) {
       setAvances([...avances, currentAvance]);
       setCurrentAvance({
         date: '',
         text: '',
-        percentage: 0,
         images: []
       });
     } else {

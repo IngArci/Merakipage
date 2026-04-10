@@ -126,6 +126,7 @@ export default function ProyectoDetalle() {
               <LeadForm
                 title="Solicita información"
                 subtitle={`Proyecto ${project.title}`}
+                formLink={(project as any).formLink}
               />
             </motion.div>
           </div>

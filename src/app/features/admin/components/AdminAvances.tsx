@@ -14,7 +14,6 @@ import { Button } from '../../../components/ui/button';
 export interface ProgressUpdate {
   date: string;
   text: string;
-  percentage: number;
   images: string[];
 }
 
@@ -25,7 +24,7 @@ interface AdminAvancesProps {
   imageUrl: string;
   setImageUrl: (url: string) => void;
   isUploading: boolean;
-  onImageUpload: (file: File) => Promise<void>;
+  onImageUpload: (files: FileList) => Promise<void>;
   handleRemoveImage: (index: number) => void;
   handleSaveAvance: () => void;
   handleDeleteAvance: (index: number) => void;
@@ -45,9 +44,9 @@ export function AdminAvances({
   handlePublishAvances
 }: AdminAvancesProps) {
   const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      await onImageUpload(file);
+    const files = e.target.files;
+    if (files && files.length > 0) {
+      await onImageUpload(files);
     }
   };
   return (
@@ -78,20 +77,7 @@ export function AdminAvances({
             />
           </div>
 
-          <div>
-            <label className="flex items-center space-x-2 text-gray-300 mb-2">
-              <Percent className="w-4 h-4 text-[#F4BA3E]" />
-              <span>Porcentaje Completado * ({currentAvance.percentage}%)</span>
-            </label>
-            <input
-              type="range"
-              min="0"
-              max="100"
-              value={currentAvance.percentage}
-              onChange={(e) => setCurrentAvance({ ...currentAvance, percentage: parseInt(e.target.value) })}
-              className="w-full h-3 bg-black/50 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-gradient-to-r [&::-webkit-slider-thumb]:from-[#947018] [&::-webkit-slider-thumb]:to-[#F4BA3E] [&::-webkit-slider-thumb]:cursor-pointer"
-            />
-          </div>
+
 
           <div>
             <label className="text-gray-300 mb-2 block">Texto Descriptivo *</label>
@@ -115,6 +101,7 @@ export function AdminAvances({
                 <input
                   type="file"
                   accept="image/*"
+                  multiple
                   onChange={handleFileChange}
                   disabled={isUploading}
                   className="hidden"
@@ -198,8 +185,6 @@ export function AdminAvances({
                   <div className="flex-1">
                     <div className="flex items-center space-x-4 mb-2">
                       <span className="text-[#F4BA3E] font-semibold">{avance.date}</span>
-                      <span className="text-gray-400">•</span>
-                      <span className="text-[#F4BA3E] font-semibold">{avance.percentage}%</span>
                     </div>
                     <p className="text-gray-300">{avance.text}</p>
                   </div>

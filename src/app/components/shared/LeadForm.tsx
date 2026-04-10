@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'motion/react';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
@@ -8,9 +9,10 @@ import { toast } from 'sonner';
 interface LeadFormProps {
   title?: string;
   subtitle?: string;
+  formLink?: string;
 }
 
-export function LeadForm({ title = "¿Quieres más información?", subtitle }: LeadFormProps) {
+export function LeadForm({ title = "¿Quieres más información?", subtitle, formLink }: LeadFormProps) {
   const [formData, setFormData] = useState({
     nombre: '',
     telefono: '',
@@ -25,12 +27,34 @@ export function LeadForm({ title = "¿Quieres más información?", subtitle }: L
     setFormData({ nombre: '', telefono: '', email: '', mensaje: '' });
   };
 
+  if (formLink) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        className="w-full"
+      >
+        <div className="w-full h-[750px] overflow-hidden rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+          <iframe
+            src={formLink}
+            style={{ width: '100%', height: '100%', border: 'none' }}
+            id={`inline-${formLink.split('/').pop()}`}
+            data-auto-height="true"
+            data-handle-iframe-events="true"
+            data-dot--complete="true"
+            title={title}
+          ></iframe>
+        </div>
+      </motion.div>
+    );
+  }
+
   return (
     <div className="relative group">
-
       <div className="absolute -inset-1 bg-gradient-to-r from-[#947018] to-[#F4BA3E] rounded-3xl opacity-20 blur-xl group-hover:opacity-30 transition duration-1000"></div>
 
-      <div className="relative bg-[#0A0A0A] rounded-2xl p-8 md:p-10 border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+      <div className={`relative bg-[#0A0A0A] rounded-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] p-8 md:p-10`}>
         <div className="mb-10">
           <h3 className="text-3xl font-semibold text-white mb-2 tracking-tight">
             {title}

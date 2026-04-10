@@ -5,7 +5,6 @@ import Slider from 'react-slick';
 interface ProgressUpdate {
   date: string;
   title: string;
-  percentage: number;
   images: string[];
 }
 
@@ -134,30 +133,10 @@ export function ProgressCard({ update, index, isLast, total }: { update: Progres
               </p>
             </div>
           </div>
-          <div className="bg-black/40 backdrop-blur-sm px-6 py-4 rounded-2xl border border-white/5 flex items-center space-x-4">
-            <div>
-              <p className="text-4xl text-[#F4BA3E] font-bold tabular-nums">{update.percentage}%</p>
-              <p className="text-gray-500 text-xs uppercase tracking-widest font-medium">Ejecutado</p>
-            </div>
-            <div className="h-10 w-px bg-white/10" />
-            <div className="text-right">
-              <p className="text-gray-400 text-sm italic">Estado actual</p>
-            </div>
-          </div>
+
         </div>
 
-        {/* Progress Bar Container */}
-        <div className="relative mb-12">
-          <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
-            <motion.div
-              initial={{ width: 0 }}
-              whileInView={{ width: `${update.percentage}%` }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.5, ease: "easeOut" }}
-              className="h-full bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#FFF18F] shadow-[0_0_10px_rgba(244,186,62,0.3)]"
-            />
-          </div>
-        </div>
+
 
         {/* Carrusel de imágenes */}
         <div className="progress-carousel-container relative">

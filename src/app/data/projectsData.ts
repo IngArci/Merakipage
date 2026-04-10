@@ -86,7 +86,8 @@ export const projectsData = {
     },
     progress: [
 
-    ]
+    ],
+    formLink: 'https://api.leadconnectorhq.com/widget/form/yH7BClvxe1HiKll1tQYL'
   },
   'laguna-mar': {
     title: 'Laguna Mar',
@@ -139,7 +140,6 @@ export const projectsData = {
       {
         date: 'Abril 2026',
         title: 'Movimiento de tierras sector A',
-        percentage: 45,
         images: [
           'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80'
         ]
@@ -199,7 +199,6 @@ export const projectsData = {
       {
         date: 'Marzo 2026',
         title: 'Vías principales pavimentadas',
-        percentage: 85,
         images: [
           'https://images.unsplash.com/photo-1763328044351-98341e9963da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjBwcm9ncmVzcyUyMHJvYWQlMjBwYXZpbmd8ZW58MXx8fHx8MTc3NTU3NDY5Mnww&ixlib=rb-4.1.0&q=80&w=1080',
           'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80',
@@ -209,7 +208,6 @@ export const projectsData = {
       {
         date: 'Febrero 2026',
         title: 'Instalación de redes eléctricas',
-        percentage: 60,
         images: [
           'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80',
           'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?w=800&q=80'
@@ -371,7 +369,6 @@ export const projectsData = {
       {
         date: 'Abril 2026',
         title: 'Trazo de senderos ecológicos',
-        percentage: 15,
         images: [
           'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80'
         ]
@@ -422,7 +419,6 @@ export const projectsData = {
       {
         date: 'Abril 2026',
         title: 'Preparación de vivero forestal',
-        percentage: 40,
         images: [
           'https://images.unsplash.com/photo-1599420186946-7b6fb4eaba02?w=800&q=80'
         ]
@@ -473,11 +469,11 @@ export const projectsData = {
       {
         date: 'Abril 2026',
         title: 'Cimentación de Casa Club Luxury',
-        percentage: 10,
         images: [
           'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80'
         ]
       }
-    ]
+    ],
+    formLink: ''
   }
 };
