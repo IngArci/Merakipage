@@ -5,9 +5,13 @@ interface LotModalProps {
   lot: any;
   isOpen: boolean;
   onClose: () => void;
+  projectName?: string;
+  projectSlug?: string;
+  sectorName?: string;
+  projectData?: any;
 }
 
-export const LotModal = ({ lot, isOpen, onClose }: LotModalProps) => {
+export const LotModal = ({ lot, isOpen, onClose, projectName, projectSlug, sectorName, projectData }: LotModalProps) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -18,6 +22,46 @@ export const LotModal = ({ lot, isOpen, onClose }: LotModalProps) => {
   }, []);
 
   if (!isOpen || !lot) return null;
+
+  const getProjectName = () => {
+    // 1. Prioritize projectName prop (from projects.json) as it's the official display name
+    if (projectName && typeof projectName === 'string' && projectName.trim() !== "") {
+      return projectName;
+    }
+    // 2. Fallback to lot.proyecto or projectSlug and format if it's a slug
+    const raw = (lot.proyecto && lot.proyecto.trim() !== "") ? lot.proyecto : (projectSlug || "");
+    if (raw && typeof raw === 'string' && raw.includes('-')) {
+      return raw
+        .split('-')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+    }
+    return raw || "Meraki";
+  };
+
+  const displayProjectName = getProjectName();
+
+  const getSectorName = () => {
+    const rawSector = (lot.sector || "").trim();
+    // If it's a generic "General" or empty, we try to use the more specific sectorName prop
+    if (rawSector && rawSector.toLowerCase() !== "general") return rawSector;
+    
+    if (sectorName && sectorName.trim() !== "" && sectorName.toLowerCase() !== "general") return sectorName;
+    
+    // Fallback: search in projectData.sectors using sectorId or sectorKey
+    if (projectData?.sectors && (lot.sectorId || lot.sectorKey)) {
+      const found = projectData.sectors.find((s: any) => 
+        (lot.sectorId && (s.id === lot.sectorId || s.key === lot.sectorId)) ||
+        (lot.sectorKey && (s.id === lot.sectorKey || s.key === lot.sectorKey))
+      );
+      if (found?.name) return found.name;
+    }
+
+    if (lot.sectorName && lot.sectorName.trim() !== "") return lot.sectorName;
+    return "";
+  };
+
+  const displaySectorName = getSectorName();
 
   const status = String(lot.estado || lot.status || "").toUpperCase().trim();
   const blockContact = status !== "DISPONIBLE";
@@ -101,8 +145,12 @@ export const LotModal = ({ lot, isOpen, onClose }: LotModalProps) => {
 
             <div style={{ display: "grid", gap: 14, marginBottom: 22, fontSize: 14 }}>
               <div>
+                <div style={{ color: "#BFBFBF", fontSize: 11, letterSpacing: 2 }}>PROYECTO</div>
+                <div style={{ color: "#FFFFFF" }}>{displayProjectName.toUpperCase()}</div>
+              </div>
+              <div>
                 <div style={{ color: "#BFBFBF", fontSize: 11, letterSpacing: 2 }}>SECTOR</div>
-                <div style={{ color: "#FFFFFF" }}>{lot.sector || "General"}</div>
+                <div style={{ color: "#FFFFFF" }}>{displaySectorName || "General"}</div>
               </div>
               <div>
                 <div style={{ color: "#BFBFBF", fontSize: 11, letterSpacing: 2 }}>ÁREA</div>
@@ -123,7 +171,8 @@ export const LotModal = ({ lot, isOpen, onClose }: LotModalProps) => {
               <button
                 onClick={() => {
                   const phone = "573176820728";
-                  const text = `Hola, estoy interesado en el terreno ${lot.numeroTerreno || lot.lote}. ¿Podrían darme más información?`;
+                  const sectorText = displaySectorName ? ` del sector ${displaySectorName}` : "";
+                  const text = `Hola, estoy interesado en el terreno ${lot.numeroTerreno || lot.lote}${sectorText} del Club de campo ${displayProjectName}. ¿Podrían darme más información?`;
                   window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, "_blank");
                 }}
                 style={buttonStyle}

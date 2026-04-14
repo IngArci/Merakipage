@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Outlet } from 'react-router';
 import { Header } from './components/shared/Header';
 import { Footer } from './components/shared/Footer';
@@ -11,12 +12,17 @@ export default function Layout() {
       <ScrollToTop />
       <Header />
       <main className="flex-grow">
-        <Outlet />
+        <Suspense fallback={
+          <div className="min-h-screen bg-black flex items-center justify-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#F4BA3E]"></div>
+          </div>
+        }>
+          <Outlet />
+        </Suspense>
       </main>
       <Footer />
       <Toaster />
-      
-      {/* WhatsApp Floating Menu */}
+
       <WhatsAppMenu />
     </div>
   );

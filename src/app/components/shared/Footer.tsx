@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-react';
+import { Facebook, Instagram, Mail, MapPin, Phone, Youtube } from 'lucide-react';
 import logoMeraki from "../../../assets/logo.png";
 
 // SVG personalizado para TikTok
@@ -9,7 +9,7 @@ const TikTokIcon = () => (
     fill="currentColor"
     className="w-5 h-5"
   >
-    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
   </svg>
 );
 
@@ -21,24 +21,54 @@ export function Footer() {
           {/* Logo y descripción */}
           <div>
             <div className="mb-6">
-              <img 
-                src={logoMeraki} 
-                alt="Grupo Constructor Meraki" 
-                className="h-16 w-auto"
+              <img
+                src={logoMeraki}
+                alt="Grupo Constructor Meraki"
+                className="h-auto w-[179px]"
+                width="179"
+                height="70"
+                loading="lazy"
               />
             </div>
             <p className="text-gray-400 text-sm mb-6">
-              Especialistas en venta de terrenos campestres y casas de campo. 
+              Especialistas en venta de terrenos campestres y casas de campo.
               Tu inversión segura en el paraíso natural.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-[#1a1a1a] hover:bg-gradient-to-br hover:from-[#947018] hover:to-[#F4BA3E] flex items-center justify-center transition-all border border-[#F4BA3E]/20">
+              <a 
+                href="https://www.facebook.com/share/1KjUT5Y1Vy/?mibextid=wwXIfr" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-10 h-10 rounded-full bg-[#1a1a1a] hover:bg-gradient-to-br hover:from-[#947018] hover:to-[#F4BA3E] flex items-center justify-center transition-all border border-[#F4BA3E]/20"
+                aria-label="Seguir a Grupo Meraki en Facebook"
+              >
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-[#1a1a1a] hover:bg-gradient-to-br hover:from-[#947018] hover:to-[#F4BA3E] flex items-center justify-center transition-all border border-[#F4BA3E]/20">
+              <a 
+                href="https://www.instagram.com/constructora.meraki?igsh=cnpzeTZqMm4yMHZz&utm_source=qr" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-10 h-10 rounded-full bg-[#1a1a1a] hover:bg-gradient-to-br hover:from-[#947018] hover:to-[#F4BA3E] flex items-center justify-center transition-all border border-[#F4BA3E]/20"
+                aria-label="Seguir a Grupo Meraki en Instagram"
+              >
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-[#1a1a1a] hover:bg-gradient-to-br hover:from-[#947018] hover:to-[#F4BA3E] flex items-center justify-center transition-all border border-[#F4BA3E]/20">
+              <a 
+                href="https://youtube.com/@constructora.meraki?si=SOMuq3Fk6LdzjvXu" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-10 h-10 rounded-full bg-[#1a1a1a] hover:bg-gradient-to-br hover:from-[#947018] hover:to-[#F4BA3E] flex items-center justify-center transition-all border border-[#F4BA3E]/20"
+                aria-label="Suscribirse al canal de Youtube de Grupo Meraki"
+              >
+                <Youtube className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://www.tiktok.com/@grupoconstructormeraki?_r=1&_t=ZS-95Vaoagm6OC" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-10 h-10 rounded-full bg-[#1a1a1a] hover:bg-gradient-to-br hover:from-[#947018] hover:to-[#F4BA3E] flex items-center justify-center transition-all border border-[#F4BA3E]/20"
+                aria-label="Seguir a Grupo Meraki en TikTok"
+              >
                 <TikTokIcon />
               </a>
             </div>
@@ -101,9 +131,9 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="#faq" className="text-gray-400 hover:text-[#F4BA3E] text-sm transition-colors">
+                <Link to="/preguntas-frecuentes" className="text-gray-400 hover:text-[#F4BA3E] text-sm transition-colors">
                   Preguntas Frecuentes
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -115,16 +145,17 @@ export function Footer() {
               <li className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-[#F4BA3E] flex-shrink-0 mt-0.5" />
                 <span className="text-gray-400 text-sm">
-                  Calle Principal 123<br />Ciudad, País
+                  Barrio Casa Club, Cra 3 #42 – 92,<br /> Ibagué
+                  Colombia
                 </span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-[#F4BA3E] flex-shrink-0" />
-                <span className="text-gray-400 text-sm">+57 300 123 4567</span>
+                <span className="text-gray-400 text-sm">+57 314 786 8069</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-[#F4BA3E] flex-shrink-0" />
-                <span className="text-gray-400 text-sm">info@meraki.com</span>
+                <span className="text-gray-400 text-sm">servicioalcliente.grupomeraki@gmail.com</span>
               </li>
             </ul>
           </div>

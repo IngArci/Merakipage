@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Bloquear panel de administración
+Disallow: /admin
+Disallow: /admin/*
+
+# Bloquear páginas internas sin valor SEO
+Disallow: /pagos
+Disallow: /cartera
+Disallow: /inversionistas
+Disallow: /privacidad
+Disallow: /terminos
+Disallow: /documentacion-legal
+
+Sitemap: https://grupoconstructormeraki.com.co/sitemap.xml

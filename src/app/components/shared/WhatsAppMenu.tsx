@@ -14,7 +14,7 @@ const whatsappAreas: WhatsAppArea[] = [
   {
     name: 'Ventas',
     description: 'Información sobre proyectos e inversión',
-    phone: '573001234567',
+    phone: '573176820728',
     icon: Phone,
     color: 'from-blue-500 to-blue-600',
   },
@@ -22,7 +22,7 @@ const whatsappAreas: WhatsAppArea[] = [
   {
     name: 'Servicio al Cliente',
     description: 'Soporte y atención general',
-    phone: '573001234569',
+    phone: '573147868069',
     icon: Headphones,
     color: 'from-emerald-500 to-emerald-600',
   },
@@ -118,8 +118,8 @@ export function WhatsAppMenu() {
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
         className={`w-16 h-16 rounded-full flex items-center justify-center shadow-2xl transition-all relative ${isOpen
-            ? 'bg-gradient-to-br from-red-500 to-red-600 hover:from-red-600 hover:to-red-700'
-            : 'bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700'
+          ? 'bg-gradient-to-br from-red-500 to-red-600 hover:from-red-600 hover:to-red-700'
+          : 'bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700'
           }`}
         aria-label={isOpen ? 'Cerrar menú de WhatsApp' : 'Abrir menú de WhatsApp'}
       >
@@ -175,7 +175,7 @@ export function WhatsAppMenu() {
               transition={{ duration: 1, repeat: Infinity }}
               className="text-white text-xs font-bold"
             >
-              3
+              2
             </motion.span>
           </motion.div>
         </>

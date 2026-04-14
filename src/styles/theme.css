@@ -1,4 +1,4 @@
-@custom-variant dark (&:is(.dark *));
+ @custom-variant dark (&:is(.dark *));
 
 :root {
   --font-size: 16px;
@@ -39,7 +39,7 @@
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: rgba(180, 151, 57, 0.2);
   --sidebar-ring: #F4BA3E;
-  
+
   /* Meraki custom colors */
   --gold-1: #947018;
   --gold-2: #B7871C;
@@ -50,6 +50,15 @@
   --dark-1: #1a1a1a;
   --dark-2: #0d060a;
   --black-pure: #000000;
+
+  /* Luxury Gradients */
+  --grad-meraki: linear-gradient(135deg, var(--gold-1) 0%, var(--gold-5) 50%, var(--gold-1) 100%);
+  --grad-dark: linear-gradient(180deg, var(--dark-1) 0%, var(--black-pure) 100%);
+  --grad-glass: rgba(255, 255, 255, 0.03);
+
+  /* Transitions */
+  --trans-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --trans-bouncy: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .dark {
@@ -195,10 +204,12 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
-  
+
   /* Hide scrollbar for IE, Edge and Firefox */
   .scrollbar-hide {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
   }
 }

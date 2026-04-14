@@ -1,20 +1,27 @@
+import { lazy } from 'react';
 import { createBrowserRouter } from 'react-router';
 import Layout from './Layout';
 import Home from './pages/Home';
-import Proyectos from './pages/Proyectos';
-import ProyectoDetalle from './pages/ProyectoDetalle';
-import Casas from './pages/Casas';
-import Referidos from './pages/Referidos';
-import Nosotros from './pages/Nosotros';
-import Servicio from './pages/Servicio';
-import Cartera from './pages/Cartera';
-import Contacto from './pages/Contacto';
-import SalasVentas from './pages/SalasVentas';
-import Privacidad from './pages/Privacidad';
-import Terminos from './pages/Terminos';
-import Inversionistas from './pages/Inversionistas';
-import Pagos from './pages/Pagos';
-import Admin from './pages/Admin';
+
+// Lazy loaded components for code splitting
+const Proyectos = lazy(() => import('./pages/Proyectos'));
+const ProyectoDetalle = lazy(() => import('./pages/ProyectoDetalle'));
+const Casas = lazy(() => import('./pages/Casas'));
+const Referidos = lazy(() => import('./pages/Referidos'));
+const Nosotros = lazy(() => import('./pages/Nosotros'));
+const Servicio = lazy(() => import('./pages/Servicio'));
+const Cartera = lazy(() => import('./pages/Cartera'));
+const Contacto = lazy(() => import('./pages/Contacto'));
+const SalasVentas = lazy(() => import('./pages/SalasVentas'));
+const Privacidad = lazy(() => import('./pages/Privacidad'));
+const Terminos = lazy(() => import('./pages/Terminos'));
+const Inversionistas = lazy(() => import('./pages/Inversionistas'));
+const Pagos = lazy(() => import('./pages/Pagos'));
+const Admin = lazy(() => import('./pages/Admin'));
+const LegalDocs = lazy(() => import('./pages/LegalDocs'));
+const PreguntasFrecuentes = lazy(() => import('./pages/PreguntasFrecuentes'));
+
+import { AdminAuthGate } from './features/admin/components/AdminAuthGate';
 
 export const router = createBrowserRouter([
   {
@@ -35,7 +42,16 @@ export const router = createBrowserRouter([
       { path: 'privacidad', Component: Privacidad },
       { path: 'terminos', Component: Terminos },
       { path: 'inversionistas', Component: Inversionistas },
-      { path: 'admin', Component: Admin },
+      { 
+        path: 'admin', 
+        element: (
+          <AdminAuthGate>
+            <Admin />
+          </AdminAuthGate>
+        ) 
+      },
+      { path: 'documentacion-legal', Component: LegalDocs },
+      { path: 'preguntas-frecuentes', Component: PreguntasFrecuentes },
     ],
   },
 ]);

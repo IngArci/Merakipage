@@ -8,43 +8,46 @@ export async function exportSvgToPdf(
 ) {
   if (!svgRef?.current) return;
   const svgElement = svgRef.current;
-  const clone = svgElement.cloneNode(true);
+  
+  // Clone to modify without affecting live UI
+  const clone = svgElement.cloneNode(true) as SVGSVGElement;
 
-  // We explicitly preserve image hrefs that Canvg can render
+  // Clean the clone of UI-specific constraints
+  clone.removeAttribute("class");
+  clone.removeAttribute("style");
+  
   const viewBox = clone.getAttribute("viewBox");
-  let width = 1000;
-  let height = 1000;
+  let nativeW = 2000;
+  let nativeH = 1500;
 
   if (viewBox) {
     const [, , w, h] = viewBox.split(/\s+/).map(Number);
-    width = w;
-    height = h;
+    nativeW = w;
+    nativeH = h;
   }
 
-  const maxPixels = 28_000_000;
-  let scale = 2.8;
+  // Explicitly set width and height attributes to match viewBox 
+  // This is CRITICAL for Canvg to know the intended native resolution
+  clone.setAttribute("width", nativeW.toString());
+  clone.setAttribute("height", nativeH.toString());
 
-  if (width * height > maxPixels) {
-    scale = Math.sqrt(maxPixels / (width * height));
-  }
-
+  // Use a high resolution scale factor (3x ensures sharp text even on large plans)
+  const scale = 3.0;
   const canvas = document.createElement("canvas");
-  canvas.width = Math.round(width * scale);
-  canvas.height = Math.round(height * scale);
+  canvas.width = Math.round(nativeW * scale);
+  canvas.height = Math.round(nativeH * scale);
 
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
 
-  // Render a dark background BEFORE rendering the SVG so it matches Merakipage UI and doesn't end up transparent if there is no image
-  ctx.fillStyle = "#000000";
+  // Render a dark background BEFORE rendering the SVG
+  ctx.fillStyle = "#0d060a";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   ctx.imageSmoothingEnabled = true;
   ctx.imageSmoothingQuality = "high";
-  ctx.scale(scale, scale);
 
-  // Note: For Canvg to correctly render the background image (like /llanogrande.jpg), 
-  // they need to be loaded explicitly, but Canvg handles same-origin href properly.
+  // Serialize the prepared clone
   const svgText = new XMLSerializer().serializeToString(clone);
 
   try {
@@ -54,19 +57,23 @@ export async function exportSvgToPdf(
       anonymousCrossOrigin: true,
     });
 
+    // We use resize to ensure it fills the high-res canvas perfectly
+    v.resize(canvas.width, canvas.height, 'xMidYMid meet');
+    
     await v.render();
 
-    const imgData = canvas.toDataURL("image/jpeg", 0.97);
+    const imgData = canvas.toDataURL("image/jpeg", 0.95);
 
     const pdf = new jsPDF({
-      orientation: width > height ? "landscape" : "portrait",
+      orientation: nativeW > nativeH ? "landscape" : "portrait",
       unit: "px",
       format: [canvas.width, canvas.height],
     });
 
     pdf.addImage(imgData, "JPEG", 0, 0, canvas.width, canvas.height);
 
-    pdf.save(`disponibilidad_${projectName}_${new Date().toISOString().split('T')[0]}.pdf`);
+    const dateStr = new Date().toISOString().split('T')[0];
+    pdf.save(`disponibilidad_${projectName}_${dateStr}.pdf`);
   } catch (error) {
     console.error("Error generating SVG to PDF via Canvg:", error);
     alert('Hubo un error al generar la descarga.');

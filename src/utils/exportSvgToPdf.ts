@@ -1,5 +1,4 @@
-import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf';
+// Dynamic imports for heavy libraries to keep bundle size small
 
 // Since the `Merakipage` UI has a dark theme, we'll keep the styles similar but export the PDF cleanly.
 export const exportSvgToPdf = async (svgRef, summary, selectedProject) => {
@@ -60,6 +59,10 @@ export const exportSvgToPdf = async (svgRef, summary, selectedProject) => {
     svgContainer.style.background = 'transparent';
     svgContainer.appendChild(clonedSvg);
     container.appendChild(svgContainer);
+
+    // Dynamically load heavy dependencies only when needed
+    const html2canvas = (await import('html2canvas')).default;
+    const { jsPDF } = await import('jspdf');
 
     // Convert to canvas
     const canvas = await html2canvas(container, {

@@ -1,11 +1,5 @@
 import { motion } from 'motion/react';
-import { LucideIcon } from 'lucide-react';
-
-interface Amenity {
-  icon: LucideIcon;
-  name: string;
-  description: string;
-}
+import { Amenity } from '../../../types/project';
 
 interface ProjectAmenitiesProps {
   amenities: Amenity[];

@@ -70,7 +70,10 @@ export function Header() {
             <img
               src={logoMeraki}
               alt="Grupo Constructor Meraki"
-              className="h-10 w-auto sm:h-12"
+              className="h-auto w-[179px]"
+              width="179"
+              height="70"
+              fetchpriority="high"
             />
           </Link>
 
@@ -149,6 +152,7 @@ export function Header() {
           <button
             className="lg:hidden p-2 text-gray-300 hover:text-[#F4BA3E]"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>

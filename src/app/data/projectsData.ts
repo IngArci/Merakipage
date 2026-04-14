@@ -2,9 +2,11 @@ import {
   DoorOpen,
   MessagesSquare,
   Waves,
+  WavesLadder,
   Droplets,
   Dog,
   Wind,
+  LandPlot,
   Grid,
   Baby,
   Volleyball,
@@ -22,8 +24,11 @@ import {
   Camera,
   Hammer
 } from 'lucide-react';
+import { Project } from '../types/project';
+import { FaTableTennisPaddleBall, FaChild, } from "react-icons/fa6";
+import { TbSoccerField } from "react-icons/tb";
 
-export const projectsData = {
+export const projectsData: Record<string, Project> = {
   'rio-claro': {
     title: 'Rio Claro Luxury Living Club',
     region: 'San Sebastián de Mariquita',
@@ -31,34 +36,27 @@ export const projectsData = {
     shortDescription: 'un espacio donde podrás construir tu futuro, en proyectos pensados para la inversión, confort y tranquilidad.',
     description: 'Río Claro es un exclusivo condominio campestre ubicado en una de las zonas más privilegiadas del Valle del Cauca. Con 200 lotes disponibles, este proyecto ofrece la combinación perfecta entre naturaleza, comodidad y rentabilidad. Rodeado de montañas y con acceso directo a fuentes hídricas naturales, Río Claro es el lugar ideal para construir tu casa de campo o hacer una inversión segura y rentable.',
     sizes: '300m² - 600m²',
-    priceFrom: '$180,000,000',
+    priceFrom: '$87,000,000',
     totalLots: 200,
     availableLots: 147,
     deliveryDate: 'Diciembre 2026',
     images: [
-      '../../public/images/rio-claro/PORTERIA.png',
-      '../../public/images/rio-claro/piscina.png',
-      '../../public/images/rio-claro/jacuzzi.png',
-      '../../public/images/rio-claro/rio-1.png',
-      '../../public/images/rio-claro/rio-lento.png',
-      , '../../public/images/rio-claro/rio.png'
+      '/images/rio-claro/PORTERIA.png',
+      '/images/rio-claro/PISCINA.png',
+      '/images/rio-claro/jacuzzi.png',
+      '/images/rio-claro/rio-1.png',
+      '/images/rio-claro/rio-lento.png',
+      '/images/rio-claro/rio.png'
     ],
     amenities: [
-      { icon: DoorOpen, name: 'Portería Exclusiva', description: '' },
-      { icon: MessagesSquare, name: 'Salón de eventos', description: '' },
-      { icon: Waves, name: 'Piscina tipo playa', description: '' },
-      { icon: Droplets, name: 'Rio Lento', description: '' },
-      { icon: Dog, name: 'Dogpark', description: '' },
-      { icon: Wind, name: 'Tobogán', description: '' },
-      { icon: Grid, name: 'Mallas Antiestres', description: '' },
-      { icon: Baby, name: 'Parque infantil', description: '' },
-      { icon: Volleyball, name: 'Cancha Volleyball', description: '' },
-      { icon: Eye, name: 'Mirador', description: '' },
-      { icon: Utensils, name: 'Zona picnic', description: '' },
-      { icon: Flame, name: 'BBQ', description: '' },
-      { icon: Goal, name: 'Cancha sintética', description: '' },
-      { icon: Footprints, name: 'Sendero', description: '' },
-      { icon: Users, name: 'Futbolín humano', description: '' }
+      { icon: DoorOpen, name: 'Portería Exclusiva', description: '' },//
+      { icon: MessagesSquare, name: 'Salón de eventos', description: '' },//
+      { icon: Waves, name: 'Piscina tipo playa', description: '' },//
+      { icon: Dog, name: 'Dogpark', description: '' },//
+      { icon: Grid, name: 'Mallas Antiestres', description: '' },//
+      { icon: Baby, name: 'Parque infantil', description: '' },//
+      { icon: Volleyball, name: 'Cancha Volleyball playa', description: '' },//
+
     ],
     location: {
       address: 'Ubicados al norte del Tolima, sobre el costado de la vía nacional, a cinco minutos del casco urbano del municipio de San Sebastián de Mariquita.',
@@ -75,7 +73,7 @@ export const projectsData = {
 
       ]
     },
-    masterPlan: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1080&q=80',
+    masterPlan: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=60&fm=webp',
     videos: {
       informesGestion: [
 
@@ -90,69 +88,70 @@ export const projectsData = {
     formLink: 'https://api.leadconnectorhq.com/widget/form/yH7BClvxe1HiKll1tQYL'
   },
   'laguna-mar': {
-    title: 'Laguna Mar',
-    region: 'Melgar',
+    title: 'LAGUNA MAR BUNGALOW COLIVING CLUB',
+    region: 'Melgar - Ricaurte',
     status: 'lanzamiento',
-    shortDescription: 'Vive frente al agua en este paraíso natural',
-    description: 'Laguna Mar es un proyecto único que combina la belleza de un entorno lacustre con todas las comodidades de un condominio moderno. Con 150 lotes frente al agua, este desarrollo ofrece una experiencia de vida incomparable. Los propietarios disfrutan de acceso directo a la laguna, perfecta para deportes acuáticos, pesca y contemplación de la naturaleza.',
-    sizes: '600m² - 1,200m²',
+    shortDescription: 'Ubicado en la mejor zona de gran valorización conocida como EL PASO justo en el epicentro de las ciudades de Ricaurte, Melgar, Girardot y Carmen de Apicalá, con acceso sobre la vía nacional Ibagué - Bogotá Ruta 40 Express.',
+    description: 'LAGUNA MAR BUNGALOW COLIVING CLUB es un mega proyecto conformado por 10 etapas ubicado en el municipio de Ricaurte donde podrás disfrutar de todas las comodidades de un condominio campestre exclusivo con el sello de calidad del GRUPO CONSTRUCTOR MERAKI. ¡Realiza una inversión inteligente en LAGUNA MAR BUNGALOW COLIVING CLUB!  Su ubicación lo hace una inversión ganadora, en el corazón de la mejor zona de veraneo en Colombia, equidistante a Ricaurte, Melgar, Girardot y Carmen de Apicalá, en un sector de gran afluencia. Su acceso se encuentra sobre la doble calzada Girardot-Bogotá, en la vía 40 express, a 200 metros del sector conocido como “EL PASO”..',
+    stages: [
+      {
+        name: 'Mar Santorini',
+        subtitle: 'Primera Etapa',
+        image: '/images/laguna-mar/LOGO-MAR-SANTORINI.png'
+      },
+      {
+        name: 'Mar Canarias',
+        subtitle: 'Segunda Etapa',
+        image: '/images/laguna-mar/LOGO-MAR-CANARIAS.png'
+      }
+    ],
+    sizes: '300m² hasta 2.500m²',
     priceFrom: '$220,000,000',
     totalLots: 150,
     availableLots: 89,
     deliveryDate: 'Junio 2027',
     images: [
-      'https://images.unsplash.com/photo-1618479357329-14dd10e76f5e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYWdvb24lMjB0cm9waWNhbCUyMG5hdHVyYWwlMjB3YXRlcnxlbnwxfHx8fDE3NzM4NDU1MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      'https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=1080&q=80',
-      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1080&q=80',
-      'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1080&q=80'
+      '/images/laguna-mar/PORTERIA-AJUSTES.png',
+      '/images/laguna-mar/mascotas-1.png',
+      '/images/laguna-mar/PISCINA-1.png',
+      '/images/laguna-mar/piscina.png',
     ],
     amenities: [
-      { icon: DoorOpen, name: 'Casa Club Premium', description: '' },
-      { icon: Waves, name: 'Muelle Privado', description: '' },
-      { icon: Dumbbell, name: 'Zona Deportiva', description: '' },
-      { icon: TreePine, name: 'Reserva Natural', description: '' },
-      { icon: Camera, name: 'Mirador', description: '' },
-      { icon: Shield, name: 'Portería', description: '' }
+      { icon: WavesLadder, name: 'Piscina tipo playa', description: '' },
+      { icon: MessagesSquare, name: 'Salón de eventos', description: '' },
+      { icon: TbSoccerField, name: 'Cancha sintética', description: '' },
+      { icon: Wind, name: 'Tobogán', description: '' },
+      { icon: LandPlot, name: 'Golfito', description: '' },
+      { icon: Dog, name: 'pista canina', description: '' },
+      { icon: FaTableTennisPaddleBall, name: 'Cancha de tenis', description: '' },
+      { icon: FaChild, name: 'Parque infantil', description: '' },
+
+
     ],
     location: {
-      address: 'Vía Medellín - Guatapé, Antioquia',
-      coordinates: '6.2442° N, 75.5742° W',
-      mapIframe: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3978.8718521734777!2d-74.74013742418697!3d4.245192845436226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f27f1fd164147%3A0x27733b3a994f332b!2sLaguna%20Mar!5e0!3m2!1ses-419!2sco!4v1775744242657!5m2!1ses-419!2sco',
+      address: 'A tan solo 2 horas de Bogotá se encuentran Ricaurte, Girardot, Melgar y Carmen de Apicalá, ciudades pujantes y epicentros de las mejores zonas de descanso de Colombia.',
+      coordinates: '67W6+3X, Melgar, Tolima',
+      mapIframe: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4890.696685498831!2d-74.7375625!3d4.2451875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f27f1fd164147%3A0x27733b3a994f332b!2sLaguna%20Mar!5e1!3m2!1ses-419!2sco!4v1775837818636!5m2!1ses-419!2sco',
       nearbyPlaces: [
-        'A 90 min de Medellín',
-        'A 30 min de Guatapé',
-        'A 20 min de El Peñol',
-        'A 15 min de Marinilla'
+        'A 2 horas de Bogotá',
+        'Ubicado entre Ricaurte, Melgar y Girardot',
+        'A 3 minutos de Piscilago',
+        'A 3 minutos del Lago Sol de Compensar',
+        'Cerca de Carmen de Apicalá'
       ]
+
     },
-    masterPlan: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1080&q=80',
+    masterPlan: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=60&fm=webp',
     videos: {
       informesGestion: [
-        'dQw4w9WgXcQ',
-        '3JZ_D3ELwOQ'
+
       ],
       avancesObra: [
-        'ScMzIvxBSi4',
-        'tgbNymZ7vqY'
+
       ]
     },
     progress: [
-      {
-        date: 'Abril 2026',
-        title: 'Movimiento de tierras sector A',
-        images: [
-          'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80'
-        ]
-      },
-      {
-        date: 'Marzo 2026',
-        title: 'Muelle privado completado',
-        percentage: 100,
-        images: [
-          'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80',
-          'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80'
-        ]
-      }
+
     ],
     formLink: 'https://api.leadconnectorhq.com/widget/form/yH7BClvxe1HiKll1tQYL'
   },
@@ -168,7 +167,7 @@ export const projectsData = {
     availableLots: 65,
     deliveryDate: 'Septiembre 2027',
     images: [
-      'https://images.unsplash.com/photo-1764223531702-1614efb82e40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWFsJTIwZXN0YXRlJTIwbGFuZCUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc3Mzg0NTUzMHww&ixlib=rb-4.1.0&q=80&w=1080'
+      'https://images.unsplash.com/photo-1764223531702-1614efb82e40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWFsJTIwZXN0YXRlJTIwbGFuZCUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc3Mzg0NTUzMHww&ixlib=rb-4.1.0&q=60&w=600&fm=webp'
     ],
     amenities: [
       { icon: Home, name: 'Club House', description: 'Arquitectura moderna' },
@@ -187,7 +186,7 @@ export const projectsData = {
         'A 30 min de San Gil'
       ]
     },
-    masterPlan: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1080&q=80',
+    masterPlan: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=60&fm=webp',
     videos: {
       informesGestion: [
         'dQw4w9WgXcQ'
@@ -197,31 +196,7 @@ export const projectsData = {
       ]
     },
     progress: [
-      {
-        date: 'Marzo 2026',
-        title: 'Vías principales pavimentadas',
-        images: [
-          'https://images.unsplash.com/photo-1763328044351-98341e9963da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjBwcm9ncmVzcyUyMHJvYWQlMjBwYXZpbmd8ZW58MXx8fHx8MTc3NTU3NDY5Mnww&ixlib=rb-4.1.0&q=80&w=1080',
-          'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80',
-          'https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=800&q=80'
-        ]
-      },
-      {
-        date: 'Febrero 2026',
-        title: 'Instalación de redes eléctricas',
-        images: [
-          'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80',
-          'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?w=800&q=80'
-        ]
-      },
-      {
-        date: 'Enero 2026',
-        title: 'Cerramiento perimetral y portería',
-        percentage: 100,
-        images: [
-          'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80'
-        ]
-      }
+
     ],
     formLink: 'https://api.leadconnectorhq.com/widget/form/yH7BClvxe1HiKll1tQYL'
   },
@@ -235,9 +210,9 @@ export const projectsData = {
     priceFrom: '$280,000,000',
     totalLots: 120,
     availableLots: 65,
-    deliveryDate: 'Septiembre 2027',
+    deliveryDate: '',
     images: [
-      'https://images.unsplash.com/photo-1764223531702-1614efb82e40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWFsJTIwZXN0YXRlJTIwbGFuZCUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc3Mzg0NTUzMHww&ixlib=rb-4.1.0&q=80&w=1080'
+      'https://images.unsplash.com/photo-1764223531702-1614efb82e40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWFsJTIwZXN0YXRlJTIwbGFuZCUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc3Mzg0NTUzMHww&ixlib=rb-4.1.0&q=60&w=600&fm=webp'
     ],
     amenities: [
       { icon: Home, name: 'Club House', description: 'Arquitectura moderna' },
@@ -256,7 +231,7 @@ export const projectsData = {
         'A 30 min de San Gil'
       ]
     },
-    masterPlan: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1080&q=80',
+    masterPlan: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=60&fm=webp',
     videos: {
       informesGestion: [
         'dQw4w9WgXcQ'
@@ -266,14 +241,7 @@ export const projectsData = {
       ]
     },
     progress: [
-      {
-        date: 'Abril 2026',
-        title: 'Adecuación de miradores principales',
-        percentage: 30,
-        images: [
-          'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80'
-        ]
-      }
+
     ],
     formLink: 'https://api.leadconnectorhq.com/widget/form/yH7BClvxe1HiKll1tQYL'
   },
@@ -289,7 +257,7 @@ export const projectsData = {
     availableLots: 65,
     deliveryDate: 'Septiembre 2027',
     images: [
-      'https://images.unsplash.com/photo-1764223531702-1614efb82e40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWFsJTIwZXN0YXRlJTIwbGFuZCUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc3Mzg0NTUzMHww&ixlib=rb-4.1.0&q=80&w=1080'
+      'https://images.unsplash.com/photo-1764223531702-1614efb82e40?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWFsJTIwZXN0YXRlJTIwbGFuZCUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc3Mzg0NTUzMHww&ixlib=rb-4.1.0&q=60&w=600'
     ],
     amenities: [
       { icon: Home, name: 'Club House', description: 'Arquitectura moderna' },
@@ -308,7 +276,7 @@ export const projectsData = {
         'A 30 min de San Gil'
       ]
     },
-    masterPlan: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1080&q=80',
+    masterPlan: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=60&fm=webp',
     videos: {
       informesGestion: [
         'dQw4w9WgXcQ'
@@ -341,7 +309,7 @@ export const projectsData = {
     availableLots: 52,
     deliveryDate: 'Marzo 2027',
     images: [
-      'https://images.unsplash.com/photo-1758565811272-e79917ca0adc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjb3VudHJ5c2lkZSUyMGVzdGF0ZSUyMGNvdW50cnlzaWRlJTIwbGFuZCUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc3Mzg0NTUyOXww&ixlib=rb-4.1.0&q=80&w=1080'
+      'https://images.unsplash.com/photo-1758565811272-e79917ca0adc?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjb3VudHJ5c2lkZSUyMGVzdGF0ZSUyMGNvdW50cnlzaWRlJTIwbGFuZCUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc3Mzg0NTUyOXww&ixlib=rb-4.1.0&q=60&w=600'
     ],
     amenities: [
       { icon: Home, name: 'Casa Social', description: 'Espacio de reunión' },
@@ -360,7 +328,7 @@ export const projectsData = {
         'A 30 min de La Vega'
       ]
     },
-    masterPlan: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1080&q=80',
+    masterPlan: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=60&fm=webp',
     videos: {
       informesGestion: [
         'dQw4w9WgXcQ'
@@ -392,7 +360,7 @@ export const projectsData = {
     availableLots: 38,
     deliveryDate: 'Agosto 2027',
     images: [
-      'https://images.unsplash.com/photo-1724048413085-1c8d81b3ffa3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3VudGFpbiUyMGNvdW50cnklMjBob3VzZSUyMGFlcmlhbCUyMHZpZXd8ZW58MXx8fHwxNzczODQ1NTMwfDA&ixlib=rb-4.1.0&q=80&w=1080'
+      'https://images.unsplash.com/photo-1724048413085-1c8d81b3ffa3?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3VudGFpbiUyMGNvdW50cnlzaWRlJTIwaG91c2UlMjBhZXJpYWwlMjB2aWV3fGVufDF8fHx8MTc3Mzg0NTUzMHww&ixlib=rb-4.1.0&q=60&w=600'
     ],
     amenities: [
       { icon: Home, name: 'Casa Campestre', description: 'Arquitectura cafeteras' },
@@ -411,7 +379,7 @@ export const projectsData = {
         'A 20 min de Circasia'
       ]
     },
-    masterPlan: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1080&q=80',
+    masterPlan: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=60&fm=webp',
     videos: {
       informesGestion: [
         'dQw4w9WgXcQ'
@@ -443,7 +411,7 @@ export const projectsData = {
     availableLots: 28,
     deliveryDate: 'Noviembre 2027',
     images: [
-      'https://images.unsplash.com/photo-1762438421221-1626a4958dbf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGZhbWlseSUyMG5hdHVyZSUyMGNvdW50cnlzaWRlfGVufDF8fHx8MTc3Mzg0NTUzMHww&ixlib=rb-4.1.0&q=80&w=1080'
+      'https://images.unsplash.com/photo-1762438421221-1626a4958dbf?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGZhbWlseSUyMG5hdHVyZSUyMGNvdW50cnlzaWRlfGVufDF8fHx8MTc3Mzg0NTUzMHww&ixlib=rb-4.1.0&q=60&w=600'
     ],
     amenities: [
       { icon: Home, name: 'Clubhouse Premium', description: 'Diseño arquitectónico de lujo' },
@@ -462,7 +430,7 @@ export const projectsData = {
         'A 25 min de Armenia'
       ]
     },
-    masterPlan: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1080&q=80',
+    masterPlan: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=60&fm=webp',
     videos: {
       informesGestion: [
         'dQw4w9WgXcQ'
