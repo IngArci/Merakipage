@@ -22,6 +22,7 @@ import {
   ShoppingBag,
   Shield,
   Camera,
+  TreePalm,
   Hammer
 } from 'lucide-react';
 import { Project } from '../types/project';
@@ -170,33 +171,59 @@ export const projectsData: Record<string, Project> = {
       'https://images.unsplash.com/photo-1764223531702-1614efb82e40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWFsJTIwZXN0YXRlJTIwbGFuZCUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc3Mzg0NTUzMHww&ixlib=rb-4.1.0&q=60&w=600&fm=webp'
     ],
     amenities: [
-      { icon: Home, name: 'Club House', description: 'Arquitectura moderna' },
-      { icon: Camera, name: 'Miradores', description: 'Múltiples puntos panorámicos' },
-      { icon: Dumbbell, name: 'Centro Deportivo', description: 'Instalaciones premium' },
-      { icon: TreePine, name: 'Senderos Naturales', description: '8km de caminos' },
-      { icon: Waves, name: 'Piscina Infinity', description: 'Vista al cañón' },
-      { icon: Shield, name: 'Seguridad Premium', description: 'Tecnología avanzada' }
+      { icon: TreePalm, name: 'Piscina Tipo Playa', description: '' },
+      { icon: Camera, name: 'Miradores', description: '' },
+      { icon: Dumbbell, name: 'Centro Deportivo', description: '' },
+      { icon: TreePine, name: 'Senderos Naturales', description: '' },
+      { icon: Waves, name: 'Piscina Infinity', description: '' },
+      { icon: Shield, name: 'Seguridad Premium', description: '' }
     ],
     location: {
-      address: 'Vía Bucaramanga - San Gil, Santander',
-      coordinates: '6.9824° N, 73.0521° W',
+      address: 'Cañon de Arizona Bungalow Luxury Club, se encuentra situado sobre la vía nacional Ibagué – Alvarado, con acceso exclusivo al costado izquierdo, justo antes del peaje de Alvarado. Ubicado en una zona de alta valorización, ideal para inversión, el proyecto se destaca por su entorno natural y estratégico.',
+      coordinates: '4°30\'35.0\"N 74°59\'33.5\"W',
       mapIframe: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4894.1473537142465!2d-74.99527162418686!3d4.509737043281716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38cba87853e4d5%3A0x9ac562c944e79fb9!2sCa%C3%B1on%20de%20Arizona%20Bungalow%20Luxury%20Club!5e1!3m2!1ses-419!2sco!4v1775744090548!5m2!1ses-419!2sco',
       nearbyPlaces: [
-        'A 45 min de Bucaramanga',
-        'A 30 min de San Gil'
+        'Ubicación sobre la vía nacional Ibagué – Alvarado',
+        'Acceso exclusivo antes del peaje de Alvarado',
+        'Zona de alta valorización',
+        'Rodeado en gran parte por la ribera del río Alvarado',
+        'Cuenta con dos lagos naturales dentro del proyecto',
+        'Entorno con importante fuente hídrica',
       ]
     },
     masterPlan: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=60&fm=webp',
     videos: {
       informesGestion: [
-        'dQw4w9WgXcQ'
       ],
       avancesObra: [
-        'ScMzIvxBSi4'
       ]
     },
     progress: [
-
+      {
+        date: 'Marzo 2026',
+        title: 'Vías principales pavimentadas',
+        images: [
+          'https://images.unsplash.com/photo-1763328044351-98341e9963da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjBwcm9ncmVzcyUyMHJvYWQlMjBwYXZpbmd8ZW58MXx8fHx8MTc3NTU3NDY5Mnww&ixlib=rb-4.1.0&q=80&w=1080',
+          'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80',
+          'https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=800&q=80'
+        ]
+      },
+      {
+        date: 'Febrero 2026',
+        title: 'Instalación de redes eléctricas',
+        images: [
+          'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80',
+          'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?w=800&q=80'
+        ]
+      },
+      {
+        date: 'Enero 2026',
+        title: 'Cerramiento perimetral y portería',
+        percentage: 100,
+        images: [
+          'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80'
+        ]
+      }
     ],
     formLink: 'https://api.leadconnectorhq.com/widget/form/yH7BClvxe1HiKll1tQYL'
   },
@@ -215,12 +242,12 @@ export const projectsData: Record<string, Project> = {
       'https://images.unsplash.com/photo-1764223531702-1614efb82e40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWFsJTIwZXN0YXRlJTIwbGFuZCUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc3Mzg0NTUzMHww&ixlib=rb-4.1.0&q=60&w=600&fm=webp'
     ],
     amenities: [
-      { icon: Home, name: 'Club House', description: 'Arquitectura moderna' },
-      { icon: Camera, name: 'Miradores', description: 'Múltiples puntos panorámicos' },
-      { icon: Dumbbell, name: 'Centro Deportivo', description: 'Instalaciones premium' },
-      { icon: TreePine, name: 'Senderos Naturales', description: '8km de caminos' },
-      { icon: Waves, name: 'Piscina Infinity', description: 'Vista al cañón' },
-      { icon: Shield, name: 'Seguridad Premium', description: 'Tecnología avanzada' }
+      { icon: Home, name: 'Club House', description: '' },
+      { icon: Camera, name: 'Miradores', description: '' },
+      { icon: Dumbbell, name: 'Centro Deportivo', description: '' },
+      { icon: TreePine, name: 'Senderos Naturales', description: '' },
+      { icon: Waves, name: 'Piscina Infinity', description: '' },
+      { icon: Shield, name: 'Seguridad Premium', description: '' }
     ],
     location: {
       address: 'Vía Bucaramanga - San Gil, Santander',
@@ -260,12 +287,12 @@ export const projectsData: Record<string, Project> = {
       'https://images.unsplash.com/photo-1764223531702-1614efb82e40?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWFsJTIwZXN0YXRlJTIwbGFuZCUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc3Mzg0NTUzMHww&ixlib=rb-4.1.0&q=60&w=600'
     ],
     amenities: [
-      { icon: Home, name: 'Club House', description: 'Arquitectura moderna' },
-      { icon: Camera, name: 'Miradores', description: 'Múltiples puntos panorámicos' },
-      { icon: Dumbbell, name: 'Centro Deportivo', description: 'Instalaciones premium' },
-      { icon: TreePine, name: 'Senderos Naturales', description: '8km de caminos' },
-      { icon: Waves, name: 'Piscina Infinity', description: 'Vista al cañón' },
-      { icon: Shield, name: 'Seguridad Premium', description: 'Tecnología avanzada' }
+      { icon: Home, name: 'Club House', description: '' },
+      { icon: Camera, name: 'Miradores', description: '' },
+      { icon: Dumbbell, name: 'Centro Deportivo', description: '' },
+      { icon: TreePine, name: 'Senderos Naturales', description: '' },
+      { icon: Waves, name: 'Piscina Infinity', description: '' },
+      { icon: Shield, name: 'Seguridad Premium', description: '' }
     ],
     location: {
       address: 'Vía Bucaramanga - San Gil, Santander',
@@ -312,12 +339,12 @@ export const projectsData: Record<string, Project> = {
       'https://images.unsplash.com/photo-1758565811272-e79917ca0adc?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjb3VudHJ5c2lkZSUyMGVzdGF0ZSUyMGNvdW50cnlzaWRlJTIwbGFuZCUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc3Mzg0NTUyOXww&ixlib=rb-4.1.0&q=60&w=600'
     ],
     amenities: [
-      { icon: Home, name: 'Casa Social', description: 'Espacio de reunión' },
-      { icon: TreePine, name: 'Bosque Nativo', description: '15 hectáreas preservadas' },
-      { icon: Dumbbell, name: 'Zona Fitness', description: 'Equipamiento outdoor' },
-      { icon: Camera, name: 'Sendero Ecológico', description: '3km de naturaleza' },
-      { icon: Waves, name: 'Lago Privado', description: 'Pesca deportiva' },
-      { icon: Shield, name: 'Portería 24/7', description: 'Acceso controlado' }
+      { icon: Home, name: 'Casa Social', description: '' },
+      { icon: TreePine, name: 'Bosque Nativo', description: '' },
+      { icon: Dumbbell, name: 'Zona Fitness', description: '' },
+      { icon: Camera, name: 'Sendero Ecológico', description: '' },
+      { icon: Waves, name: 'Lago Privado', description: '' },
+      { icon: Shield, name: 'Portería 24/7', description: '' }
     ],
     location: {
       address: 'Vía La Vega - San Francisco, Cundinamarca',
@@ -363,12 +390,12 @@ export const projectsData: Record<string, Project> = {
       'https://images.unsplash.com/photo-1724048413085-1c8d81b3ffa3?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3VudGFpbiUyMGNvdW50cnlzaWRlJTIwaG91c2UlMjBhZXJpYWwlMjB2aWV3fGVufDF8fHx8MTc3Mzg0NTUzMHww&ixlib=rb-4.1.0&q=60&w=600'
     ],
     amenities: [
-      { icon: Home, name: 'Casa Campestre', description: 'Arquitectura cafeteras' },
-      { icon: TreePine, name: 'Plantación de Café', description: 'Tour incluido' },
-      { icon: Waves, name: 'Piscina Natural', description: 'Agua de nacimiento' },
-      { icon: Camera, name: 'Mirador Cafetero', description: 'Vista panorámica' },
-      { icon: Dumbbell, name: 'Canchas', description: 'Fútbol y voleibol' },
-      { icon: Shield, name: 'Seguridad', description: 'Vigilancia privada' }
+      { icon: Home, name: 'Casa Campestre', description: '' },
+      { icon: TreePine, name: 'Plantación de Café', description: '' },
+      { icon: Waves, name: 'Piscina Natural', description: '' },
+      { icon: Camera, name: 'Mirador Cafetero', description: '' },
+      { icon: Dumbbell, name: 'Canchas', description: '' },
+      { icon: Shield, name: 'Seguridad', description: '' }
     ],
     location: {
       address: 'Vía Armenia - Circasia, Quindío',
@@ -414,12 +441,12 @@ export const projectsData: Record<string, Project> = {
       'https://images.unsplash.com/photo-1762438421221-1626a4958dbf?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGZhbWlseSUyMG5hdHVyZSUyMGNvdW50cnlzaWRlfGVufDF8fHx8MTc3Mzg0NTUzMHww&ixlib=rb-4.1.0&q=60&w=600'
     ],
     amenities: [
-      { icon: Home, name: 'Clubhouse Premium', description: 'Diseño arquitectónico de lujo' },
-      { icon: Waves, name: 'Spa & Piscina', description: 'Zona wellness completa' },
-      { icon: Dumbbell, name: 'Gimnasio Boutique', description: 'Equipamiento de última generación' },
-      { icon: TreePine, name: 'Reserva Privada', description: '20 hectáreas de bosque' },
-      { icon: Camera, name: 'Helipuerto', description: 'Acceso exclusivo' },
-      { icon: Shield, name: 'Seguridad Premium', description: 'Tecnología de punta' }
+      { icon: Home, name: 'Clubhouse Premium', description: '' },
+      { icon: Waves, name: 'Spa & Piscina', description: '' },
+      { icon: Dumbbell, name: 'Gimnasio Boutique', description: '' },
+      { icon: TreePine, name: 'Reserva Privada', description: '' },
+      { icon: Camera, name: 'Helipuerto', description: '' },
+      { icon: Shield, name: 'Seguridad Premium', description: '' }
     ],
     location: {
       address: 'Vía Montenegro - Pueblo Tapao, Quindío',
