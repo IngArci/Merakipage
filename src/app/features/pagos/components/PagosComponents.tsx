@@ -240,7 +240,7 @@ export function PagosSearch() {
           {resultado && (
             <div id="resultado">
               <span style={{ fontSize: '1.2em' }}>
-                <strong>{resultado}</strong>
+                <strong>0{resultado}</strong>
               </span>
             </div>
           )}
