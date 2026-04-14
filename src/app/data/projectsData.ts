@@ -259,40 +259,36 @@ export const projectsData: Record<string, Project> = {
     title: 'Sobre Montaña',
     region: 'alvarado',
     status: 'en-venta',
-    shortDescription: 'Terrenos premium con vista al cañón',
-    description: 'Cañón de Arizona ofrece lotes de gran tamaño con vistas espectaculares. Este exclusivo desarrollo cuenta con 120 lotes en un entorno de montaña único en Colombia. Ideal para quienes buscan privacidad, naturaleza and una inversión de alto nivel.',
-    sizes: '800m² - 2,000m²',
-    priceFrom: '$280,000,000',
-    totalLots: 120,
-    availableLots: 65,
+    shortDescription: 'Un lugar donde la montaña se convierte en estilo de vida y cada día se vive a otro nivel',
+    description: 'Descubre The Protector Club de Campo, un proyecto concebido como un refugio natural donde la tranquilidad, la privacidad y la seguridad se convierten en el verdadero lujo. Inspirado en la idea de protección y equilibrio, este club de campo ha sido diseñado para brindar un entorno donde cada detalle cuida lo más importante: tu bienestar, tu inversión y tu calidad de vida. Aquí, la naturaleza no solo rodea, sino que envuelve, creando una sensación permanente de calma y desconexión del ritmo de la ciudad.',
+    sizes: '30,000m²',
+    priceFrom: '$129,000,000',
+    totalLots: 17,
+    availableLots: 17,
     deliveryDate: '',
     images: [
-      'https://images.unsplash.com/photo-1764223531702-1614efb82e40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWFsJTIwZXN0YXRlJTIwbGFuZCUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc3Mzg0NTUzMHww&ixlib=rb-4.1.0&q=60&w=600&fm=webp'
+      '/images/sobre-montana/sobre-montana.jpeg',
     ],
     amenities: [
-      { icon: Home, name: 'Club House', description: '' },
-      { icon: Camera, name: 'Miradores', description: '' },
-      { icon: Dumbbell, name: 'Centro Deportivo', description: '' },
-      { icon: TreePine, name: 'Senderos Naturales', description: '' },
-      { icon: Waves, name: 'Piscina Infinity', description: '' },
-      { icon: Shield, name: 'Seguridad Premium', description: '' }
     ],
     location: {
-      address: 'Vía Bucaramanga - San Gil, Santander',
-      coordinates: '6.9824° N, 73.0521° W',
+      address: 'Ubicados en el pie de la cordillera central, a tan solo 10 minutos del casco urbano de Alvarado, se encuentra EL PARQUE TEMÁTICO EL PROTECTOR GLAMPING, un proyecto inspirado para el disfrute de toda la familia en conexión con la naturaleza.',
+      coordinates: '4.589559°, -74.984938°',
       mapIframe: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.0248250340524!2d-74.98751242418672!3d4.589567842609231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38b51213b39707%3A0x8435369ea5781c89!2sThe%20Protector%20Glamping!5e0!3m2!1ses-419!2sco!4v1775744220362!5m2!1ses-419!2sco',
       nearbyPlaces: [
-        'A 45 min de Bucaramanga',
-        'A 30 min de San Gil'
+        'A 3 horas de Bogotá',
+        'A 20 minutos de Ibagué',
+        'A 10 minutos del casco urbano de Alvarado',
+        'Ubicado en el pie de la cordillera central',
+        'Cercano a fuentes hídricas como los ríos Alvarado, Totare y La China',
       ]
     },
     masterPlan: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=60&fm=webp',
     videos: {
       informesGestion: [
-        'dQw4w9WgXcQ'
       ],
       avancesObra: [
-        'ScMzIvxBSi4'
+        
       ]
     },
     progress: [
