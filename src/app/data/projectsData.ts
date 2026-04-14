@@ -26,14 +26,26 @@ import {
   Hammer
 } from 'lucide-react';
 import { Project } from '../types/project';
-import { FaTableTennisPaddleBall, FaChild, } from "react-icons/fa6";
-import { TbSoccerField } from "react-icons/tb";
-
+import { FaTableTennisPaddleBall, FaChild,FaDoorOpen , FaRegTrashCan , FaFire, FaUmbrellaBeach,  } from "react-icons/fa6";
+import { TbSoccerField, TbPlayVolleyball  } from "react-icons/tb";
+import { PiTelevisionSimpleFill, PiTelevisionSimpleBold  } from "react-icons/pi";
+import { GiJumpingDog, GiRiver, GiKidSlide, GiSoccerKick, GiPoolTableCorner   } from "react-icons/gi";
+import { MdGrid4X4 } from "react-icons/md";
+import { IoIosChatbubbles } from "react-icons/io";
+import { GiGate } from "react-icons/gi";
+import { HiOutlineOfficeBuilding } from "react-icons/hi";
+import { FaTv,FaRegTrashAlt } from "react-icons/fa";
+import { FaChildren } from "react-icons/fa6";
+import { TbPicnicTable, TbMassage} from "react-icons/tb";
+import { PiPark } from "react-icons/pi";
+import { IoRestaurant } from "react-icons/io5";
+import { GiHut } from "react-icons/gi";
+import { MdLocalBar, MdPool} from "react-icons/md";
 export const projectsData: Record<string, Project> = {
   'rio-claro': {
     title: 'Rio Claro Luxury Living Club',
     region: 'San Sebastián de Mariquita',
-    status: 'lanzamiento',
+    status: 'en-venta',
     shortDescription: 'un espacio donde podrás construir tu futuro, en proyectos pensados para la inversión, confort y tranquilidad.',
     description: 'Río Claro es un exclusivo condominio campestre ubicado en una de las zonas más privilegiadas del Valle del Cauca. Con 200 lotes disponibles, este proyecto ofrece la combinación perfecta entre naturaleza, comodidad y rentabilidad. Rodeado de montañas y con acceso directo a fuentes hídricas naturales, Río Claro es el lugar ideal para construir tu casa de campo o hacer una inversión segura y rentable.',
     sizes: '300m² - 600m²',
@@ -91,7 +103,7 @@ export const projectsData: Record<string, Project> = {
   'laguna-mar': {
     title: 'LAGUNA MAR BUNGALOW COLIVING CLUB',
     region: 'Melgar - Ricaurte',
-    status: 'lanzamiento',
+    status: 'en-venta',
     shortDescription: 'Ubicado en la mejor zona de gran valorización conocida como EL PASO justo en el epicentro de las ciudades de Ricaurte, Melgar, Girardot y Carmen de Apicalá, con acceso sobre la vía nacional Ibagué - Bogotá Ruta 40 Express.',
     description: 'LAGUNA MAR BUNGALOW COLIVING CLUB es un mega proyecto conformado por 10 etapas ubicado en el municipio de Ricaurte donde podrás disfrutar de todas las comodidades de un condominio campestre exclusivo con el sello de calidad del GRUPO CONSTRUCTOR MERAKI. ¡Realiza una inversión inteligente en LAGUNA MAR BUNGALOW COLIVING CLUB!  Su ubicación lo hace una inversión ganadora, en el corazón de la mejor zona de veraneo en Colombia, equidistante a Ricaurte, Melgar, Girardot y Carmen de Apicalá, en un sector de gran afluencia. Su acceso se encuentra sobre la doble calzada Girardot-Bogotá, en la vía 40 express, a 200 metros del sector conocido como “EL PASO”..',
     stages: [
@@ -156,27 +168,43 @@ export const projectsData: Record<string, Project> = {
     ],
     formLink: 'https://api.leadconnectorhq.com/widget/form/yH7BClvxe1HiKll1tQYL'
   },
-  'cañon-arizona': {
+ 'cañon-arizona': {
     title: 'Cañón de Arizona',
     region: 'Alvarado',
-    status: 'lanzamiento',
-    shortDescription: 'Terrenos premium con vista al cañón',
-    description: 'Cañón de Arizona ofrece lotes de gran tamaño con vistas espectaculares. Este exclusivo desarrollo cuenta con 120 lotes en un entorno de montaña único en Colombia. Ideal para quienes buscan privacidad, naturaleza and una inversión de alto nivel.',
-    sizes: '800m² - 2,000m²',
-    priceFrom: '$280,000,000',
-    totalLots: 120,
-    availableLots: 65,
-    deliveryDate: 'Septiembre 2027',
+    status: 'en-venta',
+    shortDescription: 'Crea tu propio estilo de vida en un verdadero club de campo',
+    description: 'Descubre Cañón de Arizona Club de Campo, un proyecto diseñado para quienes buscan libertad, naturaleza y una inversión estratégica en un solo lugar. Ubicado en Alvarado, Tolima, se destaca por estar sobre vía nacional, lo que garantiza fácil acceso, alta conectividad y una proyección de valorización constante. Además, cuenta con un diferencial único: acceso directo al río, brindando un entorno natural privilegiado donde la tranquilidad y el contacto con la naturaleza se convierten en parte de tu día a día.',
+    sizes: '300m² - 1,760m²',
+    priceFrom: '$132,990,000',
+    totalLots: 331,
+    availableLots: 135,
+    deliveryDate: '',
     images: [
-      'https://images.unsplash.com/photo-1764223531702-1614efb82e40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWFsJTIwZXN0YXRlJTIwbGFuZCUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc3Mzg0NTUzMHww&ixlib=rb-4.1.0&q=60&w=600&fm=webp'
+      '/images/cañon-arizona/1.jpg',
+     
     ],
     amenities: [
+      { icon: GiGate, name: 'Poteria', description: '' },
+      { icon: HiOutlineOfficeBuilding, name: 'Oficina Para La Administración', description: '' },
+      { icon: FaRegTrashAlt, name: 'Shut de Basuras', description: '' },
+      { icon: FaTv, name: 'Circuito Cerrado de Televisión', description: '' },
+      { icon: Dog, name: 'Pet Park', description: '' },
+      { icon: FaChildren, name: 'Parque Infantil', description: '' },
+      { icon: Flame, name: 'BBQ', description: '' },
+      { icon: TbPicnicTable, name: 'Zona Picnic', description: '' },
+      { icon: PiPark, name: 'Estancias Biosaludables', description: '' },
+      { icon: Grid, name: 'Zonas de Mallas', description: '' },
+      { icon: IoRestaurant, name: 'Espacio para Restaurante', description: '' },
+      { icon: GiHut, name: 'Kioskos Estilo Falapa', description: '' },
+      { icon: MdLocalBar, name: 'Pool Bar', description: '' },
+      { icon: TbMassage, name: 'Zona de Masajes', description: '' },
+      { icon: Volleyball, name: 'Cancha Volleyball', description: '' },
+      { icon: MdPool, name: 'Piscina Para Niños', description: '' },
       { icon: TreePalm, name: 'Piscina Tipo Playa', description: '' },
-      { icon: Camera, name: 'Miradores', description: '' },
-      { icon: Dumbbell, name: 'Centro Deportivo', description: '' },
-      { icon: TreePine, name: 'Senderos Naturales', description: '' },
-      { icon: Waves, name: 'Piscina Infinity', description: '' },
-      { icon: Shield, name: 'Seguridad Premium', description: '' }
+      { icon: TreePine, name: 'Sendero Ecológico', description: '' },
+      { icon: FaTableTennisPaddleBall, name: 'Cancha de tenis', description: '' },
+      { icon: IoIosChatbubbles, name: 'Salón de Eventos', description: '' },
+
     ],
     location: {
       address: 'Cañon de Arizona Bungalow Luxury Club, se encuentra situado sobre la vía nacional Ibagué – Alvarado, con acceso exclusivo al costado izquierdo, justo antes del peaje de Alvarado. Ubicado en una zona de alta valorización, ideal para inversión, el proyecto se destaca por su entorno natural y estratégico.',
@@ -230,7 +258,7 @@ export const projectsData: Record<string, Project> = {
   'sobre-montañas': {
     title: 'Sobre Montaña',
     region: 'alvarado',
-    status: 'lanzamiento',
+    status: 'en-venta',
     shortDescription: 'Terrenos premium con vista al cañón',
     description: 'Cañón de Arizona ofrece lotes de gran tamaño con vistas espectaculares. Este exclusivo desarrollo cuenta con 120 lotes en un entorno de montaña único en Colombia. Ideal para quienes buscan privacidad, naturaleza and una inversión de alto nivel.',
     sizes: '800m² - 2,000m²',
@@ -276,52 +304,56 @@ export const projectsData: Record<string, Project> = {
     title: 'Llano Grande',
     region: 'Alvarado',
     status: 'entregado',
-    shortDescription: 'Terrenos premium con vista al cañón',
-    description: 'Cañón de Arizona ofrece lotes de gran tamaño con vistas espectaculares. Este exclusivo desarrollo cuenta con 120 lotes en un entorno de montaña único en Colombia. Ideal para quienes buscan privacidad, naturaleza and una inversión de alto nivel.',
+    shortDescription: 'ya es una realidad',
+    description: 'Descubre Llano Grande Luxury Living Club, un club de campo que ya es una realidad y donde la exclusividad se vive en cada detalle. Ubicado en Alvarado, Tolima, este proyecto ha sido diseñado para quienes buscan tranquilidad, valorización y un estilo de vida superior en medio de la naturaleza. Aquí no solo adquieres un terreno campestre, inviertes en un entorno consolidado, con propietarios que ya están haciendo realidad su sueño de tener su segundo hogar. Su ambiente cálido, su ubicación estratégica y su concepto de lujo campestre lo convierten en una oportunidad única.\nLlano Grande es más que un proyecto, es un lugar donde el campo y la inversión se encuentran.',
     sizes: '800m² - 2,000m²',
     priceFrom: '$280,000,000',
-    totalLots: 120,
-    availableLots: 65,
-    deliveryDate: 'Septiembre 2027',
+    totalLots: 316,
+    availableLots: 23,
+    deliveryDate: 'Marzo 2026',
     images: [
-      'https://images.unsplash.com/photo-1764223531702-1614efb82e40?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWFsJTIwZXN0YXRlJTIwbGFuZCUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc3Mzg0NTUzMHww&ixlib=rb-4.1.0&q=60&w=600'
+       '/images/llano-grande/1.png',
+        '/images/llano-grande/2.png',
+         '/images/llano-grande/3.JPG',
+          '/images/llano-grande/4.JPG',
+           '/images/llano-grande/5.JPG',
+            '/images/llano-grande/6.png',
+
     ],
     amenities: [
-      { icon: Home, name: 'Club House', description: '' },
-      { icon: Camera, name: 'Miradores', description: '' },
-      { icon: Dumbbell, name: 'Centro Deportivo', description: '' },
-      { icon: TreePine, name: 'Senderos Naturales', description: '' },
-      { icon: Waves, name: 'Piscina Infinity', description: '' },
-      { icon: Shield, name: 'Seguridad Premium', description: '' }
+      { icon: FaDoorOpen, name: 'Porteria', description: '' },
+      { icon: FaRegTrashCan , name: 'Shits de basuras', description: '' },
+      { icon: PiTelevisionSimpleFill, name: 'Circuito cerrado de television', description: '' },
+      { icon: GiJumpingDog, name: 'Pista Canina', description: '' },
+      { icon: MdGrid4X4, name: 'Mallas anti-estrés', description: '' },
+      { icon: FaChild, name: 'Parque infantil', description: '' },
+      { icon: FaFire , name: 'Bbq', description: '' },
+      { icon: GiRiver , name: 'Rio lento', description: '' },
+      { icon: GiKidSlide , name: 'Tobogán', description: '' },
+      { icon: FaUmbrellaBeach , name: 'Zona de playa en arena suelta', description: '' },
+      { icon: TbPlayVolleyball , name: 'Cancha de vóley', description: '' },
+      { icon: TbSoccerField, name: 'Cancha sintética', description: '' },
+      { icon: PiTelevisionSimpleBold , name: 'Zona de cine al aire libre', description: '' },
+      { icon: GiSoccerKick, name: 'Futbolín humano', description: '' },
+      { icon: GiPoolTableCorner , name: 'Billar humano', description: '' },
+    
+
     ],
     location: {
-      address: 'Vía Bucaramanga - San Gil, Santander',
-      coordinates: '6.9824° N, 73.0521° W',
+      address: 'A tan solo 3 horas de Bogotá se encuentra Ibagué, capital musical de Colombia; una ciudad pujante que cuenta con centros comerciales, universidades y un clima muy agradable.',
+      coordinates: '4.55909° N, -74.95602° W',
       mapIframe: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4893.819026479953!2d-74.95890371654087!3d4.558210370763409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f35f298c15e87%3A0x871bc0b27a252322!2sLlano%20Grande%20Luxury%20Living%20Club!5e1!3m2!1ses-419!2sco!4v1775744114993!5m2!1ses-419!2sco',
       nearbyPlaces: [
-        'A 45 min de Bucaramanga',
-        'A 30 min de San Gil'
+        'A 3 horas de Bogotá',
+        'Cercano a Ibagué, capital musical de Colombia',
+        'A 20 minutos de Alvarado',
+        'Zona de alta valorización',
+        'Presencia de importantes fuentes hídricas (ríos Alvarado, Totare y La China)',
+        'Entorno natural con múltiples corrientes hídricas',
+  
+
       ]
     },
-    masterPlan: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=60&fm=webp',
-    videos: {
-      informesGestion: [
-        'dQw4w9WgXcQ'
-      ],
-      avancesObra: [
-        'ScMzIvxBSi4'
-      ]
-    },
-    progress: [
-      {
-        date: 'Abril 2026',
-        title: 'Adecuación de miradores principales',
-        percentage: 30,
-        images: [
-          'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80'
-        ]
-      }
-    ],
     formLink: 'https://api.leadconnectorhq.com/widget/form/yH7BClvxe1HiKll1tQYL'
   },
   'gran-arizona': {
@@ -355,24 +387,6 @@ export const projectsData: Record<string, Project> = {
         'A 30 min de La Vega'
       ]
     },
-    masterPlan: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=60&fm=webp',
-    videos: {
-      informesGestion: [
-        'dQw4w9WgXcQ'
-      ],
-      avancesObra: [
-        'ScMzIvxBSi4'
-      ]
-    },
-    progress: [
-      {
-        date: 'Abril 2026',
-        title: 'Trazo de senderos ecológicos',
-        images: [
-          'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80'
-        ]
-      }
-    ],
     formLink: 'https://api.leadconnectorhq.com/widget/form/yH7BClvxe1HiKll1tQYL'
   },
   'Arizona-1': {
@@ -406,24 +420,6 @@ export const projectsData: Record<string, Project> = {
         'A 20 min de Circasia'
       ]
     },
-    masterPlan: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=60&fm=webp',
-    videos: {
-      informesGestion: [
-        'dQw4w9WgXcQ'
-      ],
-      avancesObra: [
-        'ScMzIvxBSi4'
-      ]
-    },
-    progress: [
-      {
-        date: 'Abril 2026',
-        title: 'Preparación de vivero forestal',
-        images: [
-          'https://images.unsplash.com/photo-1599420186946-7b6fb4eaba02?w=800&q=80'
-        ]
-      }
-    ],
     formLink: 'https://api.leadconnectorhq.com/widget/form/yH7BClvxe1HiKll1tQYL'
   },
   'arizona-2': {
@@ -457,24 +453,6 @@ export const projectsData: Record<string, Project> = {
         'A 25 min de Armenia'
       ]
     },
-    masterPlan: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=60&fm=webp',
-    videos: {
-      informesGestion: [
-        'dQw4w9WgXcQ'
-      ],
-      avancesObra: [
-        'ScMzIvxBSi4'
-      ]
-    },
-    progress: [
-      {
-        date: 'Abril 2026',
-        title: 'Cimentación de Casa Club Luxury',
-        images: [
-          'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80'
-        ]
-      }
-    ],
     formLink: 'https://api.leadconnectorhq.com/widget/form/yH7BClvxe1HiKll1tQYL'
   }
 };

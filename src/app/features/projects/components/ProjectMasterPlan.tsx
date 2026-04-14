@@ -12,7 +12,7 @@ import { SectorControls } from './SectorControls';
 import { InteractiveSvgMap } from './InteractiveSvgMap';
 
 interface ProjectMasterPlanProps {
-  masterPlan: string;
+  masterPlan?: string;
   totalLots: number;
   availableLots: number;
   projectSlug: string;

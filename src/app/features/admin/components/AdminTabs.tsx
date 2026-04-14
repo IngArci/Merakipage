@@ -2,21 +2,28 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ImageIcon, Youtube, Users, MapPin, FileText } from 'lucide-react';
 
-export type AdminTab = 'avances' | 'videos' | 'ferias' | 'asesores' | 'documentos';
+export type AdminTab = 'avances' | 'videos' | 'ferias' | 'asesores' | 'documentos' | 'galeria';
 
 interface AdminTabsProps {
   activeTab: AdminTab;
   setActiveTab: (tab: AdminTab) => void;
+  projectStatus?: string;
+  projectSlug?: string;
 }
 
-export function AdminTabs({ activeTab, setActiveTab }: AdminTabsProps) {
-  const tabs = [
-    { id: 'avances', label: 'Avances de Obra', icon: ImageIcon },
-    { id: 'videos', label: 'Videos de YouTube', icon: Youtube },
-    { id: 'ferias', label: 'Ferias y Eventos', icon: Users },
-    { id: 'asesores', label: 'Asesores', icon: MapPin },
-    { id: 'documentos', label: 'Documentos Legales', icon: FileText },
+export function AdminTabs({ activeTab, setActiveTab, projectStatus, projectSlug }: AdminTabsProps) {
+  const isDelivered = projectStatus === 'entregado';
+  
+  const allTabs = [
+    { id: 'galeria', label: 'Galería', icon: ImageIcon, visible: isDelivered },
+    { id: 'avances', label: 'Avances de Obra', icon: ImageIcon, visible: !isDelivered || projectSlug === 'llano-grande' },
+    { id: 'videos', label: 'Videos de YouTube', icon: Youtube, visible: !isDelivered || projectSlug === 'llano-grande' },
+    { id: 'ferias', label: 'Ferias y Eventos', icon: Users, visible: true },
+    { id: 'asesores', label: 'Asesores', icon: MapPin, visible: true },
+    { id: 'documentos', label: 'Documentos Legales', icon: FileText, visible: true },
   ];
+
+  const tabs = allTabs.filter(tab => tab.visible);
 
   return (
     <motion.div

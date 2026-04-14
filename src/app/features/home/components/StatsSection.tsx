@@ -28,10 +28,10 @@ const STATS: StatItem[] = [
   },
   {
     icon: MapPin,
-    value: 4,
+    value: 5,
     suffix: '',
     label: 'Ciudades',
-    sublabel: 'Ibagué, Melgar, Alvarado, Mariquita',
+    sublabel: 'Ibagué, Melgar, Alvarado, Mariquita y Fusagasugá',
   },
   {
     icon: Users,

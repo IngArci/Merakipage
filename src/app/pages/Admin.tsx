@@ -4,6 +4,8 @@ import { FolderOpen } from 'lucide-react';
 // Hooks & Utils
 import { useAdminActions } from '../features/admin/hooks/useAdminActions';
 
+import { AdminGaleria } from '../features/admin/components/AdminGaleria';
+
 // Feature Components
 import { ProjectSelector } from '../features/admin/components/ProjectSelector';
 import { AdminAvances } from '../features/admin/components/AdminAvances';
@@ -19,7 +21,8 @@ import { projectsData } from '../data/projectsData';
 
 const proyectos = Object.entries(projectsData).map(([id, data]) => ({
   id,
-  name: data.title
+  name: data.title,
+  status: data.status
 }));
 
 export default function Admin() {
@@ -28,14 +31,22 @@ export default function Admin() {
   
   const admin = useAdminActions(selectedProject, proyectos);
 
-  const showProjectSelector = activeTab === 'avances' || activeTab === 'videos' || activeTab === 'documentos';
+  const currentProject = selectedProject ? projectsData[selectedProject] : null;
+  const projectStatus = currentProject?.status;
+
+  const showProjectSelector = activeTab === 'avances' || activeTab === 'videos' || activeTab === 'documentos' || activeTab === 'galeria';
   const showNoProjectMessage = showProjectSelector && !selectedProject;
 
   return (
     <div className="min-h-screen pt-20 bg-black pb-16">
       <div className="container mx-auto px-4 lg:px-8">
         <AdminHeader />
-        <AdminTabs activeTab={activeTab} setActiveTab={setActiveTab} />
+        <AdminTabs 
+          activeTab={activeTab} 
+          setActiveTab={setActiveTab} 
+          projectStatus={projectStatus}
+          projectSlug={selectedProject}
+        />
 
         {showProjectSelector && (
           <ProjectSelector 
@@ -44,17 +55,20 @@ export default function Admin() {
             setSelectedProject={setSelectedProject}
           />
         )}
-
-        {showNoProjectMessage && (
-          <div className="text-center py-16">
-            <FolderOpen className="w-16 h-16 text-gray-600 mx-auto mb-4" />
-            <p className="text-gray-400 text-lg">
-              Selecciona un proyecto para gestionar sus {activeTab === 'avances' ? 'avances de obra' : 'videos'}
-            </p>
-          </div>
-        )}
+        
+        {/* ... (rest of the messages) */}
 
         {/* Tab Content */}
+        {activeTab === 'galeria' && selectedProject && (
+          <AdminGaleria 
+            images={admin.galeriaImages}
+            isUploading={admin.isUploading}
+            onImageUpload={admin.handleGalleryUpload}
+            handleRemoveImage={admin.handleRemoveGalleryImage}
+            handleSaveGallery={admin.handleSaveGallery}
+          />
+        )}
+
         {activeTab === 'avances' && selectedProject && (
           <AdminAvances 
             avances={admin.avances}

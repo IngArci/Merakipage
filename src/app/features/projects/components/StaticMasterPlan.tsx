@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 
 interface StaticMasterPlanProps {
-  masterPlan: string;
+  masterPlan?: string;
   totalLots: number;
   availableLots: number;
   salesProgress: number;
@@ -25,9 +25,11 @@ export function StaticMasterPlan({
           <h2 className="text-4xl mb-6 text-white font-light">Plano <span className="font-bold text-[#F4BA3E]">Maestro</span></h2>
           <div className="h-1 w-32 bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] mb-12" />
           
-          <div className="relative rounded-2xl overflow-hidden border-2 border-[#F4BA3E]/30">
-            <img src={masterPlan} alt="Plano maestro del proyecto" className="w-full h-auto" />
-          </div>
+          {masterPlan && (
+            <div className="relative rounded-2xl overflow-hidden border-2 border-[#F4BA3E]/30 mb-8">
+              <img src={masterPlan} alt="Plano maestro del proyecto" className="w-full h-auto" />
+            </div>
+          )}
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             <StatCard label="Total de Lotes" value={totalLots} />

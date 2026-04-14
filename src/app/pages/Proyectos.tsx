@@ -4,7 +4,7 @@ import { ProyectosHero, ProyectosGrid, ProyectosCTA } from '../features/proyecto
 
 export default function Proyectos() {
   const allProjects = Object.entries(projectsData).map(([slug, data]) => ({ ...data, slug }));
-  const enLanzamiento = allProjects.filter(p => p.status === 'lanzamiento');
+  const enVenta = allProjects.filter(p => p.status === 'en-venta');
   const entregados = allProjects.filter(p => p.status === 'entregado');
 
   return (
@@ -15,7 +15,7 @@ export default function Proyectos() {
         canonical="/proyectos"
       />
       <ProyectosHero />
-      <ProyectosGrid enLanzamiento={enLanzamiento} entregados={entregados} />
+      <ProyectosGrid enVenta={enVenta} entregados={entregados} />
       <ProyectosCTA />
     </div>
   );

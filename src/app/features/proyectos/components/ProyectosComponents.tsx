@@ -14,7 +14,7 @@ interface Project {
 }
 
 interface ProyectosGridProps { 
-  enLanzamiento: Project[]; 
+  enVenta: Project[]; 
   entregados: Project[]; 
 }
 
@@ -76,7 +76,7 @@ export function ProyectosHero() {
   );
 }
 
-export function ProyectosGrid({ enLanzamiento, entregados }: ProyectosGridProps) {
+export function ProyectosGrid({ enVenta, entregados }: ProyectosGridProps) {
   const renderGrid = (projects: Project[], delay = 0) => (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
       {projects.map((project, index) => (
@@ -103,17 +103,17 @@ export function ProyectosGrid({ enLanzamiento, entregados }: ProyectosGridProps)
 
   return (
     <div className="bg-[#0d060a]">
-      {/* Lanzamiento Section */}
+      {/* En Venta Section */}
       <section className="py-24 relative">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#F4BA3E]/20 to-transparent" />
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeader 
             icon={Rocket}
-            title="En Lanzamiento"
-            subtitle="Nuevas oportunidades de inversión con preventa exclusiva y alta valorización."
+            title="En venta"
+            subtitle="Nuevas oportunidades de inversión con  exclusiva y alta valorización."
             colorClass="from-[#B68110] to-[#F4BA3E]"
           />
-          {renderGrid(enLanzamiento)}
+          {renderGrid(enVenta)}
         </div>
       </section>
 
@@ -127,7 +127,7 @@ export function ProyectosGrid({ enLanzamiento, entregados }: ProyectosGridProps)
             subtitle="Casos de éxito donde la visión se convirtió en realidad para cientos de familias."
             colorClass="from-[#373634] to-[#6b582b]"
           />
-          {renderGrid(entregados, enLanzamiento.length)}
+          {renderGrid(entregados, enVenta.length)}
         </div>
       </section>
     </div>

@@ -5,8 +5,8 @@ export default function SalasVentas() {
   return (
     <div className="min-h-screen bg-[#0d060a] text-white font-light overflow-x-hidden selection:bg-[#F4BA3E]/30">
       <SEO
-        title="Salas de Ventas | Meraki - Ibagué, Melgar, Alvarado y Mariquita"
-        description="Visítanos en nuestras salas de ventas en Ibagué, Melgar, Alvarado y Mariquita. Asesórate personalmente sobre lotes campestres en el Tolima. ¡Te esperamos!"
+        title="Salas de Ventas | Meraki - Ibagué, Melgar, Alvarado, Mariquita y Fusagasugá"
+        description="Visítanos en nuestras salas de ventas en Ibagué, Melgar, Alvarado, Mariquita y Fusagasugá. Asesórate personalmente sobre lotes campestres. ¡Te esperamos!"
         canonical="/salas-ventas"
       />
       {/* Background Orbs */}

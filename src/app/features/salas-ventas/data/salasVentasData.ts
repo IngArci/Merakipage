@@ -69,11 +69,11 @@ export const salasVentasData: SalaVenta[] = [
       sunday: 'Domingos: 10:00 AM - 4:00 PM'
     },
     coordinates: { lat: 5.16274, lng: -74.89580 },
-    image: 'https://images.unsplash.com/photo-1678830776200-194e61896644?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080',
+    image: '/images/sala-de-ventas/sala-de-ventas-mariquita.png',
     features: ['Zona comercial', 'Acceso fácil', 'Atención personalizada', 'Parqueadero',],
   },
   {
-    id: 4, name: 'Sala de Ventas de Grupo constructor Meraki en  Fusagasuga', city: 'Fusagasuga',
+    id: 5, name: 'Sala de Ventas de Grupo constructor Meraki en  Fusagasuga', city: 'Fusagasuga',
     address: 'Centro comercial avenida local 148 Fusagasugá', phone: '+57 3167903662',
     email: 'direccionadministrativa@gmgroup.com.co', whatsapp: '573167903662',
     schedule: {
@@ -81,8 +81,8 @@ export const salasVentasData: SalaVenta[] = [
       saturday: 'Sábados: 10:00 AM - 7:00 PM',
       sunday: 'Domingos y Festivos: 12:00 PM - 7:00 PM'
     },
-    coordinates: { lat: 5.16274, lng: -74.89580 },
-    image: 'https://images.unsplash.com/photo-1678830776200-194e61896644?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080',
+    coordinates: { lat: 4.3438019, lng: -74.3737815 },
+    image: '/images/sala-de-ventas/sala-de-ventas-fusa.png',
     features: ['Zona comercial', 'Acceso fácil', 'Atención personalizada', 'Parqueadero',],
   },
 ];

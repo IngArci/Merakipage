@@ -10,8 +10,8 @@ import {
 } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
 
-// TTL de la caché en milisegundos (30 minutos)
-const CACHE_TTL_MS = 30 * 60 * 1000;
+// TTL de la caché en milisegundos (1 minuto)
+const CACHE_TTL_MS = 1 * 60 * 1000;
 
 interface CacheEntry<T> {
   data: T[];

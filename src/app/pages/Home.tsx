@@ -17,7 +17,7 @@ const LeadFormSection = lazy(() => import('../features/home/components/LeadFormS
 
 export default function Home() {
   const projects = Object.entries(projectsData)
-    .filter(([_, data]) => data.status === 'lanzamiento')
+    .filter(([_, data]) => data.status === 'en-venta')
     .slice(0, 3)
     .map(([slug, data]) => ({
       ...data,

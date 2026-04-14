@@ -53,6 +53,55 @@ export function useAdminActions(selectedProject: string, proyectos: any[]) {
     projectSlug: ''
   });
 
+  const [galeriaImages, setGaleriaImages] = useState<string[]>([]);
+
+
+  const handleGalleryUpload = async (files: FileList) => {
+    if (!selectedProject) {
+      alert('Por favor selecciona un proyecto primero');
+      return;
+    }
+    setIsUploading(true);
+    try {
+      const uploadPromises = Array.from(files).map(file =>
+        uploadImage(file, `galeria/${selectedProject}`)
+      );
+      const urls = await Promise.all(uploadPromises);
+      setGaleriaImages(prev => [...prev, ...urls]);
+    } catch (error) {
+      console.error('Error al subir imágenes de galería:', error);
+      alert('Error al subir una o más imágenes.');
+    } finally {
+      setIsUploading(false);
+    }
+  };
+
+  const handleRemoveGalleryImage = (index: number) => {
+    setGaleriaImages(prev => prev.filter((_, i) => i !== index));
+  };
+
+  const handleSaveGallery = async () => {
+    if (!selectedProject || galeriaImages.length === 0) {
+      alert('Selecciona un proyecto y carga fotos antes de guardar');
+      return;
+    }
+    try {
+      const galeriaRef = collection(db, 'galeria_fotos');
+      for (const url of galeriaImages) {
+        await addDoc(galeriaRef, {
+          imageUrl: url,
+          projectSlug: selectedProject,
+          createdAt: serverTimestamp()
+        });
+      }
+      alert('✅ Galería guardada con éxito');
+      setGaleriaImages([]);
+    } catch (error) {
+      console.error('Error al guardar galería:', error);
+      alert('Error al guardar la galería.');
+    }
+  };
+
 
   const handleAvanceUpload = async (files: FileList) => {
     if (!selectedProject) {
@@ -335,6 +384,10 @@ export function useAdminActions(selectedProject: string, proyectos: any[]) {
     setCurrentDoc,
     handleDocUpload,
     handleSaveDoc,
-    handleDeleteDoc
+    handleDeleteDoc,
+    galeriaImages,
+    handleGalleryUpload,
+    handleRemoveGalleryImage,
+    handleSaveGallery
   };
 }

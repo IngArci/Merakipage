@@ -14,15 +14,20 @@ import { ProjectAmenities } from '../features/projects/components/ProjectAmeniti
 import { ProjectMasterPlan } from '../features/projects/components/ProjectMasterPlan';
 import { ProjectVideosSection } from '../features/projects/components/ProjectVideosSection';
 import { ProjectProgressSection } from '../features/projects/components/ProjectProgressSection';
+import { ProjectGallerySection } from '../features/projects/components/ProjectGallerySection';
 import { ProjectContactSection } from '../features/projects/components/ProjectContactSection';
 
 export default function ProyectoDetalle() {
   const [selectedImage, setSelectedImage] = useState(0);
-  const { slug, project, combinedProgress, combinedVideos, isValid } = useProjectDetails();
+  const { slug, project, combinedProgress, combinedVideos, galleryImages, isValid } = useProjectDetails();
 
   if (!isValid || !project || !slug) {
     return <Navigate to="/proyectos" replace />;
   }
+
+  const isDelivered = project.status === 'entregado';
+  const showPlan = !isDelivered || slug === 'llano-grande';
+  
 
   return (
     <div className="min-h-screen pt-20 bg-black">
@@ -37,7 +42,7 @@ export default function ProyectoDetalle() {
         title={project.title}
         region={project.region}
         shortDescription={project.shortDescription}
-        images={project.images}
+        images={galleryImages}
         selectedImage={selectedImage}
         setSelectedImage={setSelectedImage}
         priceFrom={project.priceFrom}
@@ -60,24 +65,44 @@ export default function ProyectoDetalle() {
 
       <ProjectAmenities amenities={project.amenities} />
 
-      <ProjectMasterPlan
-        masterPlan={project.masterPlan}
-        totalLots={project.totalLots}
-        availableLots={project.availableLots}
-        projectSlug={slug}
-      />
+      {showPlan && (
+        <ProjectMasterPlan
+          masterPlan={project.masterPlan}
+          totalLots={project.totalLots}
+          availableLots={project.availableLots}
+          projectSlug={slug}
+        />
+      )}
 
       <ProjectContactSection 
         projectTitle={project.title}
         formLink={project.formLink}
       />
 
-      <ProjectVideosSection
-        informesGestion={combinedVideos.informesGestion}
-        avancesObra={combinedVideos.avancesObra}
-      />
-
-      <ProjectProgressSection progress={combinedProgress} />
+      {/* Secciones Dinámicas según Estado */}
+      {isDelivered ? (
+        <>
+          {slug === 'llano-grande' && (
+            <ProjectVideosSection
+              informesGestion={combinedVideos.informesGestion}
+              avancesObra={combinedVideos.avancesObra}
+            />
+          )}
+          <ProjectGallerySection 
+            images={galleryImages}
+            videos={slug === 'llano-grande' ? { informesGestion: [], avancesObra: [] } : combinedVideos}
+          />
+          {slug === 'llano-grande' && <ProjectProgressSection progress={combinedProgress} />}
+        </>
+      ) : (
+        <>
+          <ProjectVideosSection
+            informesGestion={combinedVideos.informesGestion}
+            avancesObra={combinedVideos.avancesObra}
+          />
+          <ProjectProgressSection progress={combinedProgress} />
+        </>
+      )}
     </div>
   );
 }

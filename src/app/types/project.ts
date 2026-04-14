@@ -1,6 +1,6 @@
 import { LucideIcon } from 'lucide-react';
 
-export type ProjectStatus = 'lanzamiento' | 'preventa' | 'entregado';
+export type ProjectStatus = 'en-venta' | 'preventa' | 'entregado';
 
 export interface Amenity {
   icon: LucideIcon | React.ComponentType;
@@ -48,9 +48,9 @@ export interface Project {
   images: string[];
   amenities: Amenity[];
   location: ProjectLocation;
-  masterPlan: string;
-  videos: ProjectVideos;
-  progress: ProgressUpdate[];
+  masterPlan?: string;
+  videos?: ProjectVideos;
+  progress?: ProgressUpdate[];
   formLink: string;
   stages?: ProjectStage[];
 }

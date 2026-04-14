@@ -69,14 +69,14 @@ function NextArrow(props: any) {
 export function VideoCarouselCompact({ videos }: { videos: string[] }) {
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: videos.length > 1,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
+    autoplay: videos.length > 1,
+    autoplaySpeed: 4000,
+    prevArrow: videos.length > 1 ? <PrevArrow /> : undefined,
+    nextArrow: videos.length > 1 ? <NextArrow /> : undefined,
     dotsClass: "slick-dots !bottom-4",
     appendDots: (dots: React.ReactNode) => (
       <div>

@@ -32,7 +32,7 @@ export function ProjectCard({ title, location, sizes, image, slug, status }: Pro
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--black-pure)] via-transparent to-transparent opacity-60" />
         <div className="absolute top-4 right-4 bg-gradient-to-r from-[var(--gold-1)] via-[var(--gold-5)] to-[var(--gold-1)] text-black px-4 py-1.5 rounded-full text-xs font-bold shadow-xl backdrop-blur-sm">
-          {status === 'lanzamiento' ? 'LANZAMIENTO' : 'ENTREGADO'}
+          {status === 'en-venta' ? 'EN VENTA' : 'ENTREGADO'}
         </div>
       </div>
       

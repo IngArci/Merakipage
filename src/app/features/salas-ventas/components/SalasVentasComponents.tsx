@@ -41,7 +41,7 @@ export function SalasVentasHero() {
           </p>
 
           <div className="flex flex-wrap justify-center gap-6 mt-10 text-sm">
-            {[{ icon: MapPin, label: '4 Sedes a nivel nacional' }, { icon: Clock, label: 'Horarios flexibles' }].map(({ icon: Icon, label }) => (
+            {[{ icon: MapPin, label: '5 Sedes a nivel nacional' }, { icon: Clock, label: 'Horarios flexibles' }].map(({ icon: Icon, label }) => (
               <div key={label} className="flex items-center space-x-2 text-gray-400">
                 <div className="w-8 h-8 rounded-full bg-[#F4BA3E]/10 border border-[#F4BA3E]/20 flex items-center justify-center">
                   <Icon className="w-4 h-4 text-[#F4BA3E]" />

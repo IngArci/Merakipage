@@ -26,10 +26,24 @@ export function useProjectDetails() {
     slug || ''
   );
 
+  const { data: firebaseGaleria } = useFirestoreCached<{
+    imageUrl: string;
+  }>(
+    'galeria_fotos',
+    'projectSlug',
+    slug || ''
+  );
+
   // Merge: Firebase primero (más recientes), luego datos estáticos
   const combinedProgress = [
     ...(firebaseAvances || []),
     ...(project?.progress || [])
+  ];
+
+  const galleryImages = [
+    ...(firebaseGaleria?.map(g => g.imageUrl) || []),
+    ...combinedProgress.flatMap(p => p.images),
+    ...(project?.images || [])
   ];
 
   const combinedVideos = {
@@ -48,6 +62,7 @@ export function useProjectDetails() {
     project,
     combinedProgress,
     combinedVideos,
+    galleryImages,
     isValid: !!project,
     navigate
   };
