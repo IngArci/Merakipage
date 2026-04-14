@@ -44,7 +44,7 @@ export function CasasCTA() {
               
               <div className="bg-white/5 p-1 rounded-[2.5rem] sm:rounded-[3rem] backdrop-blur-xl">
                 <div className="bg-[#0d060a] p-6 sm:p-10 rounded-[2.4rem] sm:rounded-[2.8rem]">
-                  <LeadForm title="Agendar Asesoría" />
+                  <LeadForm title="Agendar Asesoría" formLink="https://api.leadconnectorhq.com/widget/form/chDoVa9nMDI8U5j5PnUo" />
                 </div>
               </div>
             </div>

@@ -158,7 +158,7 @@ export function ProyectosCTA() {
               </div>
             </div>
             <div className="bg-[#0d060a] p-8 sm:p-12 rounded-[2.5rem] border border-white/10 shadow-2xl">
-              <LeadForm title="Agendar Cita" subtitle="Un asesor experto te contactará en menos de 24h" />
+              <LeadForm title="Agendar Cita" subtitle="Un asesor experto te contactará en menos de 24h" formLink="https://api.leadconnectorhq.com/widget/form/chDoVa9nMDI8U5j5PnUo" />
             </div>
           </div>
         </div>

@@ -40,8 +40,10 @@ export default function Home() {
         <CasasSection />
         <ReferralSection />
         <BenefitsSection />
-        <NosotrosPreviewSection />
-        <LeadFormSection />
+        <NosotrosPreviewSection/>
+        <LeadFormSection 
+        
+        />
       </Suspense>
     </div>
   );

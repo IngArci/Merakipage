@@ -38,7 +38,7 @@ export function LeadFormSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <LeadForm />
+            <LeadForm formLink="https://api.leadconnectorhq.com/widget/form/chDoVa9nMDI8U5j5PnUo" />
           </motion.div>
         </div>
       </div>
