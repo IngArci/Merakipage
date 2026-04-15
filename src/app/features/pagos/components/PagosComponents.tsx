@@ -1,21 +1,27 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Search, CreditCard, Smartphone, Globe, FileText, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
-import { Button } from '@/app/components/ui/button';
+import { CreditCard, Smartphone, Globe, FileText, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 import { db } from '@/lib/firebase';
 import { collection, getDocs } from 'firebase/firestore';
-import logoArizona from '@/assets/logo.png';
+import logoArizona from '/images/pagos/circulo-arizona1.png';
+import logoArizona2 from '/images/pagos/circulo-arizona2.png';
+import logoCanon from '/images/pagos/circulo-canon.png';
+import logoGrand from '/images/pagos/circulo-grand.png';
+import logoLlano from '/images/pagos/circulo-llano.png';
+import logoRio from '/images/pagos/circulo-rio.png';
+import logoLaguna from '/images/pagos/circulo-laguna.png';
+import logoSobre from '/images/pagos/circulo-sobre.png';
 import './PagosStyles.css';
 
 const proyectos = [
-  { id: 'canyon-arizona', nombre: 'Cañón de Arizona', url: 'https://portalpagos.davivienda.com/#/comercio/6713/COMPANIA%20CONSTRUCTORA%20MERAKI%20SM%20S.A.S', logo: logoArizona },
-  { id: 'laguna-mar', nombre: 'Laguna Mar', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: logoArizona },
-  { id: 'rio-claro', nombre: 'Río Claro', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: logoArizona },
-  { id: 'protector', nombre: 'The Protector', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: logoArizona },
-  { id: 'grande', nombre: 'Grande', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: logoArizona },
+  { id: 'canyon-arizona', nombre: 'Cañón de Arizona', url: 'https://portalpagos.davivienda.com/#/comercio/6713/COMPANIA%20CONSTRUCTORA%20MERAKI%20SM%20S.A.S', logo: logoCanon },
+  { id: 'laguna-mar', nombre: 'Laguna Mar', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: logoLaguna },
+  { id: 'rio-claro', nombre: 'Río Claro', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: logoRio },
+  { id: 'protector', nombre: 'Sobre Montaña', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: logoSobre },
+  { id: 'grande', nombre: 'Llano Grande', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: logoLlano },
   { id: 'arizona-1', nombre: 'Arizona I', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: logoArizona },
-  { id: 'arizona-2', nombre: 'Arizona II', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: logoArizona },
-  { id: 'grand-arizona', nombre: 'Grand Arizona', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: logoArizona },
+  { id: 'arizona-2', nombre: 'Arizona II', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: logoArizona2 },
+  { id: 'grand-arizona', nombre: 'Grand Arizona', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: logoGrand },
 ];
 
 const instructivos = [
@@ -106,12 +112,12 @@ export function PagosSearch() {
 
   // Extraer lista de proyectos y sectores dinámicamente
   const listaProyectos = Object.keys(data).sort();
-  
+
   const sectoresDisponibles = (() => {
     if (!proyecto || !data[proyecto]) return [];
     const projectDoc = data[proyecto];
     const sectorsSet = new Set<string>();
-    
+
     // Obtener candidatos de la raíz y de 'lots'
     let candidatos = Object.values(projectDoc);
     if (projectDoc.lots && typeof projectDoc.lots === 'object') {
@@ -260,14 +266,51 @@ export function PagosProyectos() {
         </motion.div>
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
           {proyectos.map((proyecto, index) => (
-            <motion.a key={proyecto.id} href={proyecto.url} target="_blank" rel="noopener noreferrer" initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: index * 0.05 }} className="group relative aspect-square bg-white rounded-full border-4 border-gray-200 hover:border-[#F4BA3E] transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-[#F4BA3E]/20 overflow-hidden flex items-center justify-center">
-              <img src={proyecto.logo} alt={proyecto.nombre} className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-300" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+            <motion.a
+              key={proyecto.id}
+              href={proyecto.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.05 }}
+              className="
+              group relative aspect-square 
+              flex items-center justify-center 
+              rounded-full overflow-hidden
+              hover:bg-white/5 
+              transition-all duration-300
+              "
+            >
+
+              {/* Contenedor uniforme */}
+              <div className="w-[100%] h-[100%] flex items-center justify-center">
+                <img
+                  src={proyecto.logo}
+                  alt={proyecto.nombre}
+                  className={`object-contain transition-transform duration-300 group-hover:scale-110
+                      ${["Sobre Montaña", "Río Claro", "Llano Grande"].includes(proyecto.nombre)
+                      ? "max-w-[90%] max-h-[90%]"
+                      : "max-w-full max-h-full"
+                    }
+  `}
+                />
+              </div>
+
+              {/* Overlay con nombre + icono */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-3 bg-gradient-to-t from-black/70 to-transparent rounded-xl">
+
                 <div className="text-center">
-                  <p className="text-white text-sm font-semibold">{proyecto.nombre}</p>
+                  <p className="text-white text-xs font-semibold">
+                    {proyecto.nombre}
+                  </p>
+
                   <ExternalLink className="w-4 h-4 text-[#F4BA3E] mx-auto mt-1" />
                 </div>
+
               </div>
+
             </motion.a>
           ))}
         </div>
