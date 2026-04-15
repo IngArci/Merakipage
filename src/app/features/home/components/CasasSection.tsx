@@ -32,7 +32,7 @@ export function CasasSection() {
               width="800"
               height="550"
               loading="lazy"
-              fetchpriority="low"
+              fetchPriority="low"
             />
           </motion.div>
 

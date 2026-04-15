@@ -3,25 +3,17 @@ import { motion } from 'motion/react';
 import { CreditCard, Smartphone, Globe, FileText, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 import { db } from '@/lib/firebase';
 import { collection, getDocs } from 'firebase/firestore';
-import logoArizona from '/images/pagos/circulo-arizona1.png';
-import logoArizona2 from '/images/pagos/circulo-arizona2.png';
-import logoCanon from '/images/pagos/circulo-canon.png';
-import logoGrand from '/images/pagos/circulo-grand.png';
-import logoLlano from '/images/pagos/circulo-llano.png';
-import logoRio from '/images/pagos/circulo-rio.png';
-import logoLaguna from '/images/pagos/circulo-laguna.png';
-import logoSobre from '/images/pagos/circulo-sobre.png';
 import './PagosStyles.css';
 
 const proyectos = [
-  { id: 'canyon-arizona', nombre: 'Cañón de Arizona', url: 'https://portalpagos.davivienda.com/#/comercio/6713/COMPANIA%20CONSTRUCTORA%20MERAKI%20SM%20S.A.S', logo: logoCanon },
-  { id: 'laguna-mar', nombre: 'Laguna Mar', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: logoLaguna },
-  { id: 'rio-claro', nombre: 'Río Claro', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: logoRio },
-  { id: 'protector', nombre: 'Sobre Montaña', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: logoSobre },
-  { id: 'grande', nombre: 'Llano Grande', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: logoLlano },
-  { id: 'arizona-1', nombre: 'Arizona I', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: logoArizona },
-  { id: 'arizona-2', nombre: 'Arizona II', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: logoArizona2 },
-  { id: 'grand-arizona', nombre: 'Grand Arizona', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: logoGrand },
+  { id: 'canyon-arizona', nombre: 'Cañón de Arizona', url: 'https://portalpagos.davivienda.com/#/comercio/6713/COMPANIA%20CONSTRUCTORA%20MERAKI%20SM%20S.A.S', logo: '/images/pagos/circulo-canon.png' },
+  { id: 'laguna-mar', nombre: 'Laguna Mar', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: '/images/pagos/circulo-laguna.png' },
+  { id: 'rio-claro', nombre: 'Río Claro', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: '/images/pagos/circulo-rio.png' },
+  { id: 'protector', nombre: 'Sobre Montaña', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: '/images/pagos/circulo-sobre.png' },
+  { id: 'grande', nombre: 'Llano Grande', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: '/images/pagos/circulo-llano.png' },
+  { id: 'arizona-1', nombre: 'Arizona I', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: '/images/pagos/circulo-arizona1.png' },
+  { id: 'arizona-2', nombre: 'Arizona II', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: '/images/pagos/circulo-arizona2.png' },
+  { id: 'grand-arizona', nombre: 'Grand Arizona', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: '/images/pagos/circulo-grand.png' },
 ];
 
 const instructivos = [
