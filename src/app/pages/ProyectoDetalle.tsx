@@ -1,6 +1,14 @@
 import { useState } from 'react';
-import { Navigate } from 'react-router';
+import { Navigate, Link } from 'react-router';
 import { SEO } from '../components/shared/SEO';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from '../components/ui/breadcrumb';
 
 // Hooks
 import { useProjectDetails } from '../features/projects/hooks/useProjectDetails';
@@ -30,7 +38,28 @@ export default function ProyectoDetalle() {
   
 
   return (
-    <div className="min-h-screen pt-20 bg-black">
+    <div className="min-h-screen pt-24 bg-black">
+      <div className="max-w-7xl mx-auto px-4 mb-6">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link to="/">Inicio</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link to="/proyectos">Proyectos</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage className="text-primary">{project.title}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>
       <SEO
         title={`${project.title} | Lotes en ${project.region}, Tolima`}
         description={`${project.shortDescription} Lotes desde ${project.priceFrom}. ${project.availableLots} lotes disponibles. ¡Agenda tu visita con Meraki!`}

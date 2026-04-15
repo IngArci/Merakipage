@@ -5,6 +5,7 @@ import { Footer } from './components/shared/Footer';
 import { Toaster } from './components/ui/sonner';
 import { WhatsAppMenu } from './components/shared/WhatsAppMenu';
 import { ScrollToTop } from './components/shared/ScrollToTop';
+import { ScrollToTopButton } from './components/shared/ScrollToTopButton';
 
 export default function Layout() {
   return (
@@ -24,6 +25,7 @@ export default function Layout() {
       <Toaster />
 
       <WhatsAppMenu />
+      <ScrollToTopButton />
     </div>
   );
 }

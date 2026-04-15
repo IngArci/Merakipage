@@ -1,6 +1,8 @@
 import { lazy, Suspense } from 'react';
+import { motion } from 'motion/react';
 import { projectsData } from '../data/projectsData';
 import { SEO } from '../components/shared/SEO';
+import { Skeleton } from '../components/ui/skeleton';
 
 // Critical Section (Static)
 import { HeroSection } from '../features/home/components/HeroSection';
@@ -34,16 +36,78 @@ export default function Home() {
       />
       <HeroSection />
       <StatsSection />
-      <Suspense fallback={<div className="min-h-[400px] bg-black" />}>
-        <PromoBanner />
-        <ProjectsSection projects={projects} />
-        <CasasSection />
-        <ReferralSection />
-        <BenefitsSection />
-        <NosotrosPreviewSection/>
-        <LeadFormSection 
+      <Suspense fallback={
+        <div className="max-w-7xl mx-auto px-4 py-20 space-y-12">
+          <Skeleton className="h-[400px] w-full rounded-2xl" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Skeleton className="h-[500px] rounded-xl" />
+            <Skeleton className="h-[500px] rounded-xl" />
+            <Skeleton className="h-[500px] rounded-xl" />
+          </div>
+        </div>
+      }>
+        <motion.div
+           initial={{ opacity: 0, y: 20 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true, margin: "-100px" }}
+           transition={{ duration: 0.6 }}
+        >
+          <PromoBanner />
+        </motion.div>
         
-        />
+        <motion.div
+           initial={{ opacity: 0, y: 20 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true, margin: "-100px" }}
+           transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <ProjectsSection projects={projects} />
+        </motion.div>
+
+        <motion.div
+           initial={{ opacity: 0, y: 20 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true, margin: "-100px" }}
+           transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <CasasSection />
+        </motion.div>
+
+        <motion.div
+           initial={{ opacity: 0, y: 20 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true, margin: "-100px" }}
+           transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <ReferralSection />
+        </motion.div>
+
+        <motion.div
+           initial={{ opacity: 0, y: 20 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true, margin: "-100px" }}
+           transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <BenefitsSection />
+        </motion.div>
+
+        <motion.div
+           initial={{ opacity: 0, y: 20 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true, margin: "-100px" }}
+           transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <NosotrosPreviewSection/>
+        </motion.div>
+
+        <motion.div
+           initial={{ opacity: 0, y: 20 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true, margin: "-100px" }}
+           transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <LeadFormSection />
+        </motion.div>
       </Suspense>
     </div>
   );

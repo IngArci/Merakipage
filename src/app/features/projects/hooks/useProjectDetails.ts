@@ -40,10 +40,11 @@ export function useProjectDetails() {
     ...(project?.progress || [])
   ];
 
+  // Galería: Fotos estáticas (configuración) + Galería oficial Firebase
+  // EXCLUIMOS fotos de avances de obra para no "ensuciar" la presentación inicial
   const galleryImages = [
-    ...(firebaseGaleria?.map(g => g.imageUrl) || []),
-    ...combinedProgress.flatMap(p => p.images),
-    ...(project?.images || [])
+    ...(project?.images || []),
+    ...(firebaseGaleria?.map(g => g.imageUrl) || [])
   ];
 
   const combinedVideos = {
