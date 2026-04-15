@@ -3,27 +3,27 @@ import { ProjectCard } from '../../../components/shared/ProjectCard';
 import { LeadForm } from '../../../components/shared/LeadForm';
 import { Rocket, CheckCircle2, ArrowRight } from 'lucide-react';
 
-interface Project { 
-  slug: string; 
-  title: string; 
-  images?: string[]; 
-  region: string; 
-  location?: { nearbyPlaces?: string[] }; 
-  sizes?: any; 
-  status: string; 
+interface Project {
+  slug: string;
+  title: string;
+  images?: string[];
+  region: string;
+  location?: { nearbyPlaces?: string[] };
+  sizes?: any;
+  status: string;
 }
 
-interface ProyectosGridProps { 
-  enVenta: Project[]; 
-  entregados: Project[]; 
+interface ProyectosGridProps {
+  enVenta: Project[];
+  entregados: Project[];
 }
 
 // Helper component for section headers
 const SectionHeader = ({ icon: Icon, title, subtitle, colorClass }: { icon: any, title: string, subtitle: string, colorClass: string }) => (
-  <motion.div 
-    initial={{ opacity: 0, y: 20 }} 
-    whileInView={{ opacity: 1, y: 0 }} 
-    viewport={{ once: true }} 
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
     className="text-center mb-16"
   >
     <div className="flex items-center justify-center mb-6">
@@ -48,18 +48,18 @@ export function ProyectosHero() {
   return (
     <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1758565811272-e79917ca0adc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080" 
-          alt="Proyectos Campestres" 
-          className="w-full h-full object-cover grayscale-[30%]" 
+        <img
+          src="https://images.unsplash.com/photo-1758565811272-e79917ca0adc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080"
+          alt="Proyectos Campestres"
+          className="w-full h-full object-cover grayscale-[30%]"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-[#0d060a]/90 to-[#0d060a]" />
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }} 
-          animate={{ opacity: 1, y: 0 }} 
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto"
         >
@@ -80,21 +80,21 @@ export function ProyectosGrid({ enVenta, entregados }: ProyectosGridProps) {
   const renderGrid = (projects: Project[], delay = 0) => (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
       {projects.map((project, index) => (
-        <motion.div 
-          key={project.slug} 
-          initial={{ opacity: 0, scale: 0.95 }} 
-          whileInView={{ opacity: 1, scale: 1 }} 
-          viewport={{ once: true }} 
+        <motion.div
+          key={project.slug}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
           transition={{ delay: (index + delay) * 0.1, duration: 0.5 }}
           className="h-full"
         >
-          <ProjectCard 
-            slug={project.slug} 
-            title={project.title} 
-            image={project.images?.[0] || ''} 
-            location={`${project.region}${project.location?.nearbyPlaces?.[0] ? ` - ${project.location.nearbyPlaces[0]}` : ''}`} 
-            sizes={project.sizes} 
-            status={project.status} 
+          <ProjectCard
+            slug={project.slug}
+            title={project.title}
+            image={project.images?.[0] || ''}
+            location={`${project.region}${project.location?.nearbyPlaces?.[0] ? ` - ${project.location.nearbyPlaces[0]}` : ''}`}
+            sizes={project.sizes}
+            status={project.status}
           />
         </motion.div>
       ))}
@@ -107,7 +107,7 @@ export function ProyectosGrid({ enVenta, entregados }: ProyectosGridProps) {
       <section className="py-24 relative">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#F4BA3E]/20 to-transparent" />
         <div className="container mx-auto px-4 lg:px-8">
-          <SectionHeader 
+          <SectionHeader
             icon={Rocket}
             title="En venta"
             subtitle="Nuevas oportunidades de inversión con  exclusiva y alta valorización."
@@ -121,7 +121,7 @@ export function ProyectosGrid({ enVenta, entregados }: ProyectosGridProps) {
       <section className="py-24 bg-gradient-to-b from-[#0d060a] to-black relative">
         <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#F4BA3E]/5 rounded-full blur-[120px] pointer-events-none" />
         <div className="container mx-auto px-4 lg:px-8">
-          <SectionHeader 
+          <SectionHeader
             icon={CheckCircle2}
             title="Proyectos Entregados"
             subtitle="Casos de éxito donde la visión se convirtió en realidad para cientos de familias."
@@ -139,7 +139,7 @@ export function ProyectosCTA() {
     <section className="py-32 bg-black relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="max-w-6xl mx-auto bg-[#111] p-8 md:p-20 rounded-[3rem] border border-white/5 relative">
+        <div className="max-w-6xl mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
               <span className="text-[#F4BA3E] font-bold tracking-[0.4em] uppercase text-xs mb-6 block">Asesoría Personalizada</span>
@@ -157,8 +157,12 @@ export function ProyectosCTA() {
                 <p className="text-white font-bold tracking-widest text-lg uppercase">Encuentra tu lugar hoy</p>
               </div>
             </div>
-            <div className="bg-[#0d060a] p-8 sm:p-12 rounded-[2.5rem] border border-white/10 shadow-2xl">
-              <LeadForm title="Agendar Cita" subtitle="Un asesor experto te contactará en menos de 24h" formLink="https://api.leadconnectorhq.com/widget/form/chDoVa9nMDI8U5j5PnUo" />
+            <div>
+              <LeadForm
+                title="Agendar Cita"
+                subtitle="Un asesor experto se contactará contigo para ayudarte a encontrar la inversión perfecta."
+                formLink="https://api.leadconnectorhq.com/widget/form/chDoVa9nMDI8U5j5PnUo"
+              />
             </div>
           </div>
         </div>
