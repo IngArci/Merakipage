@@ -15,6 +15,7 @@ import { AdminAsesores } from '../features/admin/components/AdminAsesores';
 import { AdminDocumentos } from '../features/admin/components/AdminDocumentos';
 import { AdminHeader } from '../features/admin/components/AdminHeader';
 import { AdminTabs, type AdminTab } from '../features/admin/components/AdminTabs';
+import { AdminInversionistas } from '../features/admin/components/AdminInversionistas';
 
 // Static Data
 import { projectsData } from '../data/projectsData';
@@ -132,6 +133,25 @@ export default function Admin() {
             onDocUpload={admin.handleDocUpload}
             handleSaveDoc={admin.handleSaveDoc}
             handleDeleteDoc={admin.handleDeleteDoc}
+          />
+        )}
+
+        {activeTab === 'inversionistas' && (
+          <AdminInversionistas 
+            inversionistaVideos={admin.inversionistaVideos}
+            invVideoUrl={admin.invVideoUrl}
+            setInvVideoUrl={admin.setInvVideoUrl}
+            invVideoTitle={admin.invVideoTitle}
+            setInvVideoTitle={admin.setInvVideoTitle}
+            handleAddInversionistaVideo={admin.handleAddInversionistaVideo}
+            handleDeleteInversionistaVideo={admin.handleDeleteInversionistaVideo}
+            handlePublishInversionistaVideos={admin.handlePublishInversionistaVideos}
+            currentInvPhoto={admin.currentInvPhoto}
+            setCurrentInvPhoto={admin.setCurrentInvPhoto}
+            isUploading={admin.isUploading}
+            onPhotoUpload={admin.handleInversionistaPhotoUpload}
+            handleSaveInversionistaPhoto={admin.handleSaveInversionistaPhoto}
+            handleDeleteInversionistaPhoto={admin.handleDeleteInversionistaPhoto}
           />
         )}
       </div>

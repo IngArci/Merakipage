@@ -8,7 +8,7 @@ import type { ProgressUpdate } from '../components/AdminAvances';
 import type { VideoData } from '../components/AdminVideos';
 import type { FeriaData } from '../components/AdminFerias';
 import type { AsesorData } from '../components/AdminAsesores';
-import type { LegalDocData } from '../types/admin.types';
+import type { LegalDocData, InversionistaVideoData, InversionistaPhotoData } from '../types/admin.types';
 
 export function useAdminActions(selectedProject: string, proyectos: any[]) {
   const [isUploading, setIsUploading] = useState(false);
@@ -51,6 +51,16 @@ export function useAdminActions(selectedProject: string, proyectos: any[]) {
     title: '',
     fileUrl: '',
     projectSlug: ''
+  });
+
+  const [inversionistaVideos, setInversionistaVideos] = useState<InversionistaVideoData[]>([]);
+  const [invVideoUrl, setInvVideoUrl] = useState('');
+  const [invVideoTitle, setInvVideoTitle] = useState('');
+
+  const [inversionistaPhotos, setInversionistaPhotos] = useState<InversionistaPhotoData[]>([]);
+  const [currentInvPhoto, setCurrentInvPhoto] = useState<InversionistaPhotoData>({
+    imageUrl: '',
+    caption: ''
   });
 
   const [galeriaImages, setGaleriaImages] = useState<string[]>([]);
@@ -343,6 +353,80 @@ export function useAdminActions(selectedProject: string, proyectos: any[]) {
     }
   };
 
+  const handleAddInversionistaVideo = () => {
+    if (invVideoUrl.trim() && invVideoTitle.trim()) {
+      const videoId = extractYoutubeId(invVideoUrl);
+      if (videoId) {
+        setInversionistaVideos([...inversionistaVideos, { videoId, title: invVideoTitle }]);
+        setInvVideoUrl('');
+        setInvVideoTitle('');
+      } else {
+        alert('Por favor ingresa una URL válida de YouTube');
+      }
+    } else {
+      alert('Por favor completa el título y la URL del video');
+    }
+  };
+
+  const handleDeleteInversionistaVideo = (index: number) => {
+    setInversionistaVideos(inversionistaVideos.filter((_, i) => i !== index));
+  };
+
+  const handlePublishInversionistaVideos = async () => {
+    if (inversionistaVideos.length === 0) return;
+    try {
+      const videosRef = collection(db, 'inversionistas_testimonios');
+      for (const video of inversionistaVideos) {
+        await addDoc(videosRef, {
+          ...video,
+          createdAt: serverTimestamp()
+        });
+      }
+      alert('✅ Videos de testimonios publicados con éxito');
+      setInversionistaVideos([]);
+    } catch (error) {
+      console.error('Error al publicar videos de inversionistas:', error);
+      alert('Error al publicar los videos.');
+    }
+  };
+
+  const handleInversionistaPhotoUpload = async (file: File) => {
+    setIsUploading(true);
+    try {
+      const url = await uploadImage(file, 'inversionistas');
+      setCurrentInvPhoto(prev => ({ ...prev, imageUrl: url }));
+    } catch (error) {
+      console.error('Error uploading inversionista photo:', error);
+      alert('Error al subir la foto.');
+    } finally {
+      setIsUploading(false);
+    }
+  };
+
+  const handleSaveInversionistaPhoto = async () => {
+    if (currentInvPhoto.imageUrl && currentInvPhoto.caption) {
+      try {
+        const galeriaRef = collection(db, 'inversionistas_galeria');
+        await addDoc(galeriaRef, {
+          ...currentInvPhoto,
+          createdAt: serverTimestamp()
+        });
+        alert('✅ Foto de momento memorable guardada');
+        setCurrentInvPhoto({ imageUrl: '', caption: '' });
+      } catch (error) {
+        console.error('Error al guardar foto de inversionista:', error);
+        alert('Error al guardar la foto.');
+      }
+    } else {
+      alert('Por favor sube una foto y agrega una descripción');
+    }
+  };
+
+  const handleDeleteInversionistaPhoto = (index: number) => {
+    setInversionistaPhotos(prev => prev.filter((_, i) => i !== index));
+  };
+
+
   return {
     isUploading,
     avances,
@@ -388,6 +472,22 @@ export function useAdminActions(selectedProject: string, proyectos: any[]) {
     galeriaImages,
     handleGalleryUpload,
     handleRemoveGalleryImage,
-    handleSaveGallery
+    handleSaveGallery,
+
+    inversionistaVideos,
+    invVideoUrl,
+    setInvVideoUrl,
+    invVideoTitle,
+    setInvVideoTitle,
+    handleAddInversionistaVideo,
+    handleDeleteInversionistaVideo,
+    handlePublishInversionistaVideos,
+
+    inversionistaPhotos,
+    currentInvPhoto,
+    setCurrentInvPhoto,
+    handleInversionistaPhotoUpload,
+    handleSaveInversionistaPhoto,
+    handleDeleteInversionistaPhoto
   };
 }

@@ -26,21 +26,21 @@ import {
   Hammer
 } from 'lucide-react';
 import { Project } from '../types/project';
-import { FaTableTennisPaddleBall, FaChild,FaDoorOpen , FaRegTrashCan , FaFire, FaUmbrellaBeach,  } from "react-icons/fa6";
-import { TbSoccerField, TbPlayVolleyball  } from "react-icons/tb";
-import { PiTelevisionSimpleFill, PiTelevisionSimpleBold  } from "react-icons/pi";
-import { GiJumpingDog, GiRiver, GiKidSlide, GiSoccerKick, GiPoolTableCorner   } from "react-icons/gi";
+import { FaTableTennisPaddleBall, FaChild, FaDoorOpen, FaRegTrashCan, FaFire, FaUmbrellaBeach, } from "react-icons/fa6";
+import { TbSoccerField, TbPlayVolleyball } from "react-icons/tb";
+import { PiTelevisionSimpleFill, PiTelevisionSimpleBold } from "react-icons/pi";
+import { GiJumpingDog, GiRiver, GiKidSlide, GiSoccerKick, GiPoolTableCorner } from "react-icons/gi";
 import { MdGrid4X4 } from "react-icons/md";
 import { IoIosChatbubbles } from "react-icons/io";
 import { GiGate } from "react-icons/gi";
 import { HiOutlineOfficeBuilding } from "react-icons/hi";
-import { FaTv,FaRegTrashAlt } from "react-icons/fa";
+import { FaTv, FaRegTrashAlt } from "react-icons/fa";
 import { FaChildren } from "react-icons/fa6";
-import { TbPicnicTable, TbMassage} from "react-icons/tb";
+import { TbPicnicTable, TbMassage } from "react-icons/tb";
 import { PiPark } from "react-icons/pi";
 import { IoRestaurant } from "react-icons/io5";
 import { GiHut } from "react-icons/gi";
-import { MdLocalBar, MdPool} from "react-icons/md";
+import { MdLocalBar, MdPool } from "react-icons/md";
 export const projectsData: Record<string, Project> = {
   'rio-claro': {
     title: 'Rio Claro Luxury Living Club',
@@ -168,7 +168,7 @@ export const projectsData: Record<string, Project> = {
     ],
     formLink: 'https://api.leadconnectorhq.com/widget/form/yH7BClvxe1HiKll1tQYL'
   },
- 'cañon-arizona': {
+  'cañon-arizona': {
     title: 'Cañón de Arizona',
     region: 'Alvarado',
     status: 'en-venta',
@@ -181,7 +181,7 @@ export const projectsData: Record<string, Project> = {
     deliveryDate: '',
     images: [
       '/images/cañon-arizona/1.jpg',
-     
+
     ],
     amenities: [
       { icon: GiGate, name: 'Poteria', description: '' },
@@ -253,7 +253,7 @@ export const projectsData: Record<string, Project> = {
         ]
       }
     ],
-    formLink: 'https://api.leadconnectorhq.com/widget/form/yH7BClvxe1HiKll1tQYL'
+    formLink: 'https://api.leadconnectorhq.com/widget/form/9ZgMWa0gNMYaomA3lLqJ'
   },
   'sobre-montañas': {
     title: 'Sobre Montaña',
@@ -288,7 +288,7 @@ export const projectsData: Record<string, Project> = {
       informesGestion: [
       ],
       avancesObra: [
-        
+
       ]
     },
     progress: [
@@ -308,31 +308,31 @@ export const projectsData: Record<string, Project> = {
     availableLots: 23,
     deliveryDate: 'Marzo 2026',
     images: [
-       '/images/llano-grande/1.png',
-        '/images/llano-grande/2.png',
-         '/images/llano-grande/3.JPG',
-          '/images/llano-grande/4.JPG',
-           '/images/llano-grande/5.JPG',
-            '/images/llano-grande/6.png',
+      '/images/llano-grande/1.png',
+      '/images/llano-grande/2.png',
+      '/images/llano-grande/3.JPG',
+      '/images/llano-grande/4.JPG',
+      '/images/llano-grande/5.JPG',
+      '/images/llano-grande/6.png',
 
     ],
     amenities: [
       { icon: FaDoorOpen, name: 'Porteria', description: '' },
-      { icon: FaRegTrashCan , name: 'Shits de basuras', description: '' },
+      { icon: FaRegTrashCan, name: 'Shits de basuras', description: '' },
       { icon: PiTelevisionSimpleFill, name: 'Circuito cerrado de television', description: '' },
       { icon: GiJumpingDog, name: 'Pista Canina', description: '' },
       { icon: MdGrid4X4, name: 'Mallas anti-estrés', description: '' },
       { icon: FaChild, name: 'Parque infantil', description: '' },
-      { icon: FaFire , name: 'Bbq', description: '' },
-      { icon: GiRiver , name: 'Rio lento', description: '' },
-      { icon: GiKidSlide , name: 'Tobogán', description: '' },
-      { icon: FaUmbrellaBeach , name: 'Zona de playa en arena suelta', description: '' },
-      { icon: TbPlayVolleyball , name: 'Cancha de vóley', description: '' },
+      { icon: FaFire, name: 'Bbq', description: '' },
+      { icon: GiRiver, name: 'Rio lento', description: '' },
+      { icon: GiKidSlide, name: 'Tobogán', description: '' },
+      { icon: FaUmbrellaBeach, name: 'Zona de playa en arena suelta', description: '' },
+      { icon: TbPlayVolleyball, name: 'Cancha de vóley', description: '' },
       { icon: TbSoccerField, name: 'Cancha sintética', description: '' },
-      { icon: PiTelevisionSimpleBold , name: 'Zona de cine al aire libre', description: '' },
+      { icon: PiTelevisionSimpleBold, name: 'Zona de cine al aire libre', description: '' },
       { icon: GiSoccerKick, name: 'Futbolín humano', description: '' },
-      { icon: GiPoolTableCorner , name: 'Billar humano', description: '' },
-    
+      { icon: GiPoolTableCorner, name: 'Billar humano', description: '' },
+
 
     ],
     location: {
@@ -346,7 +346,7 @@ export const projectsData: Record<string, Project> = {
         'Zona de alta valorización',
         'Presencia de importantes fuentes hídricas (ríos Alvarado, Totare y La China)',
         'Entorno natural con múltiples corrientes hídricas',
-  
+
 
       ]
     },

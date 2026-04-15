@@ -21,6 +21,7 @@ export function AdminTabs({ activeTab, setActiveTab, projectStatus, projectSlug 
     { id: 'ferias', label: 'Ferias y Eventos', icon: Users, visible: true },
     { id: 'asesores', label: 'Asesores', icon: MapPin, visible: true },
     { id: 'documentos', label: 'Documentos Legales', icon: FileText, visible: true },
+    { id: 'inversionistas', label: 'Inversionistas', icon: Users, visible: true },
   ];
 
   const tabs = allTabs.filter(tab => tab.visible);
