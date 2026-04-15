@@ -21,7 +21,7 @@ const STATS: StatItem[] = [
   },
   {
     icon: TrendingUp,
-    value: 5,
+    value: 6,
     suffix: '+',
     label: 'Proyectos Activos',
     sublabel: 'En Melgar, Alvarado y Mariquita',

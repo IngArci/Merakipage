@@ -43,11 +43,13 @@ export function ReferralSection() {
               Programa especial
             </span>
           </div>
-          
           <h2 className="text-4xl md:text-5xl mb-6 bg-gradient-to-r from-[#FFF18F] via-[#F4BA3E] to-[#FFF18F] bg-clip-text text-transparent">
-            Gana Recomendando con Meraki
+            REFIERE
           </h2>
-          
+          <h2 className="text-4xl md:text-5xl mb-6 bg-gradient-to-r from-[#FFF18F] via-[#F4BA3E] to-[#FFF18F] bg-clip-text text-transparent">
+            y gana con meraki
+          </h2>
+
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Forma parte de nuestro programa de referidos y obtén beneficios exclusivos
           </p>

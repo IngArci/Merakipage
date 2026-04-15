@@ -8,7 +8,7 @@ export function NosotrosPreviewSection() {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/2 right-0 w-96 h-96 bg-[#F4BA3E] opacity-5 rounded-full blur-3xl" />
       </div>
-      
+
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -19,15 +19,15 @@ export function NosotrosPreviewSection() {
             <h2 className="text-4xl md:text-5xl mb-6 text-white">
               Únete a los Inversionistas del Futuro
             </h2>
-            
+
             <p className="text-lg text-gray-300 mb-6">
-              En Grupo Constructor Meraki, transformamos terrenos en paraísos naturales 
+              En Grupo Constructor Meraki, transformamos terrenos en paraísos naturales
               donde las familias pueden crear recuerdos inolvidables.
             </p>
 
             <p className="text-lg text-gray-300 mb-8">
-              Con más de 15 años de experiencia, somos líderes en desarrollo de 
-              condominios campestres, ofreciendo inversiones seguras y rentables.
+              Con más de 25 años de experiencia, somos líderes en desarrollo de
+              clubes campestres, ofreciendo inversiones seguras y rentables.
             </p>
 
             <Button
