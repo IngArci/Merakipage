@@ -166,7 +166,7 @@ export const projectsData: Record<string, Project> = {
     progress: [
 
     ],
-    formLink: 'https://api.leadconnectorhq.com/widget/form/yH7BClvxe1HiKll1tQYL'
+    formLink: 'https://api.leadconnectorhq.com/widget/form/1eCEmzLEpUIt27OYe7Gd'
   },
   'cañon-arizona': {
     title: 'Cañón de Arizona',
@@ -294,7 +294,7 @@ export const projectsData: Record<string, Project> = {
     progress: [
 
     ],
-    formLink: 'https://api.leadconnectorhq.com/widget/form/yH7BClvxe1HiKll1tQYL'
+    formLink: 'https://api.leadconnectorhq.com/widget/form/JLSBZ7rxxoGUmlfJEXuv'
   },
   'llano-grande': {
     title: 'Llano Grande',
@@ -350,7 +350,7 @@ export const projectsData: Record<string, Project> = {
 
       ]
     },
-    formLink: 'https://api.leadconnectorhq.com/widget/form/yH7BClvxe1HiKll1tQYL'
+    formLink: 'https://api.leadconnectorhq.com/widget/form/TBMTUqYORc8T1oOnpG5n'
   },
   'gran-arizona': {
     title: 'Gran Arizona',
@@ -383,7 +383,7 @@ export const projectsData: Record<string, Project> = {
         'A 30 min de La Vega'
       ]
     },
-    formLink: 'https://api.leadconnectorhq.com/widget/form/yH7BClvxe1HiKll1tQYL'
+    formLink: 'https://api.leadconnectorhq.com/widget/form/4tRjvWfVixBfC90CrPUZ'
   },
   'Arizona-1': {
     title: 'Arizona 1',
@@ -416,7 +416,7 @@ export const projectsData: Record<string, Project> = {
         'A 20 min de Circasia'
       ]
     },
-    formLink: 'https://api.leadconnectorhq.com/widget/form/yH7BClvxe1HiKll1tQYL'
+    formLink: 'https://api.leadconnectorhq.com/widget/form/3d8em4aWoejtXxJC6vPy'
   },
   'arizona-2': {
     title: 'Arizona country club II',
@@ -449,6 +449,6 @@ export const projectsData: Record<string, Project> = {
         'A 25 min de Armenia'
       ]
     },
-    formLink: 'https://api.leadconnectorhq.com/widget/form/yH7BClvxe1HiKll1tQYL'
+    formLink: 'https://api.leadconnectorhq.com/widget/form/BEq2mqNK7O5vZIFXKMuL'
   }
 };
