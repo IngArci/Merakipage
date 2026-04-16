@@ -31,16 +31,17 @@ import { TbSoccerField, TbPlayVolleyball } from "react-icons/tb";
 import { PiTelevisionSimpleFill, PiTelevisionSimpleBold } from "react-icons/pi";
 import { GiJumpingDog, GiRiver, GiKidSlide, GiSoccerKick, GiPoolTableCorner } from "react-icons/gi";
 import { MdGrid4X4 } from "react-icons/md";
-import { IoIosChatbubbles } from "react-icons/io";
+import { IoIosChatbubbles, IoIosBicycle } from "react-icons/io";
 import { GiGate } from "react-icons/gi";
 import { HiOutlineOfficeBuilding } from "react-icons/hi";
-import { FaTv, FaRegTrashAlt } from "react-icons/fa";
+import { FaTv, FaRegTrashAlt, FaChess  } from "react-icons/fa";
 import { FaChildren } from "react-icons/fa6";
 import { TbPicnicTable, TbMassage } from "react-icons/tb";
 import { PiPark } from "react-icons/pi";
 import { IoRestaurant } from "react-icons/io5";
-import { GiHut } from "react-icons/gi";
+import { GiHut, GiWaterTower } from "react-icons/gi";
 import { MdLocalBar, MdPool } from "react-icons/md";
+import { AiFillVideoCamera } from "react-icons/ai";
 export const projectsData: Record<string, Project> = {
   'rio-claro': {
     title: 'Rio Claro Luxury Living Club',
@@ -358,25 +359,34 @@ export const projectsData: Record<string, Project> = {
     status: 'entregado',
     shortDescription: 'Tranquilidad y naturaleza cerca de Bogotá',
     description: 'Valle Escondido es un proyecto pensado para quienes buscan escapar del ruido de la ciudad sin alejarse demasiado. Ubicado a solo 2 horas de Bogotá, este condominio ofrece 100 lotes en un entorno de montaña con clima templado.',
-    sizes: '700m² - 1,500m²',
+    sizes: '70m² - 580m²',
     priceFrom: '$200,000,000',
-    totalLots: 100,
-    availableLots: 52,
-    deliveryDate: 'Marzo 2027',
+    totalLots: 195,
+    availableLots: 4,
+    deliveryDate: '',
     images: [
       'https://images.unsplash.com/photo-1758565811272-e79917ca0adc?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjb3VudHJ5c2lkZSUyMGVzdGF0ZSUyMGNvdW50cnlzaWRlJTIwbGFuZCUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc3Mzg0NTUyOXww&ixlib=rb-4.1.0&q=60&w=600'
     ],
     amenities: [
-      { icon: Home, name: 'Casa Social', description: '' },
-      { icon: TreePine, name: 'Bosque Nativo', description: '' },
-      { icon: Dumbbell, name: 'Zona Fitness', description: '' },
-      { icon: Camera, name: 'Sendero Ecológico', description: '' },
-      { icon: Waves, name: 'Lago Privado', description: '' },
-      { icon: Shield, name: 'Portería 24/7', description: '' }
+      { icon: HiOutlineOfficeBuilding, name: 'Oficina Para La Administración', description: '' },
+      { icon: FaRegTrashCan, name: 'Shuts de basuras', description: '' },
+      { icon: IoIosChatbubbles, name: 'Salón Social', description: '' },
+      { icon: GiRiver, name: 'Piscina en Arena tipo Rio', description: '' },
+      { icon: FaFire, name: 'BBQ', description: '' },
+      { icon: PiTelevisionSimpleFill, name: 'Circuito cerrado de television', description: '' },
+      { icon: GiWaterTower, name: 'Tanque de Reserva de Agua Potable', description: '' },
+      { icon: GiKidSlide, name: 'Tobogán', description: '' },
+      { icon: TreePine, name: 'Sendero Ecológico', description: '' },
+      { icon: TbPicnicTable, name: 'Zona Picnic', description: '' },
+      { icon: FaChess, name: 'Juegos de Mesa', description: '' },
+      { icon: IoIosBicycle, name: 'Ciclo Ruta', description: '' },
+      { icon: FaChild, name: 'Parque infantil', description: '' },
+      { icon: AiFillVideoCamera, name: 'Acua Cine', description: '' },
+      { icon: TbSoccerField, name: 'Cancha sintética', description: '' },
     ],
     location: {
       address: 'Vía La Vega - San Francisco, Cundinamarca',
-      coordinates: '4.9456° N, 74.1856° W',
+      coordinates: '4.550976, -74.959325',
       mapIframe: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4893.86805375107!2d-74.96189032418675!3d4.551004842935369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f35ee94c29065%3A0x584cea73ba6e5b75!2sGrand%20Arizona%20Country%20Club!5e1!3m2!1ses-419!2sco!4v1775744132327!5m2!1ses-419!2sco',
       nearbyPlaces: [
         'A 2 horas de Bogotá',
@@ -386,15 +396,15 @@ export const projectsData: Record<string, Project> = {
     formLink: 'https://api.leadconnectorhq.com/widget/form/4tRjvWfVixBfC90CrPUZ'
   },
   'Arizona-1': {
-    title: 'Arizona 1',
-    region: 'Arizona country club I',
+    title: 'Arizona Country club I',
+    region: 'Alvarado',
     status: 'entregado',
     shortDescription: 'Vive rodeado del mejor café del mundo',
     description: 'Bosques del Paraíso está ubicado en el corazón del Eje Cafetero, en Armenia. Este proyecto de 80 lotes combina la belleza del paisaje cultural cafetero con todas las comodidades modernas.',
     sizes: '500m² - 1,200m²',
     priceFrom: '$190,000,000',
-    totalLots: 80,
-    availableLots: 38,
+    totalLots: 141,
+    availableLots: 1,
     deliveryDate: 'Agosto 2027',
     images: [
       '/images/arizona-1/1.webp'
@@ -419,26 +429,35 @@ export const projectsData: Record<string, Project> = {
     formLink: 'https://api.leadconnectorhq.com/widget/form/3d8em4aWoejtXxJC6vPy'
   },
   'arizona-2': {
-    title: 'Arizona country club II',
+    title: 'Arizona Country Club II',
     region: 'Alvarado',
     status: 'entregado',
-    shortDescription: 'Lujo y exclusividad en el corazón del Quindío',
-    description: 'Montaña Dorada es el proyecto más exclusivo del Quindío. Con solo 60 lotes de gran tamaño, este desarrollo boutique ofrece privacidad absoluta y vistas espectaculares de las montañas cafeteras.',
+    shortDescription: 'un espacio donde podrás construir tu futuro, en proyectos pensados para la inversión, confort y tranquilidad.',
+    description: 'Arizona Country Club II es el proyecto más exclusivo del Quindío. Con solo 60 lotes de gran tamaño, este desarrollo boutique ofrece privacidad absoluta y vistas espectaculares de las montañas cafeteras.',
     sizes: '600m² - 1,800m²',
     priceFrom: '$250,000,000',
-    totalLots: 60,
-    availableLots: 28,
+    totalLots: 164,
+    availableLots: 0,
     deliveryDate: 'Noviembre 2027',
     images: [
       'https://images.unsplash.com/photo-1762438421221-1626a4958dbf?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGZhbWlseSUyMG5hdHVyZSUyMGNvdW50cnlzaWRlfGVufDF8fHx8MTc3Mzg0NTUzMHww&ixlib=rb-4.1.0&q=60&w=600'
     ],
     amenities: [
-      { icon: Home, name: 'Clubhouse Premium', description: '' },
-      { icon: Waves, name: 'Spa & Piscina', description: '' },
-      { icon: Dumbbell, name: 'Gimnasio Boutique', description: '' },
-      { icon: TreePine, name: 'Reserva Privada', description: '' },
-      { icon: Camera, name: 'Helipuerto', description: '' },
-      { icon: Shield, name: 'Seguridad Premium', description: '' }
+      { icon: HiOutlineOfficeBuilding, name: 'Oficina Para La Administración', description: '' },
+      { icon: FaRegTrashCan, name: 'Shuts de basuras', description: '' },
+      { icon: IoIosChatbubbles, name: 'Salón Social', description: '' },
+      { icon: GiRiver, name: 'Piscina en Arena tipo Rio', description: '' },
+      { icon: FaFire, name: 'BBQ', description: '' },
+      { icon: PiTelevisionSimpleFill, name: 'Circuito cerrado de television', description: '' },
+      { icon: GiWaterTower, name: 'Tanque de Reserva de Agua Potable', description: '' },
+      { icon: GiKidSlide, name: 'Tobogán', description: '' },
+      { icon: TreePine, name: 'Sendero Ecológico', description: '' },
+      { icon: TbPicnicTable, name: 'Zona Picnic', description: '' },
+      { icon: FaChess, name: 'Juegos de Mesa', description: '' },
+      { icon: IoIosBicycle, name: 'Ciclo Ruta', description: '' },
+      { icon: PiPark, name: 'Zona de Hamacas', description: '' },
+      { icon: AiFillVideoCamera, name: 'Acua Cine', description: '' },
+      { icon: TbSoccerField, name: 'Cancha sintética', description: '' },
     ],
     location: {
       address: 'Vía Montenegro - Pueblo Tapao, Quindío',
