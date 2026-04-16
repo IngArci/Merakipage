@@ -3,7 +3,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../../../lib/firebase';
 import { Lock, Mail, Loader2, AlertCircle } from 'lucide-react';
 import { motion } from 'motion/react';
-import logoMeraki from "../../../../assets/logo.png";
+import logoMeraki from "../../../../assets/logo.webp";
 
 export function AdminLogin() {
   const [email, setEmail] = useState('');
@@ -36,7 +36,7 @@ export function AdminLogin() {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#F4BA3E]/5 blur-[120px] rounded-full -mr-64 -mt-64" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#947018]/5 blur-[120px] rounded-full -ml-64 -mb-64" />
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="max-w-md w-full"
@@ -80,7 +80,7 @@ export function AdminLogin() {
             </div>
 
             {error && (
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 className="bg-red-500/10 border border-red-500/20 rounded-xl p-4 flex items-center space-x-3 text-red-400 text-sm"

@@ -35,6 +35,8 @@ export default function ProyectoDetalle() {
 
   const isDelivered = project.status === 'entregado';
   const showPlan = !isDelivered || slug === 'llano-grande';
+  const showStats = showPlan; // Same logic as showPlan
+
   
 
   return (
@@ -79,6 +81,7 @@ export default function ProyectoDetalle() {
         availableLots={project.availableLots}
         totalLots={project.totalLots}
         deliveryDate={project.deliveryDate}
+        showStats={showStats}
       />
 
       <ProjectDescription description={project.description} />

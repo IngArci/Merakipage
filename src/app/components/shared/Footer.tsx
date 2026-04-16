@@ -1,7 +1,6 @@
 import { Link } from 'react-router';
 import { Facebook, Instagram, Mail, MapPin, Phone, Youtube } from 'lucide-react';
-import logoMeraki from "../../../assets/logo.png";
-
+import logoMeraki from "../../../assets/logo.webp";
 // SVG personalizado para TikTok
 const TikTokIcon = () => (
   <svg
@@ -35,37 +34,37 @@ export function Footer() {
               Tu inversión segura en el paraíso natural.
             </p>
             <div className="flex space-x-4">
-              <a 
-                href="https://www.facebook.com/share/1KjUT5Y1Vy/?mibextid=wwXIfr" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://www.facebook.com/share/1KjUT5Y1Vy/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-[#1a1a1a] hover:bg-gradient-to-br hover:from-[#947018] hover:to-[#F4BA3E] flex items-center justify-center transition-all border border-[#F4BA3E]/20"
                 aria-label="Seguir a Grupo Meraki en Facebook"
               >
                 <Facebook className="w-5 h-5" />
               </a>
-              <a 
-                href="https://www.instagram.com/constructora.meraki?igsh=cnpzeTZqMm4yMHZz&utm_source=qr" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://www.instagram.com/constructora.meraki?igsh=cnpzeTZqMm4yMHZz&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-[#1a1a1a] hover:bg-gradient-to-br hover:from-[#947018] hover:to-[#F4BA3E] flex items-center justify-center transition-all border border-[#F4BA3E]/20"
                 aria-label="Seguir a Grupo Meraki en Instagram"
               >
                 <Instagram className="w-5 h-5" />
               </a>
-              <a 
-                href="https://youtube.com/@constructora.meraki?si=SOMuq3Fk6LdzjvXu" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://youtube.com/@constructora.meraki?si=SOMuq3Fk6LdzjvXu"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-[#1a1a1a] hover:bg-gradient-to-br hover:from-[#947018] hover:to-[#F4BA3E] flex items-center justify-center transition-all border border-[#F4BA3E]/20"
                 aria-label="Suscribirse al canal de Youtube de Grupo Meraki"
               >
                 <Youtube className="w-5 h-5" />
               </a>
-              <a 
-                href="https://www.tiktok.com/@grupoconstructormeraki?_r=1&_t=ZS-95Vaoagm6OC" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://www.tiktok.com/@grupoconstructormeraki?_r=1&_t=ZS-95Vaoagm6OC"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-[#1a1a1a] hover:bg-gradient-to-br hover:from-[#947018] hover:to-[#F4BA3E] flex items-center justify-center transition-all border border-[#F4BA3E]/20"
                 aria-label="Seguir a Grupo Meraki en TikTok"
               >
