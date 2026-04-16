@@ -357,8 +357,8 @@ export const projectsData: Record<string, Project> = {
     title: 'Gran Arizona',
     region: 'Alvarado',
     status: 'entregado',
-    shortDescription: 'Tranquilidad y naturaleza cerca de Bogotá',
-    description: 'Valle Escondido es un proyecto pensado para quienes buscan escapar del ruido de la ciudad sin alejarse demasiado. Ubicado a solo 2 horas de Bogotá, este condominio ofrece 100 lotes en un entorno de montaña con clima templado.',
+    shortDescription: 'Un espacio donde podrás construir tu futuro, en proyectos pensados para la inversión, confort y tranquilidad',
+    description: 'Gran Arizona Club de Campo, entregado en 2021, es el tercer proyecto desarrollado, marcando un punto de evolución en el concepto de club de campo. En este proyecto se innovaron los parámetros de construcción de viviendas, elevando el estándar y la armonía arquitectónica.',
     sizes: '70m² - 580m²',
     priceFrom: '$200,000,000',
     totalLots: 195,
@@ -385,12 +385,15 @@ export const projectsData: Record<string, Project> = {
       { icon: TbSoccerField, name: 'Cancha sintética', description: '' },
     ],
     location: {
-      address: 'Vía La Vega - San Francisco, Cundinamarca',
+      address: 'Vía Bogotá - Alvarado, Tolima',
       coordinates: '4.550976, -74.959325',
       mapIframe: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4893.86805375107!2d-74.96189032418675!3d4.551004842935369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f35ee94c29065%3A0x584cea73ba6e5b75!2sGrand%20Arizona%20Country%20Club!5e1!3m2!1ses-419!2sco!4v1775744132327!5m2!1ses-419!2sco',
       nearbyPlaces: [
-        'A 2 horas de Bogotá',
-        'A 30 min de La Vega'
+        'A 3 horas de Bogotá',
+        'A 20 minutos de Ibague',
+        'A 1 minuto del casco urbano de Alvarado',
+        'Zona de alta valorización',
+        'Cercano al Nevado del Ruiz',
       ]
     },
     formLink: 'https://api.leadconnectorhq.com/widget/form/4tRjvWfVixBfC90CrPUZ'
@@ -399,8 +402,8 @@ export const projectsData: Record<string, Project> = {
     title: 'Arizona Country club I',
     region: 'Alvarado',
     status: 'entregado',
-    shortDescription: 'Vive rodeado del mejor café del mundo',
-    description: 'Bosques del Paraíso está ubicado en el corazón del Eje Cafetero, en Armenia. Este proyecto de 80 lotes combina la belleza del paisaje cultural cafetero con todas las comodidades modernas.',
+    shortDescription: 'Un espacio donde podrás construir tu futuro, en proyectos pensados para la inversión, confort y tranquilidad.',
+    description: 'Descubre Arizona 1 Club de Campo, un proyecto que marca el inicio de una nueva forma de vivir el campo: más natural, más libre y con mayor proyección de valorización. Ubicado en un entorno estratégico, este desarrollo ha sido pensado para quienes buscan invertir con visión y construir un espacio propio en medio de la tranquilidad.',
     sizes: '500m² - 1,200m²',
     priceFrom: '$190,000,000',
     totalLots: 141,
@@ -412,20 +415,32 @@ export const projectsData: Record<string, Project> = {
       '/images/arizona-1/3.webp',
     ],
     amenities: [
-      { icon: Home, name: 'Casa Campestre', description: '' },
-      { icon: TreePine, name: 'Plantación de Café', description: '' },
-      { icon: Waves, name: 'Piscina Natural', description: '' },
-      { icon: Camera, name: 'Mirador Cafetero', description: '' },
-      { icon: Dumbbell, name: 'Canchas', description: '' },
-      { icon: Shield, name: 'Seguridad', description: '' }
+      { icon: HiOutlineOfficeBuilding, name: 'Oficina Para La Administración', description: '' },
+      { icon: FaRegTrashCan, name: 'Shuts de basuras', description: '' },
+      { icon: IoIosChatbubbles, name: 'Salón Social', description: '' },
+      { icon: GiRiver, name: 'Piscina en Arena tipo Rio', description: '' },
+      { icon: FaFire, name: 'BBQ', description: '' },
+      { icon: PiTelevisionSimpleFill, name: 'Circuito cerrado de television', description: '' },
+      { icon: GiWaterTower, name: 'Tanque de Reserva de Agua Potable', description: '' },
+      { icon: GiKidSlide, name: 'Tobogán', description: '' },
+      { icon: TreePine, name: 'Sendero Ecológico', description: '' },
+      { icon: TbPicnicTable, name: 'Zona Picnic', description: '' },
+      { icon: FaChess, name: 'Juegos de Mesa', description: '' },
+      { icon: IoIosBicycle, name: 'Ciclo Ruta', description: '' },
+      { icon: PiPark, name: 'Zona de Hamacas', description: '' },
+      { icon: AiFillVideoCamera, name: 'Acua Cine', description: '' },
+      { icon: TbSoccerField, name: 'Cancha sintética', description: '' },
     ],
     location: {
-      address: 'Vía Armenia - Circasia, Quindío',
-      coordinates: '4.5339° N, 75.6811° W',
+      address: 'Vía Bogotá - Alvarado, Tolima',
+      coordinates: '4.556036, -74.958218',
       mapIframe: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.2108615034062!2d-74.96079392418676!3d4.55605834289277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f35e50993ba33%3A0x54e842538fa446f5!2sArizona%20Country%20Club%20I!5e0!3m2!1ses-419!2sco!4v1775744168232!5m2!1ses-419!2sco',
       nearbyPlaces: [
-        'A 15 min de Armenia',
-        'A 20 min de Circasia'
+        'A 3 horas de Bogotá',
+        'A 20 minutos de Ibague',
+        'A 1 minuto del casco urbano de Alvarado',
+        'Zona de alta valorización',
+        'Cercano al Nevado del Ruiz',
       ]
     },
     formLink: 'https://api.leadconnectorhq.com/widget/form/3d8em4aWoejtXxJC6vPy'
@@ -434,8 +449,8 @@ export const projectsData: Record<string, Project> = {
     title: 'Arizona Country Club II',
     region: 'Alvarado',
     status: 'entregado',
-    shortDescription: 'un espacio donde podrás construir tu futuro, en proyectos pensados para la inversión, confort y tranquilidad.',
-    description: 'Arizona Country Club II es el proyecto más exclusivo del Quindío. Con solo 60 lotes de gran tamaño, este desarrollo boutique ofrece privacidad absoluta y vistas espectaculares de las montañas cafeteras.',
+    shortDescription: 'Un espacio donde podrás construir tu futuro, en proyectos pensados para la inversión, confort y tranquilidad.',
+    description: 'Arizona 2 Club de Campo es un proyecto entregado en 2016 que hoy se consolida como un verdadero caso de éxito. Con excelentes resultados en ventas, actualmente es una comunidad activa donde muchos propietarios ya han construido sus casas y disfrutan de su segundo hogar en el campo.',
     sizes: '600m² - 1,800m²',
     priceFrom: '$250,000,000',
     totalLots: 164,
@@ -462,12 +477,15 @@ export const projectsData: Record<string, Project> = {
       { icon: TbSoccerField, name: 'Cancha sintética', description: '' },
     ],
     location: {
-      address: 'Vía Montenegro - Pueblo Tapao, Quindío',
-      coordinates: '4.5639° N, 75.7511° W',
+      address: 'Vía Bogotá - Alvarado, Tolima',
+      coordinates: '4.552555, -74.958528',
       mapIframe: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.230176588586!2d-74.96109722418669!3d4.55256514292227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f35aca08f5a81%3A0x6287d687a2a7870a!2sArizona%20II%20Country%20Club!5e0!3m2!1ses-419!2sco!4v1775744199419!5m2!1ses-419!2sco',
       nearbyPlaces: [
-        'A 20 min de Montenegro',
-        'A 25 min de Armenia'
+        'A 3 horas de Bogotá',
+        'A 20 minutos de Ibague',
+        'A 1 minuto del casco urbano de Alvarado',
+        'Zona de alta valorización',
+        'Cercano al Nevado del Ruiz',
       ]
     },
     formLink: 'https://api.leadconnectorhq.com/widget/form/BEq2mqNK7O5vZIFXKMuL'
