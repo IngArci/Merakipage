@@ -46,7 +46,7 @@ export function NosotrosPreviewSection() {
             viewport={{ once: true }}
           >
             <img
-              src="https://images.unsplash.com/photo-1758519288905-38b7b00c1023?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHRlYW0lMjBoYW5kc2hha2UlMjBzdWNjZXNzfGVufDF8fHx8MTc3Mzg0NTUzMXww&ixlib=rb-4.1.0&q=80&w=1080"
+              src="/nosotros.webp"
               alt="Nosotros"
               className="w-full h-[500px] object-cover rounded-2xl shadow-2xl border-2 border-[#F4BA3E]/20"
             />

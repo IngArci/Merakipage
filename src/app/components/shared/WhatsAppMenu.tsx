@@ -101,7 +101,11 @@ export function WhatsAppMenu() {
               {/* Footer */}
               <div className="p-4 bg-black/50 border-t border-[#F4BA3E]/20">
                 <div className="flex items-center justify-center space-x-2">
-                  <MessageCircle className="w-4 h-4 text-[#F4BA3E]" />
+                  <img 
+                    src="/images/whatsapp.webp" 
+                    alt="WhatsApp" 
+                    className="w-4 h-4 object-contain"
+                  />
                   <p className="text-gray-400 text-xs">
                     Serás redirigido a WhatsApp
                   </p>
@@ -119,7 +123,7 @@ export function WhatsAppMenu() {
         onClick={() => setIsOpen(!isOpen)}
         className={`w-16 h-16 rounded-full flex items-center justify-center shadow-2xl transition-all relative ${isOpen
           ? 'bg-gradient-to-br from-red-500 to-red-600 hover:from-red-600 hover:to-red-700'
-          : 'bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700'
+          : 'bg-transparent hover:scale-110'
           }`}
         aria-label={isOpen ? 'Cerrar menú de WhatsApp' : 'Abrir menú de WhatsApp'}
       >
@@ -142,7 +146,11 @@ export function WhatsAppMenu() {
               exit={{ rotate: 90, opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              <MessageCircle className="w-8 h-8 text-white" />
+              <img 
+                src="/images/whatsapp.webp" 
+                alt="WhatsApp" 
+                className="w-16 h-16 object-contain drop-shadow-xl"
+              />
             </motion.div>
           )}
         </AnimatePresence>
@@ -161,7 +169,7 @@ export function WhatsAppMenu() {
               repeat: Infinity,
               ease: 'easeInOut',
             }}
-            className="absolute inset-0 rounded-full bg-green-500 -z-10"
+            className="absolute inset-0 rounded-full bg-green-400/20 -z-10"
           />
 
           {/* Notification badge */}

@@ -11,7 +11,7 @@ export function ProjectContactSection({ projectTitle, formLink }: ProjectContact
   const benefits = [
     'Asesoría personalizada',
     'Visita guiada gratuita',
-    'Plan de financiamiento flexible',
+    'Plan de pago flexible',
     'Beneficios exclusivos'
   ];
 

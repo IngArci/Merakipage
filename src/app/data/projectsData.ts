@@ -49,7 +49,7 @@ export const projectsData: Record<string, Project> = {
     shortDescription: 'un espacio donde podrás construir tu futuro, en proyectos pensados para la inversión, confort y tranquilidad.',
     description: 'Río Claro es un exclusivo condominio campestre ubicado en una de las zonas más privilegiadas del Valle del Cauca. Con 200 lotes disponibles, este proyecto ofrece la combinación perfecta entre naturaleza, comodidad y rentabilidad. Rodeado de montañas y con acceso directo a fuentes hídricas naturales, Río Claro es el lugar ideal para construir tu casa de campo o hacer una inversión segura y rentable.',
     sizes: '300m² - 600m²',
-    priceFrom: '$87,000,000',
+    priceFrom: '$90,999,999',
     totalLots: 200,
     availableLots: 147,
     deliveryDate: 'Diciembre 2026',
@@ -308,12 +308,12 @@ export const projectsData: Record<string, Project> = {
     availableLots: 23,
     deliveryDate: 'Marzo 2026',
     images: [
-      '/images/llano-grande/1.png',
-      '/images/llano-grande/2.png',
-      '/images/llano-grande/3.JPG',
-      '/images/llano-grande/4.JPG',
-      '/images/llano-grande/5.JPG',
-      '/images/llano-grande/6.png',
+      '/images/llano-grande/1.webp',
+      '/images/llano-grande/2.webp',
+      '/images/llano-grande/3.webp',
+      '/images/llano-grande/4.webp',
+      '/images/llano-grande/5.webp',
+      '/images/llano-grande/6.webp',
 
     ],
     amenities: [
@@ -397,7 +397,7 @@ export const projectsData: Record<string, Project> = {
     availableLots: 38,
     deliveryDate: 'Agosto 2027',
     images: [
-      'https://images.unsplash.com/photo-1724048413085-1c8d81b3ffa3?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3VudGFpbiUyMGNvdW50cnlzaWRlJTIwaG91c2UlMjBhZXJpYWwlMjB2aWV3fGVufDF8fHx8MTc3Mzg0NTUzMHww&ixlib=rb-4.1.0&q=60&w=600'
+      '/images/arizona-1/1.webp'
     ],
     amenities: [
       { icon: Home, name: 'Casa Campestre', description: '' },

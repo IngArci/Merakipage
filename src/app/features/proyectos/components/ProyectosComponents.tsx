@@ -46,14 +46,14 @@ const SectionHeader = ({ icon: Icon, title, subtitle, colorClass }: { icon: any,
 
 export function ProyectosHero() {
   return (
-    <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+    <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1758565811272-e79917ca0adc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080"
+          src="/NUESTROS-PROYECTOS.webp"
           alt="Proyectos Campestres"
           className="w-full h-full object-cover grayscale-[30%]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-[#0d060a]/90 to-[#0d060a]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-[#0d060a]/30 to-[#0d060a]" />
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center">
@@ -68,7 +68,7 @@ export function ProyectosHero() {
             Nuestros <span className="text-[#F4BA3E]">Proyectos</span>
           </h1>
           <p className="text-xl md:text-2xl text-white/80 font-light max-w-2xl mx-auto leading-relaxed">
-            Explora los condominios campestres más exclusivos de Colombia, diseñados para transformar tu visión de futuro.
+            Explora los clubes campestres más exclusivos de Colombia, diseñados para transformar tu visión de futuro.
           </p>
         </motion.div>
       </div>
