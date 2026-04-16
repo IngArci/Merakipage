@@ -73,7 +73,7 @@ export function Header() {
               className="h-auto w-[179px]"
               width="179"
               height="70"
-              fetchpriority="high"
+              {...({ fetchpriority: "high" } as any)}
             />
           </Link>
 

@@ -407,7 +407,9 @@ export const projectsData: Record<string, Project> = {
     availableLots: 1,
     deliveryDate: 'Agosto 2027',
     images: [
-      '/images/arizona-1/1.webp'
+      '/images/arizona-1/1.webp',
+      '/images/arizona-1/2.webp',
+      '/images/arizona-1/3.webp',
     ],
     amenities: [
       { icon: Home, name: 'Casa Campestre', description: '' },
