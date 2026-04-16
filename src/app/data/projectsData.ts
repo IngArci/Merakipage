@@ -34,7 +34,7 @@ import { MdGrid4X4 } from "react-icons/md";
 import { IoIosChatbubbles, IoIosBicycle } from "react-icons/io";
 import { GiGate } from "react-icons/gi";
 import { HiOutlineOfficeBuilding } from "react-icons/hi";
-import { FaTv, FaRegTrashAlt, FaChess  } from "react-icons/fa";
+import { FaTv, FaRegTrashAlt, FaChess } from "react-icons/fa";
 import { FaChildren } from "react-icons/fa6";
 import { TbPicnicTable, TbMassage } from "react-icons/tb";
 import { PiPark } from "react-icons/pi";
@@ -442,7 +442,12 @@ export const projectsData: Record<string, Project> = {
     availableLots: 0,
     deliveryDate: 'Noviembre 2027',
     images: [
-      'https://images.unsplash.com/photo-1762438421221-1626a4958dbf?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGZhbWlseSUyMG5hdHVyZSUyMGNvdW50cnlzaWRlfGVufDF8fHx8MTc3Mzg0NTUzMHww&ixlib=rb-4.1.0&q=60&w=600'
+      '/images/arizona-2/1.webp',
+      '/images/arizona-2/2.webp',
+      '/images/arizona-2/3.webp',
+      '/images/arizona-2/4.webp',
+      '/images/arizona-2/5.webp',
+
     ],
     amenities: [
       { icon: HiOutlineOfficeBuilding, name: 'Oficina Para La Administración', description: '' },
