@@ -40,7 +40,7 @@ import { TbPicnicTable, TbMassage } from "react-icons/tb";
 import { PiPark } from "react-icons/pi";
 import { IoRestaurant } from "react-icons/io5";
 import { GiHut, GiWaterTower } from "react-icons/gi";
-import { MdLocalBar, MdPool } from "react-icons/md";
+import { MdLocalBar, MdPool, MdOutlineSportsGymnastics  } from "react-icons/md";
 import { AiFillVideoCamera } from "react-icons/ai";
 export const projectsData: Record<string, Project> = {
   'rio-claro': {
@@ -121,8 +121,8 @@ export const projectsData: Record<string, Project> = {
     ],
     sizes: '300m² hasta 2.500m²',
     priceFrom: '$220,000,000',
-    totalLots: 150,
-    availableLots: 89,
+    totalLots: 641,
+    availableLots: 209,
     deliveryDate: 'Junio 2027',
     images: [
       '/images/laguna-mar/PORTERIA-AJUSTES.png',
@@ -131,16 +131,16 @@ export const projectsData: Record<string, Project> = {
       '/images/laguna-mar/piscina.png',
     ],
     amenities: [
-      { icon: WavesLadder, name: 'Piscina tipo playa', description: '' },
-      { icon: MessagesSquare, name: 'Salón de eventos', description: '' },
+      {icon: FaDoorOpen, name: 'Porteria', description: '' },
       { icon: TbSoccerField, name: 'Cancha sintética', description: '' },
-      { icon: Wind, name: 'Tobogán', description: '' },
-      { icon: LandPlot, name: 'Golfito', description: '' },
-      { icon: Dog, name: 'pista canina', description: '' },
       { icon: FaTableTennisPaddleBall, name: 'Cancha de tenis', description: '' },
+      { icon: Dog, name: 'Dog Park', description: '' },
+      { icon: MdOutlineSportsGymnastics , name: 'Pista de Calistenia', description: '' },
       { icon: FaChild, name: 'Parque infantil', description: '' },
-
-
+      { icon: LandPlot, name: 'Golfito', description: '' },
+      { icon: WavesLadder, name: 'Piscina tipo playa', description: '' },
+      { icon: GiKidSlide, name: 'Tobogán', description: '' },
+      { icon: MessagesSquare, name: 'Salón de eventos', description: '' },
     ],
     location: {
       address: 'A tan solo 2 horas de Bogotá se encuentran Ricaurte, Girardot, Melgar y Carmen de Apicalá, ciudades pujantes y epicentros de las mejores zonas de descanso de Colombia.',
