@@ -365,8 +365,8 @@ export const projectsData: Record<string, Project> = {
     availableLots: 4,
     deliveryDate: '',
     images: [
-      '/images/grand-arizona/1.webp',
       '/images/grand-arizona/2.webp',
+      '/images/grand-arizona/1.webp',
       '/images/grand-arizona/3.webp',
       '/images/grand-arizona/4.webp',
       '/images/grand-arizona/5.webp',
@@ -415,8 +415,8 @@ export const projectsData: Record<string, Project> = {
     availableLots: 1,
     deliveryDate: 'Agosto 2027',
     images: [
-      '/images/arizona-1/1.webp',
       '/images/arizona-1/2.webp',
+      '/images/arizona-1/1.webp',
       '/images/arizona-1/3.webp',
     ],
     amenities: [
