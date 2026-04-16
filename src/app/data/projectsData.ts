@@ -353,8 +353,8 @@ export const projectsData: Record<string, Project> = {
     },
     formLink: 'https://api.leadconnectorhq.com/widget/form/TBMTUqYORc8T1oOnpG5n'
   },
-  'gran-arizona': {
-    title: 'Gran Arizona',
+  'grand-arizona': {
+    title: 'Grand Arizona',
     region: 'Alvarado',
     status: 'entregado',
     shortDescription: 'Un espacio donde podrás construir tu futuro, en proyectos pensados para la inversión, confort y tranquilidad',
@@ -365,7 +365,12 @@ export const projectsData: Record<string, Project> = {
     availableLots: 4,
     deliveryDate: '',
     images: [
-      'https://images.unsplash.com/photo-1758565811272-e79917ca0adc?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjb3VudHJ5c2lkZSUyMGVzdGF0ZSUyMGNvdW50cnlzaWRlJTIwbGFuZCUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc3Mzg0NTUyOXww&ixlib=rb-4.1.0&q=60&w=600'
+      '/images/grand-arizona/1.webp',
+      '/images/grand-arizona/2.webp',
+      '/images/grand-arizona/3.webp',
+      '/images/grand-arizona/4.webp',
+      '/images/grand-arizona/5.webp',
+      '/images/grand-arizona/6.webp',
     ],
     amenities: [
       { icon: HiOutlineOfficeBuilding, name: 'Oficina Para La Administración', description: '' },
