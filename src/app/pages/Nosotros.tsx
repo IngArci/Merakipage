@@ -8,18 +8,13 @@ import { NosotrosMissionVision } from '../features/nosotros/components/NosotrosM
 import { NosotrosAsesores } from '../features/nosotros/components/NosotrosAsesores';
 import { NosotrosFerias } from '../features/nosotros/components/NosotrosFerias';
 
-const STATIC_ASESORES = [
-  { nombre: 'Carlos Martínez', cargo: 'Agente Inmobiliario', whatsapp: '573001234571' },
-  { nombre: 'María Rodríguez', cargo: 'Agente Inmobiliario', whatsapp: '573001234572' },
-  { nombre: 'Andrés López', cargo: 'Agente Inmobiliario', whatsapp: '573001234573' },
-];
 
 export default function Nosotros() {
   // ✅ Caché 30 min + getDocs — ferias y asesores no cambian en tiempo real
   const { data: firebaseFerias } = useFirestoreCached<any>('ferias_eventos');
   const { data: firebaseAsesores } = useFirestoreCached<any>('asesores');
 
-  const asesores = [...(firebaseAsesores || []), ...STATIC_ASESORES];
+  const asesores = [...(firebaseAsesores || [])];
   const ferias = [...(firebaseFerias || [])];
 
   return (
