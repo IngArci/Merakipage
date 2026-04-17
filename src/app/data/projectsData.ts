@@ -40,7 +40,7 @@ import { TbPicnicTable, TbMassage } from "react-icons/tb";
 import { PiPark } from "react-icons/pi";
 import { IoRestaurant } from "react-icons/io5";
 import { GiHut, GiWaterTower } from "react-icons/gi";
-import { MdLocalBar, MdPool, MdOutlineSportsGymnastics  } from "react-icons/md";
+import { MdLocalBar, MdPool, MdOutlineSportsGymnastics } from "react-icons/md";
 import { AiFillVideoCamera } from "react-icons/ai";
 export const projectsData: Record<string, Project> = {
   'rio-claro': {
@@ -131,11 +131,11 @@ export const projectsData: Record<string, Project> = {
       '/images/laguna-mar/piscina.png',
     ],
     amenities: [
-      {icon: FaDoorOpen, name: 'Porteria', description: '' },
+      { icon: FaDoorOpen, name: 'Porteria', description: '' },
       { icon: TbSoccerField, name: 'Cancha sintética', description: '' },
       { icon: FaTableTennisPaddleBall, name: 'Cancha de tenis', description: '' },
       { icon: Dog, name: 'Dog Park', description: '' },
-      { icon: MdOutlineSportsGymnastics , name: 'Pista de Calistenia', description: '' },
+      { icon: MdOutlineSportsGymnastics, name: 'Pista de Calistenia', description: '' },
       { icon: FaChild, name: 'Parque infantil', description: '' },
       { icon: LandPlot, name: 'Golfito', description: '' },
       { icon: WavesLadder, name: 'Piscina tipo playa', description: '' },
@@ -181,7 +181,11 @@ export const projectsData: Record<string, Project> = {
     availableLots: 135,
     deliveryDate: '',
     images: [
-      '/images/cañon-arizona/1.jpg',
+      '/images/cañon-arizona/1.webp',
+      '/images/cañon-arizona/2.webp',
+      '/images/cañon-arizona/3.webp', '/images/cañon-arizona/4.webp',
+
+
 
     ],
     amenities: [

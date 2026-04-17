@@ -19,7 +19,7 @@ export function HeroSection() {
         .hero-bg {
           position: absolute;
           inset: 0;
-          background-image: url('/hero.webp');
+          background-image: url('/hero.jpg');
           background-repeat: no-repeat;
           background-size: cover;
           /* Móvil: posición centrada en el área más visual */
