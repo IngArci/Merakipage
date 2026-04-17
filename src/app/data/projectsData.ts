@@ -55,7 +55,7 @@ export const projectsData: Record<string, Project> = {
     availableLots: 147,
     deliveryDate: 'Diciembre 2026',
     images: [
-      '/images/rio-claro/PORTERIA.png',
+      '/images/rio-claro/PORTERIA.webp',
       '/images/rio-claro/PISCINA.png',
       '/images/rio-claro/jacuzzi.png',
       '/images/rio-claro/rio-1.png',
@@ -125,7 +125,7 @@ export const projectsData: Record<string, Project> = {
     availableLots: 209,
     deliveryDate: 'Junio 2027',
     images: [
-      '/images/laguna-mar/PORTERIA-AJUSTES.png',
+      '/images/laguna-mar/PORTERIA-AJUSTES.webp',
       '/images/laguna-mar/mascotas-1.png',
       '/images/laguna-mar/PISCINA-1.png',
       '/images/laguna-mar/piscina.png',

@@ -19,7 +19,7 @@ export function HeroSection() {
         .hero-bg {
           position: absolute;
           inset: 0;
-          background-image: url('/hero.jpg');
+          background-image: url('/hero.webp');
           background-repeat: no-repeat;
           background-size: cover;
           /* Móvil: posición centrada en el área más visual */
@@ -46,6 +46,8 @@ export function HeroSection() {
               <img
                 src="/vive.webp"
                 alt="Vive en un Club de Campo - Meraki"
+                width="400"
+                height="162"
                 className="block w-auto h-auto object-contain
                   max-w-[190px]
                   sm:max-w-[280px]

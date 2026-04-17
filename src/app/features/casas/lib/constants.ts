@@ -39,7 +39,7 @@ export const CASAS_DATA = {
       name: "Tiny House",
       area: "16,2 m² de diseño inicial",
       price: "$41.999.000",
-      image: "/images/casas/tinyhouse.jpeg",
+      image: "/images/casas/tinyhouse.webp",
       features: ["Espacio abierto optimizado", "Máxima versatilidad"]
     },
     {

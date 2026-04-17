@@ -26,7 +26,7 @@ export function CasasSection() {
           >
             <div className="absolute -inset-1 bg-gradient-to-r from-[#B68110] to-[#F4BA3E] rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
             <img
-              src="/images/casas/tinyhouse.jpeg"
+              src="/images/casas/tinyhouse.webp"
               alt="Tiny House Meraki"
               className="relative w-full h-[400px] md:h-[550px] object-cover rounded-2xl shadow-2xl border border-white/10"
               width="800"

@@ -12,7 +12,6 @@ export function PromoBanner() {
         <video 
           src={videoSrc}
           className="w-full h-auto min-h-[50vh] md:min-h-0 object-cover md:object-contain"
-          autoPlay 
           muted 
           loop 
           playsInline
@@ -35,9 +34,12 @@ export function PromoBanner() {
               className="block transform transition-all duration-300 hover:scale-105 active:scale-95 drop-shadow-[0_8px_16px_rgba(0,0,0,0.6)]"
             >
               <img
-                src="/images/puerta/Boton.png"
+                src="/images/puerta/Boton.webp"
                 alt="Ir a la promoción"
                 className="w-full h-auto pointer-events-none"
+                width="400"
+                height="57"
+                loading="lazy"
               />
             </a>
           </motion.div>
