@@ -59,9 +59,9 @@ export function TerminosContent() {
                 <h2 className="text-2xl text-[#F4BA3E] mb-4">Contacto Legal</h2>
                 <p className="text-gray-300 mb-4">Para consultas sobre estos Términos y Condiciones, contáctenos:</p>
                 <ul className="space-y-2 text-gray-300">
-                  <li><strong>Email:</strong> legal@meraki.com</li>
-                  <li><strong>Teléfono:</strong> +57 300 123 4567</li>
-                  <li><strong>Dirección:</strong> Calle Principal 123, Ciudad, País</li>
+                  <li><strong>Email:</strong> servicioalcliente.grupomeraki@gmail.com</li>
+                  <li><strong>Teléfono:</strong> +57 314 786 8069</li>
+                  <li><strong>Dirección:</strong> Barrio Casa Club, Cra 3 #42 – 92, Ibagué, Colombia</li>
                 </ul>
               </div>
             </div>
