@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Button } from '../ui/button';
 import logoMeraki from "../../../assets/logos/logo.webp";
+import { useScrollSpy } from '../../hooks/useScrollSpy';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,6 +46,9 @@ export function Header() {
     { name: 'Ferias', anchor: 'ferias' },
   ];
 
+  const currentSections = isProjectDetail ? projectDetailSections : isNosotrosPage ? nosotrosSections : [];
+  const activeSectionId = useScrollSpy(currentSections.map(s => s.anchor), 100);
+
   // Función para hacer scroll suave a una sección
   const scrollToSection = (anchor: string) => {
     const element = document.getElementById(anchor);
@@ -58,7 +62,8 @@ export function Header() {
         behavior: 'smooth'
       });
     }
-    setIsMenuOpen(false);
+    // Delay micro on mobile to give visual feedback before menu abruptly vanishes
+    setTimeout(() => setIsMenuOpen(false), 150);
   };
 
   return (
@@ -92,13 +97,15 @@ export function Header() {
                   <button
                     key={section.anchor}
                     onClick={() => scrollToSection(section.anchor)}
-                    className="text-sm transition-colors hover:text-[#F4BA3E] text-gray-300"
+                    className={`text-sm transition-colors hover:text-[#F4BA3E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F4BA3E] ${
+                      activeSectionId === section.anchor ? 'text-[#F4BA3E] font-medium' : 'text-gray-300'
+                    }`}
                   >
                     {section.name}
                   </button>
                 ))}
                 <Button
-                  className="bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] hover:from-[#FFF18F] hover:via-[#F4BA3E] hover:to-[#FFF18F] text-black shadow-lg shadow-[#F4BA3E]/30"
+                  className="bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] hover:from-[#FFF18F] hover:via-[#F4BA3E] hover:to-[#FFF18F] text-black shadow-lg shadow-[#F4BA3E]/30 transition-transform duration-300 hover:scale-[1.03] active:scale-95 focus-visible:ring-2 focus-visible:ring-[#F4BA3E] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                   onClick={() => scrollToSection('contacto')}
                 >
                   Solicitar información
@@ -111,13 +118,15 @@ export function Header() {
                   <button
                     key={section.anchor}
                     onClick={() => scrollToSection(section.anchor)}
-                    className="text-sm transition-colors hover:text-[#F4BA3E] text-gray-300"
+                    className={`text-sm transition-colors hover:text-[#F4BA3E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F4BA3E] ${
+                      activeSectionId === section.anchor ? 'text-[#F4BA3E] font-medium' : 'text-gray-300'
+                    }`}
                   >
                     {section.name}
                   </button>
                 ))}
                 <Button
-                  className="bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] hover:from-[#FFF18F] hover:via-[#F4BA3E] hover:to-[#FFF18F] text-black shadow-lg shadow-[#F4BA3E]/30"
+                  className="bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] hover:from-[#FFF18F] hover:via-[#F4BA3E] hover:to-[#FFF18F] text-black shadow-lg shadow-[#F4BA3E]/30 transition-transform duration-300 hover:scale-[1.03] active:scale-95 focus-visible:ring-2 focus-visible:ring-[#F4BA3E] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                   asChild
                 >
                   <Link to="/">Volver al Inicio</Link>
@@ -130,7 +139,7 @@ export function Header() {
                   <Link
                     key={item.path}
                     to={item.path}
-                    className={`text-sm transition-colors hover:text-[#F4BA3E] ${location.pathname === item.path
+                    className={`text-sm transition-colors hover:text-[#F4BA3E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F4BA3E] ${location.pathname === item.path
                       ? 'text-[#F4BA3E]'
                       : 'text-gray-300'
                       }`}
@@ -139,7 +148,7 @@ export function Header() {
                   </Link>
                 ))}
                 <Button
-                  className="bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] hover:from-[#FFF18F] hover:via-[#F4BA3E] hover:to-[#FFF18F] text-black shadow-lg shadow-[#F4BA3E]/30"
+                  className="bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] hover:from-[#FFF18F] hover:via-[#F4BA3E] hover:to-[#FFF18F] text-black shadow-lg shadow-[#F4BA3E]/30 transition-transform duration-300 hover:scale-[1.03] active:scale-95 focus-visible:ring-2 focus-visible:ring-[#F4BA3E] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                   asChild
                 >
                   <Link to="/contacto">Invertir ahora</Link>
@@ -181,13 +190,15 @@ export function Header() {
                     <button
                       key={section.anchor}
                       onClick={() => scrollToSection(section.anchor)}
-                      className="text-sm py-2 transition-colors hover:text-[#F4BA3E] text-gray-300 text-left"
+                      className={`text-sm py-2 transition-colors hover:text-[#F4BA3E] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F4BA3E] ${
+                        activeSectionId === section.anchor ? 'text-[#F4BA3E] font-medium' : 'text-gray-300'
+                      }`}
                     >
                       {section.name}
                     </button>
                   ))}
                   <Button
-                    className="bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] hover:from-[#FFF18F] hover:via-[#F4BA3E] hover:to-[#FFF18F] text-black w-full"
+                    className="bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] hover:from-[#FFF18F] hover:via-[#F4BA3E] hover:to-[#FFF18F] text-black w-full active:scale-95 transition-transform"
                     onClick={() => scrollToSection('contacto')}
                   >
                     Solicitar información
@@ -200,13 +211,15 @@ export function Header() {
                     <button
                       key={section.anchor}
                       onClick={() => scrollToSection(section.anchor)}
-                      className="text-sm py-2 transition-colors hover:text-[#F4BA3E] text-gray-300 text-left"
+                      className={`text-sm py-2 transition-colors hover:text-[#F4BA3E] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F4BA3E] ${
+                        activeSectionId === section.anchor ? 'text-[#F4BA3E] font-medium' : 'text-gray-300'
+                      }`}
                     >
                       {section.name}
                     </button>
                   ))}
                   <Button
-                    className="bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] hover:from-[#FFF18F] hover:via-[#F4BA3E] hover:to-[#FFF18F] text-black w-full"
+                    className="bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] hover:from-[#FFF18F] hover:via-[#F4BA3E] hover:to-[#FFF18F] text-black w-full active:scale-95 transition-transform"
                     asChild
                   >
                     <Link to="/">Volver al Inicio</Link>
@@ -220,7 +233,7 @@ export function Header() {
                       key={item.path}
                       to={item.path}
                       onClick={() => setIsMenuOpen(false)}
-                      className={`text-sm py-2 transition-colors hover:text-[#F4BA3E] ${location.pathname === item.path
+                      className={`text-sm py-2 transition-colors hover:text-[#F4BA3E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F4BA3E] ${location.pathname === item.path
                         ? 'text-[#F4BA3E]'
                         : 'text-gray-300'
                         }`}
@@ -229,7 +242,7 @@ export function Header() {
                     </Link>
                   ))}
                   <Button
-                    className="bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] hover:from-[#FFF18F] hover:via-[#F4BA3E] hover:to-[#FFF18F] text-black w-full"
+                    className="bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] hover:from-[#FFF18F] hover:via-[#F4BA3E] hover:to-[#FFF18F] text-black w-full active:scale-95 transition-transform"
                     asChild
                   >
                     <Link to="/contacto" onClick={() => setIsMenuOpen(false)}>

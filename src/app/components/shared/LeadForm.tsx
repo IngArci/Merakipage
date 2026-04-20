@@ -107,7 +107,7 @@ export function LeadForm({ title = "¿Quieres más información?", subtitle, for
                 value={formData.nombre}
                 onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
                 required
-                className="h-14 bg-white/[0.03] border-white/10 focus:border-[var(--gold-5)]/40 text-white placeholder:text-gray-700 rounded-2xl"
+                className="h-14 bg-white/[0.03] border-white/10 focus:border-[var(--gold-5)]/40 text-white placeholder:text-gray-500 rounded-2xl"
               />
             </div>
 
@@ -121,7 +121,7 @@ export function LeadForm({ title = "¿Quieres más información?", subtitle, for
                 value={formData.telefono}
                 onChange={(e) => setFormData({ ...formData, telefono: e.target.value })}
                 required
-                className="h-14 bg-white/[0.03] border-white/10 focus:border-[var(--gold-5)]/40 text-white placeholder:text-gray-700 rounded-2xl"
+                className="h-14 bg-white/[0.03] border-white/10 focus:border-[var(--gold-5)]/40 text-white placeholder:text-gray-500 rounded-2xl"
               />
             </div>
 
@@ -137,7 +137,7 @@ export function LeadForm({ title = "¿Quieres más información?", subtitle, for
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               required
-              className="h-14 bg-white/[0.03] border-white/10 focus:border-[var(--gold-5)]/40 text-white placeholder:text-gray-700 rounded-2xl"
+              className="h-14 bg-white/[0.03] border-white/10 focus:border-[var(--gold-5)]/40 text-white placeholder:text-gray-500 rounded-2xl"
             />
           </div>
 
@@ -150,13 +150,13 @@ export function LeadForm({ title = "¿Quieres más información?", subtitle, for
               value={formData.mensaje}
               onChange={(e) => setFormData({ ...formData, mensaje: e.target.value })}
               required
-              className="min-h-[120px] bg-white/[0.03] border-white/10 focus:border-[var(--gold-5)]/40 text-white placeholder:text-gray-700 rounded-2xl resize-none py-4"
+              className="min-h-[120px] bg-white/[0.03] border-white/10 focus:border-[var(--gold-5)]/40 text-white placeholder:text-gray-500 rounded-2xl resize-none py-4"
             />
           </div>
 
           <Button
             type="submit"
-            className="w-full h-14 bg-gradient-to-r from-[var(--gold-1)] to-[var(--gold-5)] text-black font-bold text-sm tracking-[0.2em] rounded-2xl shadow-lg uppercase"
+            className="w-full h-14 bg-gradient-to-r from-[var(--gold-1)] to-[var(--gold-5)] text-black font-bold text-sm tracking-[0.2em] rounded-2xl shadow-lg uppercase transition-all duration-300 hover:scale-[1.02] active:scale-95"
           >
             Enviar Solicitud
           </Button>
