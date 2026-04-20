@@ -1,19 +1,21 @@
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { storage } from '../../../../lib/firebase';
+import { storage } from '@/lib/firebase';
 
 /**
- * Extracts YouTube Video ID from various URL formats
+ * Extracts Video ID from YouTube or TikTok URLs
  */
-export function extractYoutubeId(url: string): string | null {
-  const patterns = [
-    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,
-    /^([a-zA-Z0-9_-]{11})$/
-  ];
-  
-  for (const pattern of patterns) {
-    const match = url.match(pattern);
-    if (match) return match[1];
-  }
+export function extractYoutubeId(url: string): { id: string; type: 'youtube' | 'tiktok' | 'shorts' } | null {
+  // TikTok
+  const tiktokMatch = url.match(/tiktok\.com.*\/video\/(\d+)/i) || url.match(/^(\d{15,25})$/);
+  if (tiktokMatch) return { id: tiktokMatch[1], type: 'tiktok' };
+
+  // YouTube Shorts
+  const shortsMatch = url.match(/(?:youtube\.com\/shorts\/)([^&\n?#]+)/i);
+  if (shortsMatch) return { id: shortsMatch[1], type: 'shorts' };
+
+  // YouTube Standard
+  const ytMatch = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/i) || url.match(/^([a-zA-Z0-9_-]{11})$/);
+  if (ytMatch) return { id: ytMatch[1], type: 'youtube' };
   
   return null;
 }

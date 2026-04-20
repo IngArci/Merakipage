@@ -1,5 +1,5 @@
 import { SEO } from '../components/shared/SEO';
-import { useFirestoreCached } from '../hooks/useFirestoreCached';
+import { useFirestoreCached } from '@/hooks/useFirestoreCached';
 import { NosotrosHero } from '../features/nosotros/components/NosotrosHero';
 import { NosotrosStory } from '../features/nosotros/components/NosotrosStory';
 import { NosotrosStats } from '../features/nosotros/components/NosotrosStats';

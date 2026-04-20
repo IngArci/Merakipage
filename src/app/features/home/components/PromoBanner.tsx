@@ -34,7 +34,7 @@ export function PromoBanner() {
               className="block transform transition-all duration-300 hover:scale-105 active:scale-95 drop-shadow-[0_8px_16px_rgba(0,0,0,0.6)]"
             >
               <img
-                src="/images/puerta/Boton.webp"
+                src="/images/puerta/boton-opt.webp"
                 alt="Ir a la promoción"
                 className="w-full h-auto pointer-events-none"
                 width="400"

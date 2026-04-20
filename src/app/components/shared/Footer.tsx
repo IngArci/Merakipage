@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 import { Facebook, Instagram, Mail, MapPin, Phone, Youtube } from 'lucide-react';
-import logoMeraki from "../../../assets/logo.webp";
+import logoMeraki from "../../../assets/logos/logo.webp";
 // SVG personalizado para TikTok
 const TikTokIcon = () => (
   <svg

@@ -1,4 +1,4 @@
-import { projectsData } from '../data/projectsData';
+import { projectsData } from '@/data/projectsData';
 import { SEO } from '../components/shared/SEO';
 import { ProyectosHero, ProyectosGrid, ProyectosCTA } from '../features/proyectos/components/ProyectosComponents';
 

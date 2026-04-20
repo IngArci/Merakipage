@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Button } from '../ui/button';
-import logoMeraki from "../../../assets/logo.webp";
+import logoMeraki from "../../../assets/logos/logo.webp";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

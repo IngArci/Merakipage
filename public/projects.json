@@ -2,12 +2,12 @@
   "projects": [
     {
       "id": "rio-claro",
-      "planImage": "/RIO1.jpg",
+      "planImage": "/projects/RIO1.jpg",
       "planImageTopo": "/rio-topografia.png",
       "planSize": { "w": 2579.1, "h": 1658.6 },
       "name": "Río Claro",
       "location": "Mariquita, Tolima",
-      "image": "/rio-porteria.jpg",
+      "image": "/projects/rio-porteria.jpg",
 
       "coordsFile": "/coords/RIO.json",
       "sectors": [
@@ -17,12 +17,12 @@
       ]
     },{
       "id": "cañon-arizona",
-      "planImage": "/cañon1.jpg",
-      "planImageTopo": "/cañon-topografia.png",
+      "planImage": "/projects/cañon1.jpg",
+      "planImageTopo": "/projects/cañon-topografia.png",
       "planSize": { "w": 2623.08026, "h": 1333.96353 }, 
       "name": "Cañon de Arizona",
       "location": "Alvarado, Tolima",
-      "image": "/cañonportada.png", 
+      "image": "/projects/cañonportada.png", 
       
       "coordsFile": "/coords/cañon.json",
       "sectors": [
@@ -38,14 +38,14 @@
   "name": "Laguna Mar",
   "location": "Melgar, Tolima",
   "planImageTopo": "/canarias-topografia.png",
-  "image": "/lagunamarportada.png",
+  "image": "/projects/lagunamarportada.png",
 
   "sectors": [
     {
       "id": "mar-santorini",
       "name": "Mar Santorini",
       "color": "#CFAB42",
-      "planImage": "/SANTORINI.jpg",
+      "planImage": "/projects/SANTORINI.jpg",
       "planImageTopo": "/santorini-topografia.png",
       "planSize": { "w": 2636.22, "h": 1332.28 },
       "coordsFile": "/coords/SANTORINI.json",
@@ -63,7 +63,7 @@
       "id": "mar-canarias",
       "name": "Mar Canarias",
       "color": "#001855",
-      "planImage": "/CANARIAS.png",
+      "planImage": "/projects/CANARIAS.png",
       "planSize": { "w": 1318.11024, "h": 651.9685 },
       "coordsFile": "/coords/CANARIAS.json",
      
@@ -78,22 +78,22 @@
   ]
 },{
       "id": "sobre-montañas",
-      "planImage": "/sobre-montana.jpg",
+      "planImage": "/projects/sobre-montana.jpg",
       "planSize": { "w": 2636.22047, "h": 1332.28346 }, 
       "name": "Sobre Montañas",
       "location": "Alvarado, Tolima",
-      "image": "/sobre-montañas-portada.jpg", 
+      "image": "/projects/sobre-montañas-portada.jpg", 
    
       "coordsFile": "/coords/sobre-montana.json"
         
     },{
       "id": "llano-grande",
-      "planImage": "/llanogrande.jpg",
+      "planImage": "/projects/llanogrande.jpg",
       "planImageTopo": "/llanograndetopografia.png",
       "planSize": { "w": 1785.82677, "h": 892.91339 },
       "name": "Llano Grande",
       "location": "Alvarado, Tolima",
-      "image": "/PORTERIA-2.webp",
+      "image": "/projects/PORTERIA-2.webp",
       
       "coordsFile": "/coords/llanogrande.json", 
       "sectors": [

@@ -10,6 +10,8 @@ export interface InversionistaVideoData {
   id?: string;
   videoId: string;
   title: string;
+  order?: number;
+  type?: 'youtube' | 'tiktok' | 'shorts';
   createdAt?: any;
 }
 

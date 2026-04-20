@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { onAuthStateChanged, User } from 'firebase/auth';
 import { doc, getDoc } from 'firebase/firestore';
-import { auth, db } from '../../../../lib/firebase';
+import { auth, db } from '@/lib/firebase';
 import { AdminLogin } from './AdminLogin';
 import { AdminUnauthorized } from './AdminUnauthorized';
 import { Loader2 } from 'lucide-react';
@@ -52,12 +52,12 @@ export function AdminAuthGate({ children }: AdminAuthGateProps) {
     );
   }
 
-  // Si no está logueado, mostrar login
+  // Si no estÃ¡ logueado, mostrar login
   if (!user) {
     return <AdminLogin />;
   }
 
-  // Si está logueado pero NO es administrador
+  // Si estÃ¡ logueado pero NO es administrador
   if (isAdmin === false) {
     return <AdminUnauthorized />;
   }

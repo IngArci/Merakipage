@@ -18,7 +18,7 @@ import { AdminTabs, type AdminTab } from '../features/admin/components/AdminTabs
 import { AdminInversionistas } from '../features/admin/components/AdminInversionistas';
 
 // Static Data
-import { projectsData } from '../data/projectsData';
+import { projectsData } from '@/data/projectsData';
 
 const proyectos = Object.entries(projectsData).map(([id, data]) => ({
   id,
@@ -143,6 +143,8 @@ export default function Admin() {
             setInvVideoUrl={admin.setInvVideoUrl}
             invVideoTitle={admin.invVideoTitle}
             setInvVideoTitle={admin.setInvVideoTitle}
+            invVideoOrder={admin.invVideoOrder}
+            setInvVideoOrder={admin.setInvVideoOrder}
             handleAddInversionistaVideo={admin.handleAddInversionistaVideo}
             handleDeleteInversionistaVideo={admin.handleDeleteInversionistaVideo}
             handlePublishInversionistaVideos={admin.handlePublishInversionistaVideos}
@@ -152,6 +154,8 @@ export default function Admin() {
             onPhotoUpload={admin.handleInversionistaPhotoUpload}
             handleSaveInversionistaPhoto={admin.handleSaveInversionistaPhoto}
             handleDeleteInversionistaPhoto={admin.handleDeleteInversionistaPhoto}
+            handleUpdateFirestoreDoc={admin.handleUpdateFirestoreDoc}
+            handleDeleteFirestoreDoc={admin.handleDeleteFirestoreDoc}
           />
         )}
       </div>

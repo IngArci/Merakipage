@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from 'react-router';
-import { useFirestoreCached } from '../../../hooks/useFirestoreCached';
-import { projectsData } from '../../../data/projectsData';
-import { Project, ProgressUpdate } from '../../../types/project';
+import { useFirestoreCached } from '@/hooks/useFirestoreCached';
+import { projectsData } from '@/data/projectsData';
+import { Project, ProgressUpdate } from '@/types/project';
 
 export function useProjectDetails() {
   const { slug } = useParams<{ slug: string }>();

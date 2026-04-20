@@ -1,13 +1,16 @@
 import { motion } from 'motion/react';
-import { Play, Users, TrendingUp, Award, CheckCircle, Heart } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Play, Users, TrendingUp, Award, CheckCircle, Heart, ChevronDown } from 'lucide-react';
 import { Button } from '../../../components/ui/button';
 import { Link } from 'react-router';
-import { useFirestoreCollection } from '../../../hooks/useFirestoreCollection';
+import { useFirestoreCollection } from '@/hooks/useFirestoreCollection';
 
 export interface InversionistaVideo {
   id: string;
   videoId: string;
   title: string;
+  order?: number;
+  type?: 'youtube' | 'tiktok' | 'shorts';
   createdAt: any;
 }
 
@@ -61,36 +64,150 @@ export function InversionistasHero() {
 
 export function InversionistasVideoGrid() {
   const { data: videos, loading } = useFirestoreCollection<InversionistaVideo>('inversionistas_testimonios');
+  const [visibleCount, setVisibleCount] = useState(6);
 
   if (loading || videos.length === 0) return null;
 
+  // Ordenar videos: Primero por el campo 'order' (ascendente), 
+  // y como respaldo por fecha de creación (descendente)
+  const sortedVideos = [...videos].sort((a, b) => {
+    const orderA = a.order ?? 999;
+    const orderB = b.order ?? 999;
+
+    if (orderA !== orderB) {
+      return orderA - orderB;
+    }
+
+    // Si el orden es igual, mostrar el más reciente primero
+    const dateA = a.createdAt?.seconds ?? 0;
+    const dateB = b.createdAt?.seconds ?? 0;
+    return dateB - dateA;
+  });
+
+  const visibleVideos = sortedVideos.slice(0, visibleCount);
+  const hasMore = visibleCount < sortedVideos.length;
+
+  const handleLoadMore = () => {
+    setVisibleCount(prev => prev + 6);
+  };
+
   return (
-    <section className="py-16 bg-gradient-to-b from-black to-[#0d060a]">
-      <div className="container mx-auto px-4 lg:px-8">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl mb-4 bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] bg-clip-text text-transparent">Videos de Testimonios</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">Escucha directamente de nuestros inversionistas sobre su experiencia con Meraki</p>
+    <section className="py-16 bg-[#060405] relative border-t border-[#F4BA3E]/10">
+      <div className="container mx-auto px-4 lg:px-8 max-w-[1400px]">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl mb-4 font-bold bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] bg-clip-text text-transparent">
+            Videos de Testimonios
+          </h2>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            Escucha directamente de nuestras familias inversionistas sobre su experiencia con Meraki
+          </p>
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {videos.map((video, index) => (
-            <motion.div key={video.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} className="group">
-              <div className="relative overflow-hidden rounded-2xl border border-[#F4BA3E]/20 hover:border-[#F4BA3E]/50 transition-all shadow-xl bg-black">
-                <div className="aspect-video">
-                  <iframe
-                    src={`https://www.youtube.com/embed/${video.videoId}`}
-                    title={video.title}
-                    className="w-full h-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
+
+        {/* Layout Grid Estricto para asegurar que todos los cuadros sean idénticos en tamaño */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {visibleVideos.map((video, index) => {
+            const isVertical = video.type === 'tiktok' || video.type === 'shorts' || (video.videoId.length >= 15 && /^\d+$/.test(video.videoId));
+            const isTikTok = video.type === 'tiktok' || (video.videoId.length >= 15 && /^\d+$/.test(video.videoId));
+
+            return (
+              <motion.div
+                key={video.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: (index % 3) * 0.1, duration: 0.6 }}
+                className="group flex flex-col h-full"
+              >
+                <div className="relative overflow-hidden rounded-2xl border border-[#F4BA3E]/20 hover:border-[#F4BA3E]/60 transition-all duration-500 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.8)] hover:shadow-[0_10px_40px_-10px_rgba(244,186,62,0.15)] bg-[#0b0806] flex flex-col h-full transform hover:-translate-y-1">
+
+                  <div className="w-full bg-[#0b0806] py-10 flex flex-col items-center justify-center overflow-hidden border-b border-[#F4BA3E]/10 relative bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#1f160b] to-[#0b0806] flex-grow">
+                    {/* Resplandor trasero */}
+                    <div className="absolute inset-0 bg-[#F4BA3E]/5 blur-3xl rounded-full scale-110 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+
+                    {/* Frame de Móvil Premium (Estilo iPhone) Uniforme para Todos */}
+                    <div className="relative w-full max-w-[270px] aspect-[9/16] rounded-[36px] border-[6px] border-[#181310] bg-black shadow-[0_20px_40px_rgba(0,0,0,0.8)] overflow-hidden group-hover:border-[#382b1d] transition-colors duration-500 ring-1 ring-white/5">
+
+                      {/* Notch / Dynamic Island */}
+                      <div className="absolute top-0 inset-x-0 h-6 flex justify-center z-20">
+                        <div className="w-[40%] h-full bg-[#181310] rounded-b-xl group-hover:bg-[#382b1d] transition-colors duration-500 shadow-sm flex items-center justify-center pointer-events-none">
+                          <div className="w-1.5 h-1.5 rounded-full bg-black/50 border border-white/5" />
+                        </div>
+                      </div>
+
+                      {isVertical ? (
+                        <iframe
+                          src={isTikTok
+                            ? `https://www.tiktok.com/embed/v2/${video.videoId}?lang=es-ES`
+                            : `https://www.youtube.com/embed/${video.videoId}?color=white&controls=1&modestbranding=1&rel=0&autoplay=0`
+                          }
+                          className="absolute inset-x-0 top-0 w-full h-[105%] z-10 scale-[1.02] transform bg-black"
+                          allowFullScreen
+                          scrolling="no"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          style={{ border: 'none' }}
+                        />
+                      ) : (
+                        <div className="absolute inset-0 flex flex-col justify-center bg-black z-10 pointer-events-auto">
+                          {/* El video 16:9 completo sin recortes, centrado en letterbox */}
+                          <iframe
+                            src={`https://www.youtube.com/embed/${video.videoId}?color=white&controls=1&modestbranding=1`}
+                            title={video.title}
+                            className="w-full aspect-video"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            style={{ border: 'none' }}
+                          />
+                        </div>
+                      )}
+
+                      {/* Desvanecido Inferior (Oculta footers intrusivos en móviles) */}
+                      <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-black via-black/80 to-transparent z-20 pointer-events-none" />
+                    </div>
+                  </div>
+
+
+                  {/* Panel de Título Uniforme */}
+                  <div className="px-6 py-5 bg-gradient-to-b from-[#0e0a08] to-[#040203] flex-grow flex flex-col justify-center relative">
+                    <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-[#F4BA3E]/30 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out" />
+
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className={`w-2 h-2 rounded-full ${isTikTok ? 'bg-pink-500 shadow-[0_0_8px_rgba(236,72,153,0.8)]' : 'bg-red-600 shadow-[0_0_8px_rgba(220,38,38,0.8)]'} animate-pulse`} />
+                      <h4 className="text-[#947018] text-[10px] uppercase font-bold tracking-[0.2em] opacity-80 decoration-[#F4BA3E]">
+                        {isTikTok ? "TikTok Short" : "Testimonio YouTube"}
+                      </h4>
+                    </div>
+
+                    <h3 className="text-[#eaddc5] font-medium text-[15px] md:text-base group-hover:text-white transition-colors leading-relaxed line-clamp-2">
+                      {video.title}
+                    </h3>
+                  </div>
                 </div>
-                <div className="p-4 bg-gradient-to-b from-transparent to-black/20">
-                  <h3 className="text-white font-medium group-hover:text-[#F4BA3E] transition-colors line-clamp-2">{video.title}</h3>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
+
+        {/* Botón Ver Más */}
+        {hasMore && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="flex justify-center mt-12"
+          >
+            <button
+              onClick={handleLoadMore}
+              className="group relative px-8 py-4 bg-transparent overflow-hidden rounded-full border border-[#F4BA3E]/30 hover:border-[#F4BA3E] transition-all duration-500"
+            >
+              {/* Efecto de fondo al hover */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#F4BA3E]/0 via-[#F4BA3E]/5 to-[#F4BA3E]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+
+              <div className="relative flex items-center space-x-3 text-[#F4BA3E]">
+                <span className="font-bold uppercase tracking-widest text-sm">Ver más testimonios</span>
+                <ChevronDown className="w-5 h-5 group-hover:translate-y-1 transition-transform duration-300" />
+              </div>
+            </button>
+          </motion.div>
+        )}
       </div>
     </section>
   );
@@ -103,23 +220,66 @@ export function InversionistasGallery() {
 
   if (loading || photos.length === 0) return null;
 
+
+  const duplicatedPhotos = [...photos, ...photos];
+
   return (
-    <section className="py-16 bg-gradient-to-b from-black to-[#0d060a]">
-      <div className="container mx-auto px-4 lg:px-8">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl mb-4 bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] bg-clip-text text-transparent">Momentos Memorables</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">Capturando la felicidad de nuestras familias inversionistas</p>
+    <section className="py-20 bg-[#060405] relative border-t border-[#F4BA3E]/10 overflow-hidden">
+      <div className="container mx-auto px-4 lg:px-8 max-w-[1400px]">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl mb-4 font-bold bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] bg-clip-text text-transparent">
+            Registro de Inversionistas
+          </h2>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            Galería oficial inmersiva de nuestras familias fundadoras
+          </p>
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {photos.map((image, index) => (
-            <motion.div key={image.id} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} className="group relative overflow-hidden rounded-xl border border-[#F4BA3E]/20 hover:border-[#F4BA3E]/50 transition-all cursor-pointer aspect-square">
-              <img src={image.imageUrl} alt={image.caption} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                <p className="text-white text-sm p-4 font-medium">{image.caption}</p>
+      </div>
+
+      <div className="relative w-full overflow-hidden pb-10">
+        {/* Sombras laterales para difuminar los bordes del carrusel */}
+        <div className="absolute left-0 top-0 bottom-0 w-12 md:w-32 bg-gradient-to-r from-[#060405] to-transparent z-20 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-12 md:w-32 bg-gradient-to-l from-[#060405] to-transparent z-20 pointer-events-none" />
+
+        <motion.div
+          className="flex gap-6 lg:gap-8 w-max px-4 py-8 items-center"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ repeat: Infinity, ease: "linear", duration: Math.max(30, photos.length * 5) }}
+        >
+          {duplicatedPhotos.map((image, index) => (
+            <motion.div
+              key={`${image.id}-${index}`}
+              className="group flex flex-col bg-[#0b0806] border border-[#F4BA3E]/20 rounded-2xl overflow-hidden hover:border-[#F4BA3E]/60 transition-colors duration-00 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.8)] hover:shadow-[0_10px_40px_-10px_rgba(244,186,62,0.15)] w-[280px] md:w-[320px] shrink-0"
+              whileHover={{ y: -5 }} // Sutil elevación extra para la tarjeta dentro del carrusel
+            >
+              {/* Contenedor Cuadrado Uniforme para la Imagen */}
+              <div className="relative aspect-square w-full overflow-hidden bg-black border-b border-[#F4BA3E]/10">
+                <img
+                  src={image.imageUrl}
+                  alt={image.caption}
+                  className="w-full h-full object-cover transform group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+                />
+              </div>
+
+              {/* Área de Texto y Decoración Minimalista Inferior */}
+              <div className="px-5 pt-6 pb-6 flex-grow flex flex-col justify-start items-center text-center relative">
+
+                {/* Sello o Viñeta Central */}
+                <div className="absolute -top-[14px] w-7 h-7 bg-[#0b0806] rounded-full border border-[#F4BA3E]/40 flex items-center justify-center shadow-md">
+                  <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-br from-[#FFF18F] to-[#947018]" />
+                </div>
+
+                <h4 className="text-[#947018] group-hover:text-[#F4BA3E] transition-colors text-[11px] uppercase font-bold tracking-[0.25em] mb-3">
+                  Inversionista
+                </h4>
+
+                <p className="text-[#dfd0b5] text-sm md:text-[15px] font-light leading-relaxed line-clamp-3">
+                  {image.caption}
+                </p>
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

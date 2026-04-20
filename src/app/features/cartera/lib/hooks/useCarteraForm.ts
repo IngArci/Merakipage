@@ -1,6 +1,6 @@
 import { useState, useEffect, FormEvent } from 'react';
 import { collection, addDoc, query, where, getDocs } from 'firebase/firestore';
-import { db } from '../../../../../lib/firebase';
+import { db } from '@/lib/firebase';
 import type { ClubKey, TipoCita } from '../types';
 import { DIRECCION_CITA } from '../constants';
 import {
@@ -10,7 +10,7 @@ import {
   isFechaValidaPorTipo,
 } from '../utils';
 
-// ─── Types ──────────────────────────────────────────────────────────────────
+// â”€â”€â”€ Types â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export interface FormState {
   nombre: string;
   correo: string;
@@ -31,7 +31,7 @@ export const EMPTY_FORM: FormState = {
   tipoCita: '', fecha: null, hora: '', motivo: '',
 };
 
-// ─── Hook ───────────────────────────────────────────────────────────────────
+// â”€â”€â”€ Hook â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export function useCarteraForm() {
   const [form, setForm] = useState<FormState>(EMPTY_FORM);
   const [horariosOcupados, setHorariosOcupados] = useState<string[]>([]);
@@ -69,9 +69,9 @@ export function useCarteraForm() {
     if (!form.tipoCita) { setMensaje('Selecciona el tipo de cita.'); setEnviando(false); return; }
     if (!form.fecha || !form.club || !form.sector) { setMensaje('Completa todos los campos requeridos.'); setEnviando(false); return; }
     if (esFestivoBloqueado(form.fecha)) { setMensaje('No se pueden agendar citas en esa fecha.'); set('fecha', null); set('hora', ''); setEnviando(false); return; }
-    if (!isFechaValidaPorTipo(form.fecha, form.tipoCita)) { setMensaje('Fecha no válida para el tipo de cita.'); setEnviando(false); return; }
-    if (!bloques.some(b => b.valor === form.hora)) { setMensaje('Selecciona una hora válida.'); setEnviando(false); return; }
-    if (horariosOcupados.includes(form.hora)) { setMensaje('¡Este horario ya está reservado!'); setEnviando(false); return; }
+    if (!isFechaValidaPorTipo(form.fecha, form.tipoCita)) { setMensaje('Fecha no vÃ¡lida para el tipo de cita.'); setEnviando(false); return; }
+    if (!bloques.some(b => b.valor === form.hora)) { setMensaje('Selecciona una hora vÃ¡lida.'); setEnviando(false); return; }
+    if (horariosOcupados.includes(form.hora)) { setMensaje('Â¡Este horario ya estÃ¡ reservado!'); setEnviando(false); return; }
 
     try {
       const datos = {

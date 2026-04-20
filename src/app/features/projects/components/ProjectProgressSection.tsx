@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Calendar, Camera, ChevronLeft, ChevronRight } from 'lucide-react';
 import Slider from 'react-slick';
-import { ProgressUpdate } from '../../../types/project';
+import { ProgressUpdate } from '@/types/project';
 
 interface ProjectProgressSectionProps {
   progress: ProgressUpdate[];

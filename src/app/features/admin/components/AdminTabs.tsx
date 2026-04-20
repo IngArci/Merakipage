@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ImageIcon, Youtube, Users, MapPin, FileText } from 'lucide-react';
 
-export type AdminTab = 'avances' | 'videos' | 'ferias' | 'asesores' | 'documentos' | 'galeria';
+export type AdminTab = 'avances' | 'videos' | 'ferias' | 'asesores' | 'documentos' | 'galeria' | 'inversionistas';
 
 interface AdminTabsProps {
   activeTab: AdminTab;

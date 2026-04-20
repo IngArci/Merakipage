@@ -8,7 +8,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { Button } from '../../../components/ui/button';
-import { useFirestoreCollection } from '../../../hooks/useFirestoreCollection';
+import { useFirestoreCollection } from '@/hooks/useFirestoreCollection';
 import type { LegalDocData } from '../types/admin.types';
 
 interface AdminDocumentosProps {

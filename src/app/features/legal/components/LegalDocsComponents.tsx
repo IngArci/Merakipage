@@ -1,9 +1,9 @@
 import { motion } from 'motion/react';
 import { FileText, Download, Building2, ChevronRight, FileSearch, Loader2 } from 'lucide-react';
 import { useState } from 'react';
-import { useFirestoreCollection } from '../../../hooks/useFirestoreCollection';
+import { useFirestoreCollection } from '@/hooks/useFirestoreCollection';
 import type { LegalDocData } from '../../admin/types/admin.types';
-import { projectsData } from '../../../data/projectsData';
+import { projectsData } from '@/data/projectsData';
 
 export function LegalDocsHero() {
   return (

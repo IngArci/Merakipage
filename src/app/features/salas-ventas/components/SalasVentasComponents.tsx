@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { MapPin, Phone, Mail, Clock, Navigation, Calendar, Sparkles } from 'lucide-react';
-import { ImageWithFallback } from '../../../components/figma/ImageWithFallback';
+import { ImageWithFallback } from '../../../components/shared/ImageWithFallback';
 import { Button } from '../../../components/ui/button';
 import { salasVentasData } from '../data/salasVentasData';
 

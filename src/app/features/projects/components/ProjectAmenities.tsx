@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Amenity } from '../../../types/project';
+import { Amenity } from '@/types/project';
 
 interface ProjectAmenitiesProps {
   amenities: Amenity[];

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../../../lib/firebase';
+import { auth } from '@/lib/firebase';
 import { Lock, Mail, Loader2, AlertCircle } from 'lucide-react';
 import { motion } from 'motion/react';
-import logoMeraki from "../../../../assets/logo.webp";
+import logoMeraki from "../../../../assets/logos/logo.webp";
 
 export function AdminLogin() {
   const [email, setEmail] = useState('');
@@ -21,9 +21,9 @@ export function AdminLogin() {
     } catch (err: any) {
       console.error('Error de login:', err);
       if (err.code === 'auth/user-not-found' || err.code === 'auth/wrong-password' || err.code === 'auth/invalid-credential') {
-        setError('Credenciales incorrectas. Verifica tu correo y contraseña.');
+        setError('Credenciales incorrectas. Verifica tu correo y contraseÃ±a.');
       } else {
-        setError('Ocurrió un error al intentar iniciar sesión. Reintenta más tarde.');
+        setError('OcurriÃ³ un error al intentar iniciar sesiÃ³n. Reintenta mÃ¡s tarde.');
       }
     } finally {
       setLoading(false);
@@ -50,7 +50,7 @@ export function AdminLogin() {
 
           <form onSubmit={handleLogin} className="space-y-6">
             <div className="space-y-2">
-              <label className="text-xs font-bold text-[#F4BA3E] uppercase tracking-wider ml-1">Correo Electrónico</label>
+              <label className="text-xs font-bold text-[#F4BA3E] uppercase tracking-wider ml-1">Correo ElectrÃ³nico</label>
               <div className="relative group">
                 <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-[#F4BA3E] transition-colors" />
                 <input
@@ -65,7 +65,7 @@ export function AdminLogin() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs font-bold text-[#F4BA3E] uppercase tracking-wider ml-1">Contraseña</label>
+              <label className="text-xs font-bold text-[#F4BA3E] uppercase tracking-wider ml-1">ContraseÃ±a</label>
               <div className="relative group">
                 <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-[#F4BA3E] transition-colors" />
                 <input
@@ -73,7 +73,7 @@ export function AdminLogin() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="w-full bg-black/50 border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-[#F4BA3E] transition-all"
-                  placeholder="••••••••"
+                  placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
                   required
                 />
               </div>
@@ -98,14 +98,14 @@ export function AdminLogin() {
               {loading ? (
                 <Loader2 className="w-6 h-6 animate-spin" />
               ) : (
-                "Iniciar Sesión"
+                "Iniciar SesiÃ³n"
               )}
             </button>
           </form>
 
           <div className="mt-8 pt-8 border-t border-white/5 text-center">
             <p className="text-gray-500 text-xs">
-              © 2026 Grupo Constructor Meraki. Panel de Control Seguro.
+              Â© 2026 Grupo Constructor Meraki. Panel de Control Seguro.
             </p>
           </div>
         </div>

@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '../../../components/ui/button';
 import { ProjectCard } from '../../../components/shared/ProjectCard';
-import { Project } from '../../../types/project';
+import { Project } from '@/types/project';
 
 interface ProjectsSectionProps {
   projects: (Project & { slug: string })[];

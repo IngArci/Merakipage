@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Stage } from '../../../types/project';
+import { Stage } from '@/types/project';
 
 interface ProjectStagesProps {
   stages?: Stage[];

@@ -1,6 +1,6 @@
 import { ShieldAlert, LogOut } from 'lucide-react';
 import { signOut } from 'firebase/auth';
-import { auth } from '../../../../lib/firebase';
+import { auth } from '@/lib/firebase';
 import { motion } from 'motion/react';
 
 export function AdminUnauthorized() {
@@ -30,7 +30,7 @@ export function AdminUnauthorized() {
             className="w-full bg-white/5 hover:bg-white/10 text-white font-bold py-4 rounded-xl transition-all border border-white/10 flex items-center justify-center space-x-2"
           >
             <LogOut className="w-5 h-5" />
-            <span>Cerrar Sesión</span>
+            <span>Cerrar SesiÃ³n</span>
           </button>
           
           <p className="mt-8 text-xs text-gray-600 uppercase tracking-widest font-bold">

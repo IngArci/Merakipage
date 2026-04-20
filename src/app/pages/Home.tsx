@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { motion } from 'motion/react';
-import { projectsData } from '../data/projectsData';
+import { projectsData } from '@/data/projectsData';
 import { SEO } from '../components/shared/SEO';
 import { Skeleton } from '../components/ui/skeleton';
 

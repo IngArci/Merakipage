@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { normalizeCode } from '../../../utils/joinLots';
+import { normalizeCode } from '@/utils/joinLots';
 
 export function useMasterPlan(projectSlug: string) {
   const [projectData, setProjectData] = useState<any>(null);

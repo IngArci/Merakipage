@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'motion/react';
+import { useState, useEffect, useRef } from 'react';
+import { motion, useInView } from 'motion/react';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
@@ -27,14 +27,17 @@ export function LeadForm({ title = "¿Quieres más información?", subtitle, for
     setFormData({ nombre: '', telefono: '', email: '', mensaje: '' });
   };
 
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "200px" });
+
   useEffect(() => {
-    if (formLink && formLink.includes('leadconnectorhq.com')) {
+    if (isInView && formLink && formLink.includes('leadconnectorhq.com')) {
       const script = document.createElement('script');
       script.src = "https://link.msgsndr.com/js/form_embed.js";
       script.async = true;
       document.body.appendChild(script);
     }
-  }, [formLink]);
+  }, [formLink, isInView]);
 
   // 👉 CASO: FORM EXTERNO (iframe)
   if (formLink) {
@@ -42,20 +45,25 @@ export function LeadForm({ title = "¿Quieres más información?", subtitle, for
 
     return (
       <motion.div
+        ref={ref}
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         className="w-full"
       >
         <div className="w-full h-[750px] overflow-hidden rounded-2xl">
-          <iframe
-            src={formLink}
-            style={{ width: '100%', height: '100%', border: 'none' }}
-            id={isLeadConnector ? `inline-${formLink.split('/').pop()}` : undefined}
-            data-auto-height="true"
-            data-handle-iframe-events="true"
-            title={title}
-          ></iframe>
+          {isInView ? (
+            <iframe
+              src={formLink}
+              style={{ width: '100%', height: '100%', border: 'none' }}
+              id={isLeadConnector ? `inline-${formLink.split('/').pop()}` : undefined}
+              data-auto-height="true"
+              data-handle-iframe-events="true"
+              title={title}
+            ></iframe>
+          ) : (
+            <div className="w-full h-full bg-white/5 animate-pulse rounded-2xl"></div>
+          )}
         </div>
       </motion.div>
     );

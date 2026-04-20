@@ -102,7 +102,7 @@ export function WhatsAppMenu() {
               <div className="p-4 bg-black/50 border-t border-[#F4BA3E]/20">
                 <div className="flex items-center justify-center space-x-2">
                   <img 
-                    src="/images/whatsapp.webp" 
+                    src="/images/whatsapp-opt.webp" 
                     alt="WhatsApp" 
                     className="w-4 h-4 object-contain"
                   />
@@ -147,7 +147,7 @@ export function WhatsAppMenu() {
               transition={{ duration: 0.2 }}
             >
               <img 
-                src="/images/whatsapp.webp" 
+                src="/images/whatsapp-opt.webp" 
                 alt="WhatsApp" 
                 className="w-16 h-16 object-contain drop-shadow-xl"
               />

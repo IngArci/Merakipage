@@ -23,4 +23,17 @@ export default defineConfig({
     host: true,
     port: 5173,
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ["react", "react-dom", "react-router"],
+          firebase: ["firebase/app", "firebase/auth", "firebase/firestore"],
+          ui: ["lucide-react", "motion"],
+          export: ["html2canvas", "jspdf"],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 800,
+  },
 })
