@@ -1,84 +1,97 @@
-// Dynamic imports for heavy libraries to keep bundle size small
+import { RefObject } from 'react';
 
-// Since the `Merakipage` UI has a dark theme, we'll keep the styles similar but export the PDF cleanly.
-export const exportSvgToPdf = async (svgRef, summary, selectedProject) => {
+
+const imageUrlToBase64 = async (url: string): Promise<string> => {
+  try {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    return new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(reader.result as string);
+      reader.readAsDataURL(blob);
+    });
+  } catch (e) {
+    console.error('Error inlining image:', url, e);
+    return url; // Fallback to original URL
+  }
+};
+
+export const exportSvgToPdf = async (
+  svgRef: RefObject<SVGSVGElement | null>,
+  summary: any,
+  selectedProject: string
+) => {
   if (!svgRef.current) return;
 
   try {
     const svgElement = svgRef.current;
-    
-    // Create a temporary container
-    const container = document.createElement('div');
-    container.style.position = 'absolute';
-    container.style.left = '-9999px';
-    container.style.top = '-9999px';
-    container.style.background = '#000000'; // Dark background
-    container.style.padding = '40px';
-    container.style.width = '1920px'; // High resolution width
-    document.body.appendChild(container);
 
-    // Title
-    const header = document.createElement('div');
-    header.style.textAlign = 'center';
-    header.style.marginBottom = '30px';
-    header.innerHTML = `
-      <h1 style="color: #F4BA3E; font-size: 32px; font-family: sans-serif; margin: 0;">Resumen del Proyecto: ${selectedProject.toUpperCase()}</h1>
-      <p style="color: #aaaaaa; font-size: 16px; font-family: sans-serif; margin-top: 10px;">Fecha: ${new Date().toLocaleDateString()}</p>
-    `;
-    container.appendChild(header);
+    // Get real dimensions from viewBox
+    const viewBoxAttr = svgElement.getAttribute('viewBox');
+    let baseWidth = 1920;
+    let baseHeight = 1080;
+    if (viewBoxAttr) {
+      const parts = viewBoxAttr.split(/[ ,]+/).map(Number);
+      if (parts.length === 4) {
+        baseWidth = parts[2];
+        baseHeight = parts[3];
+      }
+    }
 
-    // Legend
-    const legend = document.createElement('div');
-    legend.style.display = 'flex';
-    legend.style.justifyContent = 'center';
-    legend.style.gap = '30px';
-    legend.style.marginBottom = '20px';
-    legend.innerHTML = `
-      <div style="display: flex; align-items: center; gap: 8px;">
-        <div style="width: 16px; height: 16px; border-radius: 50%; background: #22c55e;"></div>
-        <span style="color: #fff; font-family: sans-serif;">Disponible</span>
-      </div>
-      <div style="display: flex; align-items: center; gap: 8px;">
-        <div style="width: 16px; height: 16px; border-radius: 50%; background: #3b82f6;"></div>
-        <span style="color: #fff; font-family: sans-serif;">Separado / Negociación</span>
-      </div>
-      <div style="display: flex; align-items: center; gap: 8px;">
-        <div style="width: 16px; height: 16px; border-radius: 50%; background: #eab308;"></div>
-        <span style="color: #fff; font-family: sans-serif;">Vendido</span>
-      </div>
-    `;
-    container.appendChild(legend);
+    const clonedSvg = svgElement.cloneNode(true) as SVGSVGElement;
+    clonedSvg.setAttribute('width', baseWidth.toString());
+    clonedSvg.setAttribute('height', baseHeight.toString());
+    clonedSvg.style.width = `${baseWidth}px`;
+    clonedSvg.style.height = `${baseHeight}px`;
+    clonedSvg.style.transform = 'none';
 
-    // Clone the SVG content to avoid altering actual UI
-    const clonedSvg = svgElement.cloneNode(true);
-    clonedSvg.style.width = '100%';
-    clonedSvg.style.height = 'auto';
-    clonedSvg.style.transform = 'none'; // reset zooms
-    
-    const svgContainer = document.createElement('div');
-    svgContainer.style.background = 'transparent';
-    svgContainer.appendChild(clonedSvg);
-    container.appendChild(svgContainer);
+    const images = Array.from(clonedSvg.querySelectorAll('image'));
+    await Promise.all(images.map(async (img) => {
+      const href = img.getAttribute('href') || img.getAttribute('xlink:href');
+      if (href && !href.startsWith('data:')) {
+        const b64 = await imageUrlToBase64(href);
+        img.setAttribute('href', b64);
+        img.removeAttribute('xlink:href');
+      }
+    }));
 
     // Dynamically load heavy dependencies only when needed
-    const html2canvas = (await import('html2canvas')).default;
     const { jsPDF } = await import('jspdf');
+    const { Canvg } = await import('canvg');
 
-    // Convert to canvas
-    const canvas = await html2canvas(container, {
-      scale: 2,
-      useCORS: true,
-      backgroundColor: '#000000'
-    });
+    // Create high-resolution canvas
+    const scale = 2; // High quality
+    const canvas = document.createElement('canvas');
+    canvas.width = baseWidth * scale;
+    canvas.height = baseHeight * scale;
+    const ctx = canvas.getContext('2d');
 
-    document.body.removeChild(container);
+    if (!ctx) throw new Error('Could not get canvas context');
 
-    const pdf = new jsPDF('l', 'px', [canvas.width, canvas.height]);
+    // Serialize SVG with inlined images
+    const svgString = new XMLSerializer().serializeToString(clonedSvg);
     
-    // Add the image to PDF
+    // Render SVG to canvas using canvg
+    const v = await Canvg.fromString(ctx, svgString);
+    await v.render();
+
+    // Create PDF with EXACT dimensions from viewBox
+    // Convert pixels to points (pt) for maximum stability in jsPDF
+    // 1px = 0.75pt (standard conversion)
+    const widthPt = baseWidth * 0.75;
+    const heightPt = baseHeight * 0.75;
+    
+    const pdf = new jsPDF(
+      baseWidth > baseHeight ? 'l' : 'p',
+      'pt',
+      [widthPt, heightPt]
+    );
+
+    // Add the scaled canvas image to the PDF
+    // We scale it to match the page size in points exactly
     const imgData = canvas.toDataURL('image/png', 1.0);
-    pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
-    
+    pdf.addImage(imgData, 'PNG', 0, 0, widthPt, heightPt);
+
     pdf.save(`disponibilidad_${selectedProject}_${new Date().toISOString().split('T')[0]}.pdf`);
   } catch (error) {
     console.error('Error generating PDF:', error);
