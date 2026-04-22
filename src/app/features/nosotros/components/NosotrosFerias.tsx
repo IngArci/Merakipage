@@ -67,7 +67,7 @@ export function NosotrosFerias({ ferias }: NosotrosFeriasProps) {
   return (
     <section className="py-24 relative z-10" id="ferias">
       {/* Section Header */}
-      <div className="container mx-auto px-4 lg:px-8 text-center mb-24">
+      <div className="container mx-auto px-4 lg:px-8 text-center mb-16">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <h2 className="text-3xl md:text-5xl mb-6 font-bold">Ferias <span className="text-[#F4BA3E]">Inmobiliarias</span></h2>
           <div className="h-1 w-16 bg-[#F4BA3E] mx-auto mb-6 rounded-full" />
@@ -79,7 +79,7 @@ export function NosotrosFerias({ ferias }: NosotrosFeriasProps) {
 
       {/* Split Layout Events */}
       <div className="container mx-auto px-4">
-        <div className="max-w-7xl mx-auto space-y-24">
+        <div className="max-w-7xl mx-auto space-y-16">
           {ferias.map((feria, index) => (
             <motion.div
               key={feria.id || index}
@@ -90,41 +90,42 @@ export function NosotrosFerias({ ferias }: NosotrosFeriasProps) {
               className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} bg-white/[0.02] border border-white/5 rounded-[3rem] overflow-hidden shadow-2xl`}
             >
               {/* Image / Carousel Side */}
-              <div className="lg:w-1/2 h-[400px] lg:h-[600px] relative">
-                <Slider {...carouselSettings}>
+              <div className="lg:w-1/2 min-h-[400px] lg:min-h-[500px] relative overflow-hidden">
+                <Slider {...carouselSettings} className="h-full [&_.slick-track]:h-full [&_.slick-list]:h-full">
                   {feria.images?.map((image, imgIndex) => (
-                    <div key={imgIndex} className="h-[400px] lg:h-[600px] relative">
-                      <img src={image} alt={feria.nombre} className="w-full h-full object-cover" />
-                      <div className="absolute inset-0 bg-black/20" />
+                    <div key={imgIndex} className="h-full min-h-[400px] lg:min-h-[500px] relative">
+                      <img src={image} alt={feria.nombre} className="absolute inset-0 w-full h-full object-cover" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent lg:hidden" />
+                      <div className="absolute inset-0 bg-black/10" />
                     </div>
                   ))}
                 </Slider>
               </div>
 
               {/* Text / Info Side */}
-              <div className="lg:w-1/2 p-8 lg:p-16 flex flex-col justify-center bg-[#0d060a]">
-                <div className="flex flex-wrap gap-3 mb-8">
-                  <div className="flex items-center space-x-2 px-4 py-1.5 rounded-full bg-[#F4BA3E]/10 border border-[#F4BA3E]/20 text-[#F4BA3E] text-[10px] font-bold tracking-widest uppercase">
-                    <Calendar className="w-3.5 h-3.5" />
+              <div className="lg:w-1/2 p-6 lg:p-12 flex flex-col justify-center bg-[#0d060a]">
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="flex items-center space-x-2 px-3 py-1 rounded-full bg-[#F4BA3E]/10 border border-[#F4BA3E]/20 text-[#F4BA3E] text-[9px] font-bold tracking-widest uppercase">
+                    <Calendar className="w-3 h-3" />
                     <span>{feria.fecha}</span>
                   </div>
-                  <div className="flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-gray-400 text-[10px] font-bold tracking-widest uppercase">
-                    <MapPin className="w-3.5 h-3.5" />
+                  <div className="flex items-center space-x-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-400 text-[9px] font-bold tracking-widest uppercase">
+                    <MapPin className="w-3 h-3" />
                     <span>{feria.lugar}</span>
                   </div>
                 </div>
 
-                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-white uppercase tracking-tight">
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-white uppercase tracking-tight">
                   {feria.nombre}
                 </h3>
 
-                <p className="text-sm md:text-base text-gray-400 font-light leading-relaxed mb-10">
+                <p className="text-xs md:text-sm text-gray-400 font-light leading-relaxed mb-6">
                   {feria.descripcion}
                 </p>
 
-                <div className="p-6 bg-white/[0.03] rounded-2xl border-l-[3px] border-[#F4BA3E]">
-                  <h4 className="text-[9px] uppercase tracking-widest font-bold text-[#F4BA3E] mb-2">Logro Destacado</h4>
-                  <p className="text-base text-white font-serif italic leading-snug">"{feria.logros}"</p>
+                <div className="p-5 bg-white/[0.03] rounded-2xl border-l-[3px] border-[#F4BA3E]">
+                  <h4 className="text-[8px] uppercase tracking-widest font-bold text-[#F4BA3E] mb-1.5">Logro Destacado</h4>
+                  <p className="text-sm text-white font-serif italic leading-snug">"{feria.logros}"</p>
                 </div>
               </div>
             </motion.div>

@@ -5,8 +5,8 @@ import { Button } from '../../../components/ui/button';
 export function ReferidosHero() {
   return (
     <section className="relative py-32 overflow-hidden flex items-center min-h-[70vh]">
-      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1758599543157-bc1a94fec33c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVnYW50JTIwdGlueSUyMGhvdXNlJTIwY2hhbGV0fGVufDF8fHx8MTc3Mzg0NTUzMHww&ixlib=rb-4.1.0&q=80&w=1080')" }} />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/95 to-black" />
+      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/referidos/referidos.webp')" }} />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/75 to-black" />
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#F4BA3E]/10 rounded-full blur-[120px]" />
       </div>
@@ -15,12 +15,12 @@ export function ReferidosHero() {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <div className="flex items-center justify-center space-x-3 mb-8">
               <div className="h-px w-10 bg-[#F4BA3E]/50" />
-              <span className="text-[#F4BA3E] text-xs font-bold tracking-[0.5em] uppercase">Programa de Embajadores</span>
+              <span className="text-[#F4BA3E] text-xs font-bold tracking-[0.5em] uppercase">Plan Referidos</span>
               <div className="h-px w-10 bg-[#F4BA3E]/50" />
             </div>
             <h1 className="text-5xl md:text-8xl font-bold mb-8 text-white uppercase tracking-tighter leading-none">
               Gana Dinero <br />
-              <span className="text-[#F4BA3E]">Recomendando Meraki</span>
+              <span className="text-[#F4BA3E]">Recomendando  A Meraki</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/70 font-light mb-12 max-w-2xl mx-auto leading-relaxed italic">
               "Comparte oportunidades de inversión exclusivas y recibe beneficios extraordinarios por cada referido exitoso."

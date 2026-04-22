@@ -1,5 +1,5 @@
 import { SEO } from '../components/shared/SEO';
-import { CasasHero, CasasBenefits, CasasModelos, CasasCTA } from '../features/casas/components/CasasComponents';
+import { CasasHero, CasasBenefits, CasasModelos, CasasTradicionales, CasasCTA } from '../features/casas/components/CasasComponents';
 
 export default function Casas() {
   return (
@@ -12,6 +12,7 @@ export default function Casas() {
       <CasasHero />
       <CasasModelos />
       <CasasBenefits />
+      <CasasTradicionales />
       <CasasCTA />
     </div>
   );

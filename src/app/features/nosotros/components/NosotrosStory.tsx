@@ -45,10 +45,16 @@ export function NosotrosStory() {
             </h2>
 
             <div className="space-y-6 text-base text-gray-400 leading-relaxed font-light">
-              <p>"Hace un cuarto de siglo, nacimos con el propósito de redefinir la relación entre el diseño arquitectónico y la serenidad de la naturaleza colombiana."</p>
-              <p><span className="text-white font-medium">Grupo Constructor Meraki</span> se ha consolidado como el referente en condominios campestres, fusionando exclusividad con sostenibilidad.</p>
-              <p>Con <span className="text-white font-bold">25 años de trayectoria</span>, hemos transformado terrenos en hogares que inspiran y perduran a través de las generaciones.</p>
-
+              <p>En Grupo Constructor Meraki, no solo desarrollamos proyectos, los creamos con propósito.
+Nuestro nombre nace de una filosofía: hacer las cosas con el alma, con dedicación y con la convicción de que cada detalle importa.</p>
+              <p><span className="text-white font-medium">Grupo Constructor Meraki</span> Por eso, cuando decimos “Creamos con pasión”, no es solo un eslogan, es la forma en la que concebimos cada uno de nuestros clubes de campo.</p>
+              <p>Con 
+Creamos espacios pensados para vivir mejor, para conectar con la naturaleza, para invertir con seguridad y para construir un futuro con tranquilidad. Cada terreno campestre que desarrollamos refleja nuestro compromiso con la calidad, la planeación y la confianza.</p>
+              <p>Somos una empresa que cree en hacer las cosas bien desde el inicio: con proyectos reales, ubicaciones estratégicas y una visión clara de valorización y bienestar para quienes confían en nosotros.</p>
+              <p>
+Más que desarrollar proyectos, en  <span className="text-[#F4BA3E]">Meraki</span> creamos lugares donde las personas pueden cumplir un sueño:
+hacer del campo su segundo hogar.</p>
+              
               <div className="pt-6 flex items-center space-x-4">
                 <div className="w-12 h-[1px] bg-[#F4BA3E]/30" />
                 <span className="text-[10px] uppercase tracking-[0.4em] text-[#F4BA3E] font-bold">Hecho con el Alma</span>

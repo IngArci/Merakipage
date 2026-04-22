@@ -22,8 +22,7 @@ export function HeroSection() {
           background-image: url('/projects/hero.webp');
           background-repeat: no-repeat;
           background-size: cover;
-          /* Móvil: posición centrada en el área más visual */
-          background-position: 60% center;
+          background-position: 50% center;
         }
         @media (min-width: 640px) {
           .hero-bg {

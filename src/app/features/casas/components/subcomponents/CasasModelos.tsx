@@ -11,7 +11,7 @@ export function CasasModelos() {
     <section id="modelos" className="py-24 bg-[#0d060a] relative overflow-hidden">
       {/* Background accents */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#F4BA3E]/5 rounded-full blur-[150px]" />
-      
+
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-20">
           <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-6 uppercase tracking-tight">Modelos Modulares</h2>
@@ -21,7 +21,7 @@ export function CasasModelos() {
         {/* Triple Split Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
           {CASAS_DATA.modularModels.map((model, index) => (
-            <motion.div 
+            <motion.div
               key={model.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -63,19 +63,17 @@ export function CasasModelos() {
               </p>
               <div className="space-y-4 sm:space-y-6">
                 {CASAS_DATA.luxuryModels.map((model) => (
-                  <button 
-                    key={model.id} 
+                  <button
+                    key={model.id}
                     onClick={() => setActiveLuxuryModel(model)}
-                    className={`w-full group flex flex-col sm:flex-row sm:items-center justify-between p-5 sm:p-6 rounded-2xl transition-all cursor-pointer gap-3 text-left border ${
-                      activeLuxuryModel.id === model.id 
-                        ? 'bg-[#F4BA3E]/20 border-[#F4BA3E]/50' 
+                    className={`w-full group flex flex-col sm:flex-row sm:items-center justify-between p-5 sm:p-6 rounded-2xl transition-all cursor-pointer gap-3 text-left border ${activeLuxuryModel.id === model.id
+                        ? 'bg-[#F4BA3E]/20 border-[#F4BA3E]/50'
                         : 'bg-white/5 border-white/5 hover:bg-[#F4BA3E]/10 hover:border-[#F4BA3E]/20'
-                    }`}
+                      }`}
                   >
                     <div>
-                      <h4 className={`text-lg sm:text-xl font-bold transition-colors ${
-                        activeLuxuryModel.id === model.id ? 'text-[#F4BA3E]' : 'text-white'
-                      }`}>{model.name}</h4>
+                      <h4 className={`text-lg sm:text-xl font-bold transition-colors ${activeLuxuryModel.id === model.id ? 'text-[#F4BA3E]' : 'text-white'
+                        }`}>{model.name}</h4>
                       <p className="text-xs sm:text-sm text-gray-500">{model.area}</p>
                     </div>
                     <p className="text-lg sm:text-xl font-bold text-[#F4BA3E]">{model.price}</p>
@@ -86,23 +84,30 @@ export function CasasModelos() {
             <div className="relative group overflow-hidden rounded-[2rem] sm:rounded-[3rem] h-[400px] sm:h-[600px]">
               <div className="absolute -inset-4 bg-[#F4BA3E]/10 rounded-[3rem] blur-2xl group-hover:bg-[#F4BA3E]/20 transition-all duration-700" />
               <AnimatePresence mode="wait">
-                <motion.img 
+                <motion.img
                   key={activeLuxuryModel.id}
                   initial={{ opacity: 0, scale: 1.1 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.5 }}
-                  src={activeLuxuryModel.image} 
-                  alt={activeLuxuryModel.name} 
-                  className="relative z-10 w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700" 
+                  src={activeLuxuryModel.image}
+                  alt={activeLuxuryModel.name}
+                  className="relative z-10 w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
                 />
               </AnimatePresence>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
 
-        {/* Traditional Models Section */}
-        <div className="mt-32 text-center">
+export function CasasTradicionales() {
+  return (
+    <section id="tradicionales" className="pb-24 bg-[#0d060a] relative overflow-hidden">
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <div className="text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-16 uppercase tracking-tight">Casas Tradicionales</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {CASAS_DATA.traditionalModels.map(model => (
@@ -118,45 +123,44 @@ export function CasasModelos() {
 function TraditionalCard({ model }: { model: any }) {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
-  // Auto-play Logic
+
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveImageIndex((prev) => (prev < model.images.length - 1 ? prev + 1 : 0));
-    }, 4000); // Change every 4 seconds
+    }, 4000);
     return () => clearInterval(timer);
   }, [model.images.length]);
 
   return (
     <div className="relative group overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] bg-[#050505] border border-white/5 h-[400px] sm:h-[500px] flex items-center justify-center">
-      {/* Background Glow layer */}
+
       <div className="absolute inset-0 bg-gradient-to-br from-[#F4BA3E]/5 to-transparent pointer-events-none" />
 
-      {/* Dynamic Image with Animation */}
+
       <AnimatePresence mode="wait">
-        <motion.img 
+        <motion.img
           key={activeImageIndex}
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 1.05 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          src={model.images[activeImageIndex]} 
-          alt={model.name} 
-          className="relative z-10 w-full h-full object-contain p-4 sm:p-8" 
+          src={model.images[activeImageIndex]}
+          alt={model.name}
+          className="relative z-10 w-full h-full object-contain p-4 sm:p-8"
         />
       </AnimatePresence>
 
       {/* Subtle overlay for text legibility */}
       <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none z-10" />
-      
+
       {/* Image Pagination Dots */}
       <div className="absolute top-6 right-6 flex space-x-2 z-20">
         {model.images.map((_: any, idx: number) => (
           <button
             key={idx}
             onClick={() => setActiveImageIndex(idx)}
-            className={`w-10 h-1 rounded-full transition-all ${
-              activeImageIndex === idx ? 'bg-[#F4BA3E] w-12' : 'bg-white/30 hover:bg-white/50'
-            }`}
+            className={`w-10 h-1 rounded-full transition-all ${activeImageIndex === idx ? 'bg-[#F4BA3E] w-12' : 'bg-white/30 hover:bg-white/50'
+              }`}
           />
         ))}
       </div>
@@ -165,20 +169,19 @@ function TraditionalCard({ model }: { model: any }) {
         <span className="text-[10px] sm:text-xs font-bold text-[#F4BA3E] uppercase tracking-[0.2em] mb-2 block">{model.label}</span>
         <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">{model.name}</h3>
         <div className="flex flex-col sm:flex-row sm:items-center text-[#F4BA3E]">
-          <span className="text-[10px] sm:text-sm uppercase font-bold sm:mr-4">Valor m²:</span>
-          <span className="text-xl sm:text-3xl font-bold">{model.priceM2}</span>
+
         </div>
       </div>
 
       {/* Navigation Paddles (Visible on Hover) */}
-      <button 
+      <button
         onClick={() => setActiveImageIndex((prev) => (prev > 0 ? prev - 1 : model.images.length - 1))}
         className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-white/10 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all hover:bg-[#F4BA3E] hover:text-black z-30"
       >
         <span className="sr-only">Anterior</span>
         ←
       </button>
-      <button 
+      <button
         onClick={() => setActiveImageIndex((prev) => (prev < model.images.length - 1 ? prev + 1 : 0))}
         className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-white/10 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all hover:bg-[#F4BA3E] hover:text-black z-30"
       >

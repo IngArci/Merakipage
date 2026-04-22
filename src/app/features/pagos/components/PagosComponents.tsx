@@ -1,8 +1,20 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { CreditCard, Smartphone, Globe, FileText, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
+import { 
+  CreditCard, 
+  Smartphone, 
+  Globe, 
+  FileText, 
+  ChevronDown, 
+  ChevronUp, 
+  ExternalLink,
+  Download,
+  Loader2
+} from 'lucide-react';
 import { db } from '@/lib/firebase';
 import { collection, getDocs } from 'firebase/firestore';
+import { useFirestoreCollection } from '@/hooks/useFirestoreCollection';
+import type { PaymentInstructionData } from '../../admin/types/admin.types';
 import './PagosStyles.css';
 
 const proyectos = [
@@ -16,12 +28,7 @@ const proyectos = [
   { id: 'grand-arizona', nombre: 'Grand Arizona', url: 'https://portalpagos.davivienda.com/#/comercio/6638/GRUPO%20CONSTRUCTOR%20MERAKI%20SAS%20ZOMAC', logo: '/images/pagos/circulo-grand.png' },
 ];
 
-const instructivos = [
-  { id: 'bancolombia-app', banco: 'Bancolombia', tipo: 'Aplicación Móvil', icon: Smartphone, pasos: ['Ingresa a la app de Bancolombia con tu usuario y contraseña', 'Selecciona la opción "Transferencias y Pagos"', 'Elige "Pagar facturas y servicios"', 'Busca "Grupo Constructor Meraki" en el buscador', 'Ingresa tu código de referencia de pago', 'Verifica el monto a pagar', 'Confirma la transacción con tu clave dinámica', 'Guarda el comprobante de pago'] },
-  { id: 'bancolombia-web', banco: 'Bancolombia', tipo: 'Página Web', icon: Globe, pasos: ['Ingresa a www.bancolombia.com', 'Inicia sesión en "Sucursal Virtual Personas"', 'Ve a "Pagos" en el menú principal', 'Selecciona "Pago de facturas"', 'Busca "Grupo Constructor Meraki" en empresas afiliadas', 'Ingresa tu código de referencia de pago', 'Selecciona la cuenta de origen', 'Verifica el valor a pagar', 'Confirma con tu clave de seguridad', 'Descarga el comprobante de pago'] },
-  { id: 'davivienda-app', banco: 'Davivienda', tipo: 'Aplicación Móvil', icon: Smartphone, pasos: ['Abre la app Davivienda Móvil', 'Inicia sesión con tus credenciales', 'Toca en "Pagar"', 'Selecciona "Pago de facturas"', 'Busca "Grupo Constructor Meraki"', 'Ingresa tu número de referencia', 'Verifica el monto', 'Confirma con tu clave', 'Guarda el comprobante digital'] },
-  { id: 'davivienda-web', banco: 'Davivienda', tipo: 'Página Web', icon: Globe, pasos: ['Accede a www.davivienda.com', 'Ingresa a "Banca Virtual"', 'Haz clic en "Pagos"', 'Selecciona "Empresas y servicios"', 'Busca "Grupo Constructor Meraki" en el listado', 'Ingresa tu código de pago', 'Selecciona tu producto de origen', 'Verifica los datos y el valor', 'Autoriza la transacción', 'Imprime o descarga tu comprobante'] },
-];
+// Static instructivos array removed in favor of Firestore data
 
 export function PagosHero() {
   return (
@@ -54,7 +61,7 @@ export function PagosInfo() {
               <div>
                 <h3 className="text-2xl text-[#F4BA3E] mb-4">Información Importante</h3>
                 <ul className="space-y-3 text-gray-300">
-                  {['Guarda siempre tu comprobante de pago como respaldo de la transacción.', 'Los pagos pueden tardar hasta 24 horas hábiles en verse reflejados en tu cuenta.', 'Si tienes problemas con tu pago, contáctanos al WhatsApp +57 300 123 4567.', 'Verifica que tu código de referencia sea correcto antes de confirmar el pago.', 'Envía tu comprobante al correo: pagos@meraki.com para agilizar la confirmación.'].map((item, i) => (
+                  {['Guarda siempre tu comprobante de pago como respaldo de la transacción.', 'Los pagos pueden tardar hasta 24 horas hábiles en verse reflejados en tu cuenta.', 'Si tienes problemas con tu pago, contáctanos al WhatsApp +57 314 786 8069.', 'Verifica que tu código de referencia sea correcto antes de confirmar el pago.', 'Envía tu comprobante al correo: servicioalcliente.grupomeraki@gmail.com para agilizar la confirmación.'].map((item, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <span className="text-[#F4BA3E] mt-1">•</span>
                       <span>{item}</span>
@@ -312,49 +319,163 @@ export function PagosProyectos() {
 }
 
 export function PagosInstructivos() {
-  const [expandedInstructivo, setExpandedInstructivo] = useState<string | null>(null);
-  const toggleInstructivo = (id: string) => setExpandedInstructivo(expandedInstructivo === id ? null : id);
+  const { data: docs, loading } = useFirestoreCollection<PaymentInstructionData>('payment_instructions');
+
+  if (loading) {
+    return (
+      <div className="py-20 flex flex-col items-center justify-center text-[#F4BA3E]">
+        <Loader2 className="w-12 h-12 animate-spin mb-4" />
+        <p className="text-gray-400">Cargando instructivos...</p>
+      </div>
+    );
+  }
+
+  if (docs.length === 0) return null;
+
+  // Group instructions by Bank and then by Category
+  const groupedDocs: Record<string, Record<string, PaymentInstructionData[]>> = {};
+
+  docs.forEach(doc => {
+    if (!groupedDocs[doc.bank]) groupedDocs[doc.bank] = {};
+    if (!groupedDocs[doc.bank][doc.category]) groupedDocs[doc.bank][doc.category] = [];
+    groupedDocs[doc.bank][doc.category].push(doc);
+  });
+
+  const banksOrder = ['Bancolombia', 'Davivenda'];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-black to-[#0d060a]">
+    <section className="py-20 bg-gradient-to-b from-black to-[#0d060a]">
       <div className="container mx-auto px-4 lg:px-8">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl mb-4 bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] bg-clip-text text-transparent">Instructivos de Pago</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">Sigue estos pasos para realizar tu pago según tu entidad bancaria</p>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true }} 
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] bg-clip-text text-transparent uppercase tracking-tight">
+            Instructivos para pago
+          </h2>
+          <p className="text-gray-400 max-w-3xl mx-auto text-lg">
+            En esta sección podrá encontrar los instructivos de las diferentes plataformas para poder realizar el pago de su obligación.
+          </p>
         </motion.div>
-        <div className="max-w-4xl mx-auto space-y-4">
-          {instructivos.map((instructivo, index) => {
-            const Icon = instructivo.icon;
-            const isExpanded = expandedInstructivo === instructivo.id;
-            return (
-              <motion.div key={instructivo.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} className="bg-gradient-to-br from-[#0d060a] to-black border border-[#F4BA3E]/20 rounded-lg overflow-hidden">
-                <button onClick={() => toggleInstructivo(instructivo.id)} className="w-full flex items-center justify-between p-6 hover:bg-[#0d060a]/50 transition-colors">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#947018] to-[#F4BA3E] flex items-center justify-center">
-                      <Icon className="w-6 h-6 text-black" />
+
+        <div className="space-y-24">
+          {banksOrder.filter(bank => groupedDocs[bank]).map((bank) => (
+            <div key={bank}>
+              {/* Bank Header */}
+              <div className="text-center mb-12">
+                <h3 className="text-3xl md:text-4xl font-light text-[#F4BA3E] uppercase tracking-[0.2em]">
+                  {bank}
+                </h3>
+                <div className="w-24 h-px bg-gradient-to-r from-transparent via-[#F4BA3E]/50 to-transparent mx-auto mt-4" />
+              </div>
+
+              {/* Categories within Bank */}
+              <div className="space-y-16">
+                {Object.entries(groupedDocs[bank]).map(([category, items]) => (
+                  <div key={category}>
+                    {/* Category Header */}
+                    <div className="flex items-center gap-4 mb-10">
+                      <div className="h-px flex-1 bg-gradient-to-r from-transparent to-white/10" />
+                      <h4 className="text-xl md:text-2xl font-medium text-white/80 uppercase tracking-widest px-6">
+                        {category}
+                      </h4>
+                      <div className="h-px flex-1 bg-gradient-to-l from-transparent to-white/10" />
                     </div>
-                    <div className="text-left">
-                      <h3 className="text-lg text-white font-semibold">{instructivo.banco}</h3>
-                      <p className="text-sm text-gray-400">{instructivo.tipo}</p>
+
+                    {/* Instructions Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                      {items.map((doc, i) => (
+                        <InstructionCard key={doc.id || i} doc={doc} i={i} />
+                      ))}
                     </div>
                   </div>
-                  {isExpanded ? <ChevronUp className="w-6 h-6 text-[#F4BA3E]" /> : <ChevronDown className="w-6 h-6 text-[#F4BA3E]" />}
-                </button>
-                {isExpanded && (
-                  <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="border-t border-[#F4BA3E]/20 px-6 pb-6 pt-6 space-y-4">
-                    {instructivo.pasos.map((paso, pasoIndex) => (
-                      <div key={pasoIndex} className="flex gap-4">
-                        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-[#947018] to-[#F4BA3E] flex items-center justify-center text-black font-bold text-sm">{pasoIndex + 1}</div>
-                        <p className="text-gray-300 pt-1">{paso}</p>
-                      </div>
-                    ))}
-                  </motion.div>
-                )}
-              </motion.div>
-            );
-          })}
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
+  );
+}
+
+function InstructionCard({ doc, i }: { doc: PaymentInstructionData; i: number }) {
+  const [isDownloading, setIsDownloading] = useState(false);
+
+  const handleDownload = async (url: string, filename: string) => {
+    try {
+      setIsDownloading(true);
+      const response = await fetch(url);
+      const blob = await response.blob();
+      const blobUrl = window.URL.createObjectURL(blob);
+      
+      const link = document.createElement('a');
+      link.href = blobUrl;
+      link.download = filename.endsWith('.pdf') ? filename : `${filename}.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(blobUrl);
+    } catch (error) {
+      console.error('Error downloading file:', error);
+      window.open(url, '_blank');
+    } finally {
+      setIsDownloading(false);
+    }
+  };
+
+  const handleView = () => {
+    window.open(doc.fileUrl, '_blank');
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ delay: i * 0.05 }}
+      className="group relative cursor-pointer"
+      onClick={handleView}
+    >
+      <div className="absolute -inset-1 bg-gradient-to-r from-[#B68110] to-[#F4BA3E] rounded-3xl opacity-0 group-hover:opacity-10 blur-xl transition duration-500"></div>
+      <div className="relative bg-[#0d060a] border border-white/5 rounded-3xl p-8 hover:border-[#F4BA3E]/30 transition-all duration-500 flex flex-col h-full">
+        <div className="flex items-start justify-between mb-8">
+          <div className="p-4 bg-white/5 rounded-2xl group-hover:bg-[#F4BA3E]/10 transition-colors">
+            <FileText className="w-8 h-8 text-[#F4BA3E]" />
+          </div>
+          <div className="flex flex-col items-end">
+            <span className="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-1">Guía PDF</span>
+            <span className="px-3 py-1 bg-red-500/10 text-red-500 text-[10px] font-bold rounded-lg border border-red-500/20 uppercase tracking-tighter">Instructivo</span>
+          </div>
+        </div>
+
+        <h3 className="text-xl text-white font-medium mb-8 group-hover:text-[#F4BA3E] transition-colors leading-snug flex-grow">
+          {doc.title}
+        </h3>
+        
+        <div className="flex items-center justify-between pt-6 border-t border-white/5 mt-auto">
+          <div className="flex flex-col">
+            <span className="text-[10px] uppercase tracking-widest text-gray-500 mb-1">Contenido</span>
+            <span className="text-xs text-gray-400">Paso a paso</span>
+          </div>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              handleDownload(doc.fileUrl, doc.title);
+            }}
+            disabled={isDownloading}
+            className="flex items-center justify-center w-12 h-12 bg-white/5 hover:bg-[#F4BA3E] rounded-2xl text-[#F4BA3E] hover:text-black transition-all duration-300 transform group-hover:scale-110 shadow-lg disabled:opacity-50"
+          >
+            {isDownloading ? (
+              <Loader2 className="w-5 h-5 animate-spin" />
+            ) : (
+              <Download className="w-5 h-5" />
+            )}
+          </button>
+        </div>
+      </div>
+    </motion.div>
   );
 }

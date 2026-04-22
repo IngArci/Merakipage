@@ -21,3 +21,12 @@ export interface InversionistaPhotoData {
   caption: string;
   createdAt?: any;
 }
+
+export interface PaymentInstructionData {
+  id?: string;
+  title: string;
+  fileUrl: string;
+  bank: string; // e.g., 'Bancolombia', 'Davivenda'
+  category: string; // e.g., 'APP', 'Portal Web', 'Otros Proyectos'
+  createdAt?: any;
+}

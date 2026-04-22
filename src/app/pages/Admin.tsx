@@ -13,6 +13,7 @@ import { AdminVideos } from '../features/admin/components/AdminVideos';
 import { AdminFerias } from '../features/admin/components/AdminFerias';
 import { AdminAsesores } from '../features/admin/components/AdminAsesores';
 import { AdminDocumentos } from '../features/admin/components/AdminDocumentos';
+import { AdminInstructivos } from '../features/admin/components/AdminInstructivos';
 import { AdminHeader } from '../features/admin/components/AdminHeader';
 import { AdminTabs, type AdminTab } from '../features/admin/components/AdminTabs';
 import { AdminInversionistas } from '../features/admin/components/AdminInversionistas';
@@ -156,6 +157,17 @@ export default function Admin() {
             handleDeleteInversionistaPhoto={admin.handleDeleteInversionistaPhoto}
             handleUpdateFirestoreDoc={admin.handleUpdateFirestoreDoc}
             handleDeleteFirestoreDoc={admin.handleDeleteFirestoreDoc}
+          />
+        )}
+
+        {activeTab === 'instructivos' && (
+          <AdminInstructivos
+            currentInstructivo={admin.currentInstructivo}
+            setCurrentInstructivo={admin.setCurrentInstructivo}
+            isUploading={admin.isUploading}
+            onDocUpload={admin.handleInstructivoUpload}
+            handleSaveDoc={admin.handleSaveInstructivo}
+            handleDeleteDoc={admin.handleDeleteInstructivo}
           />
         )}
       </div>

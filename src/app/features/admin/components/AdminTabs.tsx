@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ImageIcon, Youtube, Users, MapPin, FileText } from 'lucide-react';
+import { ImageIcon, Youtube, Users, MapPin, FileText, CreditCard } from 'lucide-react';
 
-export type AdminTab = 'avances' | 'videos' | 'ferias' | 'asesores' | 'documentos' | 'galeria' | 'inversionistas';
+export type AdminTab = 'avances' | 'videos' | 'ferias' | 'asesores' | 'documentos' | 'galeria' | 'inversionistas' | 'instructivos';
 
 interface AdminTabsProps {
   activeTab: AdminTab;
@@ -21,6 +21,7 @@ export function AdminTabs({ activeTab, setActiveTab, projectStatus, projectSlug 
     { id: 'ferias', label: 'Ferias y Eventos', icon: Users, visible: true },
     { id: 'asesores', label: 'Asesores', icon: MapPin, visible: true },
     { id: 'documentos', label: 'Documentos Legales', icon: FileText, visible: true },
+    { id: 'instructivos', label: 'Instructivos de Pago', icon: CreditCard, visible: true },
     { id: 'inversionistas', label: 'Inversionistas', icon: Users, visible: true },
   ];
 

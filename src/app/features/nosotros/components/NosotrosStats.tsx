@@ -2,8 +2,8 @@ import { motion } from 'motion/react';
 
 const stats = [
   { number: '25+', label: 'Años de experiencia' },
-  { number: '25+', label: 'Proyectos entregados' },
-  { number: '5,000+', label: 'Clientes satisfechos' },
+  { number: '4+', label: 'Proyectos entregados' },
+  { number: '1,600+', label: 'Clientes satisfechos' },
   { number: '100%', label: 'Proyectos legales' },
 ];
 

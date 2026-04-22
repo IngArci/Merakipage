@@ -8,7 +8,7 @@ import type { ProgressUpdate } from '../components/AdminAvances';
 import type { VideoData } from '../components/AdminVideos';
 import type { FeriaData } from '../components/AdminFerias';
 import type { AsesorData } from '../components/AdminAsesores';
-import type { LegalDocData, InversionistaVideoData, InversionistaPhotoData } from '../types/admin.types';
+import type { LegalDocData, InversionistaVideoData, InversionistaPhotoData, PaymentInstructionData } from '../types/admin.types';
 
 export function useAdminActions(selectedProject: string, proyectos: any[]) {
   const [isUploading, setIsUploading] = useState(false);
@@ -62,6 +62,13 @@ export function useAdminActions(selectedProject: string, proyectos: any[]) {
   const [currentInvPhoto, setCurrentInvPhoto] = useState<InversionistaPhotoData>({
     imageUrl: '',
     caption: ''
+  });
+
+  const [currentInstructivo, setCurrentInstructivo] = useState<PaymentInstructionData>({
+    title: '',
+    fileUrl: '',
+    bank: 'Bancolombia',
+    category: ''
   });
 
   const [galeriaImages, setGaleriaImages] = useState<string[]>([]);
@@ -312,7 +319,7 @@ export function useAdminActions(selectedProject: string, proyectos: any[]) {
     }
     setIsUploading(true);
     try {
-      const url = await uploadImage(file, `legal_documents/${selectedProject}`, true);
+      const url = await uploadImage(file, `legal_documents/${selectedProject}`, false);
       setCurrentDoc((prev: LegalDocData) => ({ ...prev, fileUrl: url }));
     } catch (error) {
       console.error('Error uploading document:', error);
@@ -343,13 +350,57 @@ export function useAdminActions(selectedProject: string, proyectos: any[]) {
   };
 
   const handleDeleteDoc = async (id: string) => {
-    if (confirm('Â¿EstÃ¡s seguro de que deseas eliminar este documento?')) {
+    if (confirm('¿Estás seguro de que deseas eliminar este documento?')) {
       try {
         await deleteDoc(doc(db, 'legal_documents', id));
-        alert('âœ… Documento eliminado con Ã©xito');
+        alert('✅ Documento eliminado con éxito');
       } catch (error) {
         console.error('Error al eliminar el documento:', error);
         alert('Error al eliminar el documento.');
+      }
+    }
+  };
+
+  const handleInstructivoUpload = async (file: File) => {
+    setIsUploading(true);
+    try {
+      const url = await uploadImage(file, 'payment_instructions', false);
+      setCurrentInstructivo((prev: PaymentInstructionData) => ({ ...prev, fileUrl: url }));
+    } catch (error) {
+      console.error('Error uploading instructivo:', error);
+      alert('Error al subir el instructivo.');
+    } finally {
+      setIsUploading(false);
+    }
+  };
+
+  const handleSaveInstructivo = async () => {
+    if (currentInstructivo.title && currentInstructivo.fileUrl && currentInstructivo.bank && currentInstructivo.category) {
+      try {
+        const instructivosRef = collection(db, 'payment_instructions');
+        await addDoc(instructivosRef, {
+          ...currentInstructivo,
+          createdAt: serverTimestamp()
+        });
+        alert('✅ Instructivo guardado con éxito');
+        setCurrentInstructivo({ title: '', fileUrl: '', bank: 'Bancolombia', category: '' });
+      } catch (error) {
+        console.error('Error al guardar el instructivo:', error);
+        alert('Error al guardar el instructivo.');
+      }
+    } else {
+      alert('Por favor completa todos los campos (Banco, Categoría, Título y Archivo)');
+    }
+  };
+
+  const handleDeleteInstructivo = async (id: string) => {
+    if (confirm('¿Estás seguro de que deseas eliminar este instructivo?')) {
+      try {
+        await deleteDoc(doc(db, 'payment_instructions', id));
+        alert('✅ Instructivo eliminado con éxito');
+      } catch (error) {
+        console.error('Error al eliminar el instructivo:', error);
+        alert('Error al eliminar el instructivo.');
       }
     }
   };
@@ -524,6 +575,11 @@ export function useAdminActions(selectedProject: string, proyectos: any[]) {
     handleDeleteInversionistaPhoto,
 
     handleUpdateFirestoreDoc,
-    handleDeleteFirestoreDoc
+    handleDeleteFirestoreDoc,
+    currentInstructivo,
+    setCurrentInstructivo,
+    handleInstructivoUpload,
+    handleSaveInstructivo,
+    handleDeleteInstructivo
   };
 }

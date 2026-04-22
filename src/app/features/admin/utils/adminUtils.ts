@@ -27,10 +27,12 @@ export function extractYoutubeId(url: string): { id: string; type: 'youtube' | '
 export async function uploadImage(file: File, path: string, asAttachment: boolean = false): Promise<string> {
   const fileRef = ref(storage, `${path}/${Date.now()}_${file.name}`);
   
-  const metadata = asAttachment ? {
-    contentDisposition: `attachment; filename="${file.name}"`,
-    contentType: file.type
-  } : undefined;
+  const metadata = {
+    contentType: file.type || 'application/octet-stream',
+    contentDisposition: asAttachment 
+      ? `attachment; filename="${file.name}"` 
+      : 'inline'
+  };
 
   const snapshot = await uploadBytes(fileRef, file, metadata);
   return await getDownloadURL(snapshot.ref);
