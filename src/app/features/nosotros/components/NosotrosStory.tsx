@@ -26,7 +26,7 @@ export function NosotrosStory() {
             {/* Floating Foundation Label */}
             <div className="absolute -bottom-6 -right-6 bg-[#0a0a0a] backdrop-blur-2xl border border-white/10 p-6 rounded-3xl shadow-2xl z-20">
               <div className="text-3xl font-bold text-[#F4BA3E]">2001</div>
-              <div className="text-[10px] uppercase tracking-widest text-gray-400 mt-1 font-bold">Fundación</div>
+              <div className="text-[12px] uppercase tracking-widest text-gray-400 mt-1 font-bold">Fundación</div>
             </div>
           </motion.div>
 
@@ -37,7 +37,7 @@ export function NosotrosStory() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-block px-3 py-1 rounded-full bg-[#B7871C]/10 border border-[#B7871C]/20 text-[#B7871C] text-[10px] font-bold tracking-[0.3em] uppercase mb-6">
+            <div className="inline-block px-3 py-1 rounded-full bg-[#B7871C]/10 border border-[#B7871C]/20 text-[#B7871C] text-[12px] font-bold tracking-[0.3em] uppercase mb-6">
               Nuestra Historia
             </div>
             <h2 className="text-4xl md:text-5xl mb-8 text-white font-bold tracking-tight leading-tight">
@@ -57,7 +57,7 @@ hacer del campo su segundo hogar.</p>
               
               <div className="pt-6 flex items-center space-x-4">
                 <div className="w-12 h-[1px] bg-[#F4BA3E]/30" />
-                <span className="text-[10px] uppercase tracking-[0.4em] text-[#F4BA3E] font-bold">Hecho con el Alma</span>
+                <span className="text-[12px] uppercase tracking-[0.4em] text-[#F4BA3E] font-bold">Hecho con el Alma</span>
               </div>
             </div>
           </motion.div>

@@ -106,7 +106,7 @@ export function ReferidosFormRegistro() {
 
                 {/* Observaciones */}
                 <div className="flex flex-col gap-2">
-                  <label className="text-[10px] font-bold text-[#F4BA3E] uppercase tracking-widest ml-1">
+                  <label className="text-[12px] font-bold text-[#F4BA3E] uppercase tracking-widest ml-1">
                     Observaciones
                   </label>
                   <textarea
@@ -226,7 +226,7 @@ function Field({
 }) {
   return (
     <div className="flex flex-col gap-2">
-      <label className="text-[10px] font-bold text-[#F4BA3E] uppercase tracking-widest ml-1">
+      <label className="text-[12px] font-bold text-[#F4BA3E] uppercase tracking-widest ml-1">
         {label}
       </label>
       <input

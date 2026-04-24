@@ -60,7 +60,7 @@ export function BenefitsSection() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <div className="inline-block px-4 py-1 rounded-full bg-[#B7871C]/10 border border-[#B7871C]/20 text-[#B7871C] text-[10px] font-bold tracking-[0.3em] uppercase mb-6">Excelencia Meraki</div>
+          <div className="inline-block px-4 py-1 rounded-full bg-[#B7871C]/10 border border-[#B7871C]/20 text-[#B7871C] text-[12px] font-bold tracking-[0.3em] uppercase mb-6">Excelencia Meraki</div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white uppercase tracking-tight">
             Garantías y Beneficios <br /> <span className="text-[#F4BA3E]">de Construir con Nosotros</span>
           </h2>

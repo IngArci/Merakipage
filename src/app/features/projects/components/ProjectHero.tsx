@@ -137,7 +137,7 @@ export function ProjectHero({
             className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 max-w-4xl mx-auto"
           >
             <div className="bg-white/[0.02] backdrop-blur-md p-8 rounded-3xl border border-white/5 hover:border-[var(--gold-5)]/20 transition-all duration-500 group text-center">
-              <p className="text-[var(--gold-5)] text-[10px] uppercase tracking-[0.2em] font-bold mb-3 opacity-60">Inversión Desde</p>
+              <p className="text-[var(--gold-5)] text-[12px] uppercase tracking-[0.2em] font-bold mb-3 opacity-60">Inversión Desde</p>
               <div className="flex flex-col items-center">
                 <p className="text-2xl md:text-3xl text-white font-light">{priceFrom} <span className="text-xs text-gray-500 uppercase ml-1">COP</span></p>
                 {priceFromUSD && (
@@ -148,7 +148,7 @@ export function ProjectHero({
               </div>
             </div>
             <div className="bg-white/[0.02] backdrop-blur-md p-8 rounded-3xl border border-white/5 hover:border-[var(--gold-5)]/20 transition-all duration-500 group text-center">
-              <p className="text-[var(--gold-5)] text-[10px] uppercase tracking-[0.2em] font-bold mb-3 opacity-60">Áreas Disponibles</p>
+              <p className="text-[var(--gold-5)] text-[12px] uppercase tracking-[0.2em] font-bold mb-3 opacity-60">Áreas Disponibles</p>
               <p className="text-2xl md:text-3xl text-white font-light">{sizes}</p>
             </div>
           </motion.div>

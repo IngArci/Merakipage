@@ -151,7 +151,7 @@ export function AdminInversionistas({
                   <div className="p-3">
                     <div className="flex justify-between items-center">
                       <p className="text-sm text-white truncate flex-1 mr-2">{video.title}</p>
-                      <span className="bg-[#F4BA3E]/20 text-[#F4BA3E] text-[10px] px-2 py-0.5 rounded border border-[#F4BA3E]/30">
+                      <span className="bg-[#F4BA3E]/20 text-[#F4BA3E] text-[12px] px-2 py-0.5 rounded border border-[#F4BA3E]/30">
                         Orden: {video.order}
                       </span>
                     </div>
@@ -206,7 +206,7 @@ export function AdminInversionistas({
                     
                     <div className="flex items-end gap-3">
                       <div className="flex-1">
-                        <label className="text-[10px] uppercase tracking-widest text-gray-500 mb-1 block font-bold">Orden</label>
+                        <label className="text-[12px] uppercase tracking-widest text-gray-500 mb-1 block font-bold">Orden</label>
                         <input
                           type="number"
                           value={editingVideoOrder[video.id] ?? (video.order || '')}
@@ -316,7 +316,7 @@ export function AdminInversionistas({
                   <div key={photo.id} className="relative aspect-square rounded-xl overflow-hidden group border border-white/5 bg-gray-900">
                     <img src={photo.imageUrl} alt={photo.caption} className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-100 flex flex-col justify-end p-2">
-                      <p className="text-[10px] text-white line-clamp-2 mb-2 font-medium leading-tight">{photo.caption}</p>
+                      <p className="text-[12px] text-white line-clamp-2 mb-2 font-medium leading-tight">{photo.caption}</p>
                       <div className="flex gap-1">
                         <button
                           onClick={() => handleDeleteFirestoreDoc('inversionistas_galeria', photo.id)}

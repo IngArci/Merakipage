@@ -105,11 +105,11 @@ export function NosotrosFerias({ ferias }: NosotrosFeriasProps) {
               {/* Text / Info Side */}
               <div className="lg:w-1/2 p-6 lg:p-12 flex flex-col justify-center bg-[#0d060a]">
                 <div className="flex flex-wrap gap-2 mb-6">
-                  <div className="flex items-center space-x-2 px-3 py-1 rounded-full bg-[#F4BA3E]/10 border border-[#F4BA3E]/20 text-[#F4BA3E] text-[9px] font-bold tracking-widest uppercase">
+                  <div className="flex items-center space-x-2 px-3 py-1 rounded-full bg-[#F4BA3E]/10 border border-[#F4BA3E]/20 text-[#F4BA3E] text-[11px] font-bold tracking-widest uppercase">
                     <Calendar className="w-3 h-3" />
                     <span>{feria.fecha}</span>
                   </div>
-                  <div className="flex items-center space-x-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-400 text-[9px] font-bold tracking-widest uppercase">
+                  <div className="flex items-center space-x-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-400 text-[11px] font-bold tracking-widest uppercase">
                     <MapPin className="w-3 h-3" />
                     <span>{feria.lugar}</span>
                   </div>
@@ -124,7 +124,7 @@ export function NosotrosFerias({ ferias }: NosotrosFeriasProps) {
                 </p>
 
                 <div className="p-5 bg-white/[0.03] rounded-2xl border-l-[3px] border-[#F4BA3E]">
-                  <h4 className="text-[8px] uppercase tracking-widest font-bold text-[#F4BA3E] mb-1.5">Logro Destacado</h4>
+                  <h4 className="text-[10px] uppercase tracking-widest font-bold text-[#F4BA3E] mb-1.5">Logro Destacado</h4>
                   <p className="text-sm text-white font-serif italic leading-snug">"{feria.logros}"</p>
                 </div>
               </div>

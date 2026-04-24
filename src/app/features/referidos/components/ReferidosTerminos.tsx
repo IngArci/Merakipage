@@ -81,7 +81,7 @@ export function ReferidosTerminos() {
               <ShieldCheck className="w-6 h-6 text-[#F4BA3E]" />
             </div>
             <div>
-              <span className="text-[#F4BA3E] font-bold tracking-[0.3em] uppercase text-[10px] mb-1 block">Condiciones Generales</span>
+              <span className="text-[#F4BA3E] font-bold tracking-[0.3em] uppercase text-[12px] mb-1 block">Condiciones Generales</span>
               <h2 className="text-3xl md:text-4xl font-bold text-white uppercase tracking-tighter leasing-none">
                 Términos y <span className="text-[#F4BA3E]">Restricciones</span>
               </h2>

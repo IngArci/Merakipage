@@ -98,7 +98,7 @@ export function LeadForm({ title = "¿Quieres más información?", subtitle, for
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             
             <div className="space-y-2">
-              <Label className="text-gray-400 text-[10px] uppercase tracking-widest pl-1">
+              <Label className="text-gray-400 text-[12px] uppercase tracking-widest pl-1">
                 Nombre Completo
               </Label>
               <Input
@@ -112,7 +112,7 @@ export function LeadForm({ title = "¿Quieres más información?", subtitle, for
             </div>
 
             <div className="space-y-2">
-              <Label className="text-gray-400 text-[10px] uppercase tracking-widest pl-1">
+              <Label className="text-gray-400 text-[12px] uppercase tracking-widest pl-1">
                 Teléfono
               </Label>
               <Input
@@ -128,7 +128,7 @@ export function LeadForm({ title = "¿Quieres más información?", subtitle, for
           </div>
 
           <div className="space-y-2">
-            <Label className="text-gray-400 text-[10px] uppercase tracking-widest pl-1">
+            <Label className="text-gray-400 text-[12px] uppercase tracking-widest pl-1">
               Correo Electrónico
             </Label>
             <Input
@@ -142,7 +142,7 @@ export function LeadForm({ title = "¿Quieres más información?", subtitle, for
           </div>
 
           <div className="space-y-2">
-            <Label className="text-gray-400 text-[10px] uppercase tracking-widest pl-1">
+            <Label className="text-gray-400 text-[12px] uppercase tracking-widest pl-1">
               ¿Cómo Podemos Ayudarte?
             </Label>
             <Textarea

@@ -22,7 +22,7 @@ export function NosotrosHero() {
         >
           <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl mb-10">
             <Sparkles className="w-4 h-4 text-[#F4BA3E]" />
-            <span className="text-[#F4BA3E] text-[10px] font-bold tracking-[0.3em] uppercase">Trayectoria • 25 Años</span>
+            <span className="text-[#F4BA3E] text-[12px] font-bold tracking-[0.3em] uppercase">Trayectoria • 25 Años</span>
           </div>
 
           <h1 className="text-4xl md:text-7xl font-bold mb-6 text-white tracking-tight leading-tight uppercase">

@@ -48,7 +48,7 @@ export function ProjectCard({ title, location, sizes, image, slug, status }: Pro
           </div>
 
           <div className="mb-8 flex-grow">
-            <p className="text-[10px] text-[var(--gold-5)] uppercase tracking-widest font-bold mb-1 opacity-70">Dimensiones</p>
+            <p className="text-[12px] text-[var(--gold-5)] uppercase tracking-widest font-bold mb-1 opacity-70">Dimensiones</p>
             <p className="text-base text-gray-300 font-light italic">{sizes}</p>
           </div>
 

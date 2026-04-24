@@ -91,7 +91,7 @@ export function Header() {
                   to="/"
                   className="text-sm transition-colors hover:text-[#F4BA3E] text-[#F4BA3E]"
                 >
-                  Volver a Inicio
+                  VOLVER A INICIO
                 </Link>
                 {projectDetailSections.map((section) => (
                   <button
@@ -107,7 +107,7 @@ export function Header() {
                   className="bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] hover:from-[#FFF18F] hover:via-[#F4BA3E] hover:to-[#FFF18F] text-black shadow-lg shadow-[#F4BA3E]/30 transition-transform duration-300 hover:scale-[1.03] active:scale-95 focus-visible:ring-2 focus-visible:ring-[#F4BA3E] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                   onClick={() => scrollToSection('contacto')}
                 >
-                  Solicitar información
+                  SOLICITO INFORMACIÓN
                 </Button>
               </>
             ) : isNosotrosPage ? (
@@ -127,7 +127,7 @@ export function Header() {
                   className="bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] hover:from-[#FFF18F] hover:via-[#F4BA3E] hover:to-[#FFF18F] text-black shadow-lg shadow-[#F4BA3E]/30 transition-transform duration-300 hover:scale-[1.03] active:scale-95 focus-visible:ring-2 focus-visible:ring-[#F4BA3E] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                   asChild
                 >
-                  <Link to="/">Volver al Inicio</Link>
+                  <Link to="/">VOLVER AL INICIO</Link>
                 </Button>
               </>
             ) : (
@@ -182,7 +182,7 @@ export function Header() {
                     onClick={() => setIsMenuOpen(false)}
                     className="text-sm py-2 transition-colors hover:text-[#F4BA3E] text-[#F4BA3E] text-left"
                   >
-                    Volver a Inicio
+                    VOLVER A INICIO
                   </Link>
                   {projectDetailSections.map((section) => (
                     <button
@@ -198,7 +198,7 @@ export function Header() {
                     className="bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] hover:from-[#FFF18F] hover:via-[#F4BA3E] hover:to-[#FFF18F] text-black w-full active:scale-95 transition-transform"
                     onClick={() => scrollToSection('contacto')}
                   >
-                    Solicitar información
+                    SOLICITAR INFORMACIÓN
                   </Button>
                 </>
               ) : isNosotrosPage ? (
@@ -218,7 +218,7 @@ export function Header() {
                     className="bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] hover:from-[#FFF18F] hover:via-[#F4BA3E] hover:to-[#FFF18F] text-black w-full active:scale-95 transition-transform"
                     asChild
                   >
-                    <Link to="/">Volver al Inicio</Link>
+                    <Link to="/">VOLVER AL INICIO</Link>
                   </Button>
                 </>
               ) : (

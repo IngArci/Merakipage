@@ -25,7 +25,7 @@ export function NosotrosStats() {
                 {stat.number}
               </div>
               <div className="h-[1.5px] w-6 bg-[#F4BA3E]/30 mx-auto mb-4 group-hover:w-10 transition-all duration-500" />
-              <div className="text-[9px] text-gray-400 uppercase tracking-[0.2em] font-bold">{stat.label}</div>
+              <div className="text-[11px] text-gray-400 uppercase tracking-[0.2em] font-bold">{stat.label}</div>
             </motion.div>
           ))}
         </div>

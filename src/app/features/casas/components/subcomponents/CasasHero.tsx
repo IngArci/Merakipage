@@ -30,7 +30,7 @@ export function CasasHero() {
             animate={{ opacity: 1, x: 0 }} 
             transition={{ duration: 0.8 }}
           >
-            <span className="text-[#F4BA3E] font-bold tracking-[0.3em] uppercase mb-4 block text-[10px] sm:text-sm">Innovación Arquitectónica</span>
+            <span className="text-[#F4BA3E] font-bold tracking-[0.3em] uppercase mb-4 block text-[12px] sm:text-sm">Innovación Arquitectónica</span>
             <h1 className="text-3xl sm:text-6xl md:text-8xl font-bold text-white mb-6 uppercase tracking-tighter leading-none">
               {CASAS_DATA.concept.title}
             </h1>

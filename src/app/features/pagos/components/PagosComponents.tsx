@@ -446,8 +446,8 @@ function InstructionCard({ doc, i }: { doc: PaymentInstructionData; i: number })
             <FileText className="w-8 h-8 text-[#F4BA3E]" />
           </div>
           <div className="flex flex-col items-end">
-            <span className="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-1">Guía PDF</span>
-            <span className="px-3 py-1 bg-red-500/10 text-red-500 text-[10px] font-bold rounded-lg border border-red-500/20 uppercase tracking-tighter">Instructivo</span>
+            <span className="text-[12px] uppercase tracking-widest text-gray-500 font-bold mb-1">Guía PDF</span>
+            <span className="px-3 py-1 bg-red-500/10 text-red-500 text-[12px] font-bold rounded-lg border border-red-500/20 uppercase tracking-tighter">Instructivo</span>
           </div>
         </div>
 
@@ -457,7 +457,7 @@ function InstructionCard({ doc, i }: { doc: PaymentInstructionData; i: number })
         
         <div className="flex items-center justify-between pt-6 border-t border-white/5 mt-auto">
           <div className="flex flex-col">
-            <span className="text-[10px] uppercase tracking-widest text-gray-500 mb-1">Contenido</span>
+            <span className="text-[12px] uppercase tracking-widest text-gray-500 mb-1">Contenido</span>
             <span className="text-xs text-gray-400">Paso a paso</span>
           </div>
           <button

@@ -176,10 +176,10 @@ export function AdminInstructivos({
                       <h3 className="text-white font-medium truncate">{doc.title}</h3>
                     </div>
                     <div className="flex items-center gap-2 mt-1">
-                      <span className="text-[10px] px-2 py-0.5 bg-[#F4BA3E]/10 text-[#F4BA3E] border border-[#F4BA3E]/20 rounded-full font-bold uppercase">
+                      <span className="text-[12px] px-2 py-0.5 bg-[#F4BA3E]/10 text-[#F4BA3E] border border-[#F4BA3E]/20 rounded-full font-bold uppercase">
                         {doc.bank}
                       </span>
-                      <span className="text-[10px] px-2 py-0.5 bg-white/5 text-gray-400 border border-white/10 rounded-full font-bold uppercase">
+                      <span className="text-[12px] px-2 py-0.5 bg-white/5 text-gray-400 border border-white/10 rounded-full font-bold uppercase">
                         {doc.category}
                       </span>
                     </div>

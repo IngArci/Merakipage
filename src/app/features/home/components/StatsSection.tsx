@@ -14,7 +14,7 @@ interface StatItem {
 const STATS: StatItem[] = [
   {
     icon: Home,
-    value: 1650,
+    value: 2015,
     suffix: '+',
     label: 'Lotes Vendidos',
     sublabel: 'Familias que ya invirtieron con Meraki',
@@ -126,7 +126,7 @@ export function StatsSection() {
         >
           <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl mb-6">
             <TrendingUp className="w-4 h-4 text-[#F4BA3E]" />
-            <span className="text-[#F4BA3E] text-[10px] font-bold tracking-[0.3em] uppercase">Resultados que Hablan</span>
+            <span className="text-[#F4BA3E] text-[12px] font-bold tracking-[0.3em] uppercase">Resultados que Hablan</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-white uppercase tracking-tight">
             Más de{' '}

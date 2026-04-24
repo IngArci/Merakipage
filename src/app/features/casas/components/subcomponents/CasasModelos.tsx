@@ -45,7 +45,7 @@ export function CasasModelos() {
                 ))}
               </div>
               <div className="pt-6 border-t border-white/10">
-                <p className="text-[10px] text-gray-500 uppercase font-bold tracking-widest mb-1">Precio de inversión</p>
+                <p className="text-[12px] text-gray-500 uppercase font-bold tracking-widest mb-1">Precio de inversión</p>
                 <p className="text-2xl sm:text-3xl font-bold text-white">{model.price}</p>
               </div>
             </motion.div>
@@ -166,7 +166,7 @@ function TraditionalCard({ model }: { model: any }) {
       </div>
 
       <div className="absolute bottom-6 sm:bottom-10 left-6 sm:left-10 text-left z-20">
-        <span className="text-[10px] sm:text-xs font-bold text-[#F4BA3E] uppercase tracking-[0.2em] mb-2 block">{model.label}</span>
+        <span className="text-[12px] sm:text-xs font-bold text-[#F4BA3E] uppercase tracking-[0.2em] mb-2 block">{model.label}</span>
         <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">{model.name}</h3>
         <div className="flex flex-col sm:flex-row sm:items-center text-[#F4BA3E]">
 

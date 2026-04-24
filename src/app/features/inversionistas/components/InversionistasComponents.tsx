@@ -172,12 +172,12 @@ export function InversionistasVideoGrid() {
 
                     <div className="flex items-center gap-2 mb-2">
                       <span className={`w-2 h-2 rounded-full ${isTikTok ? 'bg-pink-500 shadow-[0_0_8px_rgba(236,72,153,0.8)]' : 'bg-red-600 shadow-[0_0_8px_rgba(220,38,38,0.8)]'} animate-pulse`} />
-                      <h4 className="text-[#947018] text-[10px] uppercase font-bold tracking-[0.2em] opacity-80 decoration-[#F4BA3E]">
+                      <h4 className="text-[#947018] text-[12px] uppercase font-bold tracking-[0.2em] opacity-80 decoration-[#F4BA3E]">
                         {isTikTok ? "TikTok Short" : "Testimonio YouTube"}
                       </h4>
                     </div>
 
-                    <h3 className="text-[#eaddc5] font-medium text-[15px] md:text-base group-hover:text-white transition-colors leading-relaxed line-clamp-2">
+                    <h3 className="text-[#eaddc5] font-medium text-[18px] md:text-base group-hover:text-white transition-colors leading-relaxed line-clamp-2">
                       {video.title}
                     </h3>
                   </div>
@@ -269,11 +269,11 @@ export function InversionistasGallery() {
                   <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-br from-[#FFF18F] to-[#947018]" />
                 </div>
 
-                <h4 className="text-[#947018] group-hover:text-[#F4BA3E] transition-colors text-[11px] uppercase font-bold tracking-[0.25em] mb-3">
+                <h4 className="text-[#947018] group-hover:text-[#F4BA3E] transition-colors text-[13px] uppercase font-bold tracking-[0.25em] mb-3">
                   Inversionista
                 </h4>
 
-                <p className="text-[#dfd0b5] text-sm md:text-[15px] font-light leading-relaxed line-clamp-3">
+                <p className="text-[#dfd0b5] text-sm md:text-[18px] font-light leading-relaxed line-clamp-3">
                   {image.caption}
                 </p>
               </div>

@@ -35,7 +35,7 @@ export function NosotrosAsesores({ asesores }: NosotrosAsesoresProps) {
           <h2 className="text-3xl md:text-5xl mb-6 font-bold">
             Asesores <span className="text-[#F4BA3E]">Oficiales</span>
           </h2>
-          <div className="inline-flex items-center px-5 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-[10px] font-bold tracking-widest uppercase mb-10">
+          <div className="inline-flex items-center px-5 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-[12px] font-bold tracking-widest uppercase mb-10">
             <Shield className="w-3.5 h-3.5 mr-2" />
             Canal de Venta Verificado
           </div>
@@ -66,7 +66,7 @@ export function NosotrosAsesores({ asesores }: NosotrosAsesoresProps) {
               </button>
             )}
           </div>
-          <p className="text-[10px] text-gray-500 mt-3 uppercase tracking-widest font-medium">Verifica la identidad de tu asesor en nuestro registro oficial</p>
+          <p className="text-[12px] text-gray-500 mt-3 uppercase tracking-widest font-medium">Verifica la identidad de tu asesor en nuestro registro oficial</p>
         </motion.div>
       </div>
 
@@ -139,7 +139,7 @@ export function NosotrosAsesores({ asesores }: NosotrosAsesoresProps) {
                       <div className="flex flex-col items-end">
                         <div className="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20">
                           <Shield className="w-3.5 h-3.5 text-green-500" />
-                          <span className="text-[10px] text-green-500 font-bold uppercase tracking-[0.15em]">Verificado</span>
+                          <span className="text-[12px] text-green-500 font-bold uppercase tracking-[0.15em]">Verificado</span>
                         </div>
                       </div>
                     </div>
@@ -150,14 +150,14 @@ export function NosotrosAsesores({ asesores }: NosotrosAsesoresProps) {
                       </h3>
                       <div className="flex items-center space-x-2.5">
                         <div className="w-2 h-2 rounded-full bg-[#F4BA3E] animate-pulse" />
-                        <p className="text-gray-400 font-bold tracking-[0.2em] uppercase text-[10px]">Agente Inmobiliario</p>
+                        <p className="text-gray-400 font-bold tracking-[0.2em] uppercase text-[12px]">Agente Inmobiliario</p>
                       </div>
                     </div>
 
                     <div className="mt-auto">
                       <Button
                         onClick={() => handleWhatsapp(asesor)}
-                        className="w-full h-14 bg-white/5 hover:bg-[#F4BA3E] text-white hover:text-black border border-white/10 hover:border-[#F4BA3E] rounded-2xl transition-all duration-500 text-[11px] font-bold tracking-[0.2em] uppercase shadow-lg hover:shadow-[#F4BA3E]/20"
+                        className="w-full h-14 bg-white/5 hover:bg-[#F4BA3E] text-white hover:text-black border border-white/10 hover:border-[#F4BA3E] rounded-2xl transition-all duration-500 text-[13px] font-bold tracking-[0.2em] uppercase shadow-lg hover:shadow-[#F4BA3E]/20"
                       >
                         <MessageCircle className="w-4.5 h-4.5 mr-2.5" />
                         Contactar Asesor
@@ -181,8 +181,8 @@ export function NosotrosAsesores({ asesores }: NosotrosAsesoresProps) {
               <h3 className="text-xl text-white font-bold mb-3 uppercase tracking-tight">Asesor No Encontrado</h3>
               <p className="text-gray-400 text-sm mb-6">El nombre "<span className="text-white font-medium">{searchTerm}</span>" no figura en nuestro registro de asesores certificados.</p>
               <div className="p-4 bg-red-500/10 rounded-xl border border-red-500/10">
-                <p className="text-red-400 text-[10px] font-bold uppercase tracking-widest">⚠️ Advertencia de Seguridad</p>
-                <p className="text-gray-500 text-[10px] mt-1">Por tu seguridad, solo realiza transacciones con personal verificado en este portal oficial.</p>
+                <p className="text-red-400 text-[12px] font-bold uppercase tracking-widest">⚠️ Advertencia de Seguridad</p>
+                <p className="text-gray-500 text-[12px] mt-1">Por tu seguridad, solo realiza transacciones con personal verificado en este portal oficial.</p>
               </div>
             </motion.div>
           )}

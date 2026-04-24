@@ -41,7 +41,7 @@ export function CasasBenefits() {
                   </div>
                   <div>
                     <h4 className="text-xs sm:text-md font-bold text-white mb-1 uppercase tracking-widest leading-tight">{spec.title}</h4>
-                    <p className="text-gray-500 text-[10px] sm:text-xs leading-relaxed">{spec.desc}</p>
+                    <p className="text-gray-500 text-[12px] sm:text-xs leading-relaxed">{spec.desc}</p>
                   </div>
                 </div>
               ))}
@@ -59,7 +59,7 @@ export function CasasBenefits() {
                 <div key={adv.title} className="p-5 sm:p-6 bg-gradient-to-br from-white/10 to-transparent rounded-2xl border border-white/5 hover:border-[#F4BA3E]/40 transition-all group">
                   <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-[#F4BA3E] mb-3 sm:mb-4 group-hover:scale-110 transition-transform" />
                   <h4 className="text-sm sm:text-base text-white font-bold mb-2 uppercase tracking-tight">{adv.title}</h4>
-                  <p className="text-gray-500 text-[10px] sm:text-sm">{adv.desc}</p>
+                  <p className="text-gray-500 text-[12px] sm:text-sm">{adv.desc}</p>
                 </div>
               ))}
             </div>
@@ -83,7 +83,7 @@ export function CasasBenefits() {
                   {step.step}
                 </div>
                 <h4 className="text-sm sm:text-base text-white font-bold mb-4 uppercase tracking-widest leading-snug">{step.title}</h4>
-                <p className="text-gray-500 text-[10px] sm:text-sm">{step.desc}</p>
+                <p className="text-gray-500 text-[12px] sm:text-sm">{step.desc}</p>
               </div>
             ))}
           </div>
