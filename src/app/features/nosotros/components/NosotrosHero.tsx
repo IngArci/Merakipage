@@ -6,9 +6,9 @@ export function NosotrosHero() {
     <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden z-10 pt-20">
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1665069181618-5618c9b621ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjb25zdHJ1Y3Rpb24lMjBhcmNoaXRlY3R1cmUlMjBidWlsZGluZyUyMHRlYW18ZW58MXx8fHwxNzczODcxMzI4fDA&ixlib=rb-4.1.0&q=80&w=1080"
+          src='/images/nosotros/FUNDIDO.webp'
           alt="Hero Background"
-          className="w-full h-full object-cover"
+          className="w-full  object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0d060a] via-[#0d060a]/70 to-[#0d060a]/20" />
       </div>

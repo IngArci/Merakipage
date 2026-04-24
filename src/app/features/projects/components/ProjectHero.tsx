@@ -16,6 +16,7 @@ interface ProjectHeroProps {
   availableLots: number;
   totalLots: number;
   deliveryDate: string;
+  priceFromUSD?: string;
   showStats?: boolean;
 }
 
@@ -31,6 +32,7 @@ export function ProjectHero({
   availableLots,
   totalLots,
   deliveryDate,
+  priceFromUSD,
   showStats = true
 }: ProjectHeroProps) {
   // ... (previous logic) ...
@@ -132,19 +134,22 @@ export function ProjectHero({
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-5xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 max-w-4xl mx-auto"
           >
             <div className="bg-white/[0.02] backdrop-blur-md p-8 rounded-3xl border border-white/5 hover:border-[var(--gold-5)]/20 transition-all duration-500 group text-center">
               <p className="text-[var(--gold-5)] text-[10px] uppercase tracking-[0.2em] font-bold mb-3 opacity-60">Inversión Desde</p>
-              <p className="text-2xl md:text-3xl text-white font-light">{priceFrom}</p>
+              <div className="flex flex-col items-center">
+                <p className="text-2xl md:text-3xl text-white font-light">{priceFrom} <span className="text-xs text-gray-500 uppercase ml-1">COP</span></p>
+                {priceFromUSD && (
+                  <p className="text-lg md:text-xl text-gray-400 font-light mt-1 border-t border-white/5 pt-1 w-full max-w-[150px]">
+                    {priceFromUSD} <span className="text-xs text-gray-500 uppercase ml-1">USD</span>
+                  </p>
+                )}
+              </div>
             </div>
             <div className="bg-white/[0.02] backdrop-blur-md p-8 rounded-3xl border border-white/5 hover:border-[var(--gold-5)]/20 transition-all duration-500 group text-center">
               <p className="text-[var(--gold-5)] text-[10px] uppercase tracking-[0.2em] font-bold mb-3 opacity-60">Áreas Disponibles</p>
               <p className="text-2xl md:text-3xl text-white font-light">{sizes}</p>
-            </div>
-            <div className="bg-white/[0.02] backdrop-blur-md p-8 rounded-3xl border border-white/5 hover:border-[var(--gold-5)]/20 transition-all duration-500 group text-center">
-              <p className="text-[var(--gold-5)] text-[10px] uppercase tracking-[0.2em] font-bold mb-3 opacity-60">Disponibilidad</p>
-              <p className="text-2xl md:text-3xl text-white font-light">{availableLots} <span className="text-base text-gray-500 font-normal">/ {totalLots}</span></p>
             </div>
           </motion.div>
         )}

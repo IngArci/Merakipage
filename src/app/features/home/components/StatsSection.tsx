@@ -35,10 +35,10 @@ const STATS: StatItem[] = [
   },
   {
     icon: Users,
-    value: 25,
+    value: 26,
     suffix: '+',
     label: 'Años de Experiencia',
-    sublabel: 'Construyendo sueños en el Tolima',
+    sublabel: 'Construyendo sueños en el Tolima, en asociación con Grupo Dinheiro 1970 S A S ',
   },
 ];
 
@@ -131,7 +131,7 @@ export function StatsSection() {
           <h2 className="text-3xl md:text-5xl font-bold text-white uppercase tracking-tight">
             Más de{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F4BA3E] via-[#FFF18F] to-[#B7871C]">
-              1600 Familias
+              2015 Familias
             </span>{' '}
             ya Invirtieron
           </h2>

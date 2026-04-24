@@ -77,6 +77,7 @@ export default function ProyectoDetalle() {
         selectedImage={selectedImage}
         setSelectedImage={setSelectedImage}
         priceFrom={project.priceFrom}
+        priceFromUSD={project.priceFromUSD}
         sizes={project.sizes}
         availableLots={project.availableLots}
         totalLots={project.totalLots}

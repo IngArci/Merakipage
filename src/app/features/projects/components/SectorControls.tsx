@@ -38,10 +38,6 @@ export function SectorControls({ projectData, activeSector, onSelectSector }: Se
           {sector.name.toUpperCase()}
         </button>
       ))}
-      
-      <strong className="text-zinc-400 text-sm flex items-center">
-        👆 Haz clic sobre un terreno para ver más información
-      </strong>
     </div>
   );
 }

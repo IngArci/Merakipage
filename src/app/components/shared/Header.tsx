@@ -17,33 +17,33 @@ export function Header() {
   const isNosotrosPage = location.pathname === '/nosotros';
 
   const menuItems = [
-    { name: 'Inicio', path: '/' },
-    { name: 'Proyectos', path: '/proyectos' },
-    { name: 'Pagos', path: '/pagos' },
-    { name: 'Referidos', path: '/referidos' },
-    { name: 'Nosotros', path: '/nosotros' },
-    { name: 'Servicio al Cliente', path: '/servicio' },
-    { name: 'Cartera', path: '/cartera' },
+    { name: 'INICIO', path: '/' },
+    { name: 'CLUBS DE CAMPO', path: '/proyectos' },
+    { name: 'PAGOS', path: '/pagos' },
+    { name: 'REFERIDOS', path: '/referidos' },
+    { name: 'NOSOTROS', path: '/nosotros' },
+    { name: 'SERVICIO AL CLIENTE', path: '/servicio' },
+    { name: 'CARTERA', path: '/cartera' },
   ];
 
   // Apartados para las páginas de detalle de proyectos
   const projectDetailSections = [
-    { name: 'Descripción', anchor: 'descripcion' },
-    { name: 'Ubicación', anchor: 'ubicacion' },
-    { name: 'Amenidades', anchor: 'amenidades' },
-    { name: 'Plano Maestro', anchor: 'plano' },
-    { name: 'Avances', anchor: 'avances' },
+    { name: 'DESCRIPCIÓN', anchor: 'descripcion' },
+    { name: 'UBICACIÓN', anchor: 'ubicacion' },
+    { name: 'AMENIDADES', anchor: 'amenidades' },
+    { name: 'PLANO MAESTRO', anchor: 'plano' },
+    { name: 'AVANCES', anchor: 'avances' },
   ];
 
   // Apartados para la página de Nosotros
   const nosotrosSections = [
-    { name: 'Historia', anchor: 'historia' },
-    { name: 'Valores', anchor: 'valores' },
-    { name: 'Misión y Visión', anchor: 'mision-vision' },
-    { name: 'Equipo', anchor: 'equipo' },
-    { name: 'Asesores', anchor: 'asesores' },
-    { name: 'Certificaciones', anchor: 'certificaciones' },
-    { name: 'Ferias', anchor: 'ferias' },
+    { name: 'HISTORIA', anchor: 'historia' },
+    { name: 'VALORES', anchor: 'valores' },
+    { name: 'MISIÓN Y VISIÓN', anchor: 'mision-vision' },
+    { name: 'EQUIPO', anchor: 'equipo' },
+    { name: 'ASESORES', anchor: 'asesores' },
+    { name: 'CERTIFICACIONES', anchor: 'certificaciones' },
+    { name: 'FERIAS', anchor: 'ferias' },
   ];
 
   const currentSections = isProjectDetail ? projectDetailSections : isNosotrosPage ? nosotrosSections : [];
@@ -89,7 +89,7 @@ export function Header() {
               <>
                 <Link
                   to="/"
-                  className="text-sm transition-colors hover:text-[#F4BA3E] text-gray-300"
+                  className="text-sm transition-colors hover:text-[#F4BA3E] text-[#F4BA3E]"
                 >
                   Volver a Inicio
                 </Link>
@@ -97,9 +97,8 @@ export function Header() {
                   <button
                     key={section.anchor}
                     onClick={() => scrollToSection(section.anchor)}
-                    className={`text-sm transition-colors hover:text-[#F4BA3E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F4BA3E] ${
-                      activeSectionId === section.anchor ? 'text-[#F4BA3E] font-medium' : 'text-gray-300'
-                    }`}
+                    className={`text-sm transition-colors text-[#F4BA3E] hover:text-[#F4BA3E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F4BA3E] ${activeSectionId === section.anchor ? 'text-[#F4BA3E] font-medium' : 'text-gray-300'
+                      }`}
                   >
                     {section.name}
                   </button>
@@ -118,9 +117,8 @@ export function Header() {
                   <button
                     key={section.anchor}
                     onClick={() => scrollToSection(section.anchor)}
-                    className={`text-sm transition-colors hover:text-[#F4BA3E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F4BA3E] ${
-                      activeSectionId === section.anchor ? 'text-[#F4BA3E] font-medium' : 'text-gray-300'
-                    }`}
+                    className={`text-sm transition-colors hover:text-[#F4BA3E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F4BA3E] ${activeSectionId === section.anchor ? 'text-[#F4BA3E] font-medium' : 'text-gray-300'
+                      }`}
                   >
                     {section.name}
                   </button>
@@ -139,9 +137,9 @@ export function Header() {
                   <Link
                     key={item.path}
                     to={item.path}
-                    className={`text-sm transition-colors hover:text-[#F4BA3E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F4BA3E] ${location.pathname === item.path
+                    className={`text-[#F4BA3E] transition-colors hover:text-[#F4BA3E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F4BA3E] ${location.pathname === item.path
                       ? 'text-[#F4BA3E]'
-                      : 'text-gray-300'
+                      : 'text-white'
                       }`}
                   >
                     {item.name}
@@ -151,7 +149,7 @@ export function Header() {
                   className="bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] hover:from-[#FFF18F] hover:via-[#F4BA3E] hover:to-[#FFF18F] text-black shadow-lg shadow-[#F4BA3E]/30 transition-transform duration-300 hover:scale-[1.03] active:scale-95 focus-visible:ring-2 focus-visible:ring-[#F4BA3E] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                   asChild
                 >
-                  <Link to="/contacto">Invertir ahora</Link>
+                  <Link to="/contacto">INVERTIR AHORA</Link>
                 </Button>
               </>
             )}
@@ -182,7 +180,7 @@ export function Header() {
                   <Link
                     to="/"
                     onClick={() => setIsMenuOpen(false)}
-                    className="text-sm py-2 transition-colors hover:text-[#F4BA3E] text-gray-300 text-left"
+                    className="text-sm py-2 transition-colors hover:text-[#F4BA3E] text-[#F4BA3E] text-left"
                   >
                     Volver a Inicio
                   </Link>
@@ -190,9 +188,8 @@ export function Header() {
                     <button
                       key={section.anchor}
                       onClick={() => scrollToSection(section.anchor)}
-                      className={`text-sm py-2 transition-colors hover:text-[#F4BA3E] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F4BA3E] ${
-                        activeSectionId === section.anchor ? 'text-[#F4BA3E] font-medium' : 'text-gray-300'
-                      }`}
+                      className={`text-sm py-2 transition-colors hover:text-[#F4BA3E] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F4BA3E] ${activeSectionId === section.anchor ? 'text-[#F4BA3E] font-medium' : 'text-gray-300'
+                        }`}
                     >
                       {section.name}
                     </button>
@@ -211,9 +208,8 @@ export function Header() {
                     <button
                       key={section.anchor}
                       onClick={() => scrollToSection(section.anchor)}
-                      className={`text-sm py-2 transition-colors hover:text-[#F4BA3E] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F4BA3E] ${
-                        activeSectionId === section.anchor ? 'text-[#F4BA3E] font-medium' : 'text-gray-300'
-                      }`}
+                      className={`text-sm py-2 transition-colors hover:text-[#F4BA3E] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F4BA3E] ${activeSectionId === section.anchor ? 'text-[#F4BA3E] font-medium' : 'text-gray-300'
+                        }`}
                     >
                       {section.name}
                     </button>
@@ -246,7 +242,7 @@ export function Header() {
                     asChild
                   >
                     <Link to="/contacto" onClick={() => setIsMenuOpen(false)}>
-                      Invertir ahora
+                      INVERTIR AHORA
                     </Link>
                   </Button>
                 </>

@@ -10,6 +10,7 @@ import { LotModal } from './LotModal';
 import { StaticMasterPlan } from './StaticMasterPlan';
 import { SectorControls } from './SectorControls';
 import { InteractiveSvgMap } from './InteractiveSvgMap';
+import { MapInteractionHint } from './MapInteractionHint';
 
 interface ProjectMasterPlanProps {
   masterPlan?: string;
@@ -34,6 +35,7 @@ export function ProjectMasterPlan({ masterPlan, totalLots, availableLots, projec
 
   const [selectedLot, setSelectedLot] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
 
   // Memoized lot mapping logic
   const mappedLots = useMemo(() => {
@@ -44,6 +46,7 @@ export function ProjectMasterPlan({ masterPlan, totalLots, availableLots, projec
   const salesProgress = Math.round(((totalLots - availableLots) / totalLots) * 100);
 
   const handleLotClick = async (lot: any) => {
+    setHasInteracted(true);
     setSelectedLot(lot);
     setIsModalOpen(true);
     if (!lot.areaM2 || !lot.observaciones) {
@@ -96,7 +99,11 @@ export function ProjectMasterPlan({ masterPlan, totalLots, availableLots, projec
           />
 
           <div className="w-full relative bg-zinc-950 border border-zinc-800 rounded-3xl overflow-hidden shadow-2xl">
-            <div className="h-[65vh] md:h-[80vh] w-full cursor-grab active:cursor-grabbing relative bg-[#111]">
+            <div 
+              onMouseDown={() => setHasInteracted(true)}
+              onTouchStart={() => setHasInteracted(true)}
+              className="h-[65vh] md:h-[80vh] w-full cursor-grab active:cursor-grabbing relative bg-[#111]"
+            >
               {loadingInventory && (
                 <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/60 backdrop-blur-sm">
                   <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#F4BA3E]"></div>
@@ -111,6 +118,10 @@ export function ProjectMasterPlan({ masterPlan, totalLots, availableLots, projec
                     mappedLots={mappedLots}
                     onLotClick={handleLotClick}
                 />
+                
+                {!hasInteracted && (
+                  <MapInteractionHint onInteraction={() => setHasInteracted(true)} />
+                )}
               </div>
             </div>
 

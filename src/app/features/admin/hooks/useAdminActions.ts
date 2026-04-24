@@ -138,7 +138,7 @@ export function useAdminActions(selectedProject: string, proyectos: any[]) {
         images: [...prev.images, ...urls]
       }));
     } catch (error) {
-      console.error('Error al subir imÃ¡genes de avance:', error);
+      console.error('Error al subir imagenes de avance:', error);
       alert('Error al subir una o mÃ¡s imÃ¡genes.');
     } finally {
       setIsUploading(false);

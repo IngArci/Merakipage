@@ -42,6 +42,7 @@ export interface Project {
   description: string;
   sizes: string;
   priceFrom: string;
+  priceFromUSD?: string;
   totalLots: number;
   availableLots: number;
   deliveryDate: string;

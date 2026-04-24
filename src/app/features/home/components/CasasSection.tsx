@@ -44,8 +44,8 @@ export function CasasSection() {
           >
             <span className="text-[#F4BA3E] font-bold tracking-[0.3em] uppercase mb-4 block text-sm">Tu forma de invertir</span>
             <h2 className="text-4xl md:text-6xl font-bold mb-8 text-white uppercase tracking-tighter leading-tight">
-              Tiny Houses & <br />
-              <span className="text-[#F4BA3E]">Casas Modulares</span>
+
+              <span className="text-[#F4BA3E]">MODELO DE CASAS</span>
             </h2>
 
             <p className="text-xl text-gray-400 mb-10 leading-relaxed font-light">

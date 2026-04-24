@@ -56,7 +56,7 @@ export const salasVentasData: SalaVenta[] = [
       sunday: 'Domingos: 10:00 AM - 4:00 PM'
     },
     coordinates: { lat: 4.50457, lng: -74.99485 },
-    image: 'https://images.unsplash.com/photo-1769546253924-9e23d794be53?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080',
+    image: '/images/sala-de-ventas/sala-alvarado.webp',
     features: ['Zona comercial', 'Acceso fácil', 'Atención personalizada', 'Parqueadero',],
   },
   {

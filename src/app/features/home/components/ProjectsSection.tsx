@@ -30,7 +30,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
           </h2>
           <div className="h-px w-40 mx-auto bg-gradient-to-r from-transparent via-[var(--gold-5)] to-transparent mb-8 opacity-40" />
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
-            Descubre clubes campestres diseñados para quienes buscan el equilibrio perfecto entre lujo y naturaleza.
+            Descubre clubes de campo diseñados para quienes buscan el equilibrio perfecto entre lujo y naturaleza.
           </p>
         </motion.div>
 

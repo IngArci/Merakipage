@@ -16,7 +16,7 @@ export function NosotrosStory() {
             <div className="relative z-10 p-1.5 bg-gradient-to-br from-white/10 to-transparent rounded-[2.5rem] border border-white/5 shadow-2xl">
               <div className="overflow-hidden rounded-[2.2rem]">
                 <img
-                  src="https://images.unsplash.com/photo-1758519288905-38b7b00c1023?w=1080&q=90"
+                  src='/images/nosotros/NOSOTROS.webp'
                   alt="Equipo Meraki"
                   className="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-1000"
                 />
