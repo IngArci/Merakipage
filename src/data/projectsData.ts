@@ -59,9 +59,9 @@ export const projectsData: Record<string, Project> = {
       '/images/rio-claro/porteria-opt.webp',
       '/images/rio-claro/PISCINA.png',
       '/images/rio-claro/jacuzzi.png',
-      '/images/rio-claro/rio-1.png',
+
       '/images/rio-claro/rio-lento.png',
-      '/images/rio-claro/rio.png'
+
     ],
     amenities: [
       { icon: DoorOpen, name: 'Portería Exclusiva', description: '' },//
@@ -118,7 +118,8 @@ export const projectsData: Record<string, Project> = {
         name: 'Mar Canarias',
         subtitle: 'Segunda Etapa',
         image: '/images/laguna-mar/LOGO-MAR-CANARIAS.png'
-      }
+      },
+
     ],
     sizes: '300m² - 2.500m²',
     priceFrom: '$90,999,999',
@@ -234,33 +235,7 @@ export const projectsData: Record<string, Project> = {
       avancesObra: [
       ]
     },
-    progress: [
-      {
-        date: 'Marzo 2026',
-        title: 'Vías principales pavimentadas',
-        images: [
-          'https://images.unsplash.com/photo-1763328044351-98341e9963da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjBwcm9ncmVzcyUyMHJvYWQlMjBwYXZpbmd8ZW58MXx8fHx8MTc3NTU3NDY5Mnww&ixlib=rb-4.1.0&q=80&w=1080',
-          'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80',
-          'https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=800&q=80'
-        ]
-      },
-      {
-        date: 'Febrero 2026',
-        title: 'Instalación de redes eléctricas',
-        images: [
-          'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80',
-          'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?w=800&q=80'
-        ]
-      },
-      {
-        date: 'Enero 2026',
-        title: 'Cerramiento perimetral y portería',
-        percentage: 100,
-        images: [
-          'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80'
-        ]
-      }
-    ],
+
     formLink: 'https://api.leadconnectorhq.com/widget/form/9ZgMWa0gNMYaomA3lLqJ'
   },
   'sobre-montañas': {

@@ -9,7 +9,7 @@ export const handleGetDirections = (lat: number, lng: number) =>
   window.open(`https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=driving`, '_blank');
 
 export const handleWhatsApp = (phone: string, name: string, isGeneral: boolean = false) => {
-  const message = isGeneral 
+  const message = isGeneral
     ? encodeURIComponent('Hola, deseo información sobre los proyectos de Meraki.')
     : encodeURIComponent(`Hola, me gustaría información sobre la ${name}.`);
   window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
@@ -162,7 +162,7 @@ export function SalasVentasCTA() {
           <div className="absolute inset-0 bg-[#0d060a]/60 rounded-[3rem]" />
           <div className="relative z-10">
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 uppercase tracking-tight">
-              ¿Listo para <span className="text-[#F4BA3E]">visitarnos?</span>
+              ¡VISITANOS  <span className="text-[#F4BA3E]">AHORA!+</span>
             </h2>
             <p className="text-gray-400 text-lg mb-10 max-w-2xl mx-auto font-light">
               Nuestro equipo de asesores está listo para ayudarte a encontrar la inversión perfecta para tu futuro.

@@ -17,7 +17,7 @@ export function NosotrosPreviewSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl mb-6 text-white">
-              Únete a los Inversionistas del Futuro
+              Hechos que hablan de Meraki
             </h2>
 
             <p className="text-lg text-gray-300 mb-6">
@@ -26,7 +26,7 @@ export function NosotrosPreviewSection() {
             </p>
 
             <p className="text-lg text-gray-300 mb-8">
-              Con más de 25 años de experiencia, somos líderes en desarrollo de
+              Con más de 26 años de experiencia, somos líderes en desarrollo de
               clubes campestres, ofreciendo inversiones seguras y rentables.
             </p>
 

@@ -11,7 +11,7 @@ export function LeadFormSection() {
         <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#F4BA3E] rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#B7871C] rounded-full blur-3xl" />
       </div>
-      
+
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -21,10 +21,10 @@ export function LeadFormSection() {
             className="text-white"
           >
             <h2 className="text-4xl md:text-5xl mb-6 bg-gradient-to-r from-white via-[#FFF18F] to-white bg-clip-text text-transparent">
-              ¿Listo para invertir en tu futuro?
+              ¡AQUI! inicia  tu inversión Ahora...
             </h2>
             <p className="text-xl mb-8 text-gray-300">
-              Completa el formulario y un asesor experto te contactará para 
+              Completa el formulario y un asesor experto te contactará para
               ayudarte a encontrar la inversión perfecta para ti.
             </p>
             <div className="flex items-center space-x-3">

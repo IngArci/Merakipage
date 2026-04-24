@@ -70,7 +70,7 @@ export function WhatsAppMenu() {
 
               {/* Header */}
               <div className="bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] p-5">
-                <h3 className="text-black font-bold text-lg pr-8">¿Con quién deseas hablar?</h3>
+                <h3 className="text-black font-bold text-lg pr-8">¡CONTACTANOS AHORA!</h3>
                 <p className="text-black/70 text-sm mt-1">Selecciona el área de tu interés</p>
               </div>
 
@@ -101,9 +101,9 @@ export function WhatsAppMenu() {
               {/* Footer */}
               <div className="p-4 bg-black/50 border-t border-[#F4BA3E]/20">
                 <div className="flex items-center justify-center space-x-2">
-                  <img 
-                    src="/images/whatsapp-opt.webp" 
-                    alt="WhatsApp" 
+                  <img
+                    src="/images/whatsapp-opt.webp"
+                    alt="WhatsApp"
                     className="w-4 h-4 object-contain"
                   />
                   <p className="text-gray-400 text-xs">
@@ -146,9 +146,9 @@ export function WhatsAppMenu() {
               exit={{ rotate: 90, opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              <img 
-                src="/images/whatsapp-opt.webp" 
-                alt="WhatsApp" 
+              <img
+                src="/images/whatsapp-opt.webp"
+                alt="WhatsApp"
                 className="w-16 h-16 object-contain drop-shadow-xl"
               />
             </motion.div>

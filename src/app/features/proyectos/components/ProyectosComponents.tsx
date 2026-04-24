@@ -65,10 +65,10 @@ export function ProyectosHero() {
         >
           <span className="text-[#F4BA3E] font-bold tracking-[0.5em] uppercase text-sm mb-6 block">Catálogo de Inversión</span>
           <h1 className="text-6xl md:text-8xl font-bold text-white mb-8 uppercase tracking-tighter leading-none">
-            Nuestros <span className="text-[#F4BA3E]">Proyectos</span>
+            Nuestros <span className="text-[#F4BA3E]">Clubs de campo</span>
           </h1>
           <p className="text-xl md:text-2xl text-white/80 font-light max-w-2xl mx-auto leading-relaxed">
-            Explora los clubes campestres más exclusivos de Colombia, diseñados para transformar tu visión de futuro.
+            Explora los clubes campestres más exclusivos de Colombia, diseñados para vivir en modo vacaciones todos los dias.
           </p>
         </motion.div>
       </div>
