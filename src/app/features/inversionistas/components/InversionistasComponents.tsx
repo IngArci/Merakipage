@@ -54,7 +54,19 @@ export function InversionistasHero() {
                   </motion.div>
                 );
               })}
-            </div>
+              </div>
+
+              {/* Logo placeholder: espacio para colocar un logo debajo de los stats. Reemplaza el contenido con tu <img> cuando quieras. */}
+              <div className="mt-12 flex justify-center">
+                <div className="w-80 md:w-96 h-24 md:h-32 flex items-center justify-center rounded-lg">
+                  {/* Logo: coloca el archivo en `public/images/grupo-dinheiro1970-white.png` */}
+                  <img
+                    src="/images/dinheiro-blanco.png"
+                    alt="Grupo Dinheiro 1970"
+                    className="max-h-20 md:max-h-32 object-contain"
+                  />
+                </div>
+              </div>
           </motion.div>
         </div>
       </div>

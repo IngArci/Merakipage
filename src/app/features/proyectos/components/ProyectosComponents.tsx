@@ -46,7 +46,7 @@ const SectionHeader = ({ icon: Icon, title, subtitle, colorClass }: { icon: any,
 
 export function ProyectosHero() {
   return (
-    <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden py-12">
       <div className="absolute inset-0 z-0">
         <img
           src="/projects/NUESTROS-PROYECTOS.webp"
@@ -64,11 +64,11 @@ export function ProyectosHero() {
           className="max-w-4xl mx-auto"
         >
           <span className="text-[#F4BA3E] font-bold tracking-[0.5em] uppercase text-sm mb-6 block">Catálogo de Inversión</span>
-          <h1 className="text-6xl md:text-8xl font-bold text-white mb-8 uppercase tracking-tighter leading-none">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase tracking-tighter leading-tight">
             Nuestros <span className="text-[#F4BA3E]">Clubs de campo</span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/80 font-light max-w-2xl mx-auto leading-relaxed">
-            Explora los clubes campestres más exclusivos de Colombia, diseñados para vivir en modo vacaciones todos los dias.
+          <p className="text-lg md:text-2xl text-white/90 font-light max-w-3xl mx-auto leading-relaxed mt-2">
+            Explora los clubes campestres más exclusivos de Colombia, diseñados para vivir en modo vacaciones todos los días.
           </p>
         </motion.div>
       </div>

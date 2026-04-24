@@ -29,6 +29,18 @@ export function NosotrosStats() {
             </motion.div>
           ))}
         </div>
+
+        {/* Logo debajo de los stats */}
+        <div className="mt-12 flex justify-center">
+          <div className="w-80 md:w-96 h-24 md:h-32 flex items-center justify-center rounded-lg">
+            {/* Logo: coloca el archivo en `public/images/dinheiro-blanco.png` */}
+            <img
+              src="/images/dinheiro-blanco.png"
+              alt="Grupo Dinheiro 1970"
+              className="max-h-20 md:max-h-32 object-contain"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
