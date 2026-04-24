@@ -25,10 +25,10 @@ export function ProjectProgressSection({ progress }: ProjectProgressSectionProps
           className="max-w-6xl mx-auto"
         >
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-medium mb-4 text-white tracking-tight">Avances de Obra</h2>
+            <h2 className="text-3xl md:text-4xl font-medium mb-4 text-white tracking-tight">AVANCES DE OBRA DE TU CLUB DE CAMPO</h2>
             <div className="h-1 w-20 bg-[#F4BA3E] mx-auto mb-5 rounded-full shadow-[0_0_15px_rgba(244,186,62,0.4)]" />
-            <p className="text-sm md:text-base text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
-              Sigue de cerca la evolución de tu futuro hogar. Transparencia y compromiso en cada etapa del desarrollo.
+            <p className="text-sm md:text-base text-white-400 max-w-2xl mx-auto font-light leading-relaxed">
+              Sigue de cerca la evolución de tu inversión porque con Meraki a la fija.
             </p>
           </div>
 
@@ -61,9 +61,9 @@ function PrevArrow(props: any) {
   return (
     <button
       onClick={onClick}
-      className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-black/40 backdrop-blur-xl border border-white/5 hover:bg-[#F4BA3E] hover:text-black transition-all flex items-center justify-center group"
+      className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-[#F4BA3E] text-white backdrop-blur-xl border border-[#F4BA3E]/40 hover:brightness-95 transition-all flex items-center justify-center group"
     >
-      <ChevronLeft className="w-5 h-5 text-white group-hover:text-black" />
+      <ChevronLeft className="w-5 h-5 text-white" />
     </button>
   );
 }
@@ -73,9 +73,9 @@ function NextArrow(props: any) {
   return (
     <button
       onClick={onClick}
-      className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-black/40 backdrop-blur-xl border border-white/5 hover:bg-[#F4BA3E] hover:text-black transition-all flex items-center justify-center group"
+      className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-[#F4BA3E] text-white backdrop-blur-xl border border-[#F4BA3E]/40 hover:brightness-95 transition-all flex items-center justify-center group"
     >
-      <ChevronRight className="w-5 h-5 text-white group-hover:text-black" />
+      <ChevronRight className="w-5 h-5 text-white" />
     </button>
   );
 }

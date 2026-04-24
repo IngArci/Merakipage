@@ -61,7 +61,14 @@ export function PagosInfo() {
               <div>
                 <h3 className="text-2xl text-[#F4BA3E] mb-4">Información Importante</h3>
                 <ul className="space-y-3 text-gray-300">
-                  {['Guarda siempre tu comprobante de pago como respaldo de la transacción.', 'Los pagos pueden tardar hasta 24 horas hábiles en verse reflejados en tu cuenta.', 'Si tienes problemas con tu pago, contáctanos al WhatsApp +57 314 786 8069.', 'Verifica que tu código de referencia sea correcto antes de confirmar el pago.', 'Envía tu comprobante al correo: servicioalcliente.grupomeraki@gmail.com para agilizar la confirmación.'].map((item, i) => (
+                  {[
+                    'Guarda siempre tu comprobante de pago como respaldo de la transacción.',
+                    'Los pagos pueden tardar hasta 24 horas hábiles en verse reflejados en tu cuenta.',
+                    'Si tienes problemas con tu pago, contáctanos al WhatsApp +57 314 786 8069.',
+                    'Verifica que tu código de referencia sea correcto antes de confirmar el pago.',
+                    'Envía tu comprobante al correo: servicioalcliente.grupomeraki@gmail.com para agilizar la confirmación.',
+                    'Costos por transferencias internacionales y tarjetas de crédito tienen costos financieros adicionales los cuales deben ser asumidos por el inversionista.'
+                  ].map((item, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <span className="text-[#F4BA3E] mt-1">•</span>
                       <span>{item}</span>

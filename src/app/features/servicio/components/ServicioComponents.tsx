@@ -68,10 +68,10 @@ export function ServicioHero() {
             Servicio al Cliente
           </h1>
           <GoldDivider />
-          <p className="text-lg md:text-xl lg:text-2xl text-[#F4BA3E] font-medium mt-8 tracking-wide drop-shadow-md">
+          <p className="text-xl md:text-2xl lg:text-3xl text-[#F4BA3E] font-semibold mt-8 tracking-wide drop-shadow-md">
             ¿Cómo podemos ayudarte hoy?
           </p>
-          <p className="text-gray-300 mt-6 max-w-2xl mx-auto leading-relaxed opacity-90 text-sm md:text-base">
+          <p className="text-gray-300 mt-6 max-w-2xl mx-auto leading-relaxed opacity-95 text-base md:text-lg">
             Nuestro equipo de especialistas está listo para brindarte el acompañamiento y las respuestas que necesitas con la seriedad que nos caracteriza.
           </p>
         </motion.div>
@@ -89,7 +89,9 @@ export function ServicioContactMethods() {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 uppercase tracking-tight">Canales de Atención</h2>
-          <p className="text-base md:text-lg text-[#F4BA3E]/80">Elige el medio que mejor se adapte a ti</p>
+          <p className="text-sm md:text-base text-[#F4BA3E] font-semibold mt-3 max-w-2xl mx-auto drop-shadow-md">
+            Recuerda que nuestros únicos canales autorizados para los inversionistas son los siguientes:
+          </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
@@ -201,9 +203,9 @@ export function ServicioFAQ() {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-6">
-            <HelpCircle className="w-12 h-12 text-[#F4BA3E]" />
+            <HelpCircle className="w-14 h-14 text-[#F4BA3E] drop-shadow-md" />
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 uppercase tracking-tight">Preguntas Frecuentes</h2>
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 uppercase tracking-tight">Preguntas Frecuentes</h2>
           <GoldDivider />
         </div>
 
@@ -213,12 +215,12 @@ export function ServicioFAQ() {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl px-4 md:px-8 overflow-hidden transition-all duration-300 data-[state=open]:border-[#F4BA3E]/40"
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl px-6 md:px-10 overflow-hidden transition-all duration-300 data-[state=open]:border-[#F4BA3E]/40"
               >
                 <AccordionTrigger className="text-left hover:no-underline py-6 text-white hover:text-[#F4BA3E] transition-colors">
-                  <span className="text-base md:text-lg font-medium pr-4">{faq.question}</span>
+                  <span className="text-lg md:text-xl font-semibold pr-4">{faq.question}</span>
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-400 pb-8 leading-relaxed border-t border-white/5 pt-4 text-sm md:text-base">
+                <AccordionContent className="text-gray-300 pb-8 leading-relaxed border-t border-white/5 pt-4 text-base md:text-lg">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

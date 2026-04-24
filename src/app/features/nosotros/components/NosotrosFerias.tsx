@@ -69,7 +69,10 @@ export function NosotrosFerias({ ferias }: NosotrosFeriasProps) {
       {/* Section Header */}
       <div className="container mx-auto px-4 lg:px-8 text-center mb-16">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-          <h2 className="text-3xl md:text-5xl mb-6 font-bold">Ferias <span className="text-[#F4BA3E]">Inmobiliarias</span></h2>
+          <h2 className="text-3xl md:text-5xl mb-6 font-bold">
+            MERAKI PRESENTE EN
+            <span className="block text-[#F4BA3E]">FERIAS INMOBILIARIAS CON EXITO TOTAL</span>
+          </h2>
           <div className="h-1 w-16 bg-[#F4BA3E] mx-auto mb-6 rounded-full" />
           <p className="text-lg text-gray-500 font-light max-w-2xl mx-auto italic">
             Nuestra participación en los eventos más importantes del sector inmobiliario colombiano

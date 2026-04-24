@@ -33,7 +33,7 @@ export function NosotrosAsesores({ asesores }: NosotrosAsesoresProps) {
       <div className="container mx-auto px-4 lg:px-8 text-center mb-12">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <h2 className="text-3xl md:text-5xl mb-6 font-bold">
-            Asesores <span className="text-[#F4BA3E]">Oficiales</span>
+            Brokers <span className="text-[#F4BA3E]">Inmobiliarios</span>
           </h2>
           <div className="inline-flex items-center px-5 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-[12px] font-bold tracking-widest uppercase mb-10">
             <Shield className="w-3.5 h-3.5 mr-2" />
@@ -66,7 +66,7 @@ export function NosotrosAsesores({ asesores }: NosotrosAsesoresProps) {
               </button>
             )}
           </div>
-          <p className="text-[12px] text-gray-500 mt-3 uppercase tracking-widest font-medium">Verifica la identidad de tu asesor en nuestro registro oficial</p>
+          <p className="text-[12px] text-[#F4BA3E] mt-3 uppercase tracking-widest font-semibold drop-shadow-sm">Verifica la identidad de tu asesor en nuestro registro oficial</p>
         </motion.div>
       </div>
 
@@ -80,10 +80,10 @@ export function NosotrosAsesores({ asesores }: NosotrosAsesoresProps) {
               exit={{ opacity: 0, y: -10 }}
               className="text-center py-10"
             >
-              <div className="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-6 border border-white/10">
-                <Shield className="w-10 h-10 text-gray-600" />
+              <div className="w-20 h-20 bg-[#F4BA3E]/10 rounded-full flex items-center justify-center mx-auto mb-6 border border-[#F4BA3E]/30 shadow-[0_8px_30px_rgba(244,186,62,0.12)]">
+                <Shield className="w-10 h-10 text-[#F4BA3E]" />
               </div>
-              <p className="text-gray-500 max-w-sm mx-auto text-sm">
+              <p className="text-[#F4BA3E] max-w-sm mx-auto text-sm font-medium drop-shadow-sm">
                 Ingresa el nombre completo del asesor para verificar si forma parte de nuestro equipo oficial.
               </p>
             </motion.div>

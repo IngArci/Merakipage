@@ -70,7 +70,10 @@ export const projectsData: Record<string, Project> = {
       { icon: Dog, name: 'Dogpark', description: '' },//
       { icon: Grid, name: 'Mallas Antiestres', description: '' },//
       { icon: Baby, name: 'Parque infantil', description: '' },//
-      { icon: Volleyball, name: 'Cancha Volleyball playa', description: '' },//
+      { icon: Volleyball, name: 'Cancha Volleyball playa', description: '' },
+      { icon: GiKidSlide, name: 'Tobogán', description: '' },
+      { icon: GiRiver, name: 'Rio lento', description: '' },//
+      { icon: TreePine, name: 'Parque Lineal', description: '' },
 
     ],
     location: {
