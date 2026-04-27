@@ -126,8 +126,8 @@ export const projectsData: Record<string, Project> = {
 
     ],
     sizes: '300m² - 2.500m²',
-    priceFrom: '$90,999,999',
-    priceFromUSD: '$25,990',
+    priceFrom: '$82,990,000',
+    priceFromUSD: '$23,990',
     totalLots: 641,
     availableLots: 207,
     deliveryDate: 'Junio 2027',

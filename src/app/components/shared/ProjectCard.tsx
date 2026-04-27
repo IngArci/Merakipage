@@ -13,6 +13,16 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ title, location, sizes, image, slug, status }: ProjectCardProps) {
+  const isSoldOutSuccessLabel = (() => {
+    const s = slug?.toLowerCase() ?? '';
+    const t = title?.toLowerCase() ?? '';
+    return (
+      ['grand-arizona', 'arizona-country-club-1', 'arizona-country-club-2'].includes(s) ||
+      t.includes('grand arizona') ||
+      t.includes('airzona country club') ||
+      t.includes('arizona country club')
+    );
+  })();
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -48,7 +58,7 @@ export function ProjectCard({ title, location, sizes, image, slug, status }: Pro
           </div>
 
           <div className="mb-8 flex-grow">
-            <p className="text-[12px] text-[var(--gold-5)] uppercase tracking-widest font-bold mb-1 opacity-70">Dimensiones</p>
+            <p className="text-[12px] text-[var(--gold-5)] uppercase tracking-widest font-bold mb-1 opacity-70">{isSoldOutSuccessLabel ? 'EXITO TOTAL EN VENTAS' : 'Dimensiones'}</p>
             <p className="text-base text-gray-300 font-light italic">{sizes}</p>
           </div>
 
