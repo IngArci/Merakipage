@@ -110,7 +110,7 @@ export const projectsData: Record<string, Project> = {
     region: 'Melgar',
     status: 'en-venta',
     shortDescription: 'Ubicado en la mejor zona de gran valorización conocida como EL PASO justo en el epicentro de las ciudades de Ricaurte, Melgar, Girardot y Carmen de Apicalá, con acceso sobre la vía nacional Ibagué - Bogotá Ruta 40 Express.',
-      description: `LAGUNA MAR BUNGALOW COLIVING CLUB es un mega proyecto conformado por 10 etapas ubicado en el municipio de Ricaurte donde podrás disfrutar de todas las comodidades de un condominio campestre exclusivo con el sello de calidad del GRUPO CONSTRUCTOR MERAKI. ¡Realiza una inversión inteligente en LAGUNA MAR BUNGALOW COLIVING CLUB! Su ubicación lo hace una inversión ganadora, en el corazón de la mejor zona de veraneo en Colombia, equidistante a Ricaurte, Melgar, Girardot y Carmen de Apicalá, en un sector de gran afluencia. Su acceso se encuentra sobre la doble calzada Girardot-Bogotá, en la vía 40 express, a 200 metros del sector conocido como “EL PASO”. 
+    description: `LAGUNA MAR BUNGALOW COLIVING CLUB es un mega proyecto conformado por 10 etapas ubicado en el municipio de Ricaurte donde podrás disfrutar de todas las comodidades de un condominio campestre exclusivo con el sello de calidad del GRUPO CONSTRUCTOR MERAKI. ¡Realiza una inversión inteligente en LAGUNA MAR BUNGALOW COLIVING CLUB! Su ubicación lo hace una inversión ganadora, en el corazón de la mejor zona de veraneo en Colombia, equidistante a Ricaurte, Melgar, Girardot y Carmen de Apicalá, en un sector de gran afluencia. Su acceso se encuentra sobre la doble calzada Girardot-Bogotá, en la vía 40 express, a 200 metros del sector conocido como “EL PASO”. 
 
     Melgar y su zona de influencia, especialmente el corredor Ricaurte–Girardot, es hoy uno de los epicentros turísticos y de mayor valorización en Colombia, gracias a su clima cálido, alta afluencia de visitantes y desarrollo constante. Ciudad Country Laguna Mar – Club de Campo en Melgar. Laguna Mar Bungalow Coliving Club es un mega proyecto conformado por 10 etapas, donde podrás disfrutar de todas las comodidades de un exclusivo club de campo con el sello de calidad del Grupo Constructor Meraki. Ubicado en el corazón de la mejor zona de veraneo del país, es una inversión ganadora: equidistante a Ricaurte, Melgar, Girardot y Carmen de Apicalá, con acceso sobre la doble calzada Girardot–Bogotá (Ruta 40 Express), a solo 200 metros del reconocido sector “El Paso”. Un proyecto diseñado para quienes buscan descanso, valorización y una inversión inteligente en un entorno estratégico. Haz del campo tu segundo hogar. Con Meraki, a la fija.`,
     stages: [
@@ -324,8 +324,7 @@ export const projectsData: Record<string, Project> = {
       '/images/llano-grande/2.webp',
       '/images/llano-grande/3.webp',
       '/images/llano-grande/4.webp',
-      '/images/llano-grande/5.webp',
-      '/images/llano-grande/6.webp',
+
 
     ],
     amenities: [
@@ -380,8 +379,7 @@ export const projectsData: Record<string, Project> = {
       '/images/grand-arizona/1.webp',
       '/images/grand-arizona/3.webp',
       '/images/grand-arizona/4.webp',
-      '/images/grand-arizona/5.webp',
-      '/images/grand-arizona/6.webp',
+
     ],
     amenities: [
       { icon: HiOutlineOfficeBuilding, name: 'Oficina Para La Administración', description: '' },

@@ -16,9 +16,9 @@ function PrevArrow(props: any) {
   return (
     <button
       onClick={onClick}
-      className="absolute left-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/10 hover:bg-[#F4BA3E] hover:text-black transition-all flex items-center justify-center group"
+      className="absolute left-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-black/60 backdrop-blur-md border border-[#F4BA3E]/30 hover:bg-[#F4BA3E] hover:text-black transition-all flex items-center justify-center group"
     >
-      <ArrowLeft className="w-6 h-6 text-white group-hover:text-black" />
+      <ArrowLeft className="w-6 h-6 text-[#F4BA3E] group-hover:text-black" />
     </button>
   );
 }
@@ -28,9 +28,9 @@ function NextArrow(props: any) {
   return (
     <button
       onClick={onClick}
-      className="absolute right-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/10 hover:bg-[#F4BA3E] hover:text-black transition-all flex items-center justify-center group"
+      className="absolute right-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-black/60 backdrop-blur-md border border-[#F4BA3E]/30 hover:bg-[#F4BA3E] hover:text-black transition-all flex items-center justify-center group"
     >
-      <ArrowRight className="w-6 h-6 text-white group-hover:text-black" />
+      <ArrowRight className="w-6 h-6 text-[#F4BA3E] group-hover:text-black" />
     </button>
   );
 }
@@ -51,10 +51,7 @@ export function ProjectGallerySection({ images, videos }: ProjectGallerySectionP
     autoplaySpeed: 5000,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
-    dotsClass: "slick-dots !bottom-8",
-    customPaging: () => (
-      <div className="w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-all" />
-    )
+    dotsClass: "slick-dots !bottom-10",
   };
 
   return (
@@ -84,11 +81,11 @@ export function ProjectGallerySection({ images, videos }: ProjectGallerySectionP
                 <Slider {...settings}>
                   {images.map((img, index) => (
                     <div key={index} className="outline-none">
-                      <div className="relative h-[500px] md:h-[700px]">
+                      <div className="relative h-[500px] md:h-[700px] bg-black">
                         <img
                           src={img}
                           alt={`Galería ${index + 1}`}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-contain"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                         <div className="absolute bottom-10 left-10 flex items-center space-x-3 bg-black/40 backdrop-blur-md px-5 py-2.5 rounded-full border border-white/10">

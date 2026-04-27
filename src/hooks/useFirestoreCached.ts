@@ -61,7 +61,7 @@ export function useFirestoreCached<T = DocumentData>(
   collectionName: string,
   filterField?: string,
   filterValue?: string,
-  orderField: string = 'createdAt',
+  orderField?: string,
   orderDirection: 'asc' | 'desc' = 'desc'
 ) {
   const cacheKey = getCacheKey(collectionName, filterField, filterValue);
@@ -79,19 +79,20 @@ export function useFirestoreCached<T = DocumentData>(
 
     let q: Query<DocumentData>;
     try {
+      const collectionRef = collection(db, collectionName);
+      const constraints = [];
+
       if (filterField && filterValue) {
-        q = query(
-          collection(db, collectionName),
-          where(filterField, '==', filterValue),
-          orderBy(orderField, orderDirection)
-        );
-      } else {
-        q = query(
-          collection(db, collectionName),
-          orderBy(orderField, orderDirection)
-        );
+        constraints.push(where(filterField, '==', filterValue));
       }
-    } catch {
+
+      if (orderField) {
+        constraints.push(orderBy(orderField, orderDirection));
+      }
+
+      q = query(collectionRef, ...constraints);
+    } catch (err) {
+      console.error(`[useFirestoreCached] Error construyendo consulta para "${collectionName}":`, err);
       setLoading(false);
       return;
     }
