@@ -19,7 +19,7 @@ interface ProyectosGridProps {
 }
 
 // Helper component for section headers
-const SectionHeader = ({ icon: Icon, title, subtitle, colorClass }: { icon: any, title: string, subtitle: string, colorClass: string }) => (
+const SectionHeader = ({ icon: Icon, title, subtitle, colorClass, subtitleColor, subtitleClass }: { icon: any, title: string, subtitle: string, colorClass: string, subtitleColor?: string, subtitleClass?: string }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -38,7 +38,7 @@ const SectionHeader = ({ icon: Icon, title, subtitle, colorClass }: { icon: any,
     <div className="flex justify-center mb-8">
       <div className="h-px w-24 bg-gradient-to-r from-transparent via-[#F4BA3E] to-transparent" />
     </div>
-    <p className="text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed italic">
+    <p className={`text-xl ${subtitleColor || 'text-gray-400'} max-w-2xl mx-auto ${subtitleClass || 'font-light'} leading-relaxed italic`}>
       "{subtitle}"
     </p>
   </motion.div>
@@ -125,6 +125,8 @@ export function ProyectosGrid({ enVenta, entregados }: ProyectosGridProps) {
             icon={CheckCircle2}
             title="Proyectos Finalizados"
             subtitle="PORQUE CON MERAKI A LA FIJA."
+            subtitleColor="text-[#F4BA3E]"
+            subtitleClass="font-bold"
             colorClass="from-[#373634] to-[#6b582b]"
           />
           {renderGrid(entregados, enVenta.length)}
@@ -144,8 +146,8 @@ export function ProyectosCTA() {
             <div>
               <span className="text-[#F4BA3E] font-bold tracking-[0.4em] uppercase text-xs mb-6 block">Asesoría Personalizada</span>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 uppercase tracking-tighter leading-tight">
-                ¿Buscas algo <br />
-                <span className="text-[#F4BA3E]">Realmente Único?</span>
+                AQUI! inicia  <br />
+                <span className="text-[#F4BA3E]"> tu inversión Ahora...</span>
               </h2>
               <p className="text-xl text-gray-400 mb-10 leading-relaxed font-light">
                 Contáctanos y te ayudaremos a encontrar el terreno perfecto para tu visión. Nuestros expertos están listos para guiarte en cada paso.

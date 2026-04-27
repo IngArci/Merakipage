@@ -40,9 +40,7 @@ export function Header() {
     { name: 'HISTORIA', anchor: 'historia' },
     { name: 'VALORES', anchor: 'valores' },
     { name: 'MISIÓN Y VISIÓN', anchor: 'mision-vision' },
-    { name: 'EQUIPO', anchor: 'equipo' },
     { name: 'ASESORES', anchor: 'asesores' },
-    { name: 'CERTIFICACIONES', anchor: 'certificaciones' },
     { name: 'FERIAS', anchor: 'ferias' },
   ];
 

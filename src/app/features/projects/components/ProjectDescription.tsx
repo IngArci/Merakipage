@@ -16,7 +16,14 @@ export function ProjectDescription({ description }: ProjectDescriptionProps) {
         >
           <h2 className="text-4xl mb-6 text-white">Descripción del Club de Campo</h2>
           <div className="h-1 w-32 bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] mb-8" />
-          <p className="text-lg text-gray-300 leading-relaxed">{description}</p>
+          <p className="text-lg text-gray-300 leading-relaxed">
+            {description.split('\n').map((line, idx, arr) => (
+              <span key={idx}>
+                {line}
+                {idx < arr.length - 1 && <br />}
+              </span>
+            ))}
+          </p>
         </motion.div>
       </div>
     </section>

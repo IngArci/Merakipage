@@ -107,10 +107,12 @@ export const projectsData: Record<string, Project> = {
   },
   'laguna-mar': {
     title: 'LAGUNA MAR BUNGALOW COLIVING CLUB',
-    region: 'Melgar - Ricaurte',
+    region: 'Melgar',
     status: 'en-venta',
     shortDescription: 'Ubicado en la mejor zona de gran valorización conocida como EL PASO justo en el epicentro de las ciudades de Ricaurte, Melgar, Girardot y Carmen de Apicalá, con acceso sobre la vía nacional Ibagué - Bogotá Ruta 40 Express.',
-    description: 'LAGUNA MAR BUNGALOW COLIVING CLUB es un mega proyecto conformado por 10 etapas ubicado en el municipio de Ricaurte donde podrás disfrutar de todas las comodidades de un condominio campestre exclusivo con el sello de calidad del GRUPO CONSTRUCTOR MERAKI. ¡Realiza una inversión inteligente en LAGUNA MAR BUNGALOW COLIVING CLUB!  Su ubicación lo hace una inversión ganadora, en el corazón de la mejor zona de veraneo en Colombia, equidistante a Ricaurte, Melgar, Girardot y Carmen de Apicalá, en un sector de gran afluencia. Su acceso se encuentra sobre la doble calzada Girardot-Bogotá, en la vía 40 express, a 200 metros del sector conocido como “EL PASO”..',
+      description: `LAGUNA MAR BUNGALOW COLIVING CLUB es un mega proyecto conformado por 10 etapas ubicado en el municipio de Ricaurte donde podrás disfrutar de todas las comodidades de un condominio campestre exclusivo con el sello de calidad del GRUPO CONSTRUCTOR MERAKI. ¡Realiza una inversión inteligente en LAGUNA MAR BUNGALOW COLIVING CLUB! Su ubicación lo hace una inversión ganadora, en el corazón de la mejor zona de veraneo en Colombia, equidistante a Ricaurte, Melgar, Girardot y Carmen de Apicalá, en un sector de gran afluencia. Su acceso se encuentra sobre la doble calzada Girardot-Bogotá, en la vía 40 express, a 200 metros del sector conocido como “EL PASO”. 
+
+    Melgar y su zona de influencia, especialmente el corredor Ricaurte–Girardot, es hoy uno de los epicentros turísticos y de mayor valorización en Colombia, gracias a su clima cálido, alta afluencia de visitantes y desarrollo constante. Ciudad Country Laguna Mar – Club de Campo en Melgar. Laguna Mar Bungalow Coliving Club es un mega proyecto conformado por 10 etapas, donde podrás disfrutar de todas las comodidades de un exclusivo club de campo con el sello de calidad del Grupo Constructor Meraki. Ubicado en el corazón de la mejor zona de veraneo del país, es una inversión ganadora: equidistante a Ricaurte, Melgar, Girardot y Carmen de Apicalá, con acceso sobre la doble calzada Girardot–Bogotá (Ruta 40 Express), a solo 200 metros del reconocido sector “El Paso”. Un proyecto diseñado para quienes buscan descanso, valorización y una inversión inteligente en un entorno estratégico. Haz del campo tu segundo hogar. Con Meraki, a la fija.`,
     stages: [
       {
         name: 'Mar Santorini',
@@ -168,12 +170,12 @@ export const projectsData: Record<string, Project> = {
       { icon: MessagesSquare, name: 'Salón de eventos', description: '' },
     ],
     location: {
-      address: 'A tan solo 2 horas de Bogotá se encuentran Ricaurte, Girardot, Melgar y Carmen de Apicalá, ciudades pujantes y epicentros de las mejores zonas de descanso de Colombia.',
+      address: 'A tan solo 2 horas de Bogotá se encuentran Girardot, Melgar y Carmen de Apicalá, ciudades pujantes y epicentros de las mejores zonas de descanso de Colombia.',
       coordinates: '67W6+3X, Melgar, Tolima',
       mapIframe: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4890.696685498831!2d-74.7375625!3d4.2451875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f27f1fd164147%3A0x27733b3a994f332b!2sLaguna%20Mar!5e1!3m2!1ses-419!2sco!4v1775837818636!5m2!1ses-419!2sco',
       nearbyPlaces: [
         'A 2 horas de Bogotá',
-        'Ubicado entre Ricaurte, Melgar y Girardot',
+        'Ubicado entre Melgar y Girardot',
         'A 3 minutos de Piscilago',
         'A 3 minutos del Lago Sol de Compensar',
         'Cerca de Carmen de Apicalá'
@@ -199,10 +201,13 @@ export const projectsData: Record<string, Project> = {
     region: 'Alvarado',
     status: 'en-venta',
     shortDescription: 'Crea tu propio estilo de vida en un verdadero club de campo',
-    description: 'Descubre Cañón de Arizona Club de Campo, un proyecto diseñado para quienes buscan libertad, naturaleza y una inversión estratégica en un solo lugar. Ubicado en Alvarado, Tolima, se destaca por estar sobre vía nacional, lo que garantiza fácil acceso, alta conectividad y una proyección de valorización constante. Además, cuenta con un diferencial único: acceso directo al río, brindando un entorno natural privilegiado donde la tranquilidad y el contacto con la naturaleza se convierten en parte de tu día a día.',
+    description: `Alvarado, Tolima, es una zona en constante crecimiento, reconocida por su clima cálido, su riqueza natural y su alto potencial de valorización, ideal para quienes buscan invertir y disfrutar del campo.
+
+  Cañón de Arizona – Club de Campo en Alvarado
+  Cañón de Arizona Bungalow Luxury Club es un exclusivo proyecto que combina ubicación estratégica y conexión con la naturaleza. Se encuentra sobre la vía nacional Ibagué – Alvarado, con acceso exclusivo antes del peaje de Alvarado, en una zona de alta valorización. Además, el proyecto rodea gran parte de la ribera del río Alvarado, una importante fuente hídrica, lo convierten en un lugar único para vivir o invertir.`,
     sizes: '300m² - 1,760m²',
-    priceFrom: '$90,999,999',
-    priceFromUSD: '$23,000',
+    priceFrom: '$169,990,00',
+    priceFromUSD: '$47,550',
     totalLots: 331,
     availableLots: 135,
     deliveryDate: '',
@@ -267,8 +272,8 @@ export const projectsData: Record<string, Project> = {
     shortDescription: 'Un lugar donde la montaña se convierte en estilo de vida y cada día se vive a otro nivel',
     description: 'Descubre The Protector Club de Campo, un proyecto concebido como un refugio natural donde la tranquilidad, la privacidad y la seguridad se convierten en el verdadero lujo. Inspirado en la idea de protección y equilibrio, este club de campo ha sido diseñado para brindar un entorno donde cada detalle cuida lo más importante: tu bienestar, tu inversión y tu calidad de vida. Aquí, la naturaleza no solo rodea, sino que envuelve, creando una sensación permanente de calma y desconexión del ritmo de la ciudad.',
     sizes: '30,000m²',
-    priceFrom: '$90,999,999',
-    priceFromUSD: '$23,000',
+    priceFrom: '$79,990,000',
+    priceFromUSD: '$22,399',
     totalLots: 17,
     availableLots: 17,
     deliveryDate: '',
