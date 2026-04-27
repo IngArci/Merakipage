@@ -15,7 +15,8 @@ export function useProjectDetails() {
   const { data: firebaseAvances } = useFirestoreCached<ProgressUpdate>(
     'avances_obra',
     'projectSlug',
-    slug || ''
+    slug || '',
+    'createdAt'
   );
   const { data: firebaseVideos } = useFirestoreCached<{
     videoId: string;
@@ -23,7 +24,8 @@ export function useProjectDetails() {
   }>(
     'videos_youtube',
     'projectSlug',
-    slug || ''
+    slug || '',
+    'createdAt'
   );
 
   const { data: firebaseGaleria } = useFirestoreCached<{
@@ -40,12 +42,11 @@ export function useProjectDetails() {
     ...(project?.progress || [])
   ];
 
-  // Galería: Fotos estáticas (configuración) + Galería oficial Firebase
-  // EXCLUIMOS fotos de avances de obra para no "ensuciar" la presentación inicial
-  const galleryImages = [
-    ...(project?.images || []),
-    ...(firebaseGaleria?.map(g => g.imageUrl) || [])
-  ];
+  // Fotos estáticas (configuración) para el Hero
+  const heroImages = project?.images || [];
+
+  // Galería oficial desde Firebase
+  const firebaseGalleryImages = firebaseGaleria?.map(g => g.imageUrl) || [];
 
   const combinedVideos = {
     informesGestion: [
@@ -63,7 +64,8 @@ export function useProjectDetails() {
     project,
     combinedProgress,
     combinedVideos,
-    galleryImages,
+    heroImages,
+    firebaseGalleryImages,
     isValid: !!project,
     navigate
   };

@@ -138,12 +138,30 @@ export function ProjectHero({
           >
             <div className="bg-white/[0.02] backdrop-blur-md p-8 rounded-3xl border border-white/5 hover:border-[var(--gold-5)]/20 transition-all duration-500 group text-center">
               <p className="text-[var(--gold-5)] text-[12px] uppercase tracking-[0.2em] font-bold mb-3 opacity-60">Inversión Desde</p>
-              <div className="flex flex-col items-center">
-                <p className="text-2xl md:text-3xl text-white font-light">{priceFrom} <span className="text-xs text-gray-500 uppercase ml-1">COP</span></p>
+              <div className="flex flex-col items-center gap-2">
+                <div className="flex items-center gap-3">
+                  <p className="text-2xl md:text-3xl text-white font-light">{priceFrom}</p>
+                  <div className="flex items-center gap-1.5 bg-white/5 px-2 py-0.5 rounded-full border border-white/5">
+                    <img 
+                      src="https://flagcdn.com/w40/co.png" 
+                      alt="Colombia" 
+                      className="w-4 h-auto rounded-sm opacity-80" 
+                    />
+                    <span className="text-[10px] text-gray-500 uppercase font-bold tracking-wider">COP</span>
+                  </div>
+                </div>
                 {priceFromUSD && (
-                  <p className="text-lg md:text-xl text-gray-400 font-light mt-1 border-t border-white/5 pt-1 w-full max-w-[150px]">
-                    {priceFromUSD} <span className="text-xs text-gray-500 uppercase ml-1">USD</span>
-                  </p>
+                  <div className="flex items-center gap-3 mt-1 border-t border-white/5 pt-2 w-full justify-center">
+                    <p className="text-lg md:text-xl text-gray-400 font-light">{priceFromUSD}</p>
+                    <div className="flex items-center gap-1.5 bg-white/5 px-2 py-0.5 rounded-full border border-white/5">
+                      <img 
+                        src="https://flagcdn.com/w40/us.png" 
+                        alt="USA" 
+                        className="w-4 h-auto rounded-sm opacity-80" 
+                      />
+                      <span className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">USD</span>
+                    </div>
+                  </div>
                 )}
               </div>
             </div>

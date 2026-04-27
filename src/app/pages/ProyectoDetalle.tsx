@@ -27,7 +27,7 @@ import { ProjectContactSection } from '../features/projects/components/ProjectCo
 
 export default function ProyectoDetalle() {
   const [selectedImage, setSelectedImage] = useState(0);
-  const { slug, project, combinedProgress, combinedVideos, galleryImages, isValid } = useProjectDetails();
+  const { slug, project, combinedProgress, combinedVideos, heroImages, firebaseGalleryImages, isValid } = useProjectDetails();
 
   if (!isValid || !project || !slug) {
     return <Navigate to="/proyectos" replace />;
@@ -73,7 +73,7 @@ export default function ProyectoDetalle() {
         title={project.title}
         region={project.region}
         shortDescription={project.shortDescription}
-        images={galleryImages}
+        images={heroImages}
         selectedImage={selectedImage}
         setSelectedImage={setSelectedImage}
         priceFrom={project.priceFrom}
@@ -122,7 +122,7 @@ export default function ProyectoDetalle() {
             />
           )}
           <ProjectGallerySection 
-            images={galleryImages}
+            images={firebaseGalleryImages}
             videos={slug === 'llano-grande' ? { informesGestion: [], avancesObra: [] } : combinedVideos}
           />
           {slug === 'llano-grande' && <ProjectProgressSection progress={combinedProgress} />}
