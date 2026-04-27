@@ -69,9 +69,13 @@ export function CarteraInfo() {
             <div className="flex flex-col items-center justify-center space-y-8">
               {/* Badge de trayectoria */}
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#F4BA3E]/20 via-[#B7871C]/20 to-transparent blur-3xl scale-110" />
-                <div className="relative bg-gradient-to-br from-[#F4BA3E]/10 to-transparent p-12 rounded-2xl border border-[#F4BA3E]/30 text-center">
-                  <p className="text-[#F4BA3E] font-semibold text-sm md:text-base uppercase tracking-wide mt-3">PORQUE NUESTRA FILOSOFIA ES UN GANA &amp; GANA</p>
+                <div className="absolute inset-0  from-[#F4BA3E]/20 via-[#B7871C]/20 to-transparent blur-3xl scale-110" />
+                <div className="relative  from-[#F4BA3E]/10 to-transparent p-12 rounded-2xl border border-[#F4BA3E]/30 text-center">
+                  <img
+                    src='/images/cartera/CARTERA.webp'
+                    alt="Hero Background"
+                    className="w-full  object-cover"
+                  />
                 </div>
               </div>
 

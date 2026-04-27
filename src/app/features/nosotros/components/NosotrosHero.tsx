@@ -10,7 +10,7 @@ export function NosotrosHero() {
           alt="Hero Background"
           className="w-full  object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0d060a] via-[#0d060a]/70 to-[#0d060a]/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0d060a] via-[#0d060a]/50 to-[#0d060a]/20" />
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 relative pt-12">

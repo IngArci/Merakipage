@@ -40,7 +40,7 @@ export function CasasHero() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-[#F4BA3E] hover:bg-[#B7871C] text-[#0d060a] font-bold rounded-full px-8 py-5 sm:py-7 text-base sm:text-lg group w-full sm:w-auto" asChild>
-                <a href="#modelos">
+                <a href="#tradicionales">
                   Explorar Modelos <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>

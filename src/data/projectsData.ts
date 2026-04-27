@@ -59,7 +59,6 @@ export const projectsData: Record<string, Project> = {
       '/images/rio-claro/porteria-opt.webp',
       '/images/rio-claro/PISCINA.png',
       '/images/rio-claro/jacuzzi.png',
-
       '/images/rio-claro/rio-lento.png',
 
     ],
@@ -115,14 +114,33 @@ export const projectsData: Record<string, Project> = {
       {
         name: 'Mar Santorini',
         subtitle: 'Primera Etapa',
-        image: '/images/laguna-mar/LOGO-MAR-SANTORINI.png'
+        image: '/images/laguna-mar/LOGO-MAR-SANTORINI.png',
+        available: true
       },
       {
         name: 'Mar Canarias',
         subtitle: 'Segunda Etapa',
-        image: '/images/laguna-mar/LOGO-MAR-CANARIAS.png'
+        image: '/images/laguna-mar/LOGO-MAR-CANARIAS.png',
+        available: true
       },
-
+      {
+        name: 'Mar Ibiza',
+        subtitle: 'Tercera Etapa',
+        image: '/images/laguna-mar/LOGO-MAR-IBIZA.png',
+        available: false
+      },
+      {
+        name: 'Mar Mykonos',
+        subtitle: 'Cuarta Etapa',
+        image: '/images/laguna-mar/LOGO-MYKONOS.png',
+        available: false
+      },
+      {
+        name: 'Mar Atenas',
+        subtitle: 'Quinta Etapa',
+        image: '/images/laguna-mar/LOGO-MAR-ATENAS.png',
+        available: false
+      },
     ],
     sizes: '300m² - 2.500m²',
     priceFrom: '$90,999,999',

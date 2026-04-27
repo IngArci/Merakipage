@@ -19,6 +19,7 @@ export interface ProjectStage {
   name: string;
   subtitle: string;
   image: string;
+  available?: boolean;
 }
 
 export interface ProgressUpdate {

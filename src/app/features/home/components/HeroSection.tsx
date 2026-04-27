@@ -22,11 +22,11 @@ export function HeroSection() {
           background-image: url('/projects/hero.webp');
           background-repeat: no-repeat;
           background-size: cover;
-          background-position: 50% center;
+          background-position: center center;
         }
-        @media (min-width: 640px) {
+        @media (min-width: 768px) {
           .hero-bg {
-            background-position: center center;
+            background-size: 100% 100%;
           }
         }
       `}</style>
