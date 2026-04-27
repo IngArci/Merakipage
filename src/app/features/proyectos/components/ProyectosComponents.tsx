@@ -123,8 +123,8 @@ export function ProyectosGrid({ enVenta, entregados }: ProyectosGridProps) {
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeader
             icon={CheckCircle2}
-            title="Proyectos Entregados"
-            subtitle="Casos de éxito donde la visión se convirtió en realidad para cientos de familias."
+            title="Proyectos Finalizados"
+            subtitle="PORQUE CON MERAKI A LA FIJA."
             colorClass="from-[#373634] to-[#6b582b]"
           />
           {renderGrid(entregados, enVenta.length)}

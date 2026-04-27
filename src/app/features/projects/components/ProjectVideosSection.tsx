@@ -17,7 +17,7 @@ export function ProjectVideosSection({ informesGestion, avancesObra }: VideoSect
           viewport={{ once: true }}
           className="max-w-6xl mx-auto"
         >
-          <h2 className="text-4xl mb-6 text-white">Noticias de tu Club Campestre</h2>
+          <h2 className="text-4xl mb-6 text-white">Noticias de tu Club de Campo</h2>
           <div className="h-1 w-32 bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] mb-12" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
