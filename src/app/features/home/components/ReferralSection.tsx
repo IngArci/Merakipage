@@ -99,11 +99,11 @@ export function ReferralSection() {
 
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, x: 30 }}
-            whileInView={{ opacity: 1, scale: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="hidden lg:flex justify-center items-center relative"
+            className="flex justify-center items-center relative mt-12 lg:mt-0 order-first lg:order-last"
           >
 
             <div className="absolute w-[80%] h-[80%] bg-[#F4BA3E]/10 blur-[100px] rounded-full pointer-events-none" />
@@ -113,7 +113,7 @@ export function ReferralSection() {
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
               src="/images/referidos/3.webp"
               alt="Gánese 3 Millones por cada Referido"
-              className="w-full max-w-sm xl:max-w-md object-contain drop-shadow-[0_20px_50px_rgba(244,186,62,0.25)] relative z-10"
+              className="w-full max-w-[280px] sm:max-w-sm xl:max-w-md object-contain drop-shadow-[0_20px_50px_rgba(244,186,62,0.25)] relative z-10"
             />
           </motion.div>
         </div>
