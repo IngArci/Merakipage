@@ -51,7 +51,7 @@ export const projectsData: Record<string, Project> = {
     description: 'Mariquita, Tolima, es un destino privilegiado por su clima cálido, su riqueza natural y su ubicación estratégica, ideal para descansar, desconectarse y disfrutar en familia sin alejarse de la ciudad.  Río Claro – Club de Campo en Mariquita Ubicado a solo 5 minutos del centro, Río Claro es un exclusivo club de campo que te ofrece terrenos campestres desde 300 m², perfectos para construir tu segundo hogar o una eco house en medio de la naturaleza. Disfruta de espacios únicos como su club de playa con río, piscina tipo playa y tobogán volcán, pensados para vivir momentos inolvidables. Haz del campo tu segundo hogar. Con Meraki, a la fija.',
     sizes: '300m² - 600m²',
     priceFrom: '$99,900,900',
-    priceFromUSD: '$25,900',
+    priceFromUSD: '$27,900',
     totalLots: 159,
     availableLots: 93,
     deliveryDate: 'Diciembre 2026',
@@ -110,9 +110,9 @@ export const projectsData: Record<string, Project> = {
     region: 'Melgar',
     status: 'en-venta',
     shortDescription: 'Ubicado en la mejor zona de gran valorización conocida como EL PASO justo en el epicentro de las ciudades de Ricaurte, Melgar, Girardot y Carmen de Apicalá, con acceso sobre la vía nacional Ibagué - Bogotá Ruta 40 Express.',
-    description: `LAGUNA MAR BUNGALOW COLIVING CLUB es un mega proyecto conformado por 10 etapas ubicado en el municipio de Ricaurte donde podrás disfrutar de todas las comodidades de un condominio campestre exclusivo con el sello de calidad del GRUPO CONSTRUCTOR MERAKI. ¡Realiza una inversión inteligente en LAGUNA MAR BUNGALOW COLIVING CLUB! Su ubicación lo hace una inversión ganadora, en el corazón de la mejor zona de veraneo en Colombia, equidistante a Ricaurte, Melgar, Girardot y Carmen de Apicalá, en un sector de gran afluencia. Su acceso se encuentra sobre la doble calzada Girardot-Bogotá, en la vía 40 express, a 200 metros del sector conocido como “EL PASO”. 
+    description: `Melgar y su zona de influencia se han consolidado como una de las zonas turísticas y de mayor valorización en Colombia, gracias a su clima cálido, su ambiente vacacional y su crecimiento constante. Laguna Mar Bungalow Coliving Club es un mega proyecto conformado por 10 etapas, diseñado para quienes buscan descanso, exclusividad e inversión segura en un verdadero club de campo con el sello de calidad del Grupo Constructor Meraki.
 
-    Melgar y su zona de influencia, especialmente el corredor Ricaurte–Girardot, es hoy uno de los epicentros turísticos y de mayor valorización en Colombia, gracias a su clima cálido, alta afluencia de visitantes y desarrollo constante. Ciudad Country Laguna Mar – Club de Campo en Melgar. Laguna Mar Bungalow Coliving Club es un mega proyecto conformado por 10 etapas, donde podrás disfrutar de todas las comodidades de un exclusivo club de campo con el sello de calidad del Grupo Constructor Meraki. Ubicado en el corazón de la mejor zona de veraneo del país, es una inversión ganadora: equidistante a Ricaurte, Melgar, Girardot y Carmen de Apicalá, con acceso sobre la doble calzada Girardot–Bogotá (Ruta 40 Express), a solo 200 metros del reconocido sector “El Paso”. Un proyecto diseñado para quienes buscan descanso, valorización y una inversión inteligente en un entorno estratégico. Haz del campo tu segundo hogar. Con Meraki, a la fija.`,
+  Ubicado en la mejor zona de gran valorización conocida como “El Paso”, justo en el epicentro de Ricaurte, Melgar, Girardot y Carmen de Apicalá, cuenta con acceso sobre la vía nacional Ibagué - Bogotá, Ruta 40 Express, lo que lo convierte en una ubicación estratégica y altamente rentable. Un proyecto pensado para disfrutar de todas las comodidades de un condominio campestre exclusivo, rodeado de turismo, desarrollo y gran proyección de valorización.`,
     stages: [
       {
         name: 'Mar Santorini',

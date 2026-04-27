@@ -87,6 +87,19 @@ export default function ProyectoDetalle() {
 
       <ProjectDescription description={project.description} />
 
+      {/** Special case: for 'sobre-montañas' add a short callout under the description and skip the Amenities header */}
+      {slug === 'sobre-montañas' && (
+        <section className="py-6 bg-gradient-to-b from-black via-[#0d060a] to-black">
+          <div className="container mx-auto px-4 lg:px-8">
+            <div className="max-w-4xl mx-auto text-center">
+              <p className="mt-4 text-center text-3xl md:text-4xl lg:text-5xl font-extrabold text-[var(--gold-5)] drop-shadow-2xl tracking-tight">
+                Construye tu Cabaña o Glamping a tu gusto
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
+
       {project.stages && <ProjectStages stages={project.stages} />}
 
       <ProjectLocation
@@ -96,7 +109,9 @@ export default function ProyectoDetalle() {
         mapIframe={project.location.mapIframe}
       />
 
-      <ProjectAmenities amenities={project.amenities} />
+      {slug !== 'sobre-montañas' && (
+        <ProjectAmenities amenities={project.amenities} />
+      )}
 
       {showPlan && (
         <ProjectMasterPlan
