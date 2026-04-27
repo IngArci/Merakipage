@@ -14,7 +14,7 @@ export function ProjectDescription({ description }: ProjectDescriptionProps) {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <h2 className="text-4xl mb-6 text-white">Descripción del Proyecto</h2>
+          <h2 className="text-4xl mb-6 text-white">Descripción del Club de Campo</h2>
           <div className="h-1 w-32 bg-gradient-to-r from-[#947018] via-[#F4BA3E] to-[#947018] mb-8" />
           <p className="text-lg text-gray-300 leading-relaxed">{description}</p>
         </motion.div>
