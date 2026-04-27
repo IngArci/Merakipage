@@ -266,11 +266,11 @@ export const projectsData: Record<string, Project> = {
     formLink: 'https://api.leadconnectorhq.com/widget/form/9ZgMWa0gNMYaomA3lLqJ'
   },
   'sobre-montañas': {
-    title: 'Sobre Montaña',
+    title: 'Sobre Montañas',
     region: 'alvarado',
     status: 'en-venta',
-    shortDescription: 'Un lugar donde la montaña se convierte en estilo de vida y cada día se vive a otro nivel',
-    description: 'Descubre The Protector Club de Campo, un proyecto concebido como un refugio natural donde la tranquilidad, la privacidad y la seguridad se convierten en el verdadero lujo. Inspirado en la idea de protección y equilibrio, este club de campo ha sido diseñado para brindar un entorno donde cada detalle cuida lo más importante: tu bienestar, tu inversión y tu calidad de vida. Aquí, la naturaleza no solo rodea, sino que envuelve, creando una sensación permanente de calma y desconexión del ritmo de la ciudad.',
+    shortDescription: 'Sanación, Meditar y Yoga',
+    description: 'Descubre Sobre Montañas, un proyecto concebido como un refugio natural donde la tranquilidad, la privacidad y la seguridad se convierten en el verdadero lujo. Inspirado en la idea de protección y equilibrio, este club de campo ha sido diseñado para brindar un entorno donde cada detalle cuida lo más importante: tu bienestar, tu inversión y tu calidad de vida. Aquí, la naturaleza no solo rodea, sino que envuelve, creando una sensación permanente de calma y desconexión del ritmo de la ciudad. El proyecto está conformado por 17 aldeas, pensadas para ofrecer espacios comunitarios y privados que fomentan la convivencia y el retiro en la naturaleza.',
     sizes: '30,000m²',
     priceFrom: '$79,990,000',
     priceFromUSD: '$22,399',
@@ -283,7 +283,7 @@ export const projectsData: Record<string, Project> = {
     amenities: [
     ],
     location: {
-      address: 'Ubicados en el pie de la cordillera central, a tan solo 10 minutos del casco urbano de Alvarado, se encuentra EL PARQUE TEMÁTICO EL PROTECTOR GLAMPING, un proyecto inspirado para el disfrute de toda la familia en conexión con la naturaleza.',
+      address: 'Ubicados en el pie de la cordillera central, a tan solo 10 minutos del casco urbano de Alvarado, se encuentra EL PARQUE TEMÁTICO SOBRE MONTAÑAS, un proyecto inspirado para el disfrute de toda la familia en conexión con la naturaleza.',
       coordinates: '4.589559°, -74.984938°',
       mapIframe: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.0248250340524!2d-74.98751242418672!3d4.589567842609231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38b51213b39707%3A0x8435369ea5781c89!2sThe%20Protector%20Glamping!5e0!3m2!1ses-419!2sco!4v1775744220362!5m2!1ses-419!2sco',
       nearbyPlaces: [
